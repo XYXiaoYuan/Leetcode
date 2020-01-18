@@ -26,21 +26,17 @@ import Foundation
 // t = O(N), s = O(N)
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var hashMap = [Int: Int]()
-        var result = [Int]()
+        var dict = [Int: Int]()
 
-        for i in 0..<nums.count {
-            let vaule = nums[i]
-            let first: Int = target - vaule
-            if let firstIndex = hashMap[first] {
-                result.append(firstIndex)
-                result.append(i)
-                return result
-            } else {
-                hashMap[vaule] = i
+        for (currentIndex, n) in nums.enumerated() {
+            let complement: Int = target - n
+            if let complementIndex = dict[complement] {
+                return [complementIndex, currentIndex]
             }
+            
+            dict[n] = currentIndex
         }
-        return result
+        return [Int]()
     }
 }
 

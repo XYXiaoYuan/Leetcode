@@ -55,9 +55,7 @@ class Solution {
 }
 
 let s = Solution()
-let result = s.fib(5)
+let result = s.fib(92)
 print(result)
-
-print(Int64.max)
 
 //: [Next](@next)

@@ -39,7 +39,10 @@ class Solution {
 }
 
 let s = Solution()
-let result = s.rob([1,2,3,1])
-print(result)
+let result1 = s.rob([1,2,3,1]) // 4
+print(result1)
+
+let result2 = s.rob([2,7,9,3,1]) // 12
+print(result2)
 
 //: [Next](@next)
