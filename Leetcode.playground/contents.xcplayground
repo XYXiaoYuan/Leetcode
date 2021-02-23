@@ -8,10 +8,11 @@
         <page name='015_三数之和'/>
         <page name='70_爬楼梯'/>
         <page name='198_打家劫舍'/>
+        <page name='238_除自身以外数组的乘积'/>
         <page name='292_Nim 游戏'/>
         <page name='509_斐波那契数'/>
         <page name='344_反转字符串'/>
-        <page name='557._反转字符串中的单词 III'/>
+        <page name='557_反转字符串中的单词 III'/>
         <page name='0152_爱生气的书店老板'/>
     </pages>
 </playground>
