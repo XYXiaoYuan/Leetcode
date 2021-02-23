@@ -35,13 +35,24 @@
 
 class Solution {
     func climbStairs(_ n: Int) -> Int {
-        var p = 0, q = 0, r = 1
-        for _ in 0..<n {
-            p = q
-            q = r
-            r = p + q
+//        var p = 0, q = 0, r = 1
+//        for _ in 0..<n {
+//            p = q
+//            q = r
+//            r = p + q
+//        }
+//        return r
+        
+        return climStair(n)
+    }
+    
+    func climStair(_ n: Int, t1: Int = 1, t2: Int = 1) -> Int {
+        if n <= 1 {
+            return t2
         }
-        return r
+        
+        /// 这里采用的是尾递归的方式，可以大大节约时间和空间的消耗。
+        return climStair(n-1, t1: t2, t2: t1 + t2)
     }
 }
 
