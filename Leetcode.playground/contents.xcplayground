@@ -2,10 +2,13 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='001_两数之和'/>
+        <page name='003_无重复字符的最长子串'/>
         <page name='015_三数之和'/>
+        <page name='70_爬楼梯'/>
         <page name='198_打家劫舍'/>
         <page name='509_斐波那契数'/>
         <page name='00_星商面试题'/>
+        <page name='557._反转字符串中的单词 III'/>
         <page name='0152_爱生气的书店老板'/>
     </pages>
 </playground>

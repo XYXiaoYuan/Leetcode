@@ -43,3 +43,5 @@ class Solution {
 let s = Solution()
 let result = s.twoSum([2, 5, 11, 7], 9)
 print(result)
+
+//: [Next](@next)

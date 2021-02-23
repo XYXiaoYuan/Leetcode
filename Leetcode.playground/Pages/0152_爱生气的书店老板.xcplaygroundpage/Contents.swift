@@ -71,3 +71,6 @@ class Solution {
 
 let s = Solution()
 s.maxSatisfied([1,0,1,2,1,1,7,5], [0,1,0,1,0,1,0,1], 3)
+
+//: [Next](@next)
+
