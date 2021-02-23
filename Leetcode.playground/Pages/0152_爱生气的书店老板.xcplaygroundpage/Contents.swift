@@ -56,7 +56,7 @@ class Solution {
         for i in X..<count {
             /// 如果新进入窗口的元素是生气的,累加不满意的顾客到滑动窗口中
             /// 如果离开窗口的元素是生气的，则从滑动窗口中减去该不满意的顾客数
-            curValue += curValue + customers[i] * grumpy[i] - customers[i - X] * grumpy[i - X]
+            curValue = curValue + customers[i] * grumpy[i] - customers[i - X] * grumpy[i - X]
 
             /// 求所有窗口内不满意顾客的最大值
             print("i = \(i), i - X = \(i - X) 每次 \(i - X + 1)的 resValue = \(resValue) --- curValue = \(curValue)")
