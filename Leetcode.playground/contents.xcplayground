@@ -4,9 +4,10 @@
         <page name='00_星商面试题'/>
         <page name='001_两数之和'/>
         <page name='003_无重复字符的最长子串'/>
-        <page name='4_寻找两个正序数组的中位数'/>
+        <page name='004_寻找两个正序数组的中位数'/>
         <page name='015_三数之和'/>
-        <page name='70_爬楼梯'/>
+        <page name='043_字符串相乘'/>
+        <page name='070_爬楼梯'/>
         <page name='198_打家劫舍'/>
         <page name='217_存在重复元素'/>
         <page name='238_除自身以外数组的乘积'/>
@@ -16,5 +17,6 @@
         <page name='557_反转字符串中的单词 III'/>
         <page name='832_翻转图像'/>
         <page name='0152_爱生气的书店老板'/>
+        <page name='007_整数反转'/>
     </pages>
 </playground>
