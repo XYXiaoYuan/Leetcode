@@ -5,6 +5,8 @@
         <page name='001_两数之和'/>
         <page name='003_无重复字符的最长子串'/>
         <page name='004_寻找两个正序数组的中位数'/>
+        <page name='006_Z 字形变换 '/>
+        <page name='007_整数反转'/>
         <page name='015_三数之和'/>
         <page name='043_字符串相乘'/>
         <page name='070_爬楼梯'/>
@@ -18,6 +20,5 @@
         <page name='832_翻转图像'/>
         <page name='867_转置矩阵'/>
         <page name='0152_爱生气的书店老板'/>
-        <page name='007_整数反转'/>
     </pages>
 </playground>
