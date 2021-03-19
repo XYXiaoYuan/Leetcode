@@ -22,5 +22,6 @@
         <page name='832_翻转图像'/>
         <page name='867_转置矩阵'/>
         <page name='1178_猜字谜'/>
+        <page name='剑指 Offer 42. 连续子数组的最大和'/>
     </pages>
 </playground>

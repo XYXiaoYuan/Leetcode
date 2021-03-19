@@ -28,13 +28,13 @@ class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         var dict = [Int: Int]()
 
-        for (currentIndex, n) in nums.enumerated() {
-            let complement: Int = target - n
-            if let complementIndex = dict[complement] {
-                return [complementIndex, currentIndex]
+        for (i, n) in nums.enumerated() {
+            let second: Int = target - n
+            if let first = dict[second] {
+                return [first, i]
             }
             
-            dict[n] = currentIndex
+            dict[n] = i
         }
         return [Int]()
     }
