@@ -10,6 +10,8 @@
         <page name='015_三数之和'/>
         <page name='043_字符串相乘'/>
         <page name='070_爬楼梯'/>
+        <page name='075_颜色分类'/>
+        <page name='088_合并两个有序数组'/>
         <page name='152_爱生气的书店老板'/>
         <page name='198_打家劫舍'/>
         <page name='217_存在重复元素'/>
@@ -22,7 +24,9 @@
         <page name='557_反转字符串中的单词 III'/>
         <page name='832_翻转图像'/>
         <page name='867_转置矩阵'/>
+        <page name='1143_最长公共子序列'/>
         <page name='1178_猜字谜'/>
         <page name='剑指 Offer 42_连续子数组的最大和'/>
+        <page name='面试题 16_16_部分排序'/>
     </pages>
 </playground>
