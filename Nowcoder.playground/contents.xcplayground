@@ -16,6 +16,7 @@
         <page name='HJ63_DNA序列'/>
         <page name='HJ64_MP3光标位置'/>
         <page name='HJ65_查找两个字符串a,b中的最长公共子串'/>
+        <page name='HJ68_成绩排序'/>
         <page name='HJ95_人民币转换'/>
         <page name='HJ100_等差数列'/>
     </pages>
