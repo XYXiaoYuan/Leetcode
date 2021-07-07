@@ -23,12 +23,12 @@ import Foundation
 
 /// 倒序法
 /// - Parameters:
-///   - line1: 第一个字符串
-///   - line2: 第二个字符串
+///   - s: 第一个字符串
+///   - t: 第二个字符串
 /// - Returns: 结果字符串
-func highPrecisionSum(_ line1: String, _ line2: String) -> String {
-    let string1 = line1.reversed()
-    let string2 = line2.reversed()
+func highPrecisionSum(_ s: String, _ t: String) -> String {
+    let string1 = s.reversed()
+    let string2 = t.reversed()
     
     var num1: [Int] = [Int]()
     for s in string1 {
@@ -84,18 +84,18 @@ func highPrecisionSum(_ line1: String, _ line2: String) -> String {
 
 /// 正序法
 /// - Parameters:
-///   - line1: 第一个字符串
-///   - line2: 第二个字符串
+///   - s: 第一个字符串
+///   - t: 第二个字符串
 /// - Returns: 结果字符串
-func highPrecisionSum1(_ line1: String, _ line2: String) -> String {
+func highPrecisionSum1(_ s: String, _ t: String) -> String {
     var num1: [Int] = [Int]()
-    for s in line1 {
+    for s in s {
         if let v = Int(String(s)) {
             num1.append(v)
         }
     }
     var num2: [Int] = [Int]()
-    for s in line2 {
+    for s in t {
         if let v = Int(String(s)) {
             num2.append(v)
         }

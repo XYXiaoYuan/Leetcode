@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
     <pages>
+        <page name='HJ17_坐标移动'/>
+        <page name='HJ20_密码验证合格程序'/>
+        <page name='HJ21_简单密码'/>
         <page name='HJ28_素数伴侣'/>
         <page name='HJ35 蛇形矩阵'/>
         <page name='HJ45 名字的漂亮度'/>
         <page name='HJ57_高精度整数加法'/>
         <page name='HJ59_找出字符串中第一个只出现一次的字符'/>
+        <page name='HJ61_放苹果'/>
+        <page name='HJ63_DNA序列'/>
+        <page name='HJ64_MP3光标位置'/>
+        <page name='HJ65_查找两个字符串a,b中的最长公共子串'/>
         <page name='001_常用代码段'/>
-        <page name='Untitled Page 7'/>
-        <page name='Untitled Page 8'/>
-        <page name='Untitled Page'/>
     </pages>
 </playground>

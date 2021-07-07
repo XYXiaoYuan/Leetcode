@@ -45,16 +45,16 @@ func sqrtNumber(_ num: Double) -> Double {
     let fixedNum: Double = 0.0001
     var mid = (low + high) / 2 //中间值
     while (high - low) > fixedNum {
-          if mid * mid > num {
-              //如果大于num，说明平方根在low--mid之间  把mid赋值给high
-              high = mid
-          } else {
-              //如果小于num，说明平方根在mid--high之间  把midz赋值给low
-              low = mid
-          }
-          mid = (low + high) / 2
-      }
-      return mid
+        if mid * mid > num {
+            //如果大于num，说明平方根在low--mid之间  把mid赋值给high
+            high = mid
+        } else {
+            //如果小于num，说明平方根在mid--high之间  把midz赋值给low
+            low = mid
+        }
+        mid = (low + high) / 2
+    }
+    return mid
  }
 
 /// 判断一个数是否为质数(素数)
