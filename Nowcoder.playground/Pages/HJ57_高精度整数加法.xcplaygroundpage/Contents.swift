@@ -145,13 +145,13 @@ if isDebug {
     let string1: String? = "9876543210"
     let string2: String? = "1234567890"
     if let line1 = string1, let line2 = string2 {
-        let res = highPrecisionSum(line1, line2)
-        print(res)
+        let result = highPrecisionSum(line1, line2)
+        print(result)
     }
 } else {
     while let line1 = readLine(), let line2 = readLine() {
-        let res = highPrecisionSum(line1, line2)
-        print(res)
+        let result = highPrecisionSum(line1, line2)
+        print(result)
     }
 }
 

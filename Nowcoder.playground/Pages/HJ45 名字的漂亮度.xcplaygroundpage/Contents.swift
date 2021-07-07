@@ -63,8 +63,8 @@ if isDebug {
         "lisi"
     ]
     
-    let res = beautifulDegreeOfName(names: names)
-    print(res)
+    let result = beautifulDegreeOfName(names: names)
+    print(result)
 } else {
     while let line = readLine(), let num = Int(line) {
         var names: [String] = [String]()
@@ -73,8 +73,8 @@ if isDebug {
                 names.append(name)
             }
         }
-        let res = beautifulDegreeOfName(names: names)
-        print(res)
+        let result = beautifulDegreeOfName(names: names)
+        print(result)
     }
 }
 
