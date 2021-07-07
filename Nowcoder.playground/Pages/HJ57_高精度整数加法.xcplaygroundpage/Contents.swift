@@ -136,25 +136,31 @@ func highPrecisionSum1(_ line1: String, _ line2: String) -> String {
     return result.map { "\($0)" }.joined(separator: "")
 }
 
-let string: String? = "9876543210"
-let stting: String? = "1234567890"
 
-#if DEBUG
-if let line1 = string, let line2 = stting {
-    let res = highPrecisionSum(line1, line2)
-    print(res)
-}
-#else
-while let line1 = readLine(), let line2 = readLine() {
-    let res = highPrecisionSum(line1, line2)
-    print(res)
-}
-#endif
 
-assert(highPrecisionSum("9876543210", "1234567890") == "11111111100")
+/// 是否是Debug模式
+var isDebug: Bool = true
+
+if isDebug {
+    let string1: String? = "9876543210"
+    let string2: String? = "1234567890"
+    if let line1 = string1, let line2 = string2 {
+        let res = highPrecisionSum(line1, line2)
+        print(res)
+    }
+} else {
+    while let line1 = readLine(), let line2 = readLine() {
+        let res = highPrecisionSum(line1, line2)
+        print(res)
+    }
+}
+
+/// 一些测试用例的断言
+assert(highPrecisionSum("9876543210", "1234567890") == "11111111100", "11111111100")
 assert(highPrecisionSum("630222", "6450") == "636672")
 assert(highPrecisionSum("623192091", "14426202982932") == "14426826175023")
 assert(highPrecisionSum("0", "0") == "0")
 assert(highPrecisionSum("1", "1") == "2")
 assert(highPrecisionSum("12", "155") == "167")
 assert(highPrecisionSum("199", "1") == "200")
+
