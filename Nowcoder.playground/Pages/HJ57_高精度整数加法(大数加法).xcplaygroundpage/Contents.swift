@@ -1,5 +1,3 @@
-import Foundation
-
 /**
  https://www.nowcoder.com/practice/49e772ab08994a96980f9618892e55b6?tpId=37&tags=&title=&difficulty=0&judgeStatus=0&rp=1
  
@@ -20,6 +18,8 @@ import Foundation
  输出：
  11111111100
  */
+
+import Foundation
 
 /// 倒序法
 /// - Parameters:

@@ -41,15 +41,11 @@ func redraimentMoveWays(_ num: Int, _ heights: [Int]) -> Int {
     var dp: [Int] = [Int].init(repeating: 1, count: num)
     
     for i in 0..<num {
-//        print("i = \(i)")
         for j in 0..<i {
-//            print("j = \(j)")
             if heights[j] < heights[i] {
                 dp[i] = max(dp[i], dp[j] + 1)
             }
         }
-        
-//        print("🐧 \n")
     }
             
     return dp.max() ?? 1

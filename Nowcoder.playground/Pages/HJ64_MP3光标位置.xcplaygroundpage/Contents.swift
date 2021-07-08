@@ -61,8 +61,6 @@ typealias Tuple = (list: [Int], cur: Int)
 enum OrderType: String {
     case up = "U"
     case down = "D"
-    
-    
 }
 
 func mp3CursorLocation(_ n: Int, _ orders: String) -> Tuple {

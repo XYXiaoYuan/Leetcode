@@ -85,7 +85,6 @@ func hundredMoneyBuyChicken() -> String {
  鸡雏值1/3，设鸡雏k只，取值0，3，6，9，……100，
  判断条件：i*5 + j*3 + k/3 = 100，满足条件输出
  */
-
 func hundredMoneyBuyChicken1() -> String {
     
     var result: [String] = [String]()

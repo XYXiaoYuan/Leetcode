@@ -38,18 +38,20 @@
 
 import Foundation
 
-public let helper1Dict: [Character: Character] = [
+/// 加密字典
+public let encryptDict: [Character: Character] = [
     "0": "1", "1": "2", "2": "3", "3": "4", "4": "5", "5": "6", "6": "7", "7": "8", "8": "9", "9": "0", "A": "b", "B": "c", "C": "d", "D": "e", "E": "f", "F": "g", "G": "h", "H": "i", "I": "j", "J": "k", "K": "l", "L": "m", "M": "n", "N": "o", "O": "p", "P": "q", "Q": "r", "R": "s", "S": "t", "T": "u", "U": "v", "V": "w", "W": "x", "X": "y", "Y": "z", "Z": "a", "a": "B", "b": "C", "c": "D", "d": "E", "e": "F", "f": "G", "g": "H", "h": "I", "i": "J", "j": "K", "k": "L", "l": "M", "m": "N", "n": "O", "o": "P", "p": "Q", "q": "R", "r": "S", "s": "T", "t": "U", "u": "V", "v": "W", "w": "X", "x": "Y", "y": "Z", "z": "A"
 ]
 
-public let helper2Dict: [Character: Character] = [
+/// 解密字典
+public let decodeDict: [Character: Character] = [
     "0": "9", "1": "0", "2": "1", "3": "2", "4": "3", "5": "4", "6": "5", "7": "6", "8": "7", "9": "8", "A": "z", "B": "a", "C": "b", "D": "c", "E": "d", "F": "e", "G": "f", "H": "g", "I": "h", "J": "i", "K": "j", "L": "k", "M": "l", "N": "m", "O": "n", "P": "o", "Q": "p", "R": "q", "S": "r", "T": "s", "U": "t", "V": "u", "W": "v", "X": "w", "Y": "x", "Z": "y", "a": "Z", "b": "A", "c": "B", "d": "C", "e": "D", "f": "E", "g": "F", "h": "G", "i": "H", "j": "I", "k": "J", "l": "K", "m": "L", "n": "M", "o": "N", "p": "O", "q": "P", "r": "Q", "s": "R", "t": "S", "u": "T", "v": "U", "w": "V", "x": "W", "y": "X", "z": "Y"
 ]
 
 func encrypt(_ str: String) -> String {
     var pwd: String = ""
     for s in str {
-        let val = helper1Dict[s]
+        let val = encryptDict[s]
         if let v = val {
             pwd.append(String(v))
         }
@@ -60,7 +62,7 @@ func encrypt(_ str: String) -> String {
 func decode(_ str: String) -> String {
     var pwd: String = ""
     for s in str {
-        let val = helper2Dict[s]
+        let val = decodeDict[s]
         if let v = val {
             pwd.append(String(v))
         }

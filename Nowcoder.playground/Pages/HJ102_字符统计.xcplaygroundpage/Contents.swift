@@ -40,7 +40,6 @@ func statisticsStringCount(_ str: String) -> String {
         }
     }
     
-    print(dict)
     let result = dict.sorted(by: {
         switch ($0.value, $1.value) {
         case let (lhs, rhs) where lhs == rhs:
@@ -49,7 +48,6 @@ func statisticsStringCount(_ str: String) -> String {
             return lhs > rhs
         }
     })
-    print(result)
     
     return result.map { String($0.key) }.joined(separator: "")
 }

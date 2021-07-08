@@ -62,7 +62,7 @@ func simplePwd(_ line: String) -> String {
             let letter = Character(UnicodeScalar(lower))
             pwd.append("\(letter)")
         case "a"..."z":    // 小写字母
-            guard let val: UInt8 = s.asciiValue else { break }
+            guard let _: UInt8 = s.asciiValue else { break }
             for item in map where item.key.contains(s) {
                 pwd.append("\(item.value)")
             }

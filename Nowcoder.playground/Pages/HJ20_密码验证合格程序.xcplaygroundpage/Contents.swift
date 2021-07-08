@@ -29,8 +29,7 @@
  NG
  OK
 
- 
- */
+*/
 
 import Foundation
 

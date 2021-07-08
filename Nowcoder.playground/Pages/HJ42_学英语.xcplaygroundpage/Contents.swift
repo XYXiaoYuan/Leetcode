@@ -113,10 +113,10 @@ func parasBig(_ num: Int, modNumber: Int, units: String, isHundred: Bool = false
 /// - Parameter num: 数字
 /// - Returns: 数字对应的英文
 func parse(_ num: Int) -> String {
-    if num > 0, num < 20 {
+    switch num {
+    case 0..<20:
         return unitsDigitDict[num]!
-    }
-    else if num >= 20, num < 100 {
+    case 20..<100:
         let x = num / 10
         let y = num % 10
         if y != 0 {
@@ -124,17 +124,13 @@ func parse(_ num: Int) -> String {
         } else {
             return tensDigitDict[x]!
         }
-    }
-    else if num >= 100, num < 1000 {
+    case 100..<1000:
         return parasBig(num, modNumber: 100, units: "hundred", isHundred: true)
-    }
-    else if num >= 1000, num < 100_0000 {
+    case 1000..<100_0000:
         return parasBig(num, modNumber: 1000, units: "thousand")
-    }
-    else if num >= 100_0000, num < 1_0000_0000 {
+    case 100_0000..<1_0000_0000:
         return parasBig(num, modNumber: 100_0000, units: "million")
-    }
-    else {
+    default:
         let delta = 10_0000 * 10000
         return parasBig(num, modNumber: delta, units: "billion")
     }
