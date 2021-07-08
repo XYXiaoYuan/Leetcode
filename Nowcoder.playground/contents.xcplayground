@@ -14,6 +14,7 @@
         <page name='HJ63_DNA序列'/>
         <page name='HJ64_MP3光标位置'/>
         <page name='HJ68_成绩排序'/>
+        <page name='HJ99_自守数'/>
         <page name='HJ100_等差数列'/>
         <page name='HJ102_字符统计'/>
         <page name='HJ103_Redraiment的走法'/>
