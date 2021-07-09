@@ -16,6 +16,8 @@
         <page name='HJ64_MP3光标位置'/>
         <page name='HJ66_配置文件恢复'/>
         <page name='HJ68_成绩排序'/>
+        <page name='TODO_HJ71_字符串通配符'/>
+        <page name='HJ74_参数解析'/>
         <page name='HJ91_走方格的方案数'/>
         <page name='HJ93_数组分组'/>
         <page name='HJ94_记票统计'/>
