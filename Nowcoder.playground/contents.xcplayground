@@ -15,6 +15,7 @@
         <page name='HJ64_MP3光标位置'/>
         <page name='HJ68_成绩排序'/>
         <page name='HJ93_数组分组'/>
+        <page name='HJ94_记票统计'/>
         <page name='HJ99_自守数'/>
         <page name='HJ100_等差数列'/>
         <page name='HJ101_输入整型数组和排序标识，对其元素按照升序或降序排序'/>
