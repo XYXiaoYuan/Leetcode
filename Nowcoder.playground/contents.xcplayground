@@ -9,11 +9,14 @@
         <page name='HJ42_学英语'/>
         <page name='HJ45 名字的漂亮度'/>
         <page name='HJ57_高精度整数加法(大数加法)'/>
+        <page name='TODO_HJ58_输入n个整数，输出其中最小的k个'/>
         <page name='HJ59_找出字符串中第一个只出现一次的字符'/>
         <page name='TODO_HJ61_放苹果'/>
         <page name='HJ63_DNA序列'/>
         <page name='HJ64_MP3光标位置'/>
+        <page name='HJ66_配置文件恢复'/>
         <page name='HJ68_成绩排序'/>
+        <page name='HJ91_走方格的方案数'/>
         <page name='HJ93_数组分组'/>
         <page name='HJ94_记票统计'/>
         <page name='HJ99_自守数'/>
@@ -27,6 +30,5 @@
         <page name='TODO_HJ35 蛇形矩阵'/>
         <page name='TODO_HJ65_查找两个字符串a,b中的最长公共子串'/>
         <page name='TODO_HJ95_人民币转换'/>
-        <page name='HJ91_走方格的方案数'/>
     </pages>
 </playground>
