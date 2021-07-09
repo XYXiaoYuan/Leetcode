@@ -29,31 +29,30 @@
 
 import Foundation
 
+typealias Tuple = (count: Int, index: Int)
+
 func vote(_ str1: String, _ str2: String) -> String {
     let candidates = str1.split(separator: " ")
     let input = str2.split(separator: " ")
     
-    var result: [String: Int] = [String: Int]()
+    var result: [String: Tuple] = [String: Tuple]()
     var invalid: Int = 0
-    for item in candidates {
-        result[String(item)] = 0
+    for (index, item) in candidates.enumerated() {
+        result[String(item)] = (count: 0, index: index)
     }
     
     for ele in input {
         let key = String(ele)
         if var val = result[key] {
-            val += 1
+            val.count += 1
             result[key] = val
         } else {
             invalid += 1
         }
     }
     let res = result.sorted { (element1, element2) in
-        guard let e1 = element1.key.first, let e2 = element2.key.first else {
-            return false
-        }
-        return e1 < e2
-    }.map { "\($0.key) : \($0.value)" }.joined(separator: "\n")
+        return element1.value.index < element2.value.index
+    }.map { "\($0.key) : \($0.value.count)" }.joined(separator: "\n")
     
     return res.appending("\nInvalid : \(invalid)")
 }
