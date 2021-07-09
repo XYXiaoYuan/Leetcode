@@ -113,7 +113,7 @@ func coordinateMove(_ line: String) -> Tuple {
 }
 
 /// 是否是Debug模式
-var isDebug: Bool = false
+var isDebug: Bool = true
 
 if isDebug {
     let line: String = "A10;S20;W10;D30;X;A1A;B10A11;;A10;"

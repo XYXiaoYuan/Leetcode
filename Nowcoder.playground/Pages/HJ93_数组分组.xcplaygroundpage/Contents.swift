@@ -60,7 +60,9 @@ func arrayGroup(_ line: String) -> Bool {
         return false
     }
         
-    let target = sum / 2 - sum3
+    let target = sum / 2 - sum5
+    print("list = \(list) -- target = \(target)")
+    
     return helper(left: 0, list: list, target: target)
 }
 
@@ -71,7 +73,7 @@ func helper(left: Int, list: [Int], target: Int) -> Bool {
 }
 
 /// 是否是Debug模式
-var isDebug: Bool = false
+var isDebug: Bool = true
 
 if isDebug {
     let line = "5, -5"
