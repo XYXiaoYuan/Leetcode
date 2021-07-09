@@ -17,6 +17,7 @@
         <page name='HJ93_数组分组'/>
         <page name='HJ99_自守数'/>
         <page name='HJ100_等差数列'/>
+        <page name='HJ101_输入整型数组和排序标识，对其元素按照升序或降序排序'/>
         <page name='HJ102_字符统计'/>
         <page name='HJ103_Redraiment的走法'/>
         <page name='HJ105_记负均正II'/>

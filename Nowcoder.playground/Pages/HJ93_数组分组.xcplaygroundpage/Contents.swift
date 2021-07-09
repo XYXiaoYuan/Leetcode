@@ -31,7 +31,15 @@
 
 import Foundation
 
-func arrayGroup(_ nums: [Int]) -> Bool {
+func arrayGroup(_ line: String) -> Bool {
+    let items = line.split(separator: " ")
+    var nums: [Int] = [Int]()
+    for ele in items {
+        if let val = Int(ele) {
+            nums.append(val)
+        }
+    }
+    
     var sum: Int = 0
     
     var sum5: Int = 0
@@ -63,41 +71,34 @@ func helper(left: Int, list: [Int], target: Int) -> Bool {
 }
 
 /// 是否是Debug模式
-var isDebug: Bool = true
+var isDebug: Bool = false
 
 if isDebug {
-    let nums: [Int] = [5, -5]
-    let result = arrayGroup(nums)
+    let line = "5, -5"
+    let result = arrayGroup(line)
     print(result)
 } else {
-    while let line1 = readLine(), let num = Int(line1), let line2 = readLine() {
-        let items = line2.split(separator: " ")
-        var nums: [Int] = [Int]()
-        for i in 0..<num {
-            if let val = Int(items[i]) {
-                nums.append(val)
-            }
-        }
-        let result = arrayGroup(nums)
+    while let line1 = readLine(), let _ = Int(line1), let line2 = readLine() {
+        let result = arrayGroup(line2)
         print(result)
     }
 }
 
-assert(arrayGroup([5, -5]) == true)
-assert(arrayGroup([-2, 2]) == true)
-assert(arrayGroup([1, 5, -5, 1]) == true)
-assert(arrayGroup([3, 8, 8, 5, 14]) == true)
-assert(arrayGroup([3, 4, 5, 7, 8, 17]) == true)
-assert(arrayGroup([1, -5, 5, 3, 2, 1, -2, -5, -2]) == true)
-assert(arrayGroup([-2, 0, -3, 3, -3, -4, -3, 1, 3, 3, -2, 0, 3, 2, 2, -5, 1, -2, -3, -5]) == true)
-assert(arrayGroup([3, 0, 1, 3, -2, -1, 4, -2, -1, 5, 0, -2, -2]) == true)
-assert(arrayGroup([3, 5, 8]) == false)
-assert(arrayGroup([3, 5, -1, -7]) == false)
-assert(arrayGroup([2, -3, 5, 5, -4, -4, 5]) == false)
+assert(arrayGroup("5 -5") == true)
+assert(arrayGroup("-2 2") == true)
+assert(arrayGroup("1 5 -5 1") == true)
+assert(arrayGroup("3 8 8 5 14") == true)
+assert(arrayGroup("3 4 5 7 8 17") == true)
+assert(arrayGroup("1 -5 5 3 2 1 -2 -5 -2") == true)
+assert(arrayGroup("-2 0 -3 3 -3 -4 -3 1 3 3 -2 0 3 2 2 -5 1 -2 -3 -5") == true)
+assert(arrayGroup("3 0 1 3 -2 -1 4 -2 -1 5 0 -2 -2") == true)
+assert(arrayGroup("3 5 8") == false)
+assert(arrayGroup("3 5 -1 -7") == false)
+assert(arrayGroup("2 -3 5 5 -4 -4 5") == false)
 //let items = "2 -3 5 5 -4 -4 5 ".split(separator: " ")
 //var nums: [Int] = [Int]()
 //for i in 0..<7 {
-//    if let val = Int(items[i]) {
+//    if let val = Int(items[i") {
 //        nums.append(val)
 //    }
 //}
