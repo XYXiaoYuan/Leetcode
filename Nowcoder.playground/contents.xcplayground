@@ -18,7 +18,6 @@
         <page name='HJ68_成绩排序'/>
         <page name='TODO_HJ71_字符串通配符'/>
         <page name='HJ74_参数解析'/>
-        <page name='HJ75_公共子串计算'/>
         <page name='HJ80_整型数组合并'/>
         <page name='HJ82_将真分数分解为埃及分数'/>
         <page name='HJ86_求最大连续bit数'/>
@@ -37,5 +36,8 @@
         <page name='TODO_HJ35 蛇形矩阵'/>
         <page name='TODO_HJ65_查找两个字符串a,b中的最长公共子串'/>
         <page name='TODO_HJ95_人民币转换'/>
+        <page name='HJ65_查找两个字符串a,b中的最长公共子串'/>
+        <page name='HJ75_公共子串计算'/>
+        <page name='HJ85_最长回文子串'/>
     </pages>
 </playground>
