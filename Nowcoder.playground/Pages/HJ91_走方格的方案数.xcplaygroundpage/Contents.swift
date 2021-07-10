@@ -25,18 +25,46 @@
 import Foundation
 
 func moveGridWays(_ x: Int, _ y: Int) -> Int {
+    var dp: [[Int]] = Array.init(repeating: [Int].init(repeating: 0, count: y + 1), count: x + 1)
+    
+    dp[0][0] = 1
+    /// 初始化 dp[x][0] = 1
+    for i in 0...x {
+        dp[i][0] = 1
+    }
+    /// 初始化 dp[0][y] = 1
+    for j in 0...y {
+        dp[0][j] = 1
+    }
+        
+    for i in 1...x {
+        for j in 1...y {
+            if i == 0 || j == 0 {
+                dp[i][j] = 0
+            } else {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+            }
+            dprint("i = \(i) --- j = \(j) 👑 dp[\(i)][\(j)] = \(dp[i][j])")
+        }
+        
+    }
+            
+    return dp[x][y]
+}
+
+func moveGridWaysRecursive(_ x: Int, _ y: Int) -> Int {
     if x == 0 || y == 0 {
         return 1
     }
-    return moveGridWays(x - 1, y) + moveGridWays(x, y - 1)
+    return moveGridWaysRecursive(x - 1, y) + moveGridWaysRecursive(x, y - 1)
 }
 
 /// 是否是Debug模式
-var isDebug: Bool = false
+var isDebug: Bool = true
 
 if isDebug {
-    let x = 2
-    let y = 2
+    let x = 8
+    let y = 8
     let result = moveGridWays(x, y)
     print(result)
 } else {
@@ -49,4 +77,22 @@ if isDebug {
     }
 }
 
-//: [Next](@next)
+/// 全局打印,发布时不触发
+///
+/// - Parameters:
+///   - msg: 需要打印的信息
+///   - file: 所在的 "swift文件"
+///   - line: 打印操作发生在哪一行
+///   - fn: 所在文件的"方法名"
+public func dprint<T>(_ msg: T,
+                      file: NSString = #file,
+                      line: Int = #line,
+                      fn: String = #function) {
+    if isDebug {
+        let prefix = "🏷_\(line)"
+        print(prefix, msg)
+    }
+}
+
+//assert(moveGridWays(2, 2) == 6)
+//assert(moveGridWays(1, 2) == 3)

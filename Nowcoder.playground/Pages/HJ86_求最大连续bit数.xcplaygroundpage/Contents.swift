@@ -33,7 +33,7 @@ import Foundation
 /// 在转换二进制的时候,直接给1计数
 /// - Parameter num: 数字
 /// - Returns: 数字的2进制连续为1的最大个数
-func continuousMaxBitCount(_ num: Int) -> Int {
+func continuousMaxBitCountRadix(_ num: Int) -> Int {
     var max: Int = 0
     var count: Int = 0
     var flag: Bool = false
@@ -78,10 +78,10 @@ func continuousMaxBitCountParseZero(_ num: Int) -> Int {
 /// 动态规划解法
 /// - Parameter num: 数字
 /// - Returns: 数字的2进制连续为1的最大个数
-func continuousMaxBitCountDp(_ num: Int) -> Int {
+func continuousMaxBitCount(_ num: Int) -> Int {
     let bitStr = String(num, radix: 2)
         
-    dprint("🐣num \(num) 转化为二进制的bit数组为\(bitStr)")
+    dprint("🐣num \(num) 转化为二进制的bit数组为 \(bitStr)")
     
     let bitArr: [String] = bitStr.map { "\($0)" }
     
