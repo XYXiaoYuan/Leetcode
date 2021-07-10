@@ -25,47 +25,43 @@ import Foundation
 
 /// 动态规划一维数组优化
 /// - Parameters:
-///   - line1: line1
-///   - line2: line2
+///   - A: line1
+///   - B: line2
 /// - Returns: 最大公共子串的字符串
-func longestCommonLCS(_ line1: String, _ line2: String) -> String {
-    if line1.isEmpty || line2.isEmpty {
+func longestCommonLCS(_ str1: String, _ str2: String) -> String {
+    var A = str1.map { "\($0)" }
+    var B = str2.map { "\($0)" }
+    
+    if A.isEmpty || B.isEmpty {
         return ""
     }
-    let chars1: [String] = line1.map { "\($0)" }
-    let chars2: [String] = line2.map { "\($0)" }
-    
-    var rowsStr = chars1
-    var colsStr = chars2
-    if chars1.count < chars2.count {
-        colsStr = chars1
-        rowsStr = chars2
+    var m = A.count
+    var n = B.count
+    // A换成较短的
+    if m > n {
+        swap(&A, &B)
+        swap(&m, &n)
     }
-
-    var dp: [Int] = [Int].init(repeating: 0, count: colsStr.count + 1)
-    var maxValue: Int = 0;
-    
-    for i in 1...rowsStr.count {
-        var cur = 0
-        for j in 1...colsStr.count {
-            let leftTop = cur
-            cur = dp[j]
-            if rowsStr[i - 1] == colsStr[j - 1] {
-                print("cur = \(cur) -- leftTop = \(leftTop)")
-                dp[j] = leftTop + 1
-            } else {
-//                print("最后不相等的index i = \(i) --- j = \(j)")
-                dp[j] = 0
+    var f = [[Int]](repeating: [Int](repeating: 0, count: n + 1), count: m + 1)
+    var maxLength = 0
+    var start = 0
+    for i in 1...m {
+        for j in 1...n {
+            if A[i - 1] == B[j - 1] {
+                f[i][j] = f[i - 1][j - 1] + 1
+                if f[i][j] > maxLength {
+                    maxLength = f[i][j]
+                    start = i - maxLength
+                }
             }
-            maxValue = max(maxValue, dp[j])
         }
     }
     
     var res: String = ""
-    print(maxValue)
-    print(colsStr)
-    
-    return ""
+    for i in start..<(start + maxLength) {
+        res.append(A[i])
+    }
+    return res
 }
 
 /// 动态规划二维数组实现

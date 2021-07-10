@@ -26,7 +26,39 @@
 
 import Foundation
 
-func maxPalindromicLCSCount(_ str: String) -> Int {
+func maxPalindromicLCSCount(_ s: String) -> Int {
+    if s.isEmpty {
+        return 0
+    }
+    let cs: [String] = s.map { "\($0)" }
+    if cs.count <= 1 {
+        return 1
+    }
+    
+    // 最长回文子串的长度(至少是1)
+    var maxLen: Int = 1
+    // 最长回文子串的开始索引
+    var begin: Int = 0
+    
+    var dp: [[Bool]] = Array.init(repeating: [Bool].init(repeating: false, count: cs.count), count: cs.count)
+    
+    // 从下到上(i由大到小)
+    for i in stride(from: cs.count - 1, through: 0, by: -1) {
+        // 从左到右(j由小到大)
+        for j in 0..<cs.count {
+            // cs[i, j]的长度
+            let len = j - i + 1
+            dp[i][j] = (cs[i] == cs[j]) && (len <= 2 || dp[i + 1][j - 1])
+            
+            if dp[i][j] && len > maxLen { // 说明cs[i, j]是回文串
+                maxLen = len
+                begin = i
+            }
+        }
+    }
+    
+    return maxLen
+    
     return 0
 }
 
@@ -34,7 +66,7 @@ func maxPalindromicLCSCount(_ str: String) -> Int {
 var isDebug: Bool = true
 
 if isDebug {
-    let str = "abcdefghijklmnop"
+    let str = "cdabbacc"
     let result = maxPalindromicLCSCount(str)
     print(result)
 } else {
@@ -53,5 +85,5 @@ public func dprint<T>(_ msg: T,
     }
 }
 
-assert(maxPalindromicLCSCount("asdfas") == 6)
+assert(maxPalindromicLCSCount("cdabbacc") == 4)
 
