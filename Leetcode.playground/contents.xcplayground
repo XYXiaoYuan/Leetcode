@@ -18,9 +18,11 @@
         <page name='088_合并两个有序数组'/>
         <page name='94_二叉树的中序遍历'/>
         <page name='121_买卖股票的最佳时机'/>
+        <page name='136_只出现一次的数字'/>
         <page name='139_单词拆分'/>
         <page name='152_爱生气的书店老板'/>
         <page name='164_最大间距'/>
+        <page name='167_两数之和 II - 输入有序数组'/>
         <page name='198_打家劫舍'/>
         <page name='203_移除链表元素'/>
         <page name='217_存在重复元素'/>
@@ -31,6 +33,7 @@
         <page name='395_至少有K个重复字符的最长子串 '/>
         <page name='509_斐波那契数'/>
         <page name='557_反转字符串中的单词 III'/>
+        <page name='746_使用最小花费爬楼梯'/>
         <page name='832_翻转图像'/>
         <page name='867_转置矩阵'/>
         <page name='1143_最长公共子序列'/>
