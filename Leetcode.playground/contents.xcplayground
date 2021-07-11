@@ -32,5 +32,8 @@
         <page name='1178_猜字谜'/>
         <page name='剑指 Offer 42_连续子数组的最大和'/>
         <page name='面试题 16_16_部分排序'/>
+        <page name='剑指 Offer 47. 礼物的最大价值'/>
+        <page name='64_最小路径和'/>
+        <page name='62_不同路径'/>
     </pages>
 </playground>

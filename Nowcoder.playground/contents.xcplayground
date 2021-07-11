@@ -69,6 +69,8 @@
         <page name='HJ93_数组分组'/>
         <page name='HJ94_记票统计'/>
         <page name='TODO_HJ95_人民币转换'/>
+        <page name='HJ96_表示数字'/>
+        <page name='HJ97_记负均正'/>
         <page name='HJ99_自守数'/>
         <page name='HJ100_等差数列'/>
         <page name='HJ101_输入整型数组和排序标识，对其元素按照升序或降序排序'/>
@@ -78,7 +80,5 @@
         <page name='HJ106_字符逆序'/>
         <page name='HJ107_求解立方根'/>
         <page name='HJ108_求最小公倍数'/>
-        <page name='HJ96_表示数字'/>
-        <page name='HJ97_记负均正'/>
     </pages>
 </playground>
