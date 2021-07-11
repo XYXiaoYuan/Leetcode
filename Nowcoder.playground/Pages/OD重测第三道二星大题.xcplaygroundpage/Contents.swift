@@ -76,7 +76,6 @@ var isDebug: Bool = true
 if isDebug {
     let file =
     """
-    COMMAND; -- tes;t;
     COMMAND TABLE IF EXISTS "UNITED STATE";
     COMMAND A GREAT (
         ID ADSAB,
