@@ -82,8 +82,11 @@
         <page name='HJ106_字符逆序'/>
         <page name='HJ107_求解立方根'/>
         <page name='HJ108_求最小公倍数'/>
-        <page name='Untitled Page111'/>
-        <page name='Untitled Page222 '/>
-        <page name='Untitled Page333'/>
+        <page name='OD测试一星普通题一'/>
+        <page name='OD测试一星普通题二'/>
+        <page name='OD测试第三道二星大题'/>
+        <page name='OD重测一星普通题一'/>
+        <page name='OD重测一星普通题二'/>
+        <page name='OD重测第三道二星大题'/>
     </pages>
 </playground>

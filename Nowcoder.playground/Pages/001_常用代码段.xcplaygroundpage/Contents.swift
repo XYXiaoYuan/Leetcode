@@ -25,6 +25,18 @@ func sqrtNumber(_ num: Double) -> Double {
 /// - Parameter num: 传进来的数
 /// - Returns: 是否为质数(素数)
 func isPrime(_ num: Int) -> Bool {
+//    var i = 2
+//
+//    while i * i <= num {
+//        if 0 == num % i {
+//            print(i, terminator: " ")
+//            num /= i
+//            i -= 1
+//        }
+//        i += 1
+//    }
+//    print(num, terminator: " ")
+    
     // 两个较小数另外处理
     if (num <= 3) {
         return num > 1;
