@@ -39,6 +39,7 @@
         <page name='HJ45_名字的漂亮度'/>
         <page name='HJ46_截取字符串'/>
         <page name='TODO_HJ48_从单向链表中删除指定值的节点'/>
+        <page name='HJ52_计算字符串的距离'/>
         <page name='HJ53_杨辉三角的变形'/>
         <page name='HJ54_表达式求值'/>
         <page name='HJ55_挑7'/>

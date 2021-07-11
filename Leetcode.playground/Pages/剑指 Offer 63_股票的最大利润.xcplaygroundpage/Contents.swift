@@ -55,7 +55,7 @@ class Solution {
 let s = Solution()
 let input1 = [7,1,5,3,6,4]
 let input2 = [7,6,4,3,1]
-let result = s.maxProfit([7,1,5,3,6,4])
+let result = s.maxProfit(input1)
 print(result)
 
 assert(s.maxProfit(input1) == 5)
