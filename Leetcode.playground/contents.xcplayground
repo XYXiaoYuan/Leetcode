@@ -16,7 +16,9 @@
         <page name='070_爬楼梯'/>
         <page name='075_颜色分类'/>
         <page name='088_合并两个有序数组'/>
+        <page name='94_二叉树的中序遍历'/>
         <page name='121_买卖股票的最佳时机'/>
+        <page name='139_单词拆分'/>
         <page name='152_爱生气的书店老板'/>
         <page name='164_最大间距'/>
         <page name='198_打家劫舍'/>
