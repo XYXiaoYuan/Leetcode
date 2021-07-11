@@ -22,7 +22,7 @@
         <page name='HJ20_密码验证合格程序'/>
         <page name='HJ21_简单密码'/>
         <page name='HJ22_汽水瓶'/>
-        <page name='H23_删除字符串中出现次数最少的字符'/>
+        <page name='HJ23_删除字符串中出现次数最少的字符'/>
         <page name='HJ24_合唱队'/>
         <page name='HJ27_查找兄弟单词'/>
         <page name='TODO_HJ28_素数伴侣'/>
@@ -39,6 +39,7 @@
         <page name='HJ45_名字的漂亮度'/>
         <page name='HJ46_截取字符串'/>
         <page name='TODO_HJ48_从单向链表中删除指定值的节点'/>
+        <page name='HJ50_四则运算'/>
         <page name='HJ52_计算字符串的距离'/>
         <page name='HJ53_杨辉三角的变形'/>
         <page name='HJ54_表达式求值'/>
@@ -81,5 +82,8 @@
         <page name='HJ106_字符逆序'/>
         <page name='HJ107_求解立方根'/>
         <page name='HJ108_求最小公倍数'/>
+        <page name='Untitled Page111'/>
+        <page name='Untitled Page222 '/>
+        <page name='Untitled Page333'/>
     </pages>
 </playground>

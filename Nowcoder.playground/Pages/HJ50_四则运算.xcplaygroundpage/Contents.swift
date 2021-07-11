@@ -24,21 +24,89 @@
 
 import Foundation
 
+fileprivate func isOperator(_ str: String) -> Bool {
+    let operators = ["{", "}", "[", "]", "(", ")", "+", "-", "*", "/"]
+    for op in operators where str == op {
+        return true
+    }
+    return false
+}
 
-func arithmetic(_ input: String) -> Int {
-    return 0
+fileprivate func isDigital(_ str: String) -> Bool {
+    let digitals = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    for digital in digitals where str == digital {
+        return true
+    }
+    return false
+}
+
+
+func calculate(_ input: String) -> Int {
+    let data = input.map {$0}
+    let leng = input.count
+    var stack: [Int] = Array(repeating: 0, count: 1000)
+    var top = -1
+    var flag = "+"
+    var num = 0
+    while (pos < leng) {
+        if data[pos] == "{" || data[pos] == "[" || data[pos] == "(" {
+            pos+=1
+            num = calculate(input)
+        }
+        
+        while (pos < leng && data[pos].isNumber) {
+            let tmp = String(data[pos])
+            num = num * 10 + (Int(tmp) ?? 0) - 0
+            pos+=1
+        }
+        switch (flag) {
+        case "+":
+            top+=1
+            stack[top] = num
+        case "-":
+            top+=1
+            stack[top] = -num
+        case "*":
+            stack[top] *= num
+        case "/":
+            stack[top] /= num
+        default:
+            break
+        }
+        num = 0
+        if pos >= leng {
+            break
+        }
+        flag = String(data[pos])
+        if data[pos] == "}" || data[pos] == "]" || data[pos] == ")" {
+            pos+=1
+            break
+        }
+        pos+=1
+    }
+    
+    var res: Int = 0
+    for i in 0...top {
+        res += stack[i]
+    }
+    
+    return res
 }
 
 /// 是否是Debug模式
 var isDebug: Bool = true
 
+var pos: Int = 0
+
 if isDebug {
+    pos = 0
     let input = "3+2*{1+2*[-4/(8-6)+7]}"
-    let result = arithmetic(input)
+    let result = calculate(input)
     print(result)
 } else {
+    pos = 0
     while let input = readLine() {
-        let result = arithmetic(input)
+        let result = calculate(input)
         print(result)
     }
 }
@@ -52,4 +120,52 @@ public func dprint<T>(_ msg: T,
     }
 }
 
-assert(arithmetic("3+2*{1+2*[-4/(8-6)+7]}") == 25)
+assert(calculate("3+2*{1+2*[-4/(8-6)+7]}") == 25)
+
+
+/// 栈
+public struct Stack<T> {
+    
+    /// Datastructure consisting of a generic item.
+    fileprivate var array = [T]()
+    
+    /// The number of items in the stack.
+    public var count: Int {
+        return array.count
+    }
+    
+    /// Verifies if the stack is empty.
+    public var isEmpty: Bool {
+        return array.isEmpty
+    }
+    
+    /// Remove all elements
+    public mutating func removeAll() {
+        array.removeAll()
+    }
+    
+    /**
+     Pushes an item to the top of the stack.
+     
+     - Parameter element: The item being pushed.
+     */
+    public mutating func push(_ element: T) {
+        array.append(element)
+    }
+    
+    /**
+     Removes and returns the item at the top of the stack.
+     
+     - Returns: The item at the top of the stack.
+     */
+    @discardableResult
+    public mutating func pop() -> T? {
+        return array.popLast()
+    }
+    
+    /// Returns the item at the top of the stack.
+    public var top: T? {
+        return array.last
+    }
+}
+
