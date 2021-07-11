@@ -11,6 +11,8 @@
         <page name='007_整数反转'/>
         <page name='015_三数之和'/>
         <page name='043_字符串相乘'/>
+        <page name='062_不同路径'/>
+        <page name='064_最小路径和'/>
         <page name='070_爬楼梯'/>
         <page name='075_颜色分类'/>
         <page name='088_合并两个有序数组'/>
@@ -33,7 +35,7 @@
         <page name='剑指 Offer 42_连续子数组的最大和'/>
         <page name='面试题 16_16_部分排序'/>
         <page name='剑指 Offer 47. 礼物的最大价值'/>
-        <page name='64_最小路径和'/>
-        <page name='62_不同路径'/>
+        <page name='121_买卖股票的最佳时机'/>
+        <page name='剑指 Offer 63_股票的最大利润'/>
     </pages>
 </playground>
