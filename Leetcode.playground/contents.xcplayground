@@ -81,5 +81,11 @@
         <page name='257_二叉树的所有路径'/>
         <page name='199_二叉树的右视图'/>
         <page name='378_有序矩阵中第 K 小的元素'/>
+        <page name='386-字典序排数'/>
+        <page name='148_排序链表'/>
+        <page name='19_删除链表的倒数第 N 个结点'/>
+        <page name='486_预测赢家'/>
+        <page name='845_数组中的最长山脉'/>
+        <page name='93_复原 IP 地址'/>
     </pages>
 </playground>
