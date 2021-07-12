@@ -36,8 +36,10 @@
         <page name='395_至少有K个重复字符的最长子串 '/>
         <page name='509_斐波那契数'/>
         <page name='557_反转字符串中的单词 III'/>
+        <page name='703_数据流中的第 K 大元素'/>
         <page name='746_使用最小花费爬楼梯'/>
         <page name='832_翻转图像'/>
+        <page name='836_矩形重叠'/>
         <page name='867_转置矩阵'/>
         <page name='1143_最长公共子序列'/>
         <page name='1178_猜字谜'/>
@@ -51,6 +53,9 @@
         <page name='剑指 Offer 57_和为s的两个数字'/>
         <page name='剑指 Offer 58 - I_翻转单词顺序'/>
         <page name='剑指 Offer 63_股票的最大利润'/>
-        <page name='836_矩形重叠'/>
+        <page name='260_只出现一次的数字 III'/>
+        <page name='137_只出现一次的数字 II'/>
+        <page name='187_重复的DNA序列'/>
+        <page name='179_最大数'/>
     </pages>
 </playground>

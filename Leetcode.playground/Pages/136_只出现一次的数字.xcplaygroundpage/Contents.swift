@@ -23,6 +23,23 @@
  */
 
 class Solution {
+    func singleNumberDict(_ nums: [Int]) -> Int {
+        if nums.isEmpty {
+            return 0
+        }
+        
+        var dict = [Int: Int]()
+        for i in nums {
+            dict.updateValue((dict[i] ?? 0) + 1, forKey: i)
+        }
+        
+        for (key, value) in dict where value == 1 {
+            return key
+        }
+        
+        return 0
+    }
+    
     func singleNumber(_ nums: [Int]) -> Int {
         if nums.isEmpty {
             return 0
