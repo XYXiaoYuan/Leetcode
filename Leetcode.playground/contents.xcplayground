@@ -78,5 +78,8 @@
         <page name='162_寻找峰值'/>
         <page name='TODO_727_最小窗口子序列'/>
         <page name='剑指 Offer 51_数组中的逆序对 '/>
+        <page name='257_二叉树的所有路径'/>
+        <page name='199_二叉树的右视图'/>
+        <page name='378_有序矩阵中第 K 小的元素'/>
     </pages>
 </playground>
