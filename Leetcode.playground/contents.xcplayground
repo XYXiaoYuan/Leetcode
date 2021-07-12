@@ -61,5 +61,9 @@
         <page name='048_旋转图像'/>
         <page name='1154_一年中的第几天'/>
         <page name='1185_一周中的第几天'/>
+        <page name='279. 完全平方数'/>
+        <page name='581_最短无序连续子数组'/>
+        <page name='1547_切棍子的最小成本'/>
+        <page name='547_省份数量'/>
     </pages>
 </playground>
