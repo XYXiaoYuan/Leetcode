@@ -65,5 +65,12 @@
         <page name='581_最短无序连续子数组'/>
         <page name='1547_切棍子的最小成本'/>
         <page name='547_省份数量'/>
+        <page name='剑指 Offer 32 - III_从上到下打印二叉树 III'/>
+        <page name='92_反转链表 II'/>
+        <page name='143_重排链表'/>
+        <page name='面试题 17_21_直方图的水量'/>
+        <page name='295_数据流的中位数'/>
+        <page name='315_计算右侧小于当前元素的个数'/>
+        <page name='622_设计循环队列'/>
     </pages>
 </playground>
