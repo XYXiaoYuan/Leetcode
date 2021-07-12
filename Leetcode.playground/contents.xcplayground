@@ -72,5 +72,11 @@
         <page name='295_数据流的中位数'/>
         <page name='315_计算右侧小于当前元素的个数'/>
         <page name='622_设计循环队列'/>
+        <page name='97_交错字符串'/>
+        <page name='714_买卖股票的最佳时机含手续费'/>
+        <page name='剑指 Offer 45_把数组排成最小的数'/>
+        <page name='162_寻找峰值'/>
+        <page name='TODO_727_最小窗口子序列'/>
+        <page name='剑指 Offer 51_数组中的逆序对 '/>
     </pages>
 </playground>
