@@ -57,5 +57,7 @@
         <page name='137_只出现一次的数字 II'/>
         <page name='187_重复的DNA序列'/>
         <page name='179_最大数'/>
+        <page name='面试题 01_07旋转矩阵'/>
+        <page name='048_旋转图像'/>
     </pages>
 </playground>
