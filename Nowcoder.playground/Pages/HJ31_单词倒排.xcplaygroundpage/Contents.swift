@@ -62,3 +62,60 @@ while let line = readLine() {
     
     print(res.joined(separator: " "))
 }
+
+
+func reverseWords(_ s: String) -> String {
+    return s.split(separator: " ").reversed().joined(separator: " ")
+}
+
+func reverseWords1(_ line: String) -> String {
+    let array = line.components(separatedBy: " ").reversed()
+    var res: [String] = [String]()
+    for ele in array {
+        var isNeedReverse: Bool = false
+        var realEle: [String] = [String]()
+        for e in ele {
+            switch e {
+            case "a"..."z", "A"..."Z":
+                realEle.append(String(e))
+            default:
+                realEle.append(" ")
+                isNeedReverse = true
+            }
+        }
+        
+        let resultEle = realEle.joined(separator: "").components(separatedBy: " ")
+        
+        let finalEle = isNeedReverse ? resultEle.reversed() : resultEle
+        res.append(finalEle.joined(separator: " "))
+    }
+    
+    return res.joined(separator: " ")
+}
+
+/// 是否是Debug模式
+var isDebug: Bool = true
+
+if isDebug {
+    let s = "the sky is blue"
+    let result = reverseWords(s)
+    print(result)
+} else {
+    while let line = readLine() {
+        let result = reverseWords(line)
+        print(result)
+    }
+}
+
+/// 全局打印,发布时不触发, isDebug == false时不打印
+public func dprint<T>(_ msg: T,
+                      line: Int = #line) {
+    if isDebug {
+        let prefix = "🏷_\(line)"
+        print(prefix, msg)
+    }
+}
+
+assert(reverseWords("the sky is blue") == "blue is sky the")
+assert(reverseWords("  hello world!  ") == "world! hello")
+assert(reverseWords("a good   example") == "example good a")

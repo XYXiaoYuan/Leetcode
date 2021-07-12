@@ -11,16 +11,18 @@
         <page name='007_整数反转'/>
         <page name='015_三数之和'/>
         <page name='043_字符串相乘'/>
-        <page name='54_螺旋矩阵'/>
+        <page name='054_螺旋矩阵'/>
         <page name='062_不同路径'/>
         <page name='064_最小路径和'/>
+        <page name='069_x 的平方根'/>
         <page name='070_爬楼梯'/>
         <page name='075_颜色分类'/>
         <page name='088_合并两个有序数组'/>
-        <page name='94_二叉树的中序遍历'/>
+        <page name='094_二叉树的中序遍历'/>
         <page name='121_买卖股票的最佳时机'/>
         <page name='136_只出现一次的数字'/>
         <page name='139_单词拆分'/>
+        <page name='151_翻转字符串里的单词'/>
         <page name='152_爱生气的书店老板'/>
         <page name='164_最大间距'/>
         <page name='167_两数之和 II - 输入有序数组'/>
@@ -39,12 +41,16 @@
         <page name='867_转置矩阵'/>
         <page name='1143_最长公共子序列'/>
         <page name='1178_猜字谜'/>
-        <page name='剑指 Offer 42_连续子数组的最大和'/>
+        <page name='面试题 01_06_字符串压缩'/>
         <page name='面试题 16_16_部分排序'/>
         <page name='剑指 Offer 03_数组中重复的数字'/>
         <page name='剑指 Offer 10- II_青蛙跳台阶问题'/>
         <page name='剑指 Offer 29_顺时针打印矩阵'/>
+        <page name='剑指 Offer 42_连续子数组的最大和'/>
         <page name='剑指 Offer 47. 礼物的最大价值'/>
+        <page name='剑指 Offer 57_和为s的两个数字'/>
+        <page name='剑指 Offer 58 - I_翻转单词顺序'/>
         <page name='剑指 Offer 63_股票的最大利润'/>
+        <page name='836_矩形重叠'/>
     </pages>
 </playground>
