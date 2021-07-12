@@ -59,5 +59,7 @@
         <page name='179_最大数'/>
         <page name='面试题 01_07旋转矩阵'/>
         <page name='048_旋转图像'/>
+        <page name='1154_一年中的第几天'/>
+        <page name='1185_一周中的第几天'/>
     </pages>
 </playground>
