@@ -93,5 +93,6 @@
         <page name='213_打家劫舍 II'/>
         <page name='912_排序数组'/>
         <page name='560_和为K的子数组'/>
+        <page name='118_杨辉三角'/>
     </pages>
 </playground>
