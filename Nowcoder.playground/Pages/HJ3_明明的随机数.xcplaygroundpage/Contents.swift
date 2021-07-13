@@ -74,21 +74,79 @@ import Foundation
 
 func randomSort(_ num: Int, _ nums: [Int]) -> String {
     
-    var set: Set<Int> = Set<Int>()
+    var set: SortedSet<Int> = SortedSet<Int>()
     for n in nums {
         set.insert(n)
     }
     
+    var res: String = ""
+    for i in 0..<set.count {
+        let val = set[i]
+        res.append("\(val)\n")
+    }
+    
+    return res
+}
+
+/// TODO:题目有问题
+func randomSort2(_ num: Int, _ nums: [Int]) -> String {
+    
+    var set: Set<Int> = Set<Int>()
+    for n in nums {
+        set.insert(n)
+    }
+        
     return set.sorted().map { "\($0)" }.joined(separator: "\n")
 }
 
-/// 是否是Debug模式
-var isDebug: Bool = false
+func randomSort1(_ num: Int, _ nums: [Int]) -> String {
+    
+    var dict = [Int: Int]()
+    for num in nums {
+        dict[num] = 1
+    }
+    let result = dict.keys.sorted().map { "\($0)" }.joined(separator: "\n")
+    
+    return result
+}
 
+/// 是否是Debug模式
+var isDebug: Bool = true
+let input = [
+    3,
+    2,
+    2,
+    1,
+    11,
+    10,
+    20,
+    40,
+    32,
+    67,
+    40,
+    20,
+    89,
+    300,
+    400,
+    15,
+]
+let result = [
+    1,
+    2,
+    10,
+    15,
+    20,
+    32,
+    40,
+    67,
+    89,
+    300,
+    400,
+]
 if isDebug {
     let num = 3
     let numebrs = [2, 2, 1]
-    let result = randomSort(num, numebrs)
+    let result = randomSort(16, input)
     print(result)
 } else {
     while let line = readLine(), let num = Int(line) {
@@ -101,4 +159,131 @@ if isDebug {
         let result = randomSort(num, numbers)
         print(result)
     }
+}
+
+/// 全局打印,发布时不触发, isDebug == false时不打印
+public func dprint<T>(_ msg: T,
+                      line: Int = #line) {
+    if isDebug {
+        let prefix = "🏷_\(line)"
+        print(prefix, msg)
+    }
+}
+
+
+//let res = result.map { String($0) }.joined(separator: "\n")
+//assert(randomSort(16, input) == res)
+
+
+public struct SortedSet<T: Comparable> {
+  private var internalSet = [T]()
+  
+  public init() { }
+  
+  // Returns the number of elements in the SortedSet.
+  public var count: Int {
+    return internalSet.count
+  }
+  
+  // Inserts an item. Performance: O(n)
+  public mutating func insert(_ item: T) {
+    if exists(item) {
+      return  // don't add an item if it already exists
+    }
+    
+    // Insert new the item just before the one that is larger.
+    for i in 0..<count {
+      if internalSet[i] > item {
+        internalSet.insert(item, at: i)
+        return
+      }
+    }
+    
+    // Append to the back if the new item is greater than any other in the set.
+    internalSet.append(item)
+  }
+  
+  // Removes an item if it exists. Performance: O(n)
+  public mutating func remove(_ item: T) {
+    if let index = index(of: item) {
+      internalSet.remove(at: index)
+    }
+  }
+  
+  // Returns true if and only if the item exists somewhere in the set.
+  public func exists(_ item: T) -> Bool {
+    return index(of: item) != nil
+  }
+  
+  // Returns the index of an item if it exists, or -1 otherwise.
+  public func index(of item: T) -> Int? {
+    var leftBound = 0
+    var rightBound = count - 1
+    
+    while leftBound <= rightBound {
+      let mid = leftBound + ((rightBound - leftBound) / 2)
+      
+      if internalSet[mid] > item {
+        rightBound = mid - 1
+      } else if internalSet[mid] < item {
+        leftBound = mid + 1
+      } else if internalSet[mid] == item {
+        return mid
+      } else {
+        // When we get here, we've landed on an item whose value is equal to the
+        // value of the item we're looking for, but the items themselves are not
+        // equal. We need to check the items with the same value to the right
+        // and to the left in order to find an exact match.
+        
+        // Check to the right.
+        for j in stride(from: mid, to: count - 1, by: 1) {
+          if internalSet[j + 1] == item {
+            return j + 1
+          } else if internalSet[j] < internalSet[j + 1] {
+            break
+          }
+        }
+        
+        // Check to the left.
+        for j in stride(from: mid, to: 0, by: -1) {
+          if internalSet[j - 1] == item {
+            return j - 1
+          } else if internalSet[j] > internalSet[j - 1] {
+            break
+          }
+        }
+        return nil
+      }
+    }
+    return nil
+  }
+  
+  // Returns the item at the given index.
+  // Assertion fails if the index is out of the range of [0, count).
+  public subscript(index: Int) -> T {
+    assert(index >= 0 && index < count)
+    return internalSet[index]
+  }
+  
+  // Returns the 'maximum' or 'largest' value in the set.
+  public func max() -> T? {
+    return count == 0 ? nil : internalSet[count - 1]
+  }
+  
+  // Returns the 'minimum' or 'smallest' value in the set.
+  public func min() -> T? {
+    return count == 0 ? nil : internalSet[0]
+  }
+  
+  // Returns the k-th largest element in the set, if k is in the range
+  // [1, count]. Returns nil otherwise.
+  public func kLargest(_ k: Int) -> T? {
+    return k > count || k <= 0 ? nil : internalSet[count - k]
+  }
+  
+  // Returns the k-th smallest element in the set, if k is in the range
+  // [1, count]. Returns nil otherwise.
+  public func kSmallest(_ k: Int) -> T? {
+    return k > count || k <= 0 ? nil : internalSet[k - 1]
+  }
 }
