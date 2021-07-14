@@ -47,9 +47,9 @@ class Solution {
     }
 }
 
-//let s = Solution()
-//let result = s.generate(5)
-//print(result)
+let s = Solution()
+let result = s.generate(5)
+print(result)
 
 //assert(s.maxValue(input1) == 12)
 
