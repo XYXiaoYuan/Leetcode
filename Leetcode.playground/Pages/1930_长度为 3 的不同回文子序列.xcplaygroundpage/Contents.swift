@@ -45,40 +45,46 @@ class Solution {
     func countPalindromicSubsequence(_ s: String) -> Int {
         let arrs: [String] = s.map { String($0) }
         
-        let n = s.count
-        var set: Set<String> = Set<String>()
-        
-        var alpha = [Int].init(repeating: 0, count: 26)
-        for s in arrs {
-            if let value = Character(s).asciiValue {
-                let v = Int(value)
-                alpha[v - 65] += 1
-            }
+        var map: [String: Int] = [String: Int]()
+        for (index, item) in arrs.enumerated() {
+            map.updateValue(index, forKey: item)
         }
         
-        for i in 0..<26 {
-            if alpha[i] < 2 {
+        print(map)
+        
+        var ans = 0
+        var used: Set<String> = Set<String>()
+        
+        for i in 0..<arrs.count {
+            let item = arrs[i]
+            if used.contains(item) {
                 continue
-            } else {
-                
             }
+            
+            let index = map[item]
+            if let index = index, index > i + 1 {
+                var set: Set<String> = Set<String>()
+                for j in (i + 1)..<index {
+                    set.insert(arrs[j])
+                }
+                print("set = \(set)")
+                ans += set.count
+            }
+            used.insert(item)
         }
         
-        
-        return set.count
+        return ans
     }
 }
 
-print(Character("a").asciiValue)
-print(UnicodeScalar("a"))
 
 let s = Solution()
 let result = s.countPalindromicSubsequence("aabca")
 print(result)
 
-//assert(s.countPalindromicSubsequence("aabca") == 3)
-//assert(s.countPalindromicSubsequence("adc") == 0)
-//assert(s.countPalindromicSubsequence("bbcbaba") == 4)
+assert(s.countPalindromicSubsequence("aabca") == 3)
+assert(s.countPalindromicSubsequence("adc") == 0)
+assert(s.countPalindromicSubsequence("bbcbaba") == 4)
 
 /// 全局打印,发布时不触发, isDebug == false时不打印
 public func print<T>(_ msg: T,
