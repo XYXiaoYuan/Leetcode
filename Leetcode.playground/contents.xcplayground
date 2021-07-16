@@ -106,6 +106,10 @@
         <page name='188_买卖股票的最佳时机 IV'/>
         <page name='309_最佳买卖股票时机含冷冻期 '/>
         <page name='714_买卖股票的最佳时机含手续费'/>
-        <page name='Temp'/>
+        <page name='189_旋转数组'/>
+        <page name='349_两个数组的交集'/>
+        <page name='350_两个数组的交集 II'/>
+        <page name='125_验证回文串'/>
+        <page name='28_实现 strStr()'/>
     </pages>
 </playground>
