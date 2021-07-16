@@ -20,7 +20,6 @@
         <page name='075_颜色分类'/>
         <page name='088_合并两个有序数组'/>
         <page name='094_二叉树的中序遍历'/>
-        <page name='121_买卖股票的最佳时机'/>
         <page name='136_只出现一次的数字'/>
         <page name='139_单词拆分'/>
         <page name='151_翻转字符串里的单词'/>
@@ -53,7 +52,6 @@
         <page name='剑指 Offer 47. 礼物的最大价值'/>
         <page name='剑指 Offer 57_和为s的两个数字'/>
         <page name='剑指 Offer 58 - I_翻转单词顺序'/>
-        <page name='剑指 Offer 63_股票的最大利润'/>
         <page name='260_只出现一次的数字 III'/>
         <page name='137_只出现一次的数字 II'/>
         <page name='187_重复的DNA序列'/>
@@ -74,7 +72,6 @@
         <page name='315_计算右侧小于当前元素的个数'/>
         <page name='622_设计循环队列'/>
         <page name='97_交错字符串'/>
-        <page name='714_买卖股票的最佳时机含手续费'/>
         <page name='剑指 Offer 45_把数组排成最小的数'/>
         <page name='162_寻找峰值'/>
         <page name='TODO_727_最小窗口子序列'/>
@@ -100,5 +97,15 @@
         <page name='1930_长度为 3 的不同回文子序列'/>
         <page name='1931_用三种不同颜色为网格涂色'/>
         <page name='1411_给 N x 3 网格图涂色的方案数'/>
+        <page name='剑指 Offer 53 - I_在排序数组中查找数字 I'/>
+        <page name='剑指 Offer 63_股票的最大利润'/>
+        <page name='34_在排序数组中查找元素的第一个和最后一个位置'/>
+        <page name='121_买卖股票的最佳时机'/>
+        <page name='122_买卖股票的最佳时机 II'/>
+        <page name='123_买卖股票的最佳时机 III'/>
+        <page name='188_买卖股票的最佳时机 IV'/>
+        <page name='309_最佳买卖股票时机含冷冻期 '/>
+        <page name='714_买卖股票的最佳时机含手续费'/>
+        <page name='Temp'/>
     </pages>
 </playground>

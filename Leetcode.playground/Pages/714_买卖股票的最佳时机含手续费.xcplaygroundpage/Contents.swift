@@ -33,7 +33,30 @@
  
  */
 
+/**
+ k = +infinity with fee 每次交易要⽀付⼿续费，只要把⼿续费从利润中减去即可。
+ 改写⽅程：
+ dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i]) dp[i][1] = max(dp[i-1][1],
+ dp[i-1][0] - prices[i] - fee)
+ 解释：
+ 相当于买⼊股票的价格升⾼了。 在第⼀个式⼦⾥减也是⼀样的，相当于卖出股票的价格减⼩了。
+ */
 class Solution {
+    func maxProfit1(_ prices: [Int], _ fee: Int) -> Int {
+        let n = prices.count
+
+        var dp_i_0 = 0
+        var dp_i_1 = Int.min
+
+        for i in 0..<n {
+            let temp = dp_i_0
+            dp_i_0 = max(dp_i_0, dp_i_1 + prices[i])
+            dp_i_1 = max(dp_i_1, temp - prices[i] - fee)
+        }
+
+        return dp_i_0
+    }
+    
     func maxProfit(_ prices: [Int], _ fee: Int) -> Int {
         if prices.isEmpty {
             return 0

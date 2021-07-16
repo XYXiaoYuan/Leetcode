@@ -27,6 +27,43 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+/**
+ 股票问题团灭
+ 
+ 每天都有三种「选择」：买⼊、卖出、⽆操作，我们⽤ buy, sell, rest 表⽰这三种选择。但问题是，并不是每天都可以任意选择这三 种选择的，因为 sell 必须在 buy 之后，buy 必须在 sell 之后。那么 rest 操作 还应该分两种状态，⼀种是 buy 之后的 rest（持有了股票），⼀种是 sell 之 后的 rest（没有持有股票）。⽽且别忘了，我们还有交易次数 k 的限制，就 是说你 buy 还只能在 k > 0 的前提下操作。 很复杂对吧，不要怕，我们现在的⽬的只是穷举，你有再多的状态，⽼夫要 做的就是⼀把梭全部列举出来。这个问题的「状态」有三个，第⼀个是天 数，第⼆个是允许交易的最⼤次数，第三个是当前的持有状态（即之前说的 rest 的状态，我们不妨⽤ 1 表⽰持有，0 表⽰没有持有）。然后我们⽤⼀个 三维数组就可以装下这⼏种状态的全部组合：
+ 
+ dp[i][k][0 or 1]
+ 0 <= i <= n-1, 1 <= k <= K
+ n 为天数，⼤ K 为最多交易数
+ 此问题共 n × K × 2 种状态，全部穷举就能搞定。
+ for 0 <= i < n:
+     for 1 <= k <= K:
+         for s in {0, 1}:
+             dp[i][k][s] = max(buy, sell, rest)
+ 
+ ⽽且我们可以⽤⾃然语⾔描述出每⼀个状态的含义，⽐如说 dp[3][2][1] 的含义就是：今天是第三天，我现在⼿上持有着股票，⾄今最多进⾏ 2 次交 易。再⽐如 dp[2][3][0] 的含义：今天是第⼆天，我现在⼿上没有持有股 票，⾄今最多进⾏ 3 次交易。很容易理解，对吧？ 我们想求的最终答案是 dp[n - 1][K][0]，即最后⼀天，最多允许 K 次交易， 最多获得多少利润。读者可能问为什么不是 dp[n - 1][K][1]？因为 [1] 代表⼿ 上还持有股票，[0] 表⽰⼿上的股票已经卖出去了，很显然后者得到的利润 ⼀定⼤于前者。 记住如何解释「状态」，⼀旦你觉得哪⾥不好理解，把它翻译成⾃然语⾔就 容易理解了。
+ 
+ dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
+               max( 选择 rest , 选择 sell )
+ 解释：今天我没有持有股票，有两种可能： 要么是我昨天就没有持有，然后今天选择 rest，所以我今天还是没有持有； 要么是我昨天持有股票，但是今天我 sell 了，所以我今天没有持有股票了。
+ 
+ dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
+               max( 选择 rest , 选择 buy )
+ 解释：今天我持有着股票，有两种可能： 要么我昨天就持有着股票，然后今天选择 rest，所以我今天还持有着股票； 要么我昨天本没有持有，但今天我选择 buy，所以今天我就持有股票了。
+ */
+
+/**
+ k = 1 直接套状态转移⽅程，根据 base case，可以做⼀些化简：
+ dp[i][1][0] = max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])
+ dp[i][1][1] = max(dp[i-1][1][1], dp[i-1][0][0] - prices[i])
+           = max(dp[i-1][1][1], -prices[i])
+ 
+ 解释：k = 0 的 base case，所以 dp[i-1][0][0] = 0。
+ 现在发现 k 都是 1，不会改变，即 k 对状态转移已经没有影响了。
+ 可以进⾏进⼀步化简去掉所有 k：
+ dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
+ dp[i][1] = max(dp[i-1][1], -prices[i])
+ */
 class Solution {
     func maxProfit(_ prices: [Int]) -> Int {
         if prices.isEmpty {
@@ -49,6 +86,44 @@ class Solution {
         }
         
         return maxProfit
+    }
+    
+    func maxProfit2(_ prices: [Int]) -> Int {
+        if prices.isEmpty {
+            return 0
+        }
+        
+        let n = prices.count
+        
+        var dp_i_0 = 0
+        var dp_i_1 = Int.min
+        
+        for i in 0..<n {
+            dp_i_0 = max(dp_i_0, dp_i_1 + prices[i])
+            dp_i_1 = max(dp_i_1, -prices[i])
+        }
+        return dp_i_0
+    }
+    
+    func maxProfit1(_ prices: [Int]) -> Int {
+        if prices.isEmpty {
+            return 0
+        }
+        
+        let n = prices.count
+        var dp: [[Int]] = [[Int]].init(repeating: [Int].init(repeating: 0, count: 2), count: n)
+        
+        for i in 0..<n {
+            if i - 1 == -1 {
+                dp[i][0] = 0
+                dp[i][1] = -prices[i]
+                continue
+            }
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
+            dp[i][1] = max(dp[i - 1][1], -prices[i])
+        }
+        
+        return dp[n - 1][0]
     }
 }
 
