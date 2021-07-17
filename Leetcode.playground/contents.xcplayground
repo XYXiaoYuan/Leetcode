@@ -111,5 +111,7 @@
         <page name='350_两个数组的交集 II'/>
         <page name='125_验证回文串'/>
         <page name='28_实现 strStr()'/>
+        <page name='44_通配符匹配'/>
+        <page name='55_跳跃游戏'/>
     </pages>
 </playground>
