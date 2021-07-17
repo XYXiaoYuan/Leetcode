@@ -113,5 +113,6 @@
         <page name='28_实现 strStr()'/>
         <page name='44_通配符匹配'/>
         <page name='55_跳跃游戏'/>
+        <page name='233_数字 1 的个数'/>
     </pages>
 </playground>
