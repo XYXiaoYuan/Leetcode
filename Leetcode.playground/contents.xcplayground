@@ -114,5 +114,10 @@
         <page name='44_通配符匹配'/>
         <page name='55_跳跃游戏'/>
         <page name='233_数字 1 的个数'/>
+        <page name='1137_第 N 个泰波那契数'/>
+        <page name='面试题17_16_按摩师'/>
+        <page name='面试题16_17_连续数列'/>
+        <page name='面试题08_01_三步问题'/>
+        <page name='面试题05_03翻转数位'/>
     </pages>
 </playground>

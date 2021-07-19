@@ -34,7 +34,32 @@
  */
 
 class Solution {
+    
+    /// 发现只跟3个值有关,可以用三个变量来推演
     func tribonacci(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        
+        if n <= 2 {
+            return 1
+        }
+        
+        var first = 0
+        var second = 1
+        var third = 1
+        
+        for _ in 3...n {
+            third = third + second + first
+            second = third - second - first
+            first = third - second - first
+        }
+        
+        return third
+    }
+    
+    /// 动态规划解法, dp[n] = dp[n - 3] + dp[n - 2] + dp[n - 1]
+    func tribonacci1(_ n: Int) -> Int {
         if n <= 1 {
             return n
         }

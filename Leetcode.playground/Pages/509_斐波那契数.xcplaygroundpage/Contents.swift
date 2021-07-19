@@ -40,17 +40,62 @@ import Foundation
 var str = "Hello, playground"
 
 class Solution {
-    func fib(_ N: Int) -> Int {
-        var n = N
+    
+    /// 直接用两个变量来推演
+    func fib(_ n: Int) -> Int {
+        var n = n
         if n <= 1 { return n }
         var first = 0
         var second = 1
+        
         while n > 1 {
             second += first
             first = second - first
             n -= 1
         }
         return second
+    }
+    
+    /// 动态规划2,数组个数为2
+    func fib12(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        
+        var dp = [Int].init(repeating: 0, count: 2)
+        dp[0] = 0
+        dp[1] = 1
+        
+        for _ in 2...n {
+            let sum = dp[0] + dp[1]
+            dp[0] = dp[1]
+            dp[1] = sum
+        }
+        return dp[1]
+    }
+    
+    /// 动态规划1, 数组个数为n
+    func fib11(_ n: Int) -> Int {
+        if n <= 1 {
+            return n
+        }
+        
+        var dp = [Int].init(repeating: 0, count: n + 1)
+        dp[0] = 0
+        dp[1] = 1
+        
+        for i in 2...n {
+            dp[i] = dp[i - 1] + dp[i - 2]
+        }
+        return dp[n]
+    }
+    
+    /// 递归实现
+    func fib0(_ n: Int) -> Int {
+        if n <= 1 { return n }
+        if n == 2 { return 1 }
+        
+        return fib0(n - 1)  + fib0(n - 2)
     }
 }
 
