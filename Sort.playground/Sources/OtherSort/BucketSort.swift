@@ -19,7 +19,7 @@ public func bucketSort<T>(_ elements: [T], distributor: Distributor, sorter: Sor
     return results
 }
 
-private func allPositiveNumbers<T: Sortable>(_ array: [T]) -> Bool {
+private func allPositiveNumbers<T: BucketSortable>(_ array: [T]) -> Bool {
     return array.filter { $0.toInt() >= 0 }.count > 0
 }
 
@@ -71,14 +71,14 @@ public struct RangeDistributor: Distributor {
 }
 
 //////////////////////////////////////
-// MARK: Sortable
+// MARK: BucketSortable
 //////////////////////////////////////
 
 public protocol IntConvertible {
     func toInt() -> Int
 }
 
-public protocol Sortable: IntConvertible, Comparable {
+public protocol BucketSortable: IntConvertible, Comparable {
 }
 
 //////////////////////////////////////
@@ -86,14 +86,14 @@ public protocol Sortable: IntConvertible, Comparable {
 //////////////////////////////////////
 
 public protocol Sorter {
-    func sort<T: Sortable>(_ items: [T]) -> [T]
+    func sort<T: BucketSortable>(_ items: [T]) -> [T]
 }
 
 public struct InsertionSorter: Sorter {
     
     public init() {}
     
-    public func sort<T: Sortable>(_ items: [T]) -> [T] {
+    public func sort<T: BucketSortable>(_ items: [T]) -> [T] {
         var results = items
         for i in 0 ..< results.count {
             var j = i
@@ -114,7 +114,7 @@ public struct InsertionSorter: Sorter {
 // MARK: Bucket
 //////////////////////////////////////
 
-public struct Bucket<T: Sortable> {
+public struct Bucket<T: BucketSortable> {
     var elements: [T]
     let capacity: Int
     
