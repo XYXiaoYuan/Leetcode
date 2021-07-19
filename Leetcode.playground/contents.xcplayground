@@ -119,5 +119,7 @@
         <page name='面试题16_17_连续数列'/>
         <page name='面试题08_01_三步问题'/>
         <page name='面试题05_03翻转数位'/>
+        <page name='280_摆动排序'/>
+        <page name='270_最接近的二叉搜索树值'/>
     </pages>
 </playground>
