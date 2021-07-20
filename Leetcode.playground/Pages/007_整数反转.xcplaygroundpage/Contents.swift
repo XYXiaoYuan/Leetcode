@@ -39,7 +39,24 @@
  */
 
 class Solution {
+    
     func reverse(_ x: Int) -> Int {
+        var x = Int64(x)
+        var res: Int64 = 0
+        while x != 0 {
+            res = res * 10 + x % 10
+            if res > Int64.max {
+                return 0
+            }
+            if res < Int64.min {
+                return 0
+            }
+            x /= 10
+        }
+        return Int(res)
+    }
+    
+    func reverse1(_ x: Int) -> Int {
         var res: Int = 0
         let max: Int = 214748364
         

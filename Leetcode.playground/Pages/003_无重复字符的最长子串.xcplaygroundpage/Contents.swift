@@ -53,7 +53,6 @@ class Solution {
         var left: Int = 0
         
         
-        
         return max
     }
 }

@@ -6,6 +6,7 @@
         <page name='00_星商面试题'/>
         <page name='00_数羊'/>
         <page name='001_两数之和'/>
+        <page name='002_两数相加'/>
         <page name='003_无重复字符的最长子串'/>
         <page name='004_寻找两个正序数组的中位数'/>
         <page name='006_Z 字形变换 '/>
@@ -121,5 +122,7 @@
         <page name='面试题05_03翻转数位'/>
         <page name='280_摆动排序'/>
         <page name='270_最接近的二叉搜索树值'/>
+        <page name='51_N 皇后'/>
+        <page name='52_N皇后 II'/>
     </pages>
 </playground>
