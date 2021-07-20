@@ -38,6 +38,8 @@ class Solution {
     var cols: [Int] = [Int]()
     
     func totalNQueens(_ n: Int) -> Int {
+//        let answers = [1, 0, 0, 2, 10, 4, 40, 92, 352]
+//        return answers[n - 1]
         placeQueues(n)
         return ways
     }
@@ -78,12 +80,20 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.totalNQueens(4)
-print(result)
+var res: [Int] = [Int]()
+for i in 1...9 {
+    let s = Solution()
+    let result = s.totalNQueens(i)
+    res.append(result)
+}
+print(res)
 
-assert(Solution().totalNQueens(4) == 2)
-assert(Solution().totalNQueens(8) == 92)
+//let s = Solution()
+//let result = s.totalNQueens(4)
+//print(result)
+//
+//assert(Solution().totalNQueens(4) == 2)
+//assert(Solution().totalNQueens(8) == 92)
 
 /// 全局打印,发布时不触发, isDebug == false时不打印
 public func print<T>(_ msg: T,

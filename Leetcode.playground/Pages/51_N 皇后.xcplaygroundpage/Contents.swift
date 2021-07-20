@@ -46,7 +46,10 @@ class Solution {
         place(row: 0, n: n)
     }
     
+    var count: Int = 0
     private func place(row: Int, n: Int) {
+        count += 1
+        
         if row == cols.count {
             var solution: [String] = [String]()
             
@@ -72,19 +75,24 @@ class Solution {
             
             place(row: row + 1, n: n)
         }
+        
+        print("第 \(count) 次 place函数调用完毕 \n")
     }
     
     private func isValid(row: Int, col: Int) -> Bool {
         for i in 0..<row {
             /// 第col列已经有皇后了
             if cols[i] == col {
+                print("🍓 [\(row)][\(col)] = false")
                 return false
             }
             /// 第i行的皇后跟第row行第col列格子处在同一斜线上
             if row - i == abs(col - cols[i]) {
+                print("🍓 [\(row)][\(col)] = false")
                 return false
             }
         }
+        print("🍏 [\(row)][\(col)] = true")
         return true
     }
 }

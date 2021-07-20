@@ -124,5 +124,6 @@
         <page name='270_最接近的二叉搜索树值'/>
         <page name='51_N 皇后'/>
         <page name='52_N皇后 II'/>
+        <page name='1222_可以攻击国王的皇后'/>
     </pages>
 </playground>
