@@ -12,5 +12,9 @@
         <page name='NC93 设计LRU缓存结构'/>
         <page name='NC119 最小的K个数'/>
         <page name='NC76 用两个栈实现队列'/>
+        <page name='NC103 反转字符串'/>
+        <page name='NC88 寻找第K大'/>
+        <page name='NC17 最长回文子串'/>
+        <page name='NC140 排序'/>
     </pages>
 </playground>
