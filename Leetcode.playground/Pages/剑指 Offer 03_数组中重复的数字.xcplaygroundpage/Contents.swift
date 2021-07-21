@@ -19,20 +19,39 @@
  */
 
 class Solution {
+    func findRepeatNumber1(_ nums: [Int]) -> Int {
+        var set: Set<Int> = Set<Int>()
+        for i in nums {
+            if set.contains(i) {
+                return i
+            }
+            set.insert(i)
+        }
+        
+        return 0
+    }
+    
+    func findRepeatNumber2(_ nums: [Int]) -> Int {
+        let sortNums = nums.sorted()
+        for i in 1..<sortNums.count {
+            if sortNums[i] == sortNums[i - 1] {
+                return sortNums[i]
+            }
+        }
+        
+        return 0
+    }
+    
     func findRepeatNumber(_ nums: [Int]) -> Int {
         var dict: [Int: Int] = [Int: Int]()
         for num in nums {
-            if var val = dict[num] {
-                val += 1
-                dict[num] = val
+            if let _ = dict[num] {
+                return num
             } else {
                 dict[num] = 1
             }
         }
         
-        if let first = dict.filter({ $0.value > 1 }).first {
-            return first.key
-        }
         return 0
     }
 }

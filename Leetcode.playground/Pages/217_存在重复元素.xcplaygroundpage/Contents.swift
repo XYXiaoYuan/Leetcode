@@ -29,7 +29,34 @@
  */
 
 class Solution {
+    
+    func containsDuplicate2(_ nums: [Int]) -> Bool {
+        var dict = [Int: Bool]()
+        
+        for num in nums {
+            if let _ = dict[num] {
+                return true
+            } else {
+                dict[num] = true
+            }
+        }
+        
+        return false
+    }
+
+    
     func containsDuplicate(_ nums: [Int]) -> Bool {
+        let sortNums = nums.sorted()
+        for i in 1..<sortNums.count {
+            if sortNums[i] == sortNums[i - 1] {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func containsDuplicate1(_ nums: [Int]) -> Bool {
         var set: Set<Int> = Set<Int>()
         for i in nums {
             if set.contains(i) {

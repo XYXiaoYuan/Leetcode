@@ -130,5 +130,7 @@
         <page name='152_乘积最大子数组'/>
         <page name='354_俄罗斯套娃信封问题'/>
         <page name='27_移除元素'/>
+        <page name='剑指 Offer 09_用两个栈实现队列'/>
+        <page name='232_用栈实现队列'/>
     </pages>
 </playground>
