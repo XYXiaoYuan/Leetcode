@@ -132,5 +132,11 @@
         <page name='27_移除元素'/>
         <page name='剑指 Offer 09_用两个栈实现队列'/>
         <page name='232_用栈实现队列'/>
+        <page name='剑指 Offer 17_打印从1到最大的n位数'/>
+        <page name='剑指 Offer 15_二进制中1的个数 '/>
+        <page name='剑指 Offer 49_丑数'/>
+        <page name='263_丑数'/>
+        <page name='264_丑数 II'/>
+        <page name='1201_丑数 III'/>
     </pages>
 </playground>
