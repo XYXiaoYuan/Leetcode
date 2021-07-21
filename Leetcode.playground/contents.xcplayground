@@ -138,5 +138,7 @@
         <page name='263_丑数'/>
         <page name='264_丑数 II'/>
         <page name='1201_丑数 III'/>
+        <page name='445_两数相加 II'/>
+        <page name='141_环形链表'/>
     </pages>
 </playground>

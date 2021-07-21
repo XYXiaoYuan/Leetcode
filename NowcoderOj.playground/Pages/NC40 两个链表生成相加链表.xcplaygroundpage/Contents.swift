@@ -25,3 +25,52 @@
   ≤9
 
  */
+public class Solution {
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * @param head1 ListNode类
+     * @param head2 ListNode类
+     * @return ListNode类
+     */
+    func addInList ( _ head1: ListNode?,  _ head2: ListNode?) -> ListNode? {
+        var stack1 = [Int]()
+        var stack2 = [Int]()
+        var l1 = head1
+        var l2 = head2
+        var sum = 0
+        var cur = ListNode(0)
+        
+        while l1 != nil {
+            stack1.append(l1!.val)
+            l1 = l1?.next
+        }
+        while l2 != nil {
+            stack2.append(l2!.val)
+            l2 = l2?.next
+        }
+        while !stack1.isEmpty || !stack2.isEmpty {
+            if !stack1.isEmpty {
+                sum += stack1.removeLast()
+            }
+            if !stack2.isEmpty {
+                sum += stack2.removeLast()
+            }
+            cur.val = sum % 10
+            let head = ListNode(sum / 10)
+            head.next = cur
+            cur = head
+            sum /= 10
+        }
+        
+        return cur.val == 0 ? cur.next : cur
+    }
+}
+
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init() { self.val = 0; self.next = nil; }
+    public init(_ val: Int) { self.val = val; self.next = nil; }
+    public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+}

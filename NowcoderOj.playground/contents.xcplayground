@@ -3,5 +3,13 @@
     <pages>
         <page name='NC91 最长递增子序列'/>
         <page name='NC40 两个链表生成相加链表'/>
+        <page name='NC78 反转链表'/>
+        <page name='NC61 两数之和'/>
+        <page name='NC68 跳台阶'/>
+        <page name='NC4 判断链表中是否有环'/>
+        <page name='NC38 螺旋矩阵'/>
+        <page name='NC32 求平方根'/>
+        <page name='NC93 设计LRU缓存结构'/>
+        <page name='NC119 最小的K个数'/>
     </pages>
 </playground>
