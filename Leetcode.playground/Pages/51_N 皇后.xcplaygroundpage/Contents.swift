@@ -28,6 +28,86 @@
 
 class Solution {
     /// 下标是索引,对应的值是摆放皇后的列
+    var cols: [Bool] = [Bool]()
+    /// 从左下角到顶部的斜边
+    var leftTop: [Bool] = [Bool]()
+    /// 从右下角到顶部的斜边
+    var rightTop: [Bool] = [Bool]()
+    
+    /// 放置的皇后位置
+    var queens: [Int] = [Int]()
+    
+    /// 结果
+    var result: [[String]] = [[String]]()
+
+    func solveNQueens(_ n: Int) -> [[String]] {
+        placeQueues(n)
+
+        return result
+    }
+    
+    private func placeQueues(_ n: Int) {
+        /// 初始化数据
+        cols = [Bool].init(repeating: false, count: n)
+        leftTop = [Bool].init(repeating: false, count: (n << 1) - 1)
+        rightTop = [Bool].init(repeating: false, count: leftTop.count)
+        
+        queens = [Int].init(repeating: 0, count: n)
+        
+        place(row: 0, n: n)
+    }
+    
+    private func place(row: Int, n: Int) {
+        if row == cols.count {
+            var solution: [String] = [String]()
+            
+            for i in 0..<n {
+                var temp: String = ""
+                for j in 0..<cols.count {
+                    if i == queens[j] {
+                        temp.append("Q")
+                    } else {
+                        temp.append(".")
+                    }
+                }
+                solution.append(temp)
+            }
+            
+            result.append(solution)
+            return
+        }
+        
+        for col in 0..<cols.count {
+            if cols[col] {
+                continue
+            }
+            let ltIndex = row - col + cols.count - 1
+            if leftTop[ltIndex] {
+                continue
+            }
+            let rtIndex = row + col
+            if rightTop[rtIndex] {
+                continue
+            }
+            
+            queens[row] = col
+            
+            cols[col] = true
+            leftTop[ltIndex] = true
+            rightTop[rtIndex] = true
+            
+            place(row: row + 1, n: n)
+            
+            cols[col] = false
+            leftTop[ltIndex] = false
+            rightTop[rtIndex] = false
+        }
+    }
+}
+
+
+class Solution1 {
+    /// 下标是索引,对应的值是摆放皇后的列
     var cols: [Int] = [Int]()
     
     /// 结果

@@ -55,17 +55,17 @@
 class Solution {
     func queensAttacktheKing(_ queens: [[Int]], _ king: [Int]) -> [[Int]] {
         var result = [[Int]]()
-        var queensSet = Set<[Int]>()
-        for queen in queens {
-            queensSet.insert(queen)
-        }
+//        var queensSet = Set<[Int]>()
+//        for queen in queens {
+//            queensSet.insert(queen)
+//        }
         
         for move in [[-1, -1], [-1, 0], [0, -1], [1, -1], [-1, 1], [1, 1], [1, 0], [0, 1]] {
             for k in 1...8 {
                 let moveY = move[0]
                 let moveX = move[1]
                 let location = [king[0] + moveY * k, king[1] + moveX * k]
-                if queensSet.contains(location) {
+                if queens.contains(location) {
                     result.append(location)
                     break
                 }

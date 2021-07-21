@@ -35,6 +35,66 @@ class Solution {
     var ways: Int = 0
     
     /// 下标是索引,对应的值是摆放皇后的列
+    var cols: [Bool] = [Bool]()
+    /// 从左下角到顶部的斜边
+    var leftTop: [Bool] = [Bool]()
+    /// 从右下角到顶部的斜边
+    var rightTop: [Bool] = [Bool]()
+    
+    
+    func totalNQueens(_ n: Int) -> Int {
+//        let answers = [1, 0, 0, 2, 10, 4, 40, 92, 352]
+//        return answers[n - 1]
+        placeQueues(n)
+        return ways
+    }
+    
+    private func placeQueues(_ n: Int) {
+        /// 初始化数据
+        cols = [Bool].init(repeating: false, count: n)
+        leftTop = [Bool].init(repeating: false, count: (n << 1) - 1)
+        rightTop = [Bool].init(repeating: false, count: leftTop.count)
+        
+        place(row: 0)
+    }
+    
+    private func place(row: Int) {
+        if row == cols.count {
+            ways += 1
+            return
+        }
+        
+        for col in 0..<cols.count {
+            if cols[col] {
+                continue
+            }
+            let ltIndex = row - col + cols.count - 1
+            if leftTop[ltIndex] {
+                continue
+            }
+            let rtIndex = row + col
+            if rightTop[rtIndex] {
+                continue
+            }
+            
+            cols[col] = true
+            leftTop[ltIndex] = true
+            rightTop[rtIndex] = true
+            
+            place(row: row + 1)
+            
+            cols[col] = false
+            leftTop[ltIndex] = false
+            rightTop[rtIndex] = false
+        }
+    }
+}
+
+class Solution1 {
+    /// n皇后的摆放的摆法有多少种
+    var ways: Int = 0
+    
+    /// 下标是索引,对应的值是摆放皇后的列
     var cols: [Int] = [Int]()
     
     func totalNQueens(_ n: Int) -> Int {
@@ -80,20 +140,20 @@ class Solution {
     }
 }
 
-var res: [Int] = [Int]()
-for i in 1...9 {
-    let s = Solution()
-    let result = s.totalNQueens(i)
-    res.append(result)
-}
-print(res)
+//var res: [Int] = [Int]()
+//for i in 1...9 {
+//    let s = Solution()
+//    let result = s.totalNQueens(i)
+//    res.append(result)
+//}
+//print(res)
 
-//let s = Solution()
-//let result = s.totalNQueens(4)
-//print(result)
-//
-//assert(Solution().totalNQueens(4) == 2)
-//assert(Solution().totalNQueens(8) == 92)
+let s = Solution()
+let result = s.totalNQueens(8)
+print(result)
+
+assert(Solution().totalNQueens(4) == 2)
+assert(Solution().totalNQueens(8) == 92)
 
 /// 全局打印,发布时不触发, isDebug == false时不打印
 public func print<T>(_ msg: T,
