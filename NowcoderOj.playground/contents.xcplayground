@@ -11,5 +11,6 @@
         <page name='NC32 求平方根'/>
         <page name='NC93 设计LRU缓存结构'/>
         <page name='NC119 最小的K个数'/>
+        <page name='NC76 用两个栈实现队列'/>
     </pages>
 </playground>

@@ -46,7 +46,7 @@
         <page name='HJ55_挑7'/>
         <page name='HJ56_完全数计算'/>
         <page name='HJ57_高精度整数加法(大数加法)'/>
-        <page name='TODO_HJ58_输入n个整数，输出其中最小的k个'/>
+        <page name='HJ58_输入n个整数，输出其中最小的k个'/>
         <page name='HJ59_找出字符串中第一个只出现一次的字符'/>
         <page name='HJ60_查找组成一个偶数最接近的两个素数'/>
         <page name='TODO_HJ61_放苹果'/>
