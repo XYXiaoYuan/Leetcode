@@ -37,27 +37,30 @@ public class Solution {
     }
     
     private func quickSort(_ arr: inout [Int], _ left: Int, _ right: Int) {
-        if left < right {
-            var l = left
-            var r = right
-            let mid_value = arr[l]
-            
-            while l < r {
-                while l < r, arr[r] >= mid_value {
-                    r -= 1
-                }
-                arr[l] = arr[r]
-                
-                while l < r && arr[l] <= mid_value {
-                    l += 1
-                }
-                arr[r] = arr[l]
-            }
-            
-            arr[r] = mid_value
-            quickSort(&arr, left, r - 1)
-            quickSort(&arr, l + 1, right)
+        if left >= right {
+            return
         }
+        
+        var l = left
+        var r = right
+        let midValue = arr[left]
+        
+        while l < r {
+            while l < r && arr[r] >= midValue {
+                r -= 1
+            }
+            arr[l] = arr[r]
+            
+            while l < r && arr[l] <= midValue {
+                l += 1
+            }
+            arr[r] = arr[l]
+        }
+        
+        arr[r] = midValue
+        
+        quickSort(&arr, left, r - 1)
+        quickSort(&arr, l + 1, right)
     }
     
     func MySort1( _ array: [Int]) -> [Int] {
