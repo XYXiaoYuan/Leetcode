@@ -149,5 +149,8 @@
         <page name='142_环形链表 II'/>
         <page name='206_反转链表'/>
         <page name='328_奇偶链表'/>
+        <page name='507_完美数'/>
+        <page name='1134_阿姆斯特朗数'/>
+        <page name='1228_等差数列中缺失的数字'/>
     </pages>
 </playground>
