@@ -49,48 +49,38 @@ class Solution {
     
     func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
         if lists.isEmpty { return nil }
-        var lists = lists
+        guard let _ = lists.first else { return lists[0] }
         
-        var step = 1
-        while step < lists.count {
-//            let nextStep = step << 1
-//            for i in stride(from: 0, through: lists.count - step, by: nextStep) {
-//                var k1 = lists[i]
-//                var k2 = lists[i + step]
-//                lists[i] = mergeTwoLists(&k1, &k2)
-//            }
-//            step = nextStep
-        }
-        
-        return lists.first ?? nil
+        return partition(lists, 0, lists.count - 1)
     }
     
-    private func mergeTwoLists(_ k1: inout ListNode?, _ k2: inout ListNode?) -> ListNode? {
-        if k1 == nil { return k2 }
-        if k2 == nil { return k1 }
+    func partition(_ list: [ListNode?], _ start: Int, _ end: Int) -> ListNode? {
+        if start == end {
+            return list[start]
+        }
+        if start < end {
+            let middle = (start + end) / 2
+            let l1 = partition(list, start, middle)
+            let l2 = partition(list, middle + 1, end)
+            return mergeTwoList(l1, l2)
+        }
+        return nil
+    }
+    
+    private func mergeTwoList(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        guard let l1 = l1 else { return l2 }
+        guard let l2 = l2 else { return l1 }
         
-        head.next = nil
-        var cur: ListNode? = head
-        
-        while k1 != nil, k2 != nil {
-            if k1?.val ?? 0 <= k2?.val ?? 0 {
-                cur?.next = k1
-                cur = cur?.next
-                k1 = k1?.next
-            } else {
-                cur?.next = k2
-                cur = cur?.next
-                k2 = k2?.next
-            }
+        var result: ListNode?
+        if l1.val <= l2.val {
+            result = l1
+            result?.next = mergeTwoList(l1.next, l2)
+        } else {
+            result = l2
+            result?.next = mergeTwoList(l1, l2.next)
         }
         
-        if k1 == nil {
-            cur?.next = k2
-        } else if k2 == nil {
-            cur?.next = k1
-        }
-        
-        return head.next
+        return result
     }
 }
 
@@ -100,9 +90,16 @@ let lists1: [ListNode?] = [
     ListNode(1, ListNode(3, ListNode(4, nil))),
     ListNode(2, ListNode(6, nil)),
 ]
-let result = s.mergeKLists(lists1)
-print(result)
+var resListNode = s.mergeKLists(lists1)
 
+var result = [Int]()
+while resListNode != nil {
+    guard let node = resListNode else { break }
+    result.append(node.val)
+    resListNode = node.next
+}
+
+print(result)
 //assert(s.maxValue(input1) == 12)
 
 /// 全局打印,发布时不触发, isDebug == false时不打印

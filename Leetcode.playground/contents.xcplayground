@@ -142,5 +142,8 @@
         <page name='141_环形链表'/>
         <page name='5_最长回文子串'/>
         <page name='23_合并K个升序链表'/>
+        <page name='24_两两交换链表中的节点'/>
+        <page name='21_合并两个有序链表'/>
+        <page name='86_分隔链表'/>
     </pages>
 </playground>
