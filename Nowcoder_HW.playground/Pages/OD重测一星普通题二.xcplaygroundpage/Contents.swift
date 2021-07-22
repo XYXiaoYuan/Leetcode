@@ -5,86 +5,91 @@
 
 import Foundation
 
-enum Operation: String {
-    case add = "+"
-    case jian = "-"
-    case chen = "*"
-    
-    func compute(lhs: Int, rhs: Int) -> Int {
-        var res: Int = 0
-        switch self {
-        case .add:
-            res = lhs + rhs
-        case .jian:
-            res = lhs - rhs
-        case .chen:
-            res = lhs * rhs
-        }
-        return res
-    }
-}
-
-func longestExCompute(_ string: String) -> Int {
-    
-    var line: String = ""
-    for str in string {
-        switch str {
-        case "0"..."9", "+", "-", "*":
-            line.append(str)
-        default:
-            continue
-        }
-    }
-    
+public class Solution {
     var numStack: Stack<Int> = Stack<Int>()
     var opStack: Stack<Operation> = Stack<Operation>()
-    
-    for str in line {
-        switch str {
-        case "0"..."9":
-            if str == "0", let top = numStack.top {
-                numStack.pop()
-                if let val = Int(String(str)) {
-                    let number = top * 10 + val
-                    numStack.push(number)
-                }
-            } else {
-                if let val = Int(String(str)) {
-                    numStack.push(val)
-                }
-            }
-        case "+", "-", "*":
-            if let op = Operation(rawValue: String(str)) {
-                opStack.push(op)
-            }
-        default:
-            continue
-        }
-    }
+
+    public enum Operation: String {
+        case add = "+"
+        case jian = "-"
+        case chen = "*"
         
-    var res: Int = 0
-    while !opStack.isEmpty {
-        if let opertaion = opStack.pop() {
-            let rhs = numStack.pop() ?? 0
-            let lhs = numStack.pop() ?? 0
-            res += opertaion.compute(lhs: lhs, rhs: rhs)
-            numStack.push(res)
+        public func compute(lhs: Int, rhs: Int) -> Int {
+            var res: Int = 0
+            switch self {
+            case .add:
+                res = lhs + rhs
+            case .jian:
+                res = lhs - rhs
+            case .chen:
+                res = lhs * rhs
+            }
+            return res
         }
     }
-    
-    return res
+
+    public func longestExCompute(_ string: String) -> Int {
+        
+        var line: String = ""
+        for str in string {
+            switch str {
+            case "0"..."9", "+", "-", "*":
+                line.append(str)
+            default:
+                continue
+            }
+        }
+                
+        for str in line {
+            switch str {
+            case "0"..."9":
+                if str == "0", let top = numStack.top {
+                    numStack.pop()
+                    if let val = Int(String(str)) {
+                        let number = top * 10 + val
+                        numStack.push(number)
+                    }
+                } else {
+                    if let val = Int(String(str)) {
+                        numStack.push(val)
+                    }
+                }
+            case "+", "-", "*":
+                if let op = Operation(rawValue: String(str)) {
+                    opStack.push(op)
+                }
+            default:
+                continue
+            }
+        }
+            
+        var res: Int = 0
+        while !opStack.isEmpty {
+            if let opertaion = opStack.pop() {
+                let rhs = numStack.pop() ?? 0
+                let lhs = numStack.pop() ?? 0
+                res += opertaion.compute(lhs: lhs, rhs: rhs)
+                numStack.push(res)
+            }
+        }
+        
+        return res
+    }
+
 }
 
 /// 是否是Debug模式
 var isDebug: Bool = true
 
 if isDebug {
+    let s = Solution()
     let line = "1-2abcd"
-    let result = longestExCompute(line)
+    let result = s.longestExCompute(line)
     print(result)
 } else {
     while let line = readLine() {
-        let result = longestExCompute(line)
+        let s = Solution()
+        let result = s.longestExCompute(line)
         print(result)
     }
 }
@@ -99,7 +104,6 @@ public func dprint<T>(_ msg: T,
 }
 
 //assert(longestExCompute("1-2abcd") == -1)
-
 
 /// 栈
 public struct Stack<T> {

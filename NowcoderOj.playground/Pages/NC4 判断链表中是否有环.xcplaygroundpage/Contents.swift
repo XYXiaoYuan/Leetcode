@@ -53,10 +53,18 @@ class Solution {
     }
 }
 
-public class ListNode {
-    public var val: Int
-    public var next: ListNode?
-    public init() { self.val = 0; self.next = nil; }
-    public init(_ val: Int) { self.val = val; self.next = nil; }
-    public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+let s = Solution()
+let head1 = ListNode(3, ListNode(2, ListNode(0, ListNode(-4, nil))))
+let result = s.hasCycle(head1)
+print(result)
+
+//assert(s.maxValue(input1) == 12)
+
+/// 全局打印,发布时不触发, isDebug == false时不打印
+public func print<T>(_ msg: T,
+                     line: Int = #line) {
+    let prefix = "🏷_\(line)"
+    print(prefix, msg)
 }
+
+
