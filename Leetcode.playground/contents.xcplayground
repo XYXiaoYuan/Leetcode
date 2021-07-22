@@ -148,5 +148,6 @@
         <page name='707_设计链表'/>
         <page name='142_环形链表 II'/>
         <page name='206_反转链表'/>
+        <page name='328_奇偶链表'/>
     </pages>
 </playground>
