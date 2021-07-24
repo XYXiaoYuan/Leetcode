@@ -33,6 +33,33 @@
 
 class Solution {
     func isArmstrong(_ n: Int) -> Bool {
+        let nums = "\(n)"
+        
+        var sum: Int = 0
+        for c in nums {
+            if let val = Int(String(c)) {
+                sum += pow(val, nums.count)
+            }
+        }
+                
+        return sum == n
+    }
+    
+    
+    /// n的幂次方
+    /// - Parameters:
+    ///   - val: n
+    ///   - count: 次方
+    /// - Returns: 结果
+    private func pow(_ val: Int, _ count:Int) -> Int {
+        var temp = 1
+        for _ in 0..<count {
+            temp *= val
+        }
+        return temp
+    }
+    
+    func isArmstrong1(_ n: Int) -> Bool {
         let nums = itoa(n)
         let count = nums.count
         
