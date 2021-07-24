@@ -152,5 +152,8 @@
         <page name='507_完美数'/>
         <page name='1134_阿姆斯特朗数'/>
         <page name='1228_等差数列中缺失的数字'/>
+        <page name='168_Excel表列名称 '/>
+        <page name='171_Excel表列序号'/>
+        <page name='258_各位相加'/>
     </pages>
 </playground>
