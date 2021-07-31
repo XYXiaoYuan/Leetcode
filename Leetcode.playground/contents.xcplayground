@@ -156,5 +156,8 @@
         <page name='171_Excel表列序号'/>
         <page name='258_各位相加'/>
         <page name='918_环形子数组的最大和'/>
+        <page name='剑指 Offer 56 - II_数组中数字出现的次数 II'/>
+        <page name='剑指 Offer 64_求1+2+…+n'/>
+        <page name='剑指 Offer 65_不用加减乘除做加法'/>
     </pages>
 </playground>
