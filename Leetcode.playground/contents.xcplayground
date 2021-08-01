@@ -161,5 +161,6 @@
         <page name='剑指 Offer 65_不用加减乘除做加法'/>
         <page name='剑指 Offer 05_替换空格'/>
         <page name='剑指 Offer 06_从尾到头打印链表 '/>
+        <page name='剑指 Offer 13_机器人的运动范围'/>
     </pages>
 </playground>
