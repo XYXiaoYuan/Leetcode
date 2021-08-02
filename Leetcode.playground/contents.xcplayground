@@ -162,5 +162,7 @@
         <page name='剑指 Offer 05_替换空格'/>
         <page name='剑指 Offer 06_从尾到头打印链表 '/>
         <page name='剑指 Offer 13_机器人的运动范围'/>
+        <page name='剑指 Offer 40_最小的k个数 '/>
+        <page name='剑指 Offer 16_数值的整数次方'/>
     </pages>
 </playground>
