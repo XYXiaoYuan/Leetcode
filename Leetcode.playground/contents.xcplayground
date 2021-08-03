@@ -168,5 +168,7 @@
         <page name='剑指 Offer 53 - II_0～n-1中缺失的数字'/>
         <page name='剑指 Offer 57 - II_和为s的连续正数序列 '/>
         <page name='剑指 Offer 61_扑克牌中的顺子'/>
+        <page name='剑指 Offer 18_删除链表的节点 '/>
+        <page name='剑指 Offer 32 - II_从上到下打印二叉树 II'/>
     </pages>
 </playground>
