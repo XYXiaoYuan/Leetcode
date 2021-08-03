@@ -26,7 +26,7 @@
 
 import Foundation
 
-func findFirstAppearOnce(_ line: String) -> String {
+func firstUniqChar(_ line: String) -> String {
     
     let array: [String] = Array(line).map { "\($0)" }
     var flag: Bool = true
@@ -56,18 +56,18 @@ var isDebug: Bool = true
 if isDebug {
     let line: String = "lbrnsepcfjzcpfgzqdiujo"
     
-    let result = findFirstAppearOnce(line)
+    let result = firstUniqChar(line)
     print(result)
 } else {
     while let line = readLine() {
         
-        let result = findFirstAppearOnce(line)
+        let result = firstUniqChar(line)
         print(result)
     }
 }
 
 /// 一些测试用例的断言
-assert(findFirstAppearOnce("asdfasdfo") == "o")
-assert(findFirstAppearOnce("aabb") == "-1")
-assert(findFirstAppearOnce("lbrnsepcfjzcpfgzqdiujo") == "l")
-assert(findFirstAppearOnce("aabbccddeeff") == "-1")
+assert(firstUniqChar("asdfasdfo") == "o")
+assert(firstUniqChar("aabb") == "-1")
+assert(firstUniqChar("lbrnsepcfjzcpfgzqdiujo") == "l")
+assert(firstUniqChar("aabbccddeeff") == "-1")
