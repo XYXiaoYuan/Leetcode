@@ -170,5 +170,7 @@
         <page name='剑指 Offer 61_扑克牌中的顺子'/>
         <page name='剑指 Offer 18_删除链表的节点 '/>
         <page name='剑指 Offer 32 - II_从上到下打印二叉树 II'/>
+        <page name='剑指 Offer 58 - II_左旋转字符串 '/>
+        <page name='剑指 Offer 30_包含min函数的栈 '/>
     </pages>
 </playground>
