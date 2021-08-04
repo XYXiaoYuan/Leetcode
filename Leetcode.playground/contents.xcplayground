@@ -179,5 +179,10 @@
         <page name='剑指 Offer 54_二叉搜索树的第k大节点 '/>
         <page name='剑指 Offer 55 - I_二叉树的深度 '/>
         <page name='剑指 Offer 34_二叉树中和为某一值的路径 '/>
+        <page name='剑指 Offer 44_数字序列中某一位的数字 '/>
+        <page name='剑指 Offer 39_数组中出现次数超过一半的数字 '/>
+        <page name='剑指 Offer 68 - I_二叉搜索树的最近公共祖先 '/>
+        <page name='剑指 Offer 68 - II_二叉树的最近公共祖先 '/>
+        <page name='剑指 Offer 60_n个骰子的点数 '/>
     </pages>
 </playground>
