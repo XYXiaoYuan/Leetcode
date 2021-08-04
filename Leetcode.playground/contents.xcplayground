@@ -190,5 +190,9 @@
         <page name='剑指 Offer 59 - II_队列的最大值 '/>
         <page name='剑指 Offer 67_把字符串转换成整数 '/>
         <page name='剑指 Offer 46_把数字翻译成字符串 '/>
+        <page name='剑指 Offer 04_二维数组中的查找 '/>
+        <page name='剑指 Offer 11_旋转数组的最小数字 '/>
+        <page name='剑指 Offer 12_矩阵中的路径 '/>
+        <page name='剑指 Offer 07_重建二叉树 '/>
     </pages>
 </playground>
