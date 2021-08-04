@@ -173,5 +173,8 @@
         <page name='剑指 Offer 58 - II_左旋转字符串 '/>
         <page name='剑指 Offer 30_包含min函数的栈 '/>
         <page name='剑指 Offer 66_构建乘积数组 '/>
+        <page name='剑指 Offer 14- I_剪绳子 '/>
+        <page name='剑指 Offer 14- II_剪绳子 II'/>
+        <page name='剑指 Offer 48_最长不含重复字符的子字符串 '/>
     </pages>
 </playground>
