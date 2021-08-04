@@ -176,5 +176,8 @@
         <page name='剑指 Offer 14- I_剪绳子 '/>
         <page name='剑指 Offer 14- II_剪绳子 II'/>
         <page name='剑指 Offer 48_最长不含重复字符的子字符串 '/>
+        <page name='剑指 Offer 54_二叉搜索树的第k大节点 '/>
+        <page name='剑指 Offer 55 - I_二叉树的深度 '/>
+        <page name='剑指 Offer 34_二叉树中和为某一值的路径 '/>
     </pages>
 </playground>
