@@ -186,5 +186,7 @@
         <page name='剑指 Offer 60_n个骰子的点数 '/>
         <page name='剑指 Offer 55 - II_平衡二叉树 '/>
         <page name='剑指 Offer 43_1～n 整数中 1 出现的次数 '/>
+        <page name='剑指 Offer 38_字符串的排列 '/>
+        <page name='剑指 Offer 59 - II_队列的最大值 '/>
     </pages>
 </playground>
