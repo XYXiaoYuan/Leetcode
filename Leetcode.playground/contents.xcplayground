@@ -188,5 +188,7 @@
         <page name='剑指 Offer 43_1～n 整数中 1 出现的次数 '/>
         <page name='剑指 Offer 38_字符串的排列 '/>
         <page name='剑指 Offer 59 - II_队列的最大值 '/>
+        <page name='剑指 Offer 67_把字符串转换成整数 '/>
+        <page name='剑指 Offer 46_把数字翻译成字符串 '/>
     </pages>
 </playground>
