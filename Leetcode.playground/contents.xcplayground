@@ -194,5 +194,6 @@
         <page name='剑指 Offer 11_旋转数组的最小数字 '/>
         <page name='剑指 Offer 12_矩阵中的路径 '/>
         <page name='剑指 Offer 07_重建二叉树 '/>
+        <page name='剑指 Offer 22_链表中倒数第k个节点 '/>
     </pages>
 </playground>
