@@ -54,7 +54,9 @@ class Solution {
 }
 
 let s = Solution()
-let result = s.merge(&[1,2,3,0,0,0], 3, &[2,5,6], 3)
+var nums1 = [1,2,3,0,0,0]
+var nums2 = [2,5,6]
+let result = s.merge(&nums1, 3, nums2, 3)
 print("结果result = \(result)")
 
 

@@ -156,6 +156,7 @@
         <page name='171_Excel表列序号'/>
         <page name='258_各位相加'/>
         <page name='918_环形子数组的最大和'/>
+        <page name='面试题 01.02_判定是否互为字符重排 '/>
         <page name='剑指 Offer 56 - II_数组中数字出现的次数 II'/>
         <page name='剑指 Offer 64_求1+2+…+n'/>
         <page name='剑指 Offer 65_不用加减乘除做加法'/>
@@ -195,5 +196,12 @@
         <page name='剑指 Offer 12_矩阵中的路径 '/>
         <page name='剑指 Offer 07_重建二叉树 '/>
         <page name='剑指 Offer 22_链表中倒数第k个节点 '/>
+        <page name='剑指 Offer 36_二叉搜索树与双向链表 '/>
+        <page name='剑指 Offer 31_栈的压入、弹出序列 '/>
+        <page name='剑指 Offer 37_序列化二叉树 '/>
+        <page name='剑指 Offer 26_树的子结构 '/>
+        <page name='剑指 Offer 28_对称的二叉树 '/>
+        <page name='剑指 Offer 20_表示数值的字符串 '/>
+        <page name='剑指 Offer 21_调整数组顺序使奇数位于偶数前面 '/>
     </pages>
 </playground>
