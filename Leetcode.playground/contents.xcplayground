@@ -156,6 +156,8 @@
         <page name='171_Excel表列序号'/>
         <page name='258_各位相加'/>
         <page name='918_环形子数组的最大和'/>
+        <page name='204_计数质数 '/>
+        <page name='415_字符串相加 '/>
         <page name='面试题 01.02_判定是否互为字符重排 '/>
         <page name='剑指 Offer 56 - II_数组中数字出现的次数 II'/>
         <page name='剑指 Offer 64_求1+2+…+n'/>
