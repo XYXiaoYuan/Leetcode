@@ -47,13 +47,13 @@ class Solution {
             // 如果找到根节点
             if num == preorder[0] {
                 root?.left = buildTree(
-                                Array(preorder[1..<index+1]),
-                                Array(inorder[0..<index])
-                            )
+                    Array(preorder[1..<index+1]),
+                    Array(inorder[0..<index])
+                )
                 root?.right = buildTree(
-                                Array(preorder[index+1..<preorder.endIndex]),
-                                Array(inorder[index+1..<inorder.endIndex])
-                            )
+                    Array(preorder[index+1..<preorder.endIndex]),
+                    Array(inorder[index+1..<inorder.endIndex])
+                )
             }
         }
         
