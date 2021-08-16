@@ -205,5 +205,8 @@
         <page name='剑指 Offer 28_对称的二叉树 '/>
         <page name='剑指 Offer 20_表示数值的字符串 '/>
         <page name='剑指 Offer 21_调整数组顺序使奇数位于偶数前面 '/>
+        <page name='剑指 Offer 27_二叉树的镜像 '/>
+        <page name='551_学生出勤记录 I '/>
+        <page name='552_学生出勤记录 II'/>
     </pages>
 </playground>
