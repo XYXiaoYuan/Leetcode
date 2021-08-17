@@ -43,9 +43,34 @@
 
 class Solution {
     func checkRecord(_ n: Int) -> Int {
-        let mod = 1000000007
+        let mod: Int64 = 1000000007
 
-        var f: [Int] = [Int].init(repeating: 1, count: n <= 5 ? 6 : n + 1)
+        var a010: Int64 = 1
+        var a011: Int64 = 0, a012: Int64 = 0, a110: Int64 = 0, a111: Int64 = 0, a112: Int64 = 0
+        
+        for _ in 0..<n {
+            let new_a010: Int64 = (a010 + a011 + a012) % mod
+            let new_a011: Int64 = a010
+            let new_a012: Int64 = a011
+            let new_a110: Int64 = (a010 + a011 + a012 + a110 + a111 + a112) % mod
+            let new_a111: Int64 = a110
+            let new_a112: Int64 = a111
+            
+            a010 = new_a010
+            a011 = new_a011
+            a012 = new_a012
+            a110 = new_a110
+            a111 = new_a111
+            a112 = new_a112
+        }
+        
+        return Int((a010 + a011 + a012 + a110 + a111 + a112) % mod)
+    }
+    
+    func checkRecord1(_ n: Int) -> Int {
+        let mod: Int64 = 1000000007
+
+        var f: [Int64] = [Int64].init(repeating: 0, count: n <= 5 ? 6 : n + 1)
         f[0] = 1
         f[1] = 2
         f[2] = 4
@@ -55,12 +80,12 @@ class Solution {
             f[i] = ((2 * f[i - 1] % mod) + (mod - f[i - 4])) % mod
         }
 
-        var sum = f[n]
+        var sum: Int64 = f[n]
         for i in 1..<n {
             sum += (f[i - 1] * f[n - i]) % mod
         }
 
-        return sum % mod
+        return Int(sum % mod)
     }
 }
 
