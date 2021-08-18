@@ -36,13 +36,13 @@
 class Solution {
     func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
         var quadruplets: [[Int]] = [[Int]]()
-        if  nums.count < 4 {
+        if nums.isEmpty || nums.count < 4 {
             return quadruplets
         }
 
-        var nums = nums.sorted()
-        let length = nums.count
-        for i in 0..<(length - 3) {
+        let nums = nums.sorted()
+        let count = nums.count
+        for i in 0..<(count - 3) {
             if i > 0, nums[i] == nums[i - 1] {
                 continue
             }
@@ -51,11 +51,11 @@ class Solution {
                 break
             }
 
-            if nums[i] + nums[length - 3] + nums[length - 2] + nums[length - 1] < target {
+            if nums[i] + nums[count - 3] + nums[count - 2] + nums[count - 1] < target {
                 continue
             }
 
-            for j in (i + 2)..<(length - 2) {
+            for j in (i + 1)..<(count - 2) {
                 if j > i + 1, nums[j] == nums[j - 1] {
                     continue
                 }
@@ -64,12 +64,12 @@ class Solution {
                     break
                 }
 
-                if nums[i] + nums[j] + nums[length - 2] + nums[length - 1] < target {
+                if nums[i] + nums[j] + nums[count - 2] + nums[count - 1] < target {
                     continue
                 }
 
                 var left = j + 1
-                var right = length - 1
+                var right = count - 1
                 while left < right {
                     let sum = nums[i] + nums[j] + nums[left] + nums[right]
                     if sum == target {
@@ -100,8 +100,8 @@ let s = Solution()
 let result = s.fourSum([1,0,-1,0,-2,2], 0)
 print(result)
 
-assert(s.fourSum([1,0,-1,0,-2,2], 0) == [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]])
-assert(s.fourSum([2,2,2,2,2], 8) == [[2,2,2,2]])
+//assert(s.fourSum([1,0,-1,0,-2,2], 0) == [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]])
+//assert(s.fourSum([2,2,2,2,2], 8) == [[2,2,2,2]])
 
 /// 全局打印,发布时不触发, isDebug == false时不打印
 public func print<T>(_ msg: T,
