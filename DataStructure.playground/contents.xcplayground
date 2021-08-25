@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='BinaryTree'/>
+        <page name='BitSet'/>
+        <page name='BloomFilter'/>
+        <page name='Hash'/>
+        <page name='LinkList'/>
+        <page name='Queue'/>
+        <page name='Stack'/>
+        <page name='Heap'/>
+    </pages>
+</playground>
