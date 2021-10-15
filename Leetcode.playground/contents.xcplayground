@@ -211,5 +211,7 @@
         <page name='18_四数之和'/>
         <page name='LCP 06. 拿硬币'/>
         <page name='1323. 6 和 9 组成的最大数字 '/>
+        <page name='504. 七进制数 '/>
+        <page name='628. 三个数的最大乘积 '/>
     </pages>
 </playground>
