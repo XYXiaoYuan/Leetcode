@@ -209,5 +209,6 @@
         <page name='551_学生出勤记录 I '/>
         <page name='552_学生出勤记录 II'/>
         <page name='18_四数之和'/>
+        <page name='LCP 06. 拿硬币'/>
     </pages>
 </playground>
