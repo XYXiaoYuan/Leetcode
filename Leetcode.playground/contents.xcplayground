@@ -214,5 +214,7 @@
         <page name='504. 七进制数 '/>
         <page name='628. 三个数的最大乘积 '/>
         <page name='1512. 好数对的数目 '/>
+        <page name='LCP 17. 速算机器人 '/>
+        <page name='LCP 22. 黑白方格画 '/>
     </pages>
 </playground>
