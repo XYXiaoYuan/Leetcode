@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
-        <page name='NC91 最长递增子序列'/>
+        <page name='NC'/>
+        <page name='NC4 判断链表中是否有环'/>
+        <page name='NC17 最长回文子串'/>
+        <page name='NC32 求平方根'/>
+        <page name='NC38 螺旋矩阵'/>
         <page name='NC40 两个链表生成相加链表'/>
-        <page name='NC78 反转链表'/>
         <page name='NC61 两数之和'/>
         <page name='NC68 跳台阶'/>
-        <page name='NC4 判断链表中是否有环'/>
-        <page name='NC38 螺旋矩阵'/>
-        <page name='NC32 求平方根'/>
-        <page name='NC93 设计LRU缓存结构'/>
-        <page name='NC119 最小的K个数'/>
         <page name='NC76 用两个栈实现队列'/>
-        <page name='NC103 反转字符串'/>
+        <page name='NC78 反转链表'/>
         <page name='NC88 寻找第K大'/>
-        <page name='NC17 最长回文子串'/>
+        <page name='NC93 设计LRU缓存结构'/>
+        <page name='NC103 反转字符串'/>
+        <page name='NC119 最小的K个数'/>
         <page name='NC140 排序'/>
     </pages>
 </playground>

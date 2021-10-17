@@ -2,6 +2,7 @@ import Foundation
 
 /// 栈
 public struct Stack<T> {
+    public init() {}
     
     /// Datastructure consisting of a generic item.
     fileprivate var array = [T]()

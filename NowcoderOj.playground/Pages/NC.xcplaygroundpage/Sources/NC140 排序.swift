@@ -23,7 +23,10 @@
   
 
  */
-public class Solution {
+public class NC140_排序 {
+//class Solution {
+    public init() {}
+        
     /**
      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
      * 将给定数组排序
@@ -68,12 +71,12 @@ public class Solution {
 //        if array.count < 1 {
 //            return array
 //        }
-//        
+//
 //        let pivot = array[array.count / 2]
 //        let less = array.filter { $0 < pivot }
 //        let equal = array.filter { $0 == pivot }
 //        let more  = array.filter { $0 > pivot }
-//        
+//
 //        return MySort(less) + equal + MySort(more)
     }
 }
@@ -85,10 +88,10 @@ public class Solution {
 
 //assert(s.maxValue(input1) == 12)
 
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 

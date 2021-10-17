@@ -32,8 +32,12 @@
  复制
  */
 
-class Solution {
-    func hasCycle(_ head: ListNode?) -> Bool {
+public class NC4_判断链表中是否有环 {
+//class Solution {
+    
+    public init() {}
+    
+    public func hasCycle(_ head: ListNode?) -> Bool {
         if head == nil || head?.next == nil {
             return false
         }
@@ -53,18 +57,18 @@ class Solution {
     }
 }
 
-let s = Solution()
-let head1 = ListNode(3, ListNode(2, ListNode(0, ListNode(-4, nil))))
-let result = s.hasCycle(head1)
-print(result)
-
-//assert(s.maxValue(input1) == 12)
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}
+//let s = Solution()
+//let head1 = ListNode(3, ListNode(2, ListNode(0, ListNode(-4, nil))))
+//let result = s.hasCycle(head1)
+//print(result)
+//
+////assert(s.maxValue(input1) == 12)
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 
 

@@ -31,7 +31,11 @@
 
  */
 
-public class Solution {
+public class NC91_最长递增子序列 {
+//class Solution {
+    public init() {}
+
+        
     /**
      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
      * retrun the longest increasing subsequence
@@ -46,7 +50,7 @@ public class Solution {
         var dp: [Int] = [Int].init(repeating: 0, count: arr.count)
         dp[0] = 1
         var maxValue = 1
-        var result: [Int] = [Int]()
+        let result: [Int] = [Int]()
         for i in 1..<dp.count {
             dp[i] = 1
             for j in 0..<i {
@@ -64,18 +68,18 @@ public class Solution {
 }
 
 
-let s = Solution()
-let input1 = [1,2,8,6,4]
-let input2 = [2,1,5,3,6,4,8,9,7]
-let result = s.LIS(input1)
-print(result)
-
-//assert(s.maxValue(input1) == 12)
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}
+//let s = Solution()
+//let input1 = [1,2,8,6,4]
+//let input2 = [2,1,5,3,6,4,8,9,7]
+//let result = s.LIS(input1)
+//print(result)
+//
+////assert(s.maxValue(input1) == 12)
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 

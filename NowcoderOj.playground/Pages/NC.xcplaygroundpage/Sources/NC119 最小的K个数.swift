@@ -33,7 +33,11 @@
 
  */
 
-public class Solution {
+public class NC119_最小的K个数 {
+//class Solution {
+    public init() {}
+
+        
     /**
      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
      *
@@ -63,15 +67,16 @@ public class Solution {
     }
 }
 
-let s = Solution()
-let result = s.GetLeastNumbers_Solution([4,5,1,6,2,7,3,8], 4)
-print(result)
+//let s = Solution()
+//let result = s.GetLeastNumbers_Solution([4,5,1,6,2,7,3,8], 4)
+//print(result)
+//
+////assert(s.maxValue(input1) == 12)
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 
-//assert(s.maxValue(input1) == 12)
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}

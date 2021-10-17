@@ -35,7 +35,11 @@
  9
  */
 
-public class Solution {
+public class NC93_设计LRU缓存结构 {
+//class Solution {
+    public init() {}
+
+        
     /**
      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
      * lru design
@@ -45,5 +49,6 @@ public class Solution {
      */
     func LRU ( _ operators: [[Int]],  _ k: Int) -> [Int] {
         // write code here
+        return []
     }
 }
