@@ -26,19 +26,16 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
-    func multiply(_ num1: String, _ num2: String) -> String {
+class _043_字符串相乘 {
+//class Solution {
+    public init() {}
 
+    public func multiply(_ num1: String, _ num2: String) -> String {
+        return ""
     }
     
     
 }
 
-class Solution1 {
-    func reverse(_ x: Int) -> Int {
-        let nums = "\(x)".reversed()
-        
-    }
-}
 
 //: [Next](@next)

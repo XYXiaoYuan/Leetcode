@@ -29,7 +29,10 @@
  链接：https://leetcode-cn.com/problems/add-two-numbers
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-class Solution {
+class _002_两数相加 {
+//class Solution {
+    public init() {}
+
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         if l1 == nil { return l2 }
         if l2 == nil { return l1 }

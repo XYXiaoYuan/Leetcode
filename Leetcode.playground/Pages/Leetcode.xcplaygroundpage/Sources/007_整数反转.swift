@@ -38,9 +38,11 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
+public class _007_整数反转 {
+//class Solution {
+    public init() {}
     
-    func reverse(_ x: Int) -> Int {
+    public func reverse(_ x: Int) -> Int {
         var x = Int64(x)
         var res: Int64 = 0
         while x != 0 {
@@ -56,7 +58,7 @@ class Solution {
         return Int(res)
     }
     
-    func reverse1(_ x: Int) -> Int {
+    public func reverse1(_ x: Int) -> Int {
         var res: Int = 0
         let max: Int = 214748364
         

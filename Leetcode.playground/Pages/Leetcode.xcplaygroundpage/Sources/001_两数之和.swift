@@ -24,8 +24,11 @@ import Foundation
  */
 
 // t = O(N), s = O(N)
-class Solution {
-    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+public class _001_两数之和 {
+//class Solution {
+    public init() {}
+    
+    public func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         var dict = [Int: Int]()
 
         for (i, n) in nums.enumerated() {
@@ -40,8 +43,8 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.twoSum([2, 5, 11, 7], 9)
-print(result)
+//let s = _001_两数之和()
+//let result = s.twoSum([2, 5, 11, 7], 9)
+//print(result)
 
 //: [Next](@next)

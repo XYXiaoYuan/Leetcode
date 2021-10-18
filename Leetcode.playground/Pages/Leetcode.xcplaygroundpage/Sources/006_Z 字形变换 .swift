@@ -47,14 +47,16 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-//class Solution {
+//public class _006_Z 字形变换 {
+//public class Solution {
+//    public init() {}
 //    public String convert(String s, int numRows) {
 //        if (numRows == 1) return s;
 //        StringBuilder[] rows = new StringBuilder[numRows];
 //        for(int i = 0; i < numRows; i++) {
 //            rows[i] = new StringBuilder();
 //        }
-//        
+//
 //        int n = 2 * numRows - 2;
 //        for (int i = 0; i < s.length(); i++) {
 //            int x = i % n;

@@ -39,8 +39,11 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
-    func uniquePaths(_ m: Int, _ n: Int) -> Int {
+public class _062_不同路径 {
+//class Solution {
+    public init() {}
+    
+    public func uniquePaths(_ m: Int, _ n: Int) -> Int {
         var dp: [[Int]] = Array.init(repeating: [Int].init(repeating: 0, count: n), count: m)
         
         dp[0][0] = 1
@@ -71,18 +74,18 @@ class Solution {
 }
 
 
-let s = Solution()
-let result = s.uniquePaths(3, 7)
-print(result)
-
-assert(s.uniquePaths(3, 2) == 3)
-assert(s.uniquePaths(7, 3) == 28)
-assert(s.uniquePaths(3, 3) == 6)
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}
+//let s = _062_不同路径()
+//let result = s.uniquePaths(3, 7)
+//print(result)
+//
+//assert(s.uniquePaths(3, 2) == 3)
+//assert(s.uniquePaths(7, 3) == 28)
+//assert(s.uniquePaths(3, 3) == 6)
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 

@@ -21,8 +21,11 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
-    func spiralOrder(_ matrix: [[Int]]) -> [Int] {
+public class _054_螺旋矩阵 {
+//class Solution {
+    public init() {}
+    
+    public func spiralOrder(_ matrix: [[Int]]) -> [Int] {
         if matrix.isEmpty { return [] }
         
         var result = [Int]()
@@ -61,19 +64,19 @@ class Solution {
     }
 }
 
-let s = Solution()
-let input1 = [[1,2,3],[4,5,6],[7,8,9]]
-let input2 = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-let result = s.spiralOrder(input1)
-print(result)
-
-assert(s.spiralOrder(input1) == [1,2,3,6,9,8,7,4,5])
-assert(s.spiralOrder(input2) == [1,2,3,4,8,12,11,10,9,5,6,7])
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}
+//let s = _054_螺旋矩阵()
+//let input1 = [[1,2,3],[4,5,6],[7,8,9]]
+//let input2 = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+//let result = s.spiralOrder(input1)
+//print(result)
+//
+//assert(s.spiralOrder(input1) == [1,2,3,6,9,8,7,4,5])
+//assert(s.spiralOrder(input2) == [1,2,3,4,8,12,11,10,9,5,6,7])
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 

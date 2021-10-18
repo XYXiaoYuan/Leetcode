@@ -40,8 +40,11 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
-    func lengthOfLongestSubstring(_ s: String) -> Int {
+public class _003_无重复字符的最长子串 {
+//class Solution {
+    public init() {}
+    
+    public func lengthOfLongestSubstring(_ s: String) -> Int {
         let sArray: [String] = Array(arrayLiteral: s)
         guard !sArray.isEmpty else {
             return 0
@@ -57,8 +60,8 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.lengthOfLongestSubstring("abcabcbb")
-print("结果为 \(result)")
+//let s = _003_无重复字符的最长子串()
+//let result = s.lengthOfLongestSubstring("abcabcbb")
+//print("结果为 \(result)")
 
 //: [Next](@next)

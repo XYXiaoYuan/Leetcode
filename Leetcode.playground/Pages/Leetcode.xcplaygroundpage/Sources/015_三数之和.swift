@@ -12,10 +12,13 @@
 ]
 */
 
-import UIKit
+import Foundation
 
-class Solution {
-    func threeSum(_ nums: [Int]) -> [[Int]] {
+public class _015_三数之和 {
+//class Solution {
+    public init() {}
+    
+    public func threeSum(_ nums: [Int]) -> [[Int]] {
         var res: [[Int]] = []
         if nums.count < 3 {
             return res
@@ -56,7 +59,7 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.threeSum([-1, 0, 1, 2, -1, -4])
-print(result)
+//let s = _015_三数之和()
+//let result = s.threeSum([-1, 0, 1, 2, -1, -4])
+//print(result)
 

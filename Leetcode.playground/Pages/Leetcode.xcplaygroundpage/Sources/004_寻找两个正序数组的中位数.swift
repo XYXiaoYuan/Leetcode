@@ -49,8 +49,11 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
-    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+public class _004_寻找两个正序数组的中位数 {
+//class Solution {
+    public init() {}
+    
+    public func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
         if nums1.isEmpty && nums2.count == 1 {
             return Double(nums2.first!)
         }
@@ -77,9 +80,9 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.findMedianSortedArrays([1,3], [2])
-print("结果result = \(result)")
+//let s = _004_寻找两个正序数组的中位数()
+//let result = s.findMedianSortedArrays([1,3], [2])
+//print("结果result = \(result)")
 
 
 //: [Next](@next)

@@ -24,8 +24,11 @@
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class Solution {
-    func minPathSum(_ grid: [[Int]]) -> Int {
+public class _064_最小路径和 {
+//class Solution {
+    public init() {}
+    
+    public func minPathSum(_ grid: [[Int]]) -> Int {
         let rows = grid.count
         let cols = grid[0].count
                 
@@ -52,26 +55,26 @@ class Solution {
     }
 }
 
-let s = Solution()
-let input1 = [
-    [1,3,1],
-    [1,5,1],
-    [4,2,1]
-]
-let input2 = [
-    [1,2,3],
-    [4,5,6]
-]
-let result = s.minPathSum(input1)
-print(result)
-
-assert(s.minPathSum(input1) == 7)
-assert(s.minPathSum(input2) == 12)
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func print<T>(_ msg: T,
-                     line: Int = #line) {
-    let prefix = "🏷_\(line)"
-    print(prefix, msg)
-}
+//let s = _064_最小路径和()
+//let input1 = [
+//    [1,3,1],
+//    [1,5,1],
+//    [4,2,1]
+//]
+//let input2 = [
+//    [1,2,3],
+//    [4,5,6]
+//]
+//let result = s.minPathSum(input1)
+//print(result)
+//
+//assert(s.minPathSum(input1) == 7)
+//assert(s.minPathSum(input2) == 12)
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func print<T>(_ msg: T,
+//                     line: Int = #line) {
+//    let prefix = "🏷_\(line)"
+//    print(prefix, msg)
+//}
 
