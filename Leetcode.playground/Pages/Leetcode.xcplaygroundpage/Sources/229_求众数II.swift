@@ -38,10 +38,11 @@
 
 import Foundation
 
-class Solution {
+public class _229_求众数II {
+    public init() {}
     
     /// 摩尔投票法
-    func majorityElement(_ nums: [Int]) -> [Int] {
+    public func majorityElement(_ nums: [Int]) -> [Int] {
         var element1 = 0
         var element2 = 0
         var vote1 = 0
@@ -88,7 +89,7 @@ class Solution {
     }
     
     /// 哈希统计
-    func majorityElement1(_ nums: [Int]) -> [Int] {
+    public func majorityElement1(_ nums: [Int]) -> [Int] {
         var dict: [Int: Int] = [Int: Int]()
         
         for num in nums {
@@ -112,10 +113,10 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.majorityElement([1,1,1,3,3,2,2,2])
-print("\(s) --- \(result)")
-
-assert(s.majorityElement([3,2,3]) == [3])
-assert(s.majorityElement([1]) == [1])
-assert(s.majorityElement([1,1,1,3,3,2,2,2]) == [1,2])
+//let s = _229_求众数II()
+//let result = s.majorityElement([1,1,1,3,3,2,2,2])
+//print("\(s) --- \(result)")
+//
+//assert(s.majorityElement([3,2,3]) == [3])
+//assert(s.majorityElement([1]) == [1])
+//assert(s.majorityElement([1,1,1,3,3,2,2,2]) == [1,2])

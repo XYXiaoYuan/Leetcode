@@ -392,6 +392,16 @@ do {
 }
 
 do {
+    let s = _229_求众数II()
+    let result = s.majorityElement([1,1,1,3,3,2,2,2])
+    print("\(s) --- \(result)")
+
+    assert(s.majorityElement([3,2,3]) == [3])
+    assert(s.majorityElement([1]) == [1])
+    assert(s.majorityElement([1,1,1,3,3,2,2,2]) == [1,2])
+}
+
+do {
     let s = _233_数字1的个数()
     let result = s.countDigitOne(13)
     print("\(s) --- \(result)")
