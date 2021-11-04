@@ -642,6 +642,16 @@ do {
 }
 
 do {
+    let s = _1218_最长定差子序列()
+    let result = s.longestSubsequence([1,2,3,4], 1)
+    print("\(s) --- \(result)")
+
+    assert(s.longestSubsequence([1,2,3,4], 1) == 4)
+    assert(s.longestSubsequence([1,3,5,7], 1) == 1)
+    assert(s.longestSubsequence([1,5,7,8,5,3,4,2,1], -2) == 4)
+}
+
+do {
     let s = _1222_可以攻击国王的皇后()
     let result = s.queensAttacktheKing([[0,1],[1,0],[4,0],[0,4],[3,3],[2,4]], [0,0])
     print("\(s) --- \(result)")

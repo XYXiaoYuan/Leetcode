@@ -37,8 +37,10 @@
 
 import Foundation
 
-class Solution {
-    func longestSubsequence(_ arr: [Int], _ difference: Int) -> Int {
+public class _1218_最长定差子序列 {
+    public init() {}
+    
+    public func longestSubsequence(_ arr: [Int], _ difference: Int) -> Int {
         var ans = 0
         
         var dp = [Int: Int]()
@@ -51,10 +53,10 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.longestSubsequence([1,2,3,4], 1)
-print("\(s) --- \(result)")
-
-assert(s.longestSubsequence([1,2,3,4], 1) == 4)
-assert(s.longestSubsequence([1,3,5,7], 1) == 1)
-assert(s.longestSubsequence([1,5,7,8,5,3,4,2,1], -2) == 4)
+//let s = _1218_最长定差子序列()
+//let result = s.longestSubsequence([1,2,3,4], 1)
+//print("\(s) --- \(result)")
+//
+//assert(s.longestSubsequence([1,2,3,4], 1) == 4)
+//assert(s.longestSubsequence([1,3,5,7], 1) == 1)
+//assert(s.longestSubsequence([1,5,7,8,5,3,4,2,1], -2) == 4)
