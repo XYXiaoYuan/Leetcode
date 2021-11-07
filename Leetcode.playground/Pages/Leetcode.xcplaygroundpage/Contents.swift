@@ -454,6 +454,17 @@ do {
 }
 
 do {
+    let s = _299_猜数字游戏()
+    let result = s.getHint("1123", "0111")
+    print("\(s) --- \(result)")
+
+    assert(s.getHint("1807", "7810") == "1A3B")
+    assert(s.getHint("1123", "0111") == "1A1B")
+    assert(s.getHint("1", "0") == "0A0B")
+    assert(s.getHint("1", "1") == "1A0B")
+}
+
+do {
     let s = _300_最长递增子序列()
     let result = s.lengthOfLIS([10,9,2,5,3,7,101,18])
     print("\(s) --- \(result)")

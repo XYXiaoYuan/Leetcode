@@ -56,8 +56,10 @@
 
 import Foundation
 
-class Solution {
-    func getHint(_ secret: String, _ guess: String) -> String {
+public class _299_猜数字游戏 {
+    public init() {}
+   
+    public func getHint(_ secret: String, _ guess: String) -> String {
         var bulls = 0
                 
         var cntS = [Int].init(repeating: 0, count: 10)
@@ -87,9 +89,9 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.getHint("1123", "0111")
-print("\(s) --- \(result)")
+//let s = _299_猜数字游戏()
+//let result = s.getHint("1123", "0111")
+//print("\(s) --- \(result)")
 
 //assert(s.getHint("1807", "7810") == "1A3B")
 //assert(s.getHint("1123", "0111") == "1A1B")
