@@ -517,6 +517,15 @@ do {
 }
 
 do {
+    let s = _598_范围求和II()
+    let result = s.maxCount(1,1,[[1,1]])
+    print("\(s) --- \(result)")
+    
+    assert(s.maxCount(1,1,[[1,1]]) == 1)
+    assert(s.maxCount(3,5,[[2,2],[3,3]]) == 4)
+}
+
+do {
     let s = _628_三个数的最大乘积()
     let result = s.numIdenticalPairs([1,2,3,1,1,3])
     print("\(s) --- \(result)")

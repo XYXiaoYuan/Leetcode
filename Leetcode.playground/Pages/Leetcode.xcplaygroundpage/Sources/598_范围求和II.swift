@@ -44,8 +44,10 @@
 
 import Foundation
 
-class Solution {
-    func maxCount(_ m: Int, _ n: Int, _ ops: [[Int]]) -> Int {
+public class _598_范围求和II {
+    public init() {}
+    
+    public func maxCount(_ m: Int, _ n: Int, _ ops: [[Int]]) -> Int {
         var minX = m
         var minY = n
         
@@ -58,9 +60,9 @@ class Solution {
     }
 }
 
-let s = Solution()
-let result = s.maxCount(1,1,[[1,1]])
-print("\(s) --- \(result)")
+//let s = _598_范围求和II()
+//let result = s.maxCount(1,1,[[1,1]])
+//print("\(s) --- \(result)")
 
-assert(s.maxCount(1,1,[[1,1]]) == 1)
-assert(s.maxCount(3,5,[[2,2],[3,3]]) == 4)
+//assert(s.maxCount(3,3,[[2,2],[3,3]]) == 4)
+//assert(s.maxCount(3,5,[[2,2],[3,3]]) == 4)
