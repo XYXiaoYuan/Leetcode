@@ -568,6 +568,16 @@ do {
 }
 
 do {
+    let s = _829_连续整数求和()
+    let result = s.consecutiveNumbersSum(15)
+    print("\(s) --- \(result)")
+
+    assert(s.consecutiveNumbersSum(5) == 2)
+    assert(s.consecutiveNumbersSum(9) == 3)
+    assert(s.consecutiveNumbersSum(15) == 4)
+}
+
+do {
     let s = _832_翻转图像()
     let result = s.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
     print("\(s) --- \(result)")
