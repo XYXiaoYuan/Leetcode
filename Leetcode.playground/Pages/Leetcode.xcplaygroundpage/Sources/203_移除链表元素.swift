@@ -38,29 +38,26 @@ public class _203_移除链表元素 {
     public init() {}
     
     public func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
-        guard var head = head else {
-            return nil
-        }
+        if head == nil { return nil }
+        var head = head
         
         // 新链表的头结点
-        var newHead = ListNode(0)
+        let dummyHead = ListNode(0)
         // 新链表的尾结点
-        var newTail = newHead
+        var newTail = dummyHead
 
         while head != nil {
-            if head.val != val {
+            if head?.val != val {
                 newTail.next = head
-                newTail = head
+                newTail = head!
             }
 
-            if let next = head.next {
-                head = next
-            }
+            head = head?.next
         }
 
         newTail.next = nil
 
-        return newHead.next
+        return dummyHead.next
     }
 }
 

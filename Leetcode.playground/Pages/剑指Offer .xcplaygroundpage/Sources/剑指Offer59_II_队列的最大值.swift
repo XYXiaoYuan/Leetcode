@@ -56,7 +56,7 @@ public class _剑指Offer59_II_队列的最大值 {
     
     func pop_front() -> Int {
         if !queue.isEmpty {
-            var popValue = queue.removeFirst()
+            let popValue = queue.removeFirst()
 
             if popValue == maxQueue.first! {
                 maxQueue.removeFirst()

@@ -44,8 +44,8 @@ public class _581_最短无序连续子数组 {
         }
         
         if i < j {
-            var subMax = nums[i...j].max()!
-            var subMin = nums[i...j].min()!
+            let subMax = nums[i...j].max()!
+            let subMin = nums[i...j].min()!
             
             // expand area
             while j+1 < nums.count && subMax > nums[j+1] {
@@ -62,7 +62,7 @@ public class _581_最短无序连续子数组 {
     
     
     public func findUnsortedSubarray1(_ nums: [Int]) -> Int {
-        var sortedNums = nums.sorted(by: < )
+        let sortedNums = nums.sorted(by: < )
         var start = 0
         var end = 0
         for i in 0 ..< nums.count {

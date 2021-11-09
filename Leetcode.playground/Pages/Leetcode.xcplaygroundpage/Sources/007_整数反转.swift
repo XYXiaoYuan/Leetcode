@@ -47,9 +47,9 @@ public class _007_整数反转 {
         var res: Int64 = 0
         while x != 0 {
             res = res * 10 + x % 10
-            if res > Int64.max {
-                return 0
-            }
+//            if res > Int64.max {
+//                return 0
+//            }
             if res < Int64.min {
                 return 0
             }

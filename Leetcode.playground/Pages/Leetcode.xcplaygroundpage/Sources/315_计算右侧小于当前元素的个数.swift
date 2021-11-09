@@ -53,7 +53,7 @@ public class _315_计算右侧小于当前元素的个数 {
         {
             return []
         }
-        var sortCopy = nums.sorted(by:<)
+        let sortCopy = nums.sorted(by:<)
         var indices:[Int:Int] = [:]
         for (index, num) in sortCopy.enumerated()
         {
@@ -65,8 +65,8 @@ public class _315_计算右侧小于当前元素的个数 {
         
         for i in stride(from:nums.count - 1, through:0, by:-1)
         {
-            var rangeIndex = indices[nums[i]]!
-            var rangeSum = getRangeSum(&fenwickTree, rangeIndex - 1)
+            let rangeIndex = indices[nums[i]]!
+            let rangeSum = getRangeSum(&fenwickTree, rangeIndex - 1)
             result.insert(rangeSum, at:0)
             update(&fenwickTree,rangeIndex, 1)
         }

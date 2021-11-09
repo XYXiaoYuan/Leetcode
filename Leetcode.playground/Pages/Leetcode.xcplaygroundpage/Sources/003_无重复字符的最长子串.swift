@@ -50,13 +50,13 @@ public class _003_无重复字符的最长子串 {
             return 0
         }
         
-        var map: [String: Int] = [:]
+//        var map: [String: Int] = [:]
+//        
+//        var max: Int = 0
+//        var left: Int = 0
         
-        var max: Int = 0
-        var left: Int = 0
         
-        
-        return max
+        return 0
     }
 }
 

@@ -50,7 +50,7 @@ public class _剑指Offer42_连续子数组的最大和 {
             }
             maxValue = max(dp[i], maxValue)
             
-            print("dp[\(i)] = \(dp[i])")
+//            print("dp[\(i)] = \(dp[i])")
         }
 
         return maxValue

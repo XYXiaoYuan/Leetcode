@@ -47,7 +47,7 @@ public class _005_最长回文子串 {
         
         var low = 0
         var maxL = 0
-        var count = 1
+//        var count = 1
         let word = Array(s)
         for i in 0..<word.count - 1 {
             checkSubString(i,i,word,&low,&maxL)

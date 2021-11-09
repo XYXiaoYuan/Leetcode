@@ -209,7 +209,7 @@ do {
 do {
     let s = _剑指Offer66_构建乘积数组()
     let input1 = [1, 2, 3, 4, 5]
-    let input2 = [1, 2, 0, 4, 5]
+//    let input2 = [1, 2, 0, 4, 5]
     let input3 = [1, 2, 0, 4, 0]
     let result = s.constructArr(input3)
     print("\(s) --- \(result)")

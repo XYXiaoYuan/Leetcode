@@ -44,7 +44,7 @@ public class _剑指Offer30_包含min函数的栈 {
     }
     
     func pop() {
-        array.popLast()
+       let _ = array.popLast()
     }
     
     func top() -> Int {

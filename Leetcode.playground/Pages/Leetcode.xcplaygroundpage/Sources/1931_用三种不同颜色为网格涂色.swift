@@ -42,8 +42,8 @@ public class _1931_用三种不同颜色为网格涂色 {
         dp[1][0] = 0
         dp[0][1] = 0
         
-        for i in 0..<m {
-            for j in 0..<n {
+        for _ in 0..<m {
+            for _ in 0..<n {
                 
             }
         }

@@ -37,7 +37,7 @@ public class _164_最大间距 {
             return 0
         }
         
-        let numsSorted = nums.sorted()
+        let _ = nums.sorted()
                 
         return 0
     }

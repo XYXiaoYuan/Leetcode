@@ -61,20 +61,20 @@ public class _004_寻找两个正序数组的中位数 {
             return Double(nums1.first!)
         }
         
-        let count: Int = max(nums1.count, nums2.count)
-        var cur1: Int = 0
-        var cur2: Int = 0
-        
-        var middleIndex: (Int, Int) = (0, 0)
-        if count & 2 == 1 {
-            middleIndex
-        }
-        
-        for i in 0..<count {
-            if nums1[cur1] < nums2[cur2] {
-                
-            }
-        }
+//        let count: Int = max(nums1.count, nums2.count)
+//        var cur1: Int = 0
+//        var cur2: Int = 0
+//
+//        var middleIndex: (Int, Int) = (0, 0)
+//        if count & 2 == 1 {
+//            middleIndex
+//        }
+//
+//        for i in 0..<count {
+//            if nums1[cur1] < nums2[cur2] {
+//
+//            }
+//        }
         
         return 1.0
     }

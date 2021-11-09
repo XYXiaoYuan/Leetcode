@@ -32,7 +32,7 @@ public class _剑指Offer22_链表中倒数第k个节点 {
         var headA = head  //声明指针A
         var headB = head  //声明另外一个目标指针B
         
-        for i in 0..<k-1 { //0到k-1开区间
+        for _ in 0..<k-1 { //0到k-1开区间
             if headA?.next != nil {
                 headA = headA?.next
             } else { //当为nil的时候说明存在输入的k大于整个链表的长度

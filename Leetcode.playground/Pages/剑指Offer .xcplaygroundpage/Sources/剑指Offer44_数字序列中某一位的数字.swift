@@ -52,7 +52,7 @@ public class _剑指Offer44_数字序列中某一位的数字 {
         // 例子2 位数是3，n=3 表示的是第三个，对应的数字是 100 + 3/3-1 = 100 里的 3%3+3=3的第三个数字
         // 考虑基数 10^(digits-1)
         var t = 1
-        for i in 1..<digits {
+        for _ in 1..<digits {
             t *= 10
         }
         // 这里考虑一下对应的是第几个数字，需要考虑前面提到边缘情况就是正好能被digits整除
@@ -63,7 +63,7 @@ public class _剑指Offer44_数字序列中某一位的数字 {
         // 如果是最后一位，index=digits, 那么一次除法都没有
         // 如果是第一位，index=0, 则需要除digits-1次
         // 总结就是 digits - 位数
-        for i in index..<digits {
+        for _ in index..<digits {
             t /= 10
         }
 

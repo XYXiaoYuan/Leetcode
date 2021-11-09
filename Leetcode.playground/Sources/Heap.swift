@@ -39,6 +39,7 @@ extension Heap {
     /// Read and remove the next item off `Heap`.
     ///
     /// - returns: The next item of type `ElementType` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
+    @discardableResult
     public mutating func pull() -> ElementType? {
         let item = peek()
         guard !self.isEmpty else {

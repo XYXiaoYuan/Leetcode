@@ -43,12 +43,12 @@ class MyLinkedList {
     
     /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
     func get(_ index: Int) -> Int {
-0
+        0
     }
     
     /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
     func addAtHead(_ val: Int) {
-0
+        
     }
     
     /** Append a node of value val to the last element of the linked list. */

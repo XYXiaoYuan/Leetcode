@@ -49,7 +49,7 @@ public class _295_数据流的中位数 {
         
         var start = 0, end = nums.count - 1
         while start <= end {
-            var mid = start + (end - start) / 2
+            let mid = start + (end - start) / 2
             if num > nums[mid] {
                 start = mid + 1
             } else if num < nums[mid] {

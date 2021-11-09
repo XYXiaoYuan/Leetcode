@@ -24,15 +24,15 @@ do {
 }
 
 do {
-    let s = _048_旋转图像()
-    var input1 = [
-        [1,2,3],
-        [4,5,6],
-        [7,8,9]
-      ]
+//    let s = _048_旋转图像()
+//    var input1 = [
+//        [1,2,3],
+//        [4,5,6],
+//        [7,8,9]
+//      ]
 
-    let result = s.rotate(&input1)
-    print("\(s) --- \(result)")
+//    let result = s.rotate(&input1)
+//    print("\(s) --- \(result)")
 }
 
 do {
@@ -161,18 +161,18 @@ do {
 }
 
 do {
-    let s = _075_颜色分类()
-    var nums: [Int] = [2,0,2,1,1,0]
-    let result = s.sortColors(&nums)
-    print("\(s) --- \(result)")
+//    let s = _075_颜色分类()
+//    var nums: [Int] = [2,0,2,1,1,0]
+//    let result = s.sortColors(&nums)
+//    print("\(s) --- \(result)")
 }
 
 do {
-    let s = _088_合并两个有序数组()
-    var nums1 = [1,2,3,0,0,0]
-    let nums2 = [2,5,6]
-    let result = s.merge(&nums1, 3, nums2, 3)
-    print("\(s) --- \(result)")
+//    let s = _088_合并两个有序数组()
+//    var nums1 = [1,2,3,0,0,0]
+//    let nums2 = [2,5,6]
+//    let result = s.merge(&nums1, 3, nums2, 3)
+//    print("\(s) --- \(result)")
 }
 
 do {
@@ -430,10 +430,10 @@ do {
 }
 
 do {
-    let s = _344_反转字符串()
-    var origin: [Character] = ["h","e","l","l","o"]
-    let result = s.reverseString(&origin)
-    print("\(s) --- \(result)")
+//    let s = _344_反转字符串()
+//    var origin: [Character] = ["h","e","l","l","o"]
+//    let result = s.reverseString(&origin)
+//    print("\(s) --- \(result)")
 }
 
 do {

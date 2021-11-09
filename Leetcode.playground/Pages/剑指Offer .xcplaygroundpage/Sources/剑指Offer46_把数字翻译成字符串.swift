@@ -33,7 +33,7 @@ public class _剑指Offer46_把数字翻译成字符串 {
         }
         
         // 先转数组
-        var numArr = String(num).map { String($0) }
+        let numArr = String(num).map { String($0) }
         var dp = [Int](repeating:0, count:numArr.count)
         // 初始化前两个元素
         dp[0] = 1
