@@ -45,13 +45,13 @@ public class _152_爱生气的书店老板 {
             sum += customers[i] * (1 - grumpy[i])
         }
         
-        print("所有不生气时间内的顾客总数 \(sum)")
+//        print("所有不生气时间内的顾客总数 \(sum)")
         /// 生气的 X 分钟内,会让多少顾客不满意
         var curValue: Int = 0
         for i in 0..<X {
             curValue += customers[i] * grumpy[i]
         }
-        print("生气的 X 分钟内,会让多少顾客不满意 \(curValue)")
+//        print("生气的 X 分钟内,会让多少顾客不满意 \(curValue)")
 
         var resValue = curValue
         
@@ -62,7 +62,7 @@ public class _152_爱生气的书店老板 {
             curValue = curValue + customers[i] * grumpy[i] - customers[i - X] * grumpy[i - X]
 
             /// 求所有窗口内不满意顾客的最大值
-            print("i = \(i), i - X = \(i - X) 每次 \(i - X + 1)的 resValue = \(resValue) --- curValue = \(curValue)")
+//            print("i = \(i), i - X = \(i - X) 每次 \(i - X + 1)的 resValue = \(resValue) --- curValue = \(curValue)")
             resValue = max(resValue, curValue)
         }
         

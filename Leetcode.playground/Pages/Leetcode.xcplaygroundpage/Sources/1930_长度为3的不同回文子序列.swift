@@ -53,7 +53,7 @@ public class _1930_长度为3的不同回文子序列 {
             map.updateValue(index, forKey: item)
         }
         
-        print(map)
+//        print(map)
         
         var ans = 0
         var used: Set<String> = Set<String>()
@@ -70,7 +70,6 @@ public class _1930_长度为3的不同回文子序列 {
                 for j in (i + 1)..<index {
                     set.insert(arrs[j])
                 }
-                print("set = \(set)")
                 ans += set.count
             }
             used.insert(item)

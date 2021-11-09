@@ -60,7 +60,7 @@ public class _1178_猜字谜 {
                 k |= 1 << (char.asciiValue! - Character("a").asciiValue!)
             }
             map[k, default:0] += 1
-            print("map = \(map)")
+//            print("map = \(map)")
         }
         for i in 0..<puzzles.count {
             var k = 0

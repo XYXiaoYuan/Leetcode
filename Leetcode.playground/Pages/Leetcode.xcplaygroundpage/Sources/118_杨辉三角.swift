@@ -36,7 +36,7 @@ public class _118_杨辉三角 {
         for i in 0..<numRows {
             var temp: [Int] = [Int].init(repeating: 1, count: i + 1)
             for j in 0..<numRows where i >= j {
-                print("i = \(i) -- j = \(j)")
+//                print("i = \(i) -- j = \(j)")
                 if j == 0 || j == i {
                     continue
                 } else {

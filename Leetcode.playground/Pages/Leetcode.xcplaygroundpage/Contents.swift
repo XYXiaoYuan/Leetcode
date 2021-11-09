@@ -30,12 +30,7 @@ do {
         [4,5,6],
         [7,8,9]
       ]
-//    var input2 = [
-//        [ 5, 1, 9,11],
-//        [ 2, 4, 8,10],
-//        [13, 3, 6, 7],
-//        [15,14,12,16]
-//      ]
+
     let result = s.rotate(&input1)
     print("\(s) --- \(result)")
 }
@@ -43,7 +38,7 @@ do {
 do {
     let s = _051_N皇后()
     let result = s.solveNQueens(4)
-    print(result)
+    print("\(s) --- \(result)")
 
     assert(_051_N皇后().solveNQueens(1) == [["Q"]])
     assert(_051_N皇后().solveNQueens(2) == [])
@@ -120,51 +115,9 @@ do {
         [0,0,0,0,0],
         [0,0,0,0,0]
     ]
-    let input7 = [
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [1,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [1,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,1],
-        [0,0],
-        [0,0],
-        [1,0],
-        [0,0],
-        [0,0],
-        [0,1],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,1],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [1,0],
-        [0,0],
-        [0,0],
-        [0,0],
-        [0,0]
-    ]
+   
     let result = s.uniquePathsWithObstacles(input5)
-    print(result)
+    print("\(s) --- \(result)")
 
     assert(s.uniquePathsWithObstacles(input1) == 2)
     assert(s.uniquePathsWithObstacles(input2) == 0)
@@ -172,8 +125,6 @@ do {
     assert(s.uniquePathsWithObstacles(input4) == 1)
     assert(s.uniquePathsWithObstacles(input5) == 0)
     assert(s.uniquePathsWithObstacles(input6) == 0)
-    assert(s.uniquePathsWithObstacles(input7) == 0)
-
 }
 
 do {
@@ -188,7 +139,7 @@ do {
         [4,5,6]
     ]
     let result = s.minPathSum(input1)
-    print(result)
+    print("\(s) --- \(result)")
 
     assert(s.minPathSum(input1) == 7)
     assert(s.minPathSum(input2) == 12)
@@ -219,7 +170,7 @@ do {
 do {
     let s = _088_合并两个有序数组()
     var nums1 = [1,2,3,0,0,0]
-    var nums2 = [2,5,6]
+    let nums2 = [2,5,6]
     let result = s.merge(&nums1, 3, nums2, 3)
     print("\(s) --- \(result)")
 }
@@ -299,6 +250,14 @@ do {
     let s = _152_乘积最大子数组()
     let result = s.maxProduct([-2])
     print("\(s) --- \(result)")
+}
+
+do {
+    let s = _163_缺失的区间()
+    let result = s.findMissingRanges([0, 1, 3, 50, 75], 0, 99)
+    print("\(s) --- \(result)")
+
+    assert(s.findMissingRanges([0, 1, 3, 50, 75], 0, 99) == ["2", "4->49", "51->74", "76->99"])
 }
 
 do {

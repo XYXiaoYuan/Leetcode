@@ -48,7 +48,6 @@ public class _679_24点游戏 {
                     continue
                 }
                 var nums_ = nums.enumerated().filter({ $0.0 != i && $0.0 != j }).map({ $0.1 })
-                print("nums_ = \(nums_)")
                 let parts = possibleParts(a: nums[i], b: nums[j])
                 for p in parts {
                     nums_.append(p)

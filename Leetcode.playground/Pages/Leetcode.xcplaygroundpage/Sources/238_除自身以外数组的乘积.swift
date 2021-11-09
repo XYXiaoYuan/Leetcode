@@ -38,22 +38,12 @@ public class _238_除自身以外数组的乘积 {
         var q = 1
         for i in 0..<nums.count {
             res[i] = p
-            print("第 \(i) 次 --- res = \(res)")
-            print("乘之前🦄 第 \(i) 次 --- p = \(p)")
             p *= nums[i]
-            print("乘之后🐶 第 \(i) 次 --- p = \(p)")
-            
-            print("\n")
         }
         
         for i in stride(from: nums.count - 1, to: 0, by: -1) {
-            print("乘之前🦄第 \(i) 次 --- q = \(q)")
             q *= nums[i]
-            print("乘之后🐶第 \(i) 次 --- q = \(q)")
             res[i - 1] *= q
-            print("第 \(i) 次 --- res = \(res)")
-            
-            print("\n")
         }
                 
         return res

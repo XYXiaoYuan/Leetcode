@@ -56,7 +56,7 @@ public class _062_不同路径 {
             dp[0][j] = 1
         }
         
-        print(dp)
+//        print(dp)
         
         for i in 1..<m {
             for j in 1..<n {
