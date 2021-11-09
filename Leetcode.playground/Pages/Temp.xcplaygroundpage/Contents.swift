@@ -16,35 +16,28 @@
 
 import Foundation
 
-public class _163_缺失的区间 {
+public class _660_移除9 {
     public init() {}
     
-    public func findMissingRanges(_ nums: [Int], _ lower: Int, _ upper: Int) -> [String] {
-        var numsVar = nums
-        numsVar.append(upper + 1)
-        let numbers = numsVar
+    public func newInteger1(_ n: Int) -> Int {
+        var ans = ""
         
-        var result: [String] = [String]()
-        
-        var last = lower - 1
-        for num in numbers {
-            /// 比上一个数字中有缺失,需要添加在答案中的
-            let start = last + 1
-            if num - last > 2 {
-                result.append("\(start)->\(num - 1)")
-            } else if num - last == 2 {
-                result.append("\(start)")
-            }
-            last = num
+        var n = n
+        while n != 0 {
+            ans = String(n % 9) + ans
+            n /= 9
         }
-            
-        return result
+
+        return Int(ans) ?? 0
+    }
+    
+    public func newInteger(_ n: Int) -> Int {
+        return n != 0 ? newInteger(n / 9) * 10 + n % 9 : 0
     }
 }
 
-//let s = _163_缺失的区间()
-//let result = s.findMissingRanges([0, 1, 3, 50, 75], 0, 99)
-//print("\(s) --- \(result)")
+let s = _660_移除9()
+let result = s.newInteger(9)
+print("\(s) --- \(result)")
 
-//assert(s.findMissingRanges([0, 1, 3, 50, 75], 0, 99) == ["2", "4->49", "51->74", "76->99"])
-
+assert(s.newInteger(9) == 10)

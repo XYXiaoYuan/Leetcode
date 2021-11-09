@@ -506,6 +506,14 @@ do {
 }
 
 do {
+    let s = _660_移除9()
+    let result = s.newInteger(9)
+    print("\(s) --- \(result)")
+
+    assert(s.newInteger(9) == 10)
+}
+
+do {
     let s = _679_24点游戏()
     let result = s.judgePoint24([4, 1, 8, 7])
     print("\(s) --- \(result)")
