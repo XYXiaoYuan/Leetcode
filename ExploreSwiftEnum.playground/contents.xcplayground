@@ -3,5 +3,6 @@
     <pages>
         <page name='枚举的继承'/>
         <page name='Mems'/>
+        <page name='命名空间'/>
     </pages>
 </playground>

@@ -4,7 +4,9 @@ import UIKit
 import Foundation
 import PlaygroundSupport
 
-PlaygroundPage.current.liveView = ViewController()
+let rootViewController = ViewController()
+let nav = UINavigationController(rootViewController: rootViewController)
+PlaygroundPage.current.liveView = nav
 
 /// 列表组`协议`
 protocol TableSection {
@@ -94,6 +96,10 @@ class ViewController: UITableViewController {
         let cell = UITableViewCell()
         cell.textLabel?.text = row.mandatoryTitle
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 
