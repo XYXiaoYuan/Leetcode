@@ -2,8 +2,13 @@
 
 import Foundation
 
-var greeting = "Hello, playground"
+enum Publishers {}
 
-
+//extension Publishers {
+//    struct First<Upstream>: Publisher where Upstream: Publisher {
+//        ...
+//    }
+//  }
+//}
 
 //: [Next](@next)
