@@ -4,5 +4,6 @@
         <page name='枚举的继承'/>
         <page name='Mems'/>
         <page name='命名空间'/>
+        <page name='枚举的Case模式_模式匹配'/>
     </pages>
 </playground>
