@@ -24,6 +24,14 @@ do {
 }
 
 do {
+    let s = _043_字符串相乘()
+    let result = s.multiply("123", "456")
+    print("\(s) --- \(result)")
+    
+    assert(s.multiply("123", "456") == "56088")
+}
+
+do {
 //    let s = _048_旋转图像()
 //    var input1 = [
 //        [1,2,3],
