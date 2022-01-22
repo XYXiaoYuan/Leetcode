@@ -76,7 +76,8 @@ public class _1104_二叉树寻路 {
     }
 }
 
-let s = _1104_二叉树寻路()
-let result = s.pathInZigZagTree(26)
-print(result)
+
+//let s = _1104_二叉树寻路()
+//let result = s.pathInZigZagTree(26)
+//print(result)
 

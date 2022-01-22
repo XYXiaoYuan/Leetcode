@@ -597,6 +597,15 @@ do {
 }
 
 do {
+    let s = _1104_二叉树寻路()
+    let result = s.pathInZigZagTree(26)
+    print(result)
+    
+    assert(s.pathInZigZagTree(14) == [1,3,4,14])
+    assert(s.pathInZigZagTree(26) == [1,2,6,10,26])
+}
+
+do {
     let s = _1134_阿姆斯特朗数()
     let result = s.isArmstrong(153)
     print("\(s) --- \(result)")
