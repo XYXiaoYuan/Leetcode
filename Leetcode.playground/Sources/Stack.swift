@@ -45,5 +45,19 @@ public struct Stack<T> {
     public var top: T? {
         return array.last
     }
+    
+    public var first: T? {
+        return array.first
+    }
+    
+    public func toString() -> String {
+        var result: String = String()
+        for item in array {
+            if let value = item as? String {
+                result.append(value)
+            }
+        }
+        return result
+    }
 }
 

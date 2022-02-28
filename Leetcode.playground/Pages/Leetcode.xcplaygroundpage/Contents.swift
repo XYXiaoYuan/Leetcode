@@ -709,6 +709,15 @@ do {
 }
 
 do {
+    let s = _1805_字符串中不同整数的数目()
+    let result = s.numDifferentIntegers("a123bc34d8ef34")
+    print("\(s) --- \(result)")
+    assert(s.numDifferentIntegers("a123bc34d8ef34") == 3)
+    assert(s.numDifferentIntegers("leet1234code234") == 2)
+    assert(s.numDifferentIntegers("a1b01c001") == 1)
+}
+
+do {
     let s = _1930_长度为3的不同回文子序列()
     let result = s.countPalindromicSubsequence("aabca")
     print("\(s) --- \(result)")
@@ -717,6 +726,7 @@ do {
     assert(s.countPalindromicSubsequence("adc") == 0)
     assert(s.countPalindromicSubsequence("bbcbaba") == 4)
 }
+
 
 //: [Next](@next)
 

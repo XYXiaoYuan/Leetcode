@@ -44,7 +44,7 @@ public class _1805_字符串中不同整数的数目 {
 //class Solution {
     public init() {}
 
-    func numDifferentIntegers(_ word: String) -> Int {
+    public func numDifferentIntegers(_ word: String) -> Int {
         let letters = word.map { "\($0)" }
         var set: Set<String> = Set<String>()
         var mystack: Stack<String> = Stack<String>()
@@ -76,23 +76,23 @@ public class _1805_字符串中不同整数的数目 {
     }
 }
 
-do {
-    let s = _1805_字符串中不同整数的数目()
-    let result = s.numDifferentIntegers("a123bc34d8ef34")
-    print(result)
-    assert(result == 3)
-}
-
-do {
-    let s = _1805_字符串中不同整数的数目()
-    let result = s.numDifferentIntegers("leet1234code234")
-    print(result)
-    assert(result == 2)
-}
-
-do {
-    let s = _1805_字符串中不同整数的数目()
-    let result = s.numDifferentIntegers("a1b01c001")
-    print(result)
-    assert(result == 1)
-}
+//do {
+//    let s = _1805_字符串中不同整数的数目()
+//    let result = s.numDifferentIntegers("a123bc34d8ef34")
+//    print(result)
+//    assert(result == 3)
+//}
+//
+//do {
+//    let s = _1805_字符串中不同整数的数目()
+//    let result = s.numDifferentIntegers("leet1234code234")
+//    print(result)
+//    assert(result == 2)
+//}
+//
+//do {
+//    let s = _1805_字符串中不同整数的数目()
+//    let result = s.numDifferentIntegers("a1b01c001")
+//    print(result)
+//    assert(result == 1)
+//}
