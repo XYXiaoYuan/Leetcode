@@ -54,16 +54,16 @@ public class _1196_最多可以买到的苹果数量 {
     }
 }
 
-do {
-    let s = _1196_最多可以买到的苹果数量()
-    let result = s.maxNumberOfApples([100,200,150,1000])
-    print(result)
-    assert(result == 4)
-}
-
-do {
-    let s = _1196_最多可以买到的苹果数量()
-    let result = s.maxNumberOfApples([900,950,800,1000,700,800])
-    print(result)
-    assert(result == 5)
-}
+//do {
+//    let s = _1196_最多可以买到的苹果数量()
+//    let result = s.maxNumberOfApples([100,200,150,1000])
+//    print(result)
+//    assert(result == 4)
+//}
+//
+//do {
+//    let s = _1196_最多可以买到的苹果数量()
+//    let result = s.maxNumberOfApples([900,950,800,1000,700,800])
+//    print(result)
+//    assert(result == 5)
+//}

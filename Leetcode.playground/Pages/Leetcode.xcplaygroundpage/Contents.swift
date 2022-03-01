@@ -648,6 +648,14 @@ do {
 }
 
 do {
+    let s = _1196_最多可以买到的苹果数量()
+    let result = s.maxNumberOfApples([100,200,150,1000])
+    print("\(s) --- \(result)")
+    assert(s.maxNumberOfApples([100,200,150,1000]) == 4)
+    assert(s.maxNumberOfApples([900,950,800,1000,700,800]) == 5)
+}
+
+do {
     let s = _1201_丑数III()
     let result = s.nthUglyNumber(3, 2, 3, 5)
     print("\(s) --- \(result)")
