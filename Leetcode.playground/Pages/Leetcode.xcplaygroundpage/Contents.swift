@@ -735,6 +735,14 @@ do {
     assert(s.countPalindromicSubsequence("bbcbaba") == 4)
 }
 
+do {
+    let s = _1979_找出数组的最大公约数()
+    let result = s.findGCD([2,5,6,9,10])
+    print("\(s) --- \(result)")
+    assert(s.findGCD([2,5,6,9,10]) == 2)
+    assert(s.findGCD([7,5,6,8,3]) == 1)
+    assert(s.findGCD([3,3]) == 3)
+}
 
 //: [Next](@next)
 

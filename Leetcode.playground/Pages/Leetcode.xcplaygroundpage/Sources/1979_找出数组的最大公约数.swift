@@ -72,24 +72,24 @@ public class _1979_找出数组的最大公约数 {
     }
 }
 
-do {
-    let s = _1979_找出数组的最大公约数()
-    let result = s.findGCD([2,5,6,9,10])
-    print(result)
-    assert(result == 2)
-}
-
-do {
-    let s = _1979_找出数组的最大公约数()
-    let result = s.findGCD([7,5,6,8,3])
-    print(result)
-    assert(result == 1)
-}
-
-do {
-    let s = _1979_找出数组的最大公约数()
-    let result = s.findGCD([3,3])
-    print(result)
-    assert(result == 3)
-}
+//do {
+//    let s = _1979_找出数组的最大公约数()
+//    let result = s.findGCD([2,5,6,9,10])
+//    print(result)
+//    assert(result == 2)
+//}
+//
+//do {
+//    let s = _1979_找出数组的最大公约数()
+//    let result = s.findGCD([7,5,6,8,3])
+//    print(result)
+//    assert(result == 1)
+//}
+//
+//do {
+//    let s = _1979_找出数组的最大公约数()
+//    let result = s.findGCD([3,3])
+//    print(result)
+//    assert(result == 3)
+//}
 
