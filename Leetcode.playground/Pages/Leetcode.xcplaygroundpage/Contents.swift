@@ -445,6 +445,16 @@ do {
 }
 
 do {
+    let s = _372_超级次方()
+    let result = s.superPow(2, [3])
+    print("\(s) --- \(result)")
+    assert(s.superPow(2, [3]) == 8)
+    assert(s.superPow(2, [1, 0]) == 1024)
+    assert(s.superPow(1, [4,3,3,8,5,2]) == 1)
+    assert(s.superPow(2147483647, [2, 0, 0]) == 1198)
+}
+
+do {
     let s = _378_有序矩阵中第K小的元素()
     let input1 =
     [

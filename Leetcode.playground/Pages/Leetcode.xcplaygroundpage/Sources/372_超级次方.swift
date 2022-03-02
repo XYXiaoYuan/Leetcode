@@ -76,32 +76,32 @@ public class _372_超级次方 {
     }
 }
 
-do {
-    let s = _372_超级次方()
-    let result = s.superPow(2, [3])
-    print(result)
-    assert(result == 8)
-}
-
-do {
-    let s = _372_超级次方()
-    let result = s.superPow(2, [1, 0])
-    print(result)
-    assert(result == 1024)
-}
-
-do {
-    let s = _372_超级次方()
-    let result = s.superPow(1, [4,3,3,8,5,2])
-    print(result)
-    assert(result == 1)
-}
-
-do {
-    let s = _372_超级次方()
-    let result = s.superPow(2147483647, [2, 0, 0])
-    print(result)
-    assert(result == 1198)
-}
+//do {
+//    let s = _372_超级次方()
+//    let result = s.superPow(2, [3])
+//    print(result)
+//    assert(result == 8)
+//}
+//
+//do {
+//    let s = _372_超级次方()
+//    let result = s.superPow(2, [1, 0])
+//    print(result)
+//    assert(result == 1024)
+//}
+//
+//do {
+//    let s = _372_超级次方()
+//    let result = s.superPow(1, [4,3,3,8,5,2])
+//    print(result)
+//    assert(result == 1)
+//}
+//
+//do {
+//    let s = _372_超级次方()
+//    let result = s.superPow(2147483647, [2, 0, 0])
+//    print(result)
+//    assert(result == 1198)
+//}
 
 
