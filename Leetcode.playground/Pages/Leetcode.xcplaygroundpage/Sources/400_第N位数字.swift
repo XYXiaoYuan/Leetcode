@@ -31,7 +31,7 @@ public class _400_第N位数字 {
 //class Solution {
     public init() {}
         
-    func findNthDigit(_ n: Int) -> Int {
+    public func findNthDigit(_ n: Int) -> Int {
         // 先找到digits
         var digits = 1
         var base = 9
@@ -68,7 +68,7 @@ public class _400_第N位数字 {
         return t % 10
     }
     
-    func findNthDigit1(_ n: Int) -> Int {
+    public func findNthDigit1(_ n: Int) -> Int {
         if n < 10 {return n }
         var n = n
         
@@ -110,10 +110,3 @@ public class _400_第N位数字 {
 
     }
 }
-
-do {
-    let s = _400_第N位数字()
-    let result = s.findNthDigit(3)
-    print(result)
-}
-

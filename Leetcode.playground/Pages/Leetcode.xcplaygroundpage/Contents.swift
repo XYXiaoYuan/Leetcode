@@ -479,6 +479,15 @@ do {
 }
 
 do {
+    let s = _400_第N位数字()
+    let result = s.findNthDigit(3)
+    print("\(s) --- \(result)")
+
+    assert(s.findNthDigit(3) == 3)
+    assert(s.findNthDigit(11) == 0)
+}
+
+do {
     let s = _507_完美数()
     let result = s.checkPerfectNumber(28)
     print("\(s) --- \(result)")
