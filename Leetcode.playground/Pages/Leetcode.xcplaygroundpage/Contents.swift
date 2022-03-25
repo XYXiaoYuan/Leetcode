@@ -533,6 +533,15 @@ do {
 }
 
 do {
+    let s = _633_平方数之和()
+    let result = s.judgeSquareSum(3)
+    print("\(s) --- \(result)")
+    
+    assert(s.judgeSquareSum(5) == true)
+    assert(s.judgeSquareSum(3) == false)
+}
+
+do {
     let s = _660_移除9()
     let result = s.newInteger(9)
     print("\(s) --- \(result)")

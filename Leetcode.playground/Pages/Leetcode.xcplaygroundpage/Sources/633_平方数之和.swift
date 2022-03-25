@@ -32,7 +32,7 @@ public class _633_平方数之和 {
 //class Solution {
     public init() {}
     
-    func judgeSquareSum(_ c: Int) -> Bool {
+    public func judgeSquareSum(_ c: Int) -> Bool {
         var a: Int = 0
         var b: Int = Int(sqrt(Double(c)))
         while a <= b {
@@ -49,9 +49,9 @@ public class _633_平方数之和 {
     }
 }
 
-do {
-    let s = _633_平方数之和()
-    let result = s.judgeSquareSum(3)
-    print(result)
-}
+//do {
+//    let s = _633_平方数之和()
+//    let result = s.judgeSquareSum(3)
+//    print(result)
+//}
 
