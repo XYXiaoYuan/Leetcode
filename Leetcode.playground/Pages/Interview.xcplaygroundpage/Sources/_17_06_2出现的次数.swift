@@ -1,4 +1,3 @@
-import Darwin
 /**
  https://leetcode.cn/problems/number-of-2s-in-range-lcci/
  
@@ -20,9 +19,11 @@ import Darwin
  */
 
 
-public class _面试题_17_06_2出现的次数 {
+public class _17_06_2出现的次数 {
+    public init() {}
+
 //class Solution class Solution {
-    func numberOf2sInRange(_ n: Int) -> Int {
+    public func numberOf2sInRange(_ n: Int) -> Int {
         var ans = 0
         var count: Int
         var res: Int
@@ -40,9 +41,9 @@ public class _面试题_17_06_2出现的次数 {
     }
 }
 
-do {
-    let s = _面试题_17_06_2出现的次数()
-    let result = s.numberOf2sInRange(25)
-    print(result)
-}
+//do {
+//    let s = _17_06_2出现的次数()
+//    let result = s.numberOf2sInRange(25)
+//    print(result)
+//}
 
