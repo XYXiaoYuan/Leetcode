@@ -489,6 +489,15 @@ do {
 }
 
 do {
+    let s = _390_消除游戏()
+    let result = s.lastRemaining(9)
+    print("\(s) --- \(result)")
+    
+    assert(s.lastRemaining(9) == 6)
+    assert(s.lastRemaining(1) == 1)
+}
+
+do {
     let s = _400_第N位数字()
     let result = s.findNthDigit(3)
     print("\(s) --- \(result)")

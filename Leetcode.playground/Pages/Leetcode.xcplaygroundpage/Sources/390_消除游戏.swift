@@ -1,4 +1,3 @@
-import Darwin
 /**
  https://leetcode.cn/problems/elimination-game/
  
@@ -72,9 +71,9 @@ public class _390_消除游戏 {
     }
 }
 
-do {
-    let s = _390_消除游戏()
-    let result = s.lastRemaining(9)
-    print(result)
-}
+//do {
+//    let s = _390_消除游戏()
+//    let result = s.lastRemaining(9)
+//    print(result)
+//}
 
