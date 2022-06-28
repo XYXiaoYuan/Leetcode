@@ -1,4 +1,3 @@
-import Darwin
 /**
  https://leetcode.cn/problems/integer-to-english-words/
  
@@ -32,9 +31,11 @@ import Darwin
 
 
 public class _273_整数转换英文表示 {
-    //class Solution class Solution {
+    public init() {}
+
+    //class Solution {
     // one digit
-    func one(_ num: Int) -> String {
+    private func one(_ num: Int) -> String {
         switch num {
         case 0: return ""
         case 1: return "One"
@@ -51,7 +52,7 @@ public class _273_整数转换英文表示 {
     }
     
     // two digit but < 20
-    func underTwenty(_ num: Int) -> String {
+    private func underTwenty(_ num: Int) -> String {
         switch num {
         case 0: return "Ten"
         case 1: return "Eleven"
@@ -68,7 +69,7 @@ public class _273_整数转换英文表示 {
     }
     
     // two digit but >= 20
-    func two(_ num: Int) -> String {
+    private func two(_ num: Int) -> String {
         switch num {
         case 2: return "Twenty"
         case 3: return "Thirty"
@@ -82,7 +83,7 @@ public class _273_整数转换英文表示 {
         }
     }
     
-    func format(_ num: Int) -> String? {
+    private func format(_ num: Int) -> String? {
         if num <= 0 { return nil }
         
         let hundred = num / 100
@@ -109,7 +110,7 @@ public class _273_整数转换英文表示 {
         return ans.joined(separator: " ")
     }
     
-    func numberToWords(_ num: Int) -> String {
+    public func numberToWords(_ num: Int) -> String {
         if num == 0 { return "Zero" }
         let billion = num / 1_000_000_000
         let million = (num - billion * 1_000_000_000) / 1_000_000
@@ -137,9 +138,9 @@ public class _273_整数转换英文表示 {
     }
 }
 
-do {
-    let s = _273_整数转换英文表示()
-    let result = s.numberToWords(25)
-    print(result)
-}
+//do {
+//    let s = _273_整数转换英文表示()
+//    let result = s.numberToWords(25)
+//    print(result)
+//}
 

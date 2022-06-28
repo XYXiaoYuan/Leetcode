@@ -412,6 +412,16 @@ do {
 }
 
 do {
+    let s = _273_整数转换英文表示()
+    let result = s.numberToWords(123)
+    print(result)
+    
+    assert(s.numberToWords(123) == "One Hundred Twenty Three")
+    assert(s.numberToWords(12345) == "Twelve Thousand Three Hundred Forty Five")
+    assert(s.numberToWords(1234567) == "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven")
+}
+
+do {
     let s = _279_完全平方数()
     let result = s.numSquares(12)
     print("\(s) --- \(result)")
