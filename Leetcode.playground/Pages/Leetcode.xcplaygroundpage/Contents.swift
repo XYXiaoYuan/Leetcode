@@ -378,6 +378,15 @@ do {
 }
 
 do {
+    let s = _234_回文链表()
+    let head = ListNode(1, ListNode(2, ListNode(2, ListNode(1))))
+    let result = s.isPalindrome(head)
+    print("\(s) --- \(result)")
+    
+    assert(s.isPalindrome(head) == true)
+}
+
+do {
     let s = _238_除自身以外数组的乘积()
     let result = s.productExceptSelf([1, 2, 3, 4])
     print("\(s) --- \(result)")

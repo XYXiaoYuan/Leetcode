@@ -95,10 +95,10 @@ public class _234_回文链表 {
     }
 }
 
-do {
-    let s = _234_回文链表()
-    let head = ListNode(1, ListNode(2, ListNode(2, ListNode(1))))
-    let result = s.isPalindrome(head)
-    print(result)
-}
+//do {
+//    let s = _234_回文链表()
+//    let head = ListNode(1, ListNode(2, ListNode(2, ListNode(1))))
+//    let result = s.isPalindrome(head)
+//    print(result)
+//}
 
