@@ -41,6 +41,24 @@ public class _390_消除游戏 {
     //class Solution class Solution {
     
     public func lastRemaining(_ n: Int) -> Int {
+        var ltr = true
+        var remain = n
+        var step = 1
+        var head = 1
+        
+        while remain > 1 {
+            if ltr || remain % 2 == 1 {
+                head = head + step
+            }
+            remain = remain / 2
+            step  = step * 2
+            ltr = !ltr
+        }
+        
+        return head
+    }
+    
+    public func lastRemaining1(_ n: Int) -> Int {
         return help(n, true)
     }
     
@@ -62,7 +80,7 @@ public class _390_消除游戏 {
                 //    2   4   6
                 // 2*(1   2   3  )
             } else { // 偶数长度的情况
-                return help(n / 2, !L2R) * 2 - 1
+                return 2 * help(n / 2, !L2R) - 1
                 //   1 2 3 4 5 6 7 8
                 //   1   3   5   7
                 // 2*(1   2   3   4) - 1
