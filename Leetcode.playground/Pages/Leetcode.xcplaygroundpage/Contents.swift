@@ -7,6 +7,17 @@ do {
 }
 
 do {
+    let s = _008_字符串转换整数()
+    let result = s.myAtoi("42")
+    print("\(s) --- \(result)")
+
+    assert(s.myAtoi("42") == 42)
+    assert(s.myAtoi("   -42") == -42)
+    assert(s.myAtoi("4193 with words") == 4193)
+    assert(s.myAtoi("words and 987") == 0)
+}
+
+do {
     let s = _018_四数之和()
     let result = s.fourSum([1,0,-1,0,-2,2], 0)
     print("\(s) --- \(result)")
