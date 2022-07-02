@@ -39,19 +39,19 @@ Times.test(title: "冒泡排序1") {
     testBubbleSort1()
 }
 
-extension Int: IntConvertible, Sortable {
-    public func toInt() -> Int {
-        return self
-    }
-}
-
+//extension Int: IntConvertible, Sortable {
+//    public func toInt() -> Int {
+//        return self
+//    }
+//}
+//
 //////////////////////////////////////
 // MARK: Playing code
 //////////////////////////////////////
 
-let input = [1, 2, 4, 6, 10, 5]
-var buckets = [Bucket<Int>(capacity: 15), Bucket<Int>(capacity: 15), Bucket<Int>(capacity: 15)]
-
-let sortedElements = bucketSort(input, distributor: RangeDistributor(), sorter: InsertionSorter(), buckets: buckets)
-
-print(sortedElements)
+//let input = [1, 2, 4, 6, 10, 5]
+//var buckets = [Bucket<Int>(capacity: 15), Bucket<Int>(capacity: 15), Bucket<Int>(capacity: 15)]
+//
+//let sortedElements = bucketSort(input, distributor: RangeDistributor(), sorter: InsertionSorter(), buckets: buckets)
+//
+//print(sortedElements)

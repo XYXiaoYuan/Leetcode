@@ -104,7 +104,7 @@ extension Int {
         
         let right = disorderCount - left
         reverse(array: &array, begin: array.count - right, end: array.count)
-    
+        
         return array
     }
     
