@@ -90,9 +90,9 @@ public class _227_基本计算器II {
     }
 }
 
-do {
-    let s = _227_基本计算器II()
-    let result = s.calculate("16*4/2")
-    print("\(s) --- \(result)")
-}
+//do {
+//    let s = _227_基本计算器II()
+//    let result = s.calculate("16*4/2")
+//    print("\(s) --- \(result)")
+//}
 
