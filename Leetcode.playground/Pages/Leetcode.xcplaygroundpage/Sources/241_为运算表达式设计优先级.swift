@@ -50,7 +50,7 @@ public class _241_为运算表达式设计优先级 {
     /// 过滤子问题，避免重复计算
     var memo = [String: [Int]]()
     
-    func diffWaysToCompute(_ expression: String) -> [Int] {
+    public func diffWaysToCompute(_ expression: String) -> [Int] {
         let s = expression
         /// 避免重复计算
         if let value = memo[s] {
@@ -96,9 +96,9 @@ public class _241_为运算表达式设计优先级 {
     }
 }
 
-do {
-    let s = _241_为运算表达式设计优先级()
-    let result = s.diffWaysToCompute("2-1-1")
-    print("\(s) --- \(result)")
-}
+//do {
+//    let s = _241_为运算表达式设计优先级()
+//    let result = s.diffWaysToCompute("2-1-1")
+//    print("\(s) --- \(result)")
+//}
 

@@ -404,6 +404,12 @@ do {
 }
 
 do {
+    let s = _241_为运算表达式设计优先级()
+    let result = s.diffWaysToCompute("2-1-1")
+    print("\(s) --- \(result)")
+}
+
+do {
     let s = _257_二叉树的所有路径()
     let result = s.binaryTreePaths(TreeNode(1,TreeNode(2,nil,TreeNode(5, nil, nil)),TreeNode(3,nil, nil)))
     print("\(s) --- \(result)")
