@@ -24,6 +24,13 @@ do {
 }
 
 do {
+    let s = _25_K个一组翻转链表()
+    let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
+    let result = s.reverseKGroup(head, 2)
+    print("\(s) --- \(result ?? nil)")
+}
+
+do {
     let s = _034_在排序数组中查找元素的第一个和最后一个位置()
     let input1: [Int] = [5,7,7,8,8,10]
     let input2: [Int] = []
