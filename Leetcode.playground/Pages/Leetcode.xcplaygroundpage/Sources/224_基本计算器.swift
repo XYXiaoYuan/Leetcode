@@ -41,7 +41,7 @@ public class _224_基本计算器 {
     public init() {}
     //class Solution class Solution {
         
-    func calculate(_ s: String) -> Int {
+    public func calculate(_ s: String) -> Int {
         var result = 0, sign = 1, num = 0
         var stack = [(result: Int, sign: Int)]()
         for char in s where char != " " {
@@ -73,9 +73,9 @@ public class _224_基本计算器 {
     }
 }
 
-do {
-    let s = _224_基本计算器()
-    let result = s.calculate("16*4/2")
-    print("\(s) --- \(result)")
-}
+//do {
+//    let s = _224_基本计算器()
+//    let result = s.calculate("16*4/2")
+//    print("\(s) --- \(result)")
+//}
 

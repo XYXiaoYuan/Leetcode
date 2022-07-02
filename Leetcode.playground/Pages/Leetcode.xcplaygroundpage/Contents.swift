@@ -370,6 +370,12 @@ do {
 }
 
 do {
+    let s = _224_基本计算器()
+    let result = s.calculate("1+2")
+    print("\(s) --- \(result)")
+}
+
+do {
     let s = _229_求众数II()
     let result = s.majorityElement([1,1,1,3,3,2,2,2])
     print("\(s) --- \(result)")
