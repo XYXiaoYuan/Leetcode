@@ -518,6 +518,17 @@ do {
 }
 
 do {
+    let s = _394_字符串解码()
+    let result = s.decodeString("3[a]2[bc]")
+    print("\(s) --- \(result)")
+    
+    assert(s.decodeString("3[a]2[bc]") == "aaabcbc")
+    assert(s.decodeString("3[a2[c]]") == "accaccacc")
+    assert(s.decodeString("2[abc]3[cd]ef") == "abcabccdcdcdef")
+    assert(s.decodeString("abc3[cd]xyz") == "abccdcdcdxyz")
+}
+
+do {
     let s = _400_第N位数字()
     let result = s.findNthDigit(3)
     print("\(s) --- \(result)")

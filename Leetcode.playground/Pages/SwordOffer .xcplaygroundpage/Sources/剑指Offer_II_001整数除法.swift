@@ -49,7 +49,7 @@
 
 
 public class _剑指Offer_II_001整数除法 {
-//class Solution {
+//class Soflution {
     public init() {}
     
     public func divide(_ dividend: Int, _ divisor: Int) -> Int {

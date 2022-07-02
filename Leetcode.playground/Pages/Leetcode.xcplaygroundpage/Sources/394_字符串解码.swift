@@ -74,11 +74,19 @@ public class _394_字符串解码 {
     }
 }
     
-do {
-    let s = _394_字符串解码()
-    let result = s.decodeString("3[a]2[bc]")
-    print("\(s) --- \(result)")
-}
+//do {
+//    let s = _394_字符串解码()
+//    let result = s.decodeString("3[a]2[bc]")
+//    print(result)
+//}
+
+
+
+//do {
+//    let s = _394_字符串解码()
+//    let result = s.decodeString("3[a2[c]]")
+//    print(result)
+//}
 
 
 

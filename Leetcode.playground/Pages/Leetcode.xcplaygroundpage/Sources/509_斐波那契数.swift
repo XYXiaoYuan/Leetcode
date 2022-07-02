@@ -41,8 +41,27 @@ public class _509_斐波那契数 {
 //class Solution {
     public init() {}
     
-    /// 直接用两个变量来推演
     public func fib(_ n: Int) -> Int {
+        let sqrt5 = Float(sqrt(5))
+        let fibN = pow((1 + sqrt5) / 2, Float(n)) - pow((1 - sqrt5) / 2, Float(n))
+        return Int(round(Double(fibN / sqrt5)))
+    }
+    
+    public func fib32(_ n: Int) -> Int {
+        if n <= 1 { return n }
+        
+        var first = 0
+        var second = 1
+        for _ in 0..<(n - 1) {
+            let sum = first + second
+            first = second
+            second = sum
+        }
+        return second
+    }
+    
+    /// 直接用两个变量来推演
+    public func fib31(_ n: Int) -> Int {
         var n = n
         if n <= 1 { return n }
         var first = 0
