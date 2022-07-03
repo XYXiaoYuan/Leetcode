@@ -74,4 +74,44 @@ class _002_两数相加 {
         
         return dummyHead.next
     }
+    
+    func addTwoNumbers1(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        func listNodeCount(_ node: ListNode?) -> Int {
+            var count = 0, node = node
+            while node != nil {
+                count += 1
+                node = node?.next
+            }
+            return count
+        }
+        
+        let count1 = listNodeCount(l1)
+        let count2 = listNodeCount(l2)
+        let l = count1 >= count2 ? l1 : l2
+        let s = l === l1 ? l2 : l1
+        var curL = l
+        var curS = s
+        var last = curL
+        var carry = 0
+        var curNum = 0
+        while curS != nil {
+            curNum = (curL?.val ?? 0) + (curS?.val ?? 0) + carry
+            curL?.val = (curNum % 10)
+            carry = (curNum / 10)
+            last = curL
+            curL = curL?.next
+            curS = curS?.next
+        }
+        while curL != nil {
+            curNum = (curL?.val ?? 0)  + carry
+            curL?.val = (curNum % 10)
+            carry = (curNum / 10)
+            last = curL
+            curL = curL?.next
+        }
+        if carry != 0 {
+            last?.next = ListNode(1)
+        }
+        return l
+    }
 }
