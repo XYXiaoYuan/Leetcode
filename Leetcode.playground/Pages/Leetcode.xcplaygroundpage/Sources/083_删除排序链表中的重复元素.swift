@@ -52,10 +52,10 @@ public class _83_删除排序链表中的重复元素 {
     }
 }
 
-do {
-    let s = _83_删除排序链表中的重复元素()
-    let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
-    let result = s.deleteDuplicates(head)
-    print("\(s) --- \(String(describing: result))")
-}
+//do {
+//    let s = _83_删除排序链表中的重复元素()
+//    let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
+//    let result = s.deleteDuplicates(head)
+//    print("\(s) --- \(String(describing: result))")
+//}
 
