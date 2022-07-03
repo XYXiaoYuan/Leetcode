@@ -60,6 +60,16 @@ do {
 }
 
 do {
+    let s = _剑指OfferII_023_两个链表的第一个重合节点()
+    let headA = ListNode(4, ListNode(1, ListNode(8, ListNode(4, ListNode(5, nil)))))
+    let headB = ListNode(5, ListNode(0, ListNode(1, ListNode(8, ListNode(4, ListNode(5, nil))))))
+    let result = s.getIntersectionNode(headA, headB)
+    if let result = result {
+        print("\(s) --- \(result.print())")
+    }
+}
+
+do {
     let s = _剑指Offer29_顺时针打印矩阵()
     let input1 = [[1,2,3],[4,5,6],[7,8,9]]
     let input2 = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
