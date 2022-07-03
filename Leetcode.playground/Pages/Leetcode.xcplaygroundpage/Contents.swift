@@ -28,7 +28,7 @@ do {
     let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
     let result = s.reverseKGroup(head, 2)
     if let result = result {
-        print("\(s) --- \(result.printListNode())")
+        print("\(s) --- \(result.print())")
     }
 }
 
@@ -208,7 +208,7 @@ do {
     let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
     let result = s.deleteDuplicates(head)
     if let result = result {
-        print("\(s) --- \(result.printListNode())")
+        print("\(s) --- \(result.print())")
     }
 }
 

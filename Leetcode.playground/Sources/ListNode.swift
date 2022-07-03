@@ -9,7 +9,7 @@ public class ListNode {
 }
 
 public extension ListNode {
-    func printListNode(_ valPrefix: String = "❗️") -> String {
+    func print(_ valPrefix: String = "❗️") -> String {
         var values = "[0_\(valPrefix)\(val)] -> "
         var index = 1
         while self.next != nil {

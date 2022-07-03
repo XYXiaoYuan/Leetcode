@@ -57,7 +57,7 @@ do {
     let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
     let result = s.deleteDuplicates(head)
     if let result = result {
-        print("\(s) --- \(result.printListNode())")
+        print("\(s) --- \(result.print())")
     }
 
 }
