@@ -60,8 +60,8 @@ public class _086_分隔链表 {
 }
 
 //let s = _086_分隔链表()
-//let head1 = ListNode(1, ListNode(4, ListNode(3, ListNode(2, ListNode(5, ListNode(2, nil))))))
-//let head2 = ListNode(2, ListNode(1, nil))
+//let head1 = ListNode.arrayToNode([1,4,3,2,5,2])
+//let head2 = ListNode.arrayToNode([2,1])
 //var resListNode = s.partition(head2, 3)
 //
 //var result = [Int]()

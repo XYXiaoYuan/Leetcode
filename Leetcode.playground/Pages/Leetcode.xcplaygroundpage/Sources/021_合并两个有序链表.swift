@@ -88,8 +88,8 @@ public class _021_合并两个有序链表 {
 }
 
 //let s = _021_合并两个有序链表()
-//let l1 = ListNode(1, ListNode(2, ListNode(4, nil)))
-//let l2 = ListNode(1, ListNode(3, ListNode(4, nil)))
+//let l1 = ListNode.arrayToNode([1,2,4])
+//let l2 = ListNode.arrayToNode([1,3,4])
 //var resListNode = s.mergeTwoLists(l1, l2)
 //
 //var result = [Int]()

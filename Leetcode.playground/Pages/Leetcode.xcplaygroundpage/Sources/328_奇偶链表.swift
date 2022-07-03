@@ -51,7 +51,7 @@ public class _328_奇偶链表 {
 }
 
 //let s = _328_奇偶链表()
-//let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
+//let head = ListNode.arrayToNode([1,2,3,4,5])
 //var resListNode = s.oddEvenList(head)
 //
 //var result = [Int]()

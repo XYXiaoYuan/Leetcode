@@ -90,8 +90,8 @@ public class _剑指OfferII_023_两个链表的第一个重合节点 {
 
 //do {
 //    let s = _剑指OfferII_023_两个链表的第一个重合节点()
-//    let headA = ListNode(4, ListNode(1, ListNode(8, ListNode(4, ListNode(5, nil)))))
-//    let headB = ListNode(5, ListNode(0, ListNode(1, ListNode(8, ListNode(4, ListNode(5, nil))))))
+//    let headA = ListNode.arrayToNode([4,1,8,4,5])
+//    let headB = ListNode.arrayToNode([5,0,1,8,4,5])
 //    let result = s.getIntersectionNode(headA, headB)
 //    if let result = result {
 //        print("\(s) --- \(result.print())")

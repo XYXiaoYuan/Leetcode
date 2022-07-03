@@ -62,7 +62,7 @@ public class _024_两两交换链表中的节点 {
 }
 
 //let s = _024_两两交换链表中的节点()
-//let input1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, nil))))
+//let input1 = ListNode.arrayToNode([1,2,3,4])
 //var resListNode = s.swapPairs(input1)
 //
 //var result = [Int]()

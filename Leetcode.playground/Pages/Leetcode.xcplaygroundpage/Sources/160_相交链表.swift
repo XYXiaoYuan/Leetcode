@@ -98,8 +98,8 @@ public class _160_相交链表 {
 
 //do {
 //    let s = _160_相交链表()
-//    let headA = ListNode(4, ListNode(1, ListNode(8, ListNode(4, ListNode(5, nil)))))
-//    let headB = ListNode(5, ListNode(6, ListNode(1, ListNode(8, ListNode(4, ListNode(5, nil))))))
+//    let headA = ListNode.arrayToNode([4,1,8,4,5])
+//    let headB = ListNode.arrayToNode([6,1,8,4,5])
 //    let result = s.getIntersectionNode(headA, headB)
 //    print(result)
 //}

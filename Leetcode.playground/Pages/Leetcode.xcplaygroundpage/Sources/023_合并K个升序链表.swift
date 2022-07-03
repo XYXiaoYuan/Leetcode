@@ -91,9 +91,9 @@ public class _023_合并K个升序链表 {
 
 //let s = _023_合并K个升序链表()
 //let lists1: [ListNode?] = [
-//    ListNode(1, ListNode(4, ListNode(5, nil))),
-//    ListNode(1, ListNode(3, ListNode(4, nil))),
-//    ListNode(2, ListNode(6, nil)),
+//    ListNode.arrayToNode([1,4,5]),
+//    ListNode.arrayToNode([1,3,4]),
+//    ListNode.arrayToNode([2,6]),
 //]
 //var resListNode = s.mergeKLists(lists1)
 //

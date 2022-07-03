@@ -96,7 +96,7 @@ public class _25_K个一组翻转链表 {
 
 //do {
 //    let s = _25_K个一组翻转链表()
-//    let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
+//    let head = ListNode.arrayToNode([1,2,3,4,5])
 //    let result = s.reverseKGroup(head, 2)
 //    print("\(s) --- \(result ?? nil)")
 //}

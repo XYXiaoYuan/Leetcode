@@ -77,7 +77,7 @@ public class _1290_二进制链表转整数 {
 
 //do {
 //    let s = _1290_二进制链表转整数()
-//    let head = ListNode(1, ListNode(0, ListNode(1, nil)))
+//    let head = ListNode.arrayToNode([1,0,1])
 //    let result = s.getDecimalValue(head)
 //    print("\(s) --- \(result)")
 //}

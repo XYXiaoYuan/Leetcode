@@ -25,7 +25,7 @@ do {
 
 do {
     let s = _25_K个一组翻转链表()
-    let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
+    let head = ListNode.arrayToNode([1,2,3,4,5])
     let result = s.reverseKGroup(head, 2)
     if let result = result {
         print("\(s) --- \(result.print())")
@@ -205,7 +205,7 @@ do {
 
 do {
     let s = _83_删除排序链表中的重复元素()
-    let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
+    let head = ListNode.arrayToNode([1,1,2,3,3])
     let result = s.deleteDuplicates(head)
     if let result = result {
         print("\(s) --- \(result.print())")
@@ -420,7 +420,7 @@ do {
 
 do {
     let s = _234_回文链表()
-    let head = ListNode(1, ListNode(2, ListNode(2, ListNode(1))))
+    let head = ListNode.arrayToNode([1,2,2,1])
     let result = s.isPalindrome(head)
     print("\(s) --- \(result)")
     
@@ -801,7 +801,7 @@ do {
 
 do {
     let s = _1290_二进制链表转整数()
-    let head = ListNode(1, ListNode(0, ListNode(1, nil)))
+    let head = ListNode.arrayToNode([1,0,1])
     let result = s.getDecimalValue(head)
     print("\(s) --- \(result)")
 }
