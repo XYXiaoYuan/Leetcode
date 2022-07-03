@@ -8,6 +8,23 @@ public class ListNode {
     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
 }
 
+/// 数组转链表
+public extension ListNode {
+    /// 需要先生成最里面的
+//    static func arrayToListnode(_ array: [Int]) -> ListNode? {
+//        guard let first = array.first else { return nil }
+//        var node = ListNode(first, nil)
+//
+//        while array.isEmpty {
+//            let top = array.removeFirst()
+//            node.next = ListNode(top, <#T##next: ListNode?##ListNode?#>)
+//        }
+//
+//        return node
+//    }
+}
+
+/// 打印
 public extension ListNode {
     func print(_ valPrefix: String = "❗️") -> String {
         var values = "[0_\(valPrefix)\(val)] -> "

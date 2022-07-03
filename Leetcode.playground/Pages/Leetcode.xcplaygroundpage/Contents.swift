@@ -800,6 +800,13 @@ do {
 }
 
 do {
+    let s = _1290_二进制链表转整数()
+    let head = ListNode(1, ListNode(0, ListNode(1, nil)))
+    let result = s.getDecimalValue(head)
+    print("\(s) --- \(result)")
+}
+
+do {
     let s = _1323_6和9组成的最大数字()
     let result = s.maximum69Number(9669)
     print("\(s) --- \(result)")
