@@ -27,7 +27,9 @@ do {
     let s = _25_K个一组翻转链表()
     let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
     let result = s.reverseKGroup(head, 2)
-    print("\(s) --- \(result ?? nil)")
+    if let result = result {
+        print("\(s) --- \(result.printListNode())")
+    }
 }
 
 do {
@@ -205,7 +207,9 @@ do {
     let s = _83_删除排序链表中的重复元素()
     let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
     let result = s.deleteDuplicates(head)
-    print("\(s) --- \(String(describing: result))")
+    if let result = result {
+        print("\(s) --- \(result.printListNode())")
+    }
 }
 
 do {

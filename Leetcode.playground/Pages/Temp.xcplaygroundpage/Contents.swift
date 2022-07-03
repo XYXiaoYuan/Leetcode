@@ -46,7 +46,7 @@ public class _83_删除排序链表中的重复元素 {
             // fast++
             fast = fast?.next
         }
-        // 断开与后面重复元素的连接
+        // 断开与后面重复元素的连接ß
         slow?.next = nil
         return head
     }
@@ -56,6 +56,9 @@ do {
     let s = _83_删除排序链表中的重复元素()
     let head = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3, nil)))))
     let result = s.deleteDuplicates(head)
-    print("\(s) --- \(String(describing: result))")
+    if let result = result {
+        print("\(s) --- \(result.printListNode())")
+    }
+
 }
 
