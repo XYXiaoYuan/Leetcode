@@ -62,6 +62,29 @@ public class _021_合并两个有序链表 {
         
         return head
     }
+    
+    public func mergeTwoLists1(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+        if list1 == nil || list2 == nil {
+            return list1 == nil ? list2 : list1
+        }
+        
+        let head = (list1?.val ?? 0) <= (list2?.val ?? 0) ? list1 : list2
+        var cur1 = head?.next
+        var cur2 = head === list1 ? list2 : list1
+        var pre = head
+        while cur1 != nil, cur2 != nil {
+            if (cur1?.val ?? 0) <= (cur2?.val ?? 0) {
+                pre?.next = cur1
+                cur1 = cur1?.next
+            } else {
+                pre?.next = cur2
+                cur2 = cur2?.next
+            }
+            pre = pre?.next
+        }
+        pre?.next = cur1 != nil ? cur1 : cur2
+        return head
+    }
 }
 
 //let s = _021_合并两个有序链表()
