@@ -1,84 +1,74 @@
 import Darwin
 /**
- https://leetcode.cn/problems/convert-binary-number-in-a-linked-list-to-integer/
+ https://leetcode.cn/problems/rotate-list/
  
- 给你一个单链表的引用结点 head。链表中每个结点的值不是 0 就是 1。已知此链表是一个整数数字的二进制表示形式。
-
- 请你返回该链表所表示数字的 十进制值 。
+ 给你一个链表的头节点 head ，旋转链表，将链表每个节点向右移动 k 个位置。
 
   
 
  示例 1：
 
 
-
- 输入：head = [1,0,1]
- 输出：5
- 解释：二进制数 (101) 转化为十进制数 (5)
+ 输入：head = [1,2,3,4,5], k = 2
+ 输出：[4,5,1,2,3]
  示例 2：
 
- 输入：head = [0]
- 输出：0
- 示例 3：
 
- 输入：head = [1]
- 输出：1
- 示例 4：
-
- 输入：head = [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0]
- 输出：18880
- 示例 5：
-
- 输入：head = [0,0]
- 输出：0
+ 输入：head = [0,1,2], k = 4
+ 输出：[2,0,1]
   
 
  提示：
 
- 链表不为空。
- 链表的结点总数不超过 30。
- 每个结点的值不是 0 就是 1。
-
+ 链表中节点的数目在范围 [0, 500] 内
+ -100 <= Node.val <= 100
+ 0 <= k <= 2 * 109
 
  来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/convert-binary-number-in-a-linked-list-to-integer
+ 链接：https://leetcode.cn/problems/rotate-list
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-public class _1290_二进制链表转整数 {
+public class _51_旋转链表 {
     public init() {}
     //class Solution class Solution {
     
-    public func getDecimalValue(_ head: ListNode?) -> Int {
-        func listNodeCount(_ node: ListNode?) -> Int {
-            var count = 0, node = node
-            while node != nil {
-                count += 1
-                node = node?.next
-            }
-            return count
+    public func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
+        if k == 0 || head == nil || head?.next == nil {
+            return head
         }
         
-        let count = listNodeCount(head)
-        var head = head
-        var result = 0
-        var index = 1
-        while head != nil {
-            if (head?.val ?? 0) == 1 {
-                let value = Int(pow(Float(2), Float(count - index)))
-                result += value
-            }
-            head = head?.next
-            index += 1
+        var n = 1
+        var iter = head
+        while iter?.next != nil {
+            iter = iter?.next
+            n += 1
         }
-        return result
+        print("遍历完 iter = \(iter!.log())")
+        
+        let add = n - k % n
+        if k == add {
+            return head
+        }
+        iter?.next = head
+        while n > 0 {
+            iter = iter?.next
+            n -= 1
+        }
+        
+        let ret = iter?.next
+        iter?.next = nil
+        return ret
     }
 }
 
 do {
-    let s = _1290_二进制链表转整数()
-    let list = [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0]
+    let s = _51_旋转链表()
+    let list = [1,2,3,4,5]
     let head = ListNode.arrayToNode(list)
-    let result = s.getDecimalValue(head)
-    print("\(s) --- \(result)")
+    let result = s.rotateRight(head, 2)
+    if let result = result {
+        print("\(s) --- \(result.print())")
+    }
+
 }

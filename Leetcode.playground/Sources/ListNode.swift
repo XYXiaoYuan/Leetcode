@@ -14,15 +14,14 @@ public extension ListNode {
     /// - Returns: 链表
     static func arrayToNode(_ list: [Int]) -> ListNode? {
         /// 需要先生成最里面的,再生成外面的,所以list传过来,需要逆序一下处理
-        var items = list.reversed().map { $0 }
+        let items = list.reversed().map { $0 }
         guard let first = items.first, let last = items.last else { return nil }
-        /// 删除最后一个元素
-        items.remove(at: items.count - 1)
         
         /// 初始化最后一个节点
         var lastNode: ListNode? = ListNode(first, nil)
         
-        for i in 1..<items.count {
+        /// 去掉第0和最后一个，遍历区间是[1,items.count - 1)
+        for i in 1..<(items.count - 1) {
             lastNode = ListNode(items[i], lastNode)
         }
         
@@ -34,6 +33,19 @@ public extension ListNode {
 /// 打印
 public extension ListNode {
     func print(_ valPrefix: String = "❗️") -> String {
+        var values = "[0_\(valPrefix)\(val)] -> "
+        var index = 1
+        while self.next != nil {
+            values.append("[\(index)_\(valPrefix)\(self.next?.val ?? 0)] -> ")
+            
+            self.next = self.next?.next
+            index += 1
+        }
+        return values + "nil"
+    }
+    
+    func log() -> String {
+        let valPrefix: String = "❗️"
         var values = "[0_\(valPrefix)\(val)] -> "
         var index = 1
         while self.next != nil {
