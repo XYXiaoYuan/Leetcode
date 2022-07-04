@@ -106,6 +106,16 @@ do {
 }
 
 do {
+    let s = _61_旋转链表()
+    let list = [1,2,3,4,5]
+    let head = ListNode.arrayToNode(list)
+    let result = s.rotateRight(head, 2)
+    if let result = result {
+        print("\(s) --- \(result.log())")
+    }
+}
+
+do {
     let s = _062_不同路径()
     let result = s.uniquePaths(3, 7)
     print("\(s) --- \(result)")
