@@ -28,7 +28,7 @@ do {
     let head = ListNode.arrayToNode([1,2,3,4,5])
     let result = s.reverseKGroup(head, 2)
     if let result = result {
-        print("\(s) --- \(result.print())")
+        print("\(s) --- \(result.log())")
     }
 }
 
@@ -208,7 +208,7 @@ do {
     let head = ListNode.arrayToNode([1,1,2,3,3])
     let result = s.deleteDuplicates(head)
     if let result = result {
-        print("\(s) --- \(result.print())")
+        print("\(s) --- \(result.log())")
     }
 }
 

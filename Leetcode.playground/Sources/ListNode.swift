@@ -32,7 +32,8 @@ public extension ListNode {
 
 /// 打印
 public extension ListNode {
-    func print(_ valPrefix: String = "❗️") -> String {
+    func log() -> String {
+        let valPrefix: String = "❗️"
         var values = "[0_\(valPrefix)\(val)] -> "
         var index = 1
         while self.next != nil {
@@ -44,14 +45,15 @@ public extension ListNode {
         return values + "nil"
     }
     
-    func log() -> String {
+    func dLog(_ listNode: ListNode?) -> String {
+        let node = listNode
         let valPrefix: String = "❗️"
         var values = "[0_\(valPrefix)\(val)] -> "
         var index = 1
-        while self.next != nil {
-            values.append("[\(index)_\(valPrefix)\(self.next?.val ?? 0)] -> ")
+        while node?.next != nil {
+            values.append("[\(index)_\(valPrefix)\(node?.next?.val ?? 0)] -> ")
             
-            self.next = self.next?.next
+            node?.next = node?.next?.next
             index += 1
         }
         return values + "nil"
