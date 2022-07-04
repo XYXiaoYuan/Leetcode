@@ -34,35 +34,40 @@ public class _61_旋转链表 {
     //class Solution class Solution {
     
     public func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
-        if k == 0 || head == nil || head?.next == nil {
-            return head
-        }
-
-        var n = 1
-        var cur: ListNode? = head
-        while cur?.next != nil {
-            cur = cur?.next
-            n += 1
+        guard head != nil else { return head }
+        
+        let size = listNodeCount(head)
+        let offset = k % size
+        guard offset > 0  else { return head }
+        
+        var slow = head
+        var fast = head
+        
+        var count = 0
+        while count < offset{
+            count += 1
+            fast = fast?.next
         }
         
-        let add = n - k % n
-
-//        print("遍历完 iter = \(cur?.dLog(cur)) k \(k) add \(add)")
-        if k == add {
-            return head
+        while fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next
         }
-        cur?.next = head
-//        print("cur?.next后 iter = \(cur?.dLog(cur))")
-        while n > 0 {
-            cur = cur?.next
-            n -= 1
+        
+        let new_head = slow?.next
+        slow?.next = nil
+        fast?.next = head
+        
+        return new_head
+    }
+    
+    private func listNodeCount(_ node: ListNode?) -> Int {
+        var count = 0, node = node
+        while node != nil {
+            count += 1
+            node = node?.next
         }
-//        print("while n > 0后 cur = \(iter?.dLog(cur))")
-
-        let ret = cur?.next
-//        print("ret = \(ret?.dLog(ret))")
-        cur?.next = nil
-        return ret
+        return count
     }
 }
 
