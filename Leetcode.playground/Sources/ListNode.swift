@@ -8,11 +8,21 @@ public class ListNode {
     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
 }
 
+/// 遵守`Equatable`协议，方便写测试用例时判等
+extension ListNode: Equatable {
+    public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
+        return lhs.val == rhs.val
+    }
+}
+
 public extension ListNode {
     /// 数组转链表,通过一个数组转换成链表
     /// - Parameter list: 列表
     /// - Returns: 链表
     static func arrayToNode(_ list: [Int]) -> ListNode? {
+        if list.isEmpty { return nil }
+        if list.count == 1 { return ListNode(list.first ?? 0, nil) }
+
         /// 需要先生成最里面的,再生成外面的,所以list传过来,需要逆序一下处理
         let items = list.reversed().map { $0 }
         guard let first = items.first, let last = items.last else { return nil }

@@ -1,133 +1,126 @@
-import Darwin
 /**
- https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/
+ https://leetcode.cn/problems/two-sum/
  
- 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。
- 
+ 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+
+ 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+
+ 你可以按任意顺序返回答案。
+
   
- 
+
  示例 1：
- 
- 
- 输入：head = [1,2,3,3,4,4,5]
- 输出：[1,2,5]
+
+ 输入：nums = [2,7,11,15], target = 9
+ 输出：[0,1]
+ 解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
  示例 2：
- 
- 
- 输入：head = [1,1,1,2,3]
- 输出：[2,3]
-  
- 
- 提示：
- 
- 链表中节点数目在范围 [0, 300] 内
- -100 <= Node.val <= 100
- 题目数据保证链表已经按升序 排列
- 通过次数269,487提交次数504,735
- 
- 
+
+ 输入：nums = [3,2,4], target = 6
+ 输出：[1,2]
+ 示例 3：
+
+ 输入：nums = [3,3], target = 6
+ 输出：[0,1]
+
+
  来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii
+ 链接：https://leetcode.cn/problems/two-sum
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-public class _82_删除排序链表中的重复元素II {
+
+/**
+ 思路,哈希表
+ 用空间换时间
+ first + second = target
+ let first: Int = target - nums[i]
+ 以nums数组的value作为key,numbs数组的key,作为value,用一个字典存储所有hashMap
+ 当能以hashMap[first]取到对应的值时,说明匹配到了first,下标为hashMap[first],第二个数second下标为i
+ 那么就只需要返回[hashMap[first], i]就好了
+ */
+
+import Foundation
+import XCTest
+//_001_两数之和.Test.defaultTestSuite.run()
+
+// t = O(N), s = O(N)
+public class _001_两数之和 {
+//class Solution {
     public init() {}
-    //class Solution class Solution {
-        
-    public func deleteDuplicates(_ head: ListNode?) -> ListNode? {
-        let dummy = ListNode(0)
-        var fast: ListNode? = head
-        var slow: ListNode? = dummy
-        slow?.next = fast
-        
-        while fast != nil {
-            while fast?.next != nil && fast?.val == fast?.next?.val {
-                fast = fast?.next
-            }
-            if slow?.next !== fast {
-                slow?.next = fast?.next
-                fast = slow?.next
-            } else {
-                slow = slow?.next
-                fast = fast?.next
-            }
-        }
-        
-        return dummy.next
-    }
     
-    public func deleteDuplicates_Recursive(_ head: ListNode?) -> ListNode? {
-        if head == nil {
-            return nil
-        }
-        
-        var head = head
-        
-        if head?.next != nil && head?.val == head?.next?.val {
-            while head?.next != nil && head?.val == head?.next?.val {
-                head = head?.next
-            }
-            return deleteDuplicates(head?.next)
-        } else {
-            head?.next = deleteDuplicates(head?.next)
-        }
-        
-        return head
-    }
-    
-    public func deleteDuplicates_Map(_ head: ListNode?) -> ListNode? {
-        var map = [Int: Int]()
-        let root: ListNode? = ListNode(Int.min, head)
-        var slow = root
-        var fast = head
-        
-        // first pass
-        var start = head
-        
-        while start != nil {
-            if let key = start?.val {
-                if let count = map[key] {
-                    map[key] = count + 1
-                } else {
-                    map[key] = 1
-                }
-            }
-            start = start?.next
-        }
-        
-        while fast != nil {
-            if let key = fast?.val, let count = map[key], count > 1 {
-                slow?.next = fast?.next
-                fast = fast?.next
-            } else {
-                slow = slow?.next
-                fast = fast?.next
-            }
-        }
-        return root?.next
-    }
-    
-}
+    public func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var targetOffset = [Int: Int]()
 
-do {
-    let s = _82_删除排序链表中的重复元素II()
-    let list = [1,1,2,3,3,4,4,5]
-    let head = ListNode.arrayToNode(list)
-    let result = s.deleteDuplicates(head)
-    if let result = result {
-        print("\(s) --- \(result.log())")
+        for (index, num) in nums.enumerated() {
+            let second: Int = target - num
+            if let first = targetOffset[second] {
+                return [first, index]
+            }
+            
+            targetOffset[num] = index
+        }
+        return [Int]()
+    }
+    
+    public func twoSum1(_ nums: [Int], _ target: Int) -> [Int] {
+        var targetOffset = [Int: Int]()
+
+        for num in nums.enumerated() {
+            if let offset = targetOffset[num.element] {
+                return [num.offset, offset]
+            }
+            
+            targetOffset[target - num.element] = num.offset
+        }
+        return [Int]()
     }
 }
 
-/// 是否是Debug模式
-var isDebug: Bool = true
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func dprint<T>(_ msg: T,
-                      line: Int = #line) {
-    if isDebug {
-        let prefix = "🏷_\(line)"
-        print(prefix, msg)
+extension _001_两数之和 {
+    class Test: XCTestCase {
+        var s = _001_两数之和()
+        
+        func testExample1() {
+            let result = s.twoSum([2, 7, 11, 15], 9).sorted()
+            let answer = [0, 1].sorted()
+            XCTAssertEqual(result, answer)
+        }
+        
+        func testExample2() {
+            let result = s.twoSum([3,2,4], 6).sorted()
+            let answer = [1, 2].sorted()
+            XCTAssertEqual(result, answer)
+        }
+        
+        func testExample3() {
+            let result = s.twoSum([3,3], 6).sorted()
+            let answer = [0, 1].sorted()
+            XCTAssertEqual(result, answer)
+        }
+        
+        func testExample4() {
+            let result = s.twoSum1([2, 7, 11, 15], 9).sorted()
+            let answer = [0, 1].sorted()
+            XCTAssertEqual(result, answer)
+        }
+        
+        func testExample5() {
+            let result = s.twoSum1([3,2,4], 6).sorted()
+            let answer = [1, 2].sorted()
+            XCTAssertEqual(result, answer)
+        }
+        
+        func testExample6() {
+            let result = s.twoSum1([3,3], 6).sorted()
+            let answer = [0, 1].sorted()
+            XCTAssertEqual(result, answer)
+        }
     }
 }
+
+//let s = _001_两数之和()
+//let result = s.twoSum([2, 5, 11, 7], 9)
+//print(result)
+
+//: [Next](@next)

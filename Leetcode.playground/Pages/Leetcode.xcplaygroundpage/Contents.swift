@@ -4,6 +4,27 @@ do {
     let s = _001_两数之和()
     let result = s.twoSum([2, 5, 11, 7], 9)
     print("\(s) --- \(result)")
+
+    assert(s.twoSum([2, 7, 11, 15], 9) == [0,1])
+    assert(s.twoSum([3,2,4], 6) == [1,2])
+    assert(s.twoSum([3,3], 6) == [0,1])
+
+    s.runTestSuite()
+}
+
+do {
+    let s = _002_两数相加()
+    let node1 = ListNode.arrayToNode([2,4,3])
+    let node2 = ListNode.arrayToNode([5,6,4])
+    let result = s.addTwoNumbers(node1, node2)
+    let answer = ListNode.arrayToNode([7,0,8])
+    if let result = result {
+        print("\(s) --- \(result.log())")
+    }
+
+    assert(result == answer)
+    
+    s.runTestSuite()
 }
 
 do {
