@@ -741,6 +741,20 @@ do {
 }
 
 do {
+    let s = _876_链表的中间结点()
+    let node = ListNode.arrayToNode([1,2,3,4,5])
+    let result = s.middleNode(node)
+    let answer = ListNode.arrayToNode([3,4,5])
+    if let result = result {
+        print("\(s) --- \(result)")
+    }
+
+    assert(result == answer)
+    
+    s.runTestSuite()
+}
+
+do {
     let s = _918_环形子数组的最大和()
     let input1 = [1,-2,3,-2]
     let input2 = [5,-3,5]

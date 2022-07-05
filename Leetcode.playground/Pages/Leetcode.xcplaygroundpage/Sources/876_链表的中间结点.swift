@@ -34,7 +34,7 @@
 import Foundation
 import Darwin
 import XCTest
-_876_链表的中间结点.Test.defaultTestSuite.run()
+//_876_链表的中间结点.Test.defaultTestSuite.run()
 
 public class _876_链表的中间结点 {
     //class Solution {
@@ -73,16 +73,16 @@ extension _876_链表的中间结点 {
     }
 }
 
-do {
-    let s = _876_链表的中间结点()
-    let node = ListNode.arrayToNode([1,2,3,4,5])
-    let result = s.middleNode(node)
-    let answer = ListNode.arrayToNode([3,4,5])
-    if let result = result {
-        print("\(s) --- \(result)")
-    }
-
-    assert(result == answer)
-}
+//do {
+//    let s = _876_链表的中间结点()
+//    let node = ListNode.arrayToNode([1,2,3,4,5])
+//    let result = s.middleNode(node)
+//    let answer = ListNode.arrayToNode([3,4,5])
+//    if let result = result {
+//        print("\(s) --- \(result)")
+//    }
+//
+//    assert(result == answer)
+//}
 
 //: [Next](@next)
