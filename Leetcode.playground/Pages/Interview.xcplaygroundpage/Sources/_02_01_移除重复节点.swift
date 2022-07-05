@@ -29,12 +29,11 @@
 import Foundation
 import Darwin
 import XCTest
-_面试_02_01_移除重复节点.Test.defaultTestSuite.run()
 
-public class _面试_02_01_移除重复节点 {
+public class _02_01_移除重复节点 {
     //class Solution {
     public init() {}
-    public func runTestSuite() { _面试_02_01_移除重复节点.Test.defaultTestSuite.run() }
+    public func runTestSuite() { _02_01_移除重复节点.Test.defaultTestSuite.run() }
     
     public func removeDuplicateNodes(_ head: ListNode?) -> ListNode? {
         if head == nil { return head }
@@ -59,9 +58,9 @@ public class _面试_02_01_移除重复节点 {
     }
 }
 
-extension _面试_02_01_移除重复节点 {
+public extension _02_01_移除重复节点 {
     class Test: XCTestCase {
-        var s = _面试_02_01_移除重复节点()
+        var s = _02_01_移除重复节点()
         
         func testExample1() {
             let node = ListNode.arrayToNode([1, 2, 3, 3, 2, 1])
@@ -79,16 +78,18 @@ extension _面试_02_01_移除重复节点 {
     }
 }
 
-do {
-    let s = _面试_02_01_移除重复节点()
-    let node = ListNode.arrayToNode([1, 2, 3, 3, 2, 1])
-    let result = s.removeDuplicateNodes(node)
-    let answer = ListNode.arrayToNode([1, 2, 3])
-    if let result = result {
-        print("\(s) --- \(result)")
-    }
-
-    assert(result == answer)
-}
+//do {
+//    let s = _02_01_移除重复节点()
+//    let node = ListNode.arrayToNode([1, 2, 3, 3, 2, 1])
+//    let result = s.removeDuplicateNodes(node)
+//    let answer = ListNode.arrayToNode([1, 2, 3])
+//    if let result = result {
+//        print("\(s) --- \(result)")
+//    }
+//
+//    assert(result == answer)
+//    
+//    _02_01_移除重复节点.Test.defaultTestSuite.run()
+//}
 
 //: [Next](@next)
