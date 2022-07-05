@@ -110,24 +110,24 @@ public class _82_删除排序链表中的重复元素II {
     
 }
 
-do {
-    let s = _82_删除排序链表中的重复元素II()
-    let list = [1,1,2,3,3,4,4,5]
-    let head = ListNode.arrayToNode(list)
-    let result = s.deleteDuplicates(head)
-    if let result = result {
-        print("\(s) --- \(result.log())")
-    }
-}
+//do {
+//    let s = _82_删除排序链表中的重复元素II()
+//    let list = [1,1,2,3,3,4,4,5]
+//    let head = ListNode.arrayToNode(list)
+//    let result = s.deleteDuplicates(head)
+//    if let result = result {
+//        print("\(s) --- \(result.log())")
+//    }
+//}
 
-/// 是否是Debug模式
-var isDebug: Bool = true
-
-/// 全局打印,发布时不触发, isDebug == false时不打印
-public func dprint<T>(_ msg: T,
-                      line: Int = #line) {
-    if isDebug {
-        let prefix = "🏷_\(line)"
-        print(prefix, msg)
-    }
-}
+///// 是否是Debug模式
+//var isDebug: Bool = true
+//
+///// 全局打印,发布时不触发, isDebug == false时不打印
+//public func dprint<T>(_ msg: T,
+//                      line: Int = #line) {
+//    if isDebug {
+//        let prefix = "🏷_\(line)"
+//        print(prefix, msg)
+//    }
+//}

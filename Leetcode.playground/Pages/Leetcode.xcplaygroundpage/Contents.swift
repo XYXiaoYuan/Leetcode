@@ -206,11 +206,13 @@ do {
 }
 
 do {
-//    let s = _088_合并两个有序数组()
-//    var nums1 = [1,2,3,0,0,0]
-//    let nums2 = [2,5,6]
-//    let result = s.merge(&nums1, 3, nums2, 3)
-//    print("\(s) --- \(result)")
+    let s = _82_删除排序链表中的重复元素II()
+    let list = [1,1,2,3,3,4,4,5]
+    let head = ListNode.arrayToNode(list)
+    let result = s.deleteDuplicates(head)
+    if let result = result {
+        print("\(s) --- \(result.log())")
+    }
 }
 
 do {
@@ -220,6 +222,14 @@ do {
     if let result = result {
         print("\(s) --- \(result.log())")
     }
+}
+
+do {
+//    let s = _088_合并两个有序数组()
+//    var nums1 = [1,2,3,0,0,0]
+//    let nums2 = [2,5,6]
+//    let result = s.merge(&nums1, 3, nums2, 3)
+//    print("\(s) --- \(result)")
 }
 
 do {
