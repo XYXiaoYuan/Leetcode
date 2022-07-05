@@ -65,7 +65,7 @@ do {
     let headB = ListNode.arrayToNode([5,0,1,8,4,5])
     let result = s.getIntersectionNode(headA, headB)
     if let result = result {
-        print("\(s) --- \(result.log())")
+        print("\(s) --- \(result)")
     }
 }
 

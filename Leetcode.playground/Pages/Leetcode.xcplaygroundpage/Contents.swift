@@ -19,7 +19,7 @@ do {
     let result = s.addTwoNumbers(node1, node2)
     let answer = ListNode.arrayToNode([7,0,8])
     if let result = result {
-        print("\(s) --- \(result.log())")
+        print("\(s) --- \(result)")
     }
 
     assert(result == answer)
@@ -49,7 +49,7 @@ do {
     let head = ListNode.arrayToNode([1,2,3,4,5])
     let result = s.reverseKGroup(head, 2)
     if let result = result {
-        print("\(s) --- \(result.log())")
+        print("\(s) --- \(result)")
     }
 }
 
@@ -132,7 +132,7 @@ do {
     let head = ListNode.arrayToNode(list)
     let result = s.rotateRight(head, 2)
     if let result = result {
-        print("\(s) --- \(result.log())")
+        print("\(s) --- \(result)")
     }
 }
 
@@ -232,7 +232,7 @@ do {
     let head = ListNode.arrayToNode(list)
     let result = s.deleteDuplicates(head)
     if let result = result {
-        print("\(s) --- \(result.log())")
+        print("\(s) --- \(result)")
     }
 }
 
@@ -241,7 +241,7 @@ do {
     let head = ListNode.arrayToNode([1,1,2,3,3])
     let result = s.deleteDuplicates(head)
     if let result = result {
-        print("\(s) --- \(result.log())")
+        print("\(s) --- \(result)")
     }
 }
 

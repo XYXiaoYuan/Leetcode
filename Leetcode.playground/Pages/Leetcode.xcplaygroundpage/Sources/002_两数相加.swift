@@ -160,7 +160,7 @@ extension _002_两数相加 {
 //    let result = s.addTwoNumbers(node1, node2)
 //    let answer = ListNode.arrayToNode([7,0,8])
 //    if let result = result {
-//        print("\(s) --- \(result.log())")
+//        print("\(s) --- \(result)")
 //    }
 //    
 //    assert(result == answer)

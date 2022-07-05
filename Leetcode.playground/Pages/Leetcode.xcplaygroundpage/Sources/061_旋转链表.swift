@@ -77,7 +77,7 @@ public class _61_旋转链表 {
 //    let head = ListNode.arrayToNode(list)
 //    let result = s.rotateRight(head, 2)
 //    if let result = result {
-//        print("\(s) --- \(result.log())")
+//        print("\(s) --- \(result)")
 //    }
 //}
 

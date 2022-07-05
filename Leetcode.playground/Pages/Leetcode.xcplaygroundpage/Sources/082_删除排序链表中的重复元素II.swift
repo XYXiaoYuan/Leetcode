@@ -116,7 +116,7 @@ public class _82_删除排序链表中的重复元素II {
 //    let head = ListNode.arrayToNode(list)
 //    let result = s.deleteDuplicates(head)
 //    if let result = result {
-//        print("\(s) --- \(result.log())")
+//        print("\(s) --- \(result)")
 //    }
 //}
 
