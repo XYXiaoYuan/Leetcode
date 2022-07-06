@@ -70,11 +70,11 @@ extension _101_对称二叉树 {
     }
 }
 
-do {
-//    let s = _101_对称二叉树()
-    
-    _101_对称二叉树.Test.defaultTestSuite.run()
-}
+//do {
+////    let s = _101_对称二叉树()
+//
+//    _101_对称二叉树.Test.defaultTestSuite.run()
+//}
 
 
 
