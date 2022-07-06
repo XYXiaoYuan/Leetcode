@@ -68,7 +68,7 @@ public class _剑指Offer_II_029_排序的循环链表 {
     }
 }
 
-extension _剑指Offer_II_029_排序的循环链表 {
+public extension _剑指Offer_II_029_排序的循环链表 {
     class Test: XCTestCase {
         var s = _剑指Offer_II_029_排序的循环链表()
         
@@ -95,18 +95,18 @@ extension _剑指Offer_II_029_排序的循环链表 {
     }
 }
 
-do {
-    let s = _剑指Offer_II_029_排序的循环链表()
-    let node = ListNode.arrayToNode([3, 4, 1])
-    let result = s.insert(node,2)
-    let answer = ListNode.arrayToNode([3, 4, 1, 2])
-    if let result = result {
-        print("\(s) --- \(result)")
-    }
-
-    assert(result == answer)
-    
-    _剑指Offer_II_029_排序的循环链表.Test.defaultTestSuite.run()
-}
+//do {
+//    let s = _剑指Offer_II_029_排序的循环链表()
+//    let node = ListNode.arrayToNode([3, 4, 1])
+//    let result = s.insert(node,2)
+//    let answer = ListNode.arrayToNode([3, 4, 1, 2])
+//    if let result = result {
+//        print("\(s) --- \(result)")
+//    }
+//
+//    assert(result == answer)
+//    
+//    _剑指Offer_II_029_排序的循环链表.Test.defaultTestSuite.run()
+//}
 
 //: [Next](@next)
