@@ -70,11 +70,11 @@ extension _100_相同的树 {
     }
 }
 
-do {
+//do {
 //    let s = _100_相同的树()
-    
-    _100_相同的树.Test.defaultTestSuite.run()
-}
+//
+//    _100_相同的树.Test.defaultTestSuite.run()
+//}
 
 
 
