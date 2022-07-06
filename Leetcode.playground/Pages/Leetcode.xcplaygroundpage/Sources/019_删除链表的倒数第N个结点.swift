@@ -56,5 +56,29 @@ public class _19_删除链表的倒数第N个结点 {
         return head
         
     }
+    
+    public func removeNthFromEnd1(_ head: ListNode?, _ n: Int) -> ListNode? {
+        if head?.next == nil { return nil }
+        var head = head, n = n
+        
+        var slow: ListNode? = head
+        var fast: ListNode? = head
+        
+        while n > 0 {
+            fast = fast?.next
+            n -= 1
+        }
+        
+        if fast == nil {
+            head = slow?.next
+        } else {
+            while fast?.next != nil {
+                slow = slow?.next
+                fast = fast?.next
+            }
+            slow?.next = slow?.next?.next
+        }
+        return head
+    }
 }
 
