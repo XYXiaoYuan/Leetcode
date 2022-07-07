@@ -22,7 +22,7 @@ public struct PriorityQueue<E> {
         self.cmp = cmp
         self.heap = values
         
-        var i = heap.count/2 - 1
+        var i = heap.count / 2 - 1
         while i >= 0 {
             sink(i)
             i -= 1
@@ -70,7 +70,7 @@ extension PriorityQueue where E: Comparable {
 extension PriorityQueue: Queue {
     /// typealias Queue.Element
     public typealias QE = E
-
+    
     /// How many elements the Priority Queue stores
     public var count: Int { heap.count }
     
@@ -89,7 +89,7 @@ extension PriorityQueue: Queue {
         heap.append(element)
         swim(heap.count - 1)
     }
-
+    
     /// Remove and return the element with the highest priority (or lowest if ascending). O(lg n)
     ///
     /// - returns: The element with the highest priority in the Priority Queue, or nil if the PriorityQueue is empty.
@@ -178,7 +178,7 @@ private extension PriorityQueue {
         cmp(e1, e2) != .orderedAscending
     }
     
-    // Based on example from Sedgewick p 316
+    /// Based on example from Sedgewick p 316
     mutating func swim(_ index: Int) {
         var index = index
         while index > 0 && ordered(heap[(index - 1) / 2], heap[index]) {
@@ -187,7 +187,7 @@ private extension PriorityQueue {
         }
     }
     
-    // Based on example from Sedgewick p 316
+    /// Based on example from Sedgewick p 316
     mutating func sink(_ index: Int) {
         var index = index
         while 2 * index + 1 < heap.count {
@@ -245,14 +245,14 @@ extension PriorityQueue: Sequence {
 
 // MARK: - CollectionType
 extension PriorityQueue: Collection {
-
+    
     public typealias Index = Int
-
+    
     public var startIndex: Int { heap.startIndex }
     public var endIndex: Int { heap.endIndex }
-
+    
     public subscript(i: Int) -> E { heap[i] }
-
+    
     public func index(after i: PriorityQueue.Index) -> PriorityQueue.Index {
         heap.index(after: i)
     }

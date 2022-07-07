@@ -9,7 +9,7 @@ import Foundation
 
 
 extension DoublyLinkList {
-    // 双向链表节点
+    /// 双向链表节点
     final class Node<E>: LinkListNode {
         typealias Element = E
         /// 存储的元素
@@ -36,24 +36,25 @@ extension DoublyLinkList {
 
 /// 双向链表
 public struct DoublyLinkList<T: Equatable>: LinkList {
-    
+    /// 元素类型
     public typealias Element = T
-        
-    // 头结点
+    
+    /// 头结点
     private var header: Node<T>?
-    // 尾结点
+    /// 尾结点
     private var footer: Node<T>?
-    // 节点数量
+    /// 节点数量
     public private(set) var count: Int = 0
     
     public init() {}
     
+    /// 第一个元素
     public var first: T? {
         header?.val
     }
     
+    /// 最后一个元素
     public var last: T? {
-        /// 最后一个元素
         footer?.val
     }
     
@@ -76,11 +77,10 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
         count += 1
     }
     
-    #if swift(>=5.2)
+#if swift(>=5.2)
     public mutating func append<S>(contentsOf newElements: S) where S : Sequence, Self.Element == S.Element {
         let nodes = newElements.map { Node(val: $0) }
         var pre: Node<T>?
-        //let v = nodes[0]
         nodes.forEach {
             pre?.next = $0
             $0.prev = pre
@@ -98,7 +98,7 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
         footer = nodes.last
         count += nodes.count
     }
-    #else
+#else
     public mutating func append<S>(contentsOf newElements: S) where S : Sequence, DoublyLinkList.Element == S.Element {
         
         let nodes = newElements.map { Node(val: $0) }
@@ -120,8 +120,8 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
         footer = nodes.last
         count += nodes.count
     }
-    #endif
-
+#endif
+    
     /// O(index)   O(count - index)
     public mutating func insert(_ element: T, at index: Int) {
         if index == 0 {
@@ -133,7 +133,7 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
         guard index > 0, index < count else {
             fatalError("insert element index must be < list.count")
         }
-        ///  插入的索引小于(count/2) 从前面开始遍历
+        /// 插入的索引小于(count/2) 从前面开始遍历
         if index < count >> 1 {
             var node = header!
             var v = 1
@@ -161,7 +161,7 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
             prev?.next = current
             count += 1
         }
-
+        
     }
     
     /// 插入 pre 之后插入新的元素
@@ -201,12 +201,12 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
                     count += 1
                 } else {
                     /// 变成头结点
-                     let next = header
+                    let next = header
                     header = Node(val: element, next: header)
                     next?.prev = header
                     count += 1
                 }
-
+                
                 return
             }
             if node.next == nil {
@@ -230,12 +230,12 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
             count -= 1
             return head.val
         }
-
+        
         guard index > 0, index < count else {
             fatalError("remove element index must be < list.count")
         }
         
-        // 获取删除前一个节点
+        /// 获取删除前一个节点
         if index < count >> 1 {
             var preNode = head
             
@@ -267,7 +267,7 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
             count -= 1
             return removed.val
         }
-
+        
     }
     
     /// O(1)
@@ -320,10 +320,10 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
         node.next?.prev = node.prev
         count -= 1
         if (header === node) {
-             header = node.next
+            header = node.next
         }
         if (footer === node) {
-             footer = node.prev
+            footer = node.prev
         }
     }
     
@@ -378,7 +378,7 @@ public struct DoublyLinkList<T: Equatable>: LinkList {
                     node = node.next!
                     c += 1
                 }
-                 node.val = newValue
+                node.val = newValue
             } else {
                 let rIndex = count - index
                 var node = footer!
@@ -436,22 +436,22 @@ extension DoublyLinkList {
 }
 
 extension DoublyLinkList {
-
-    #if swift(>=5.2)
+    
+#if swift(>=5.2)
     /// 快速构造
     /// - Parameter elements: 元素集合
     public init<S>(contentsOf elements: S) where S : Sequence, Self.Element == S.Element {
         self.init()
         self.append(contentsOf: elements)
     }
-    #else
+#else
     /// 快速构造
     /// - Parameter elements: 元素集合
     public init<S>(contentsOf elements: S) where S : Sequence, DoublyLinkList.Element == S.Element {
         self.init()
         self.append(contentsOf: elements)
     }
-    #endif
+#endif
 }
 
 
@@ -463,7 +463,6 @@ public extension DoublyLinkList {
     func map<T>(_ transform: (Element) throws -> T) rethrows -> [T] {
         try header?.map { return try transform($0) } ?? []
     }
-    
     
     /// 转为数组
     /// - Parameter transform: 转换block 返回nil 时不加入数组
@@ -484,7 +483,6 @@ extension DoublyLinkList: IteratorProtocol {
     public mutating func next() -> Element? { removeFirst() }
 }
 
-
 // MARK: - SequenceType
 extension DoublyLinkList: Sequence {
     
@@ -495,19 +493,25 @@ extension DoublyLinkList: Sequence {
 
 // MARK: - Queue
 extension DoublyLinkList: Queue {
-    
+    /// 队列首元素
     public func peek() -> T? {
         first
     }
     
+    /// 压入一个新的元素到队列
+    /// - Parameter element: 元素
     public mutating func push(_ element: T) {
         append(element)
     }
     
+    /// 移除堆顶元素
     public mutating func pop() -> T? {
         removeFirst()
     }
     
+    /// 移除一个元素 从队头开始匹配
+    /// - Parameter item: 需要移除的元素
+    /// - Returns: 返回队列中保存的元素 如果不存在则返回nil
     public mutating func removeFromFront(_ item: T) -> T? {
         var val = header
         while let node = val {
@@ -521,6 +525,9 @@ extension DoublyLinkList: Queue {
         return nil
     }
     
+    /// 移除一个元素 从队尾开始匹配
+    /// - Parameter item: 需要移除的元素
+    /// - Returns: 返回队列中保存的元素 如果不存在则返回nil
     public mutating func removeFromTail(_ item: T) -> T? {
         var val = footer
         while let node = val {
@@ -533,6 +540,10 @@ extension DoublyLinkList: Queue {
         }
         return nil
     }
+    
+    /// 移除所有的该元素
+    /// - Parameter item: 需要移除的元素
+    /// - Returns: 返回队列中保存的所有元素 如果不存在则返回nil
     public mutating func removeAll(_ item: T) -> [T]? {
         var val = header
         var result = [T]()
@@ -546,6 +557,7 @@ extension DoublyLinkList: Queue {
         return result.isEmpty ? nil : result
     }
     
+    /// 清空队列
     public mutating func clear() {
         removeAll()
     }

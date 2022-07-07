@@ -30,7 +30,7 @@ fileprivate class DummyNode<K, V>: CustomDebugStringConvertible {
 
 /// 跳表节点
 fileprivate final class Node<K, V>: DummyNode<K, V> {
-
+    
     /// 元素关联的KEY
     var key: K
     
@@ -53,7 +53,7 @@ fileprivate final class Node<K, V>: DummyNode<K, V> {
 
 /// 跳表
 public struct SkipList<K, V> {
-
+    
     /// 节点个数
     public private(set) var count: Int = 0
     /// 是否为空
@@ -198,7 +198,7 @@ public extension SkipList {
         count += 1
         return nil
     }
-
+    
     
     /// 移除元素
     /// - Parameter key: 关联的key
@@ -336,7 +336,7 @@ private extension SkipList {
     
     /// 更新层级
     mutating func updateLevel(_ removedLevel: Int) {
-
+        
         /// 更新层数
         if removedLevel == level {
             if count == 0 {
@@ -350,7 +350,7 @@ private extension SkipList {
             }
             level = MAX_LEVEL
         }
-
+        
     }
 }
 

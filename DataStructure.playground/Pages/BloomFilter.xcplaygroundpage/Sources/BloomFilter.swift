@@ -33,21 +33,22 @@ extension BloomFilter {
     public mutating func insert<S>(contentsOf values: S) where S.Element == Self.Value, S: Sequence  {
         values.forEach { insert($0) }
     }
-
+    
     /// 查询该元素是否存在 (是否已处理)
     /// - Parameter value: 元素值
     /// - Returns: 返回true说明可能已存在(被处理了), 返回false说明一定不存在(未被处理)
     public func query(_ value: Value) -> Bool {
-      // Map hashes to indices in the Bloom Filter
+        /// Map hashes to indices in the Bloom Filter
         for hashfn in hashFunctions where !bitSet[abs(hashfn(value)) % bitSet.count] {
             return false
         }
         return true
     }
     
-    // As soon as the reduction hits a 'true' value, the && condition will fail.
+    /// As soon as the reduction hits a 'true' value, the && condition will fail.
     public var isEmpty: Bool { bitSet.isEmpty }
 }
+
 
 /// 布隆过滤器
 public struct BFStruct<T: Hashable>: BloomFilter {
@@ -57,6 +58,7 @@ public struct BFStruct<T: Hashable>: BloomFilter {
     public var bitSet: BitSet
     /// 哈希函数集合
     public var hashFunctions: [(T) -> Int]
+    
     
     /// 构造一个布隆过滤器
     /// - Parameters:
@@ -81,7 +83,7 @@ public struct BFStruct<T: Hashable>: BloomFilter {
         /// 计算存储计算规模
         let m = Int(-(Float(dataSize) * log(fp) / (log(2) * log(2))))
         bitSet = BitSet(capacity: m)
-  
+        
         /// 添加hash函数
         let k = Int( ceil(-log2(fp)) )
         

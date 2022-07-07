@@ -61,8 +61,6 @@ public protocol LinkList {
     mutating func reverse()
 }
 
-
-
 /// 链表节点
 public protocol LinkListNode {
     /// 元素类型
@@ -72,7 +70,6 @@ public protocol LinkListNode {
     /// 下一个节点
     var next: Self? { get }
 }
-
 
 public extension LinkListNode {
     
@@ -91,7 +88,6 @@ public extension LinkListNode {
             node = node.next!
         }
     }
-    
     
     /// 转为数组
     /// - Parameter transform: 转换block 返回nil 时不加入数组
@@ -115,7 +111,7 @@ public extension LinkListNode {
     /// 遍历操作
     /// - Parameter body: 遍历Block
     func forEach(_ body: (Element) throws -> Void) rethrows {
-         var node = self
+        var node = self
         while true {
             try body(node.val)
             if node.next == nil {

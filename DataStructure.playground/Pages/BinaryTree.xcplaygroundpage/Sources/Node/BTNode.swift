@@ -43,12 +43,11 @@ public extension BTNode {
         
         let nodes = levelNodes()
         var maxCount = 0
-        
         func toSting(reversed level: Int) -> String {
             if maxCount == 0 {
                 var str = ""
                 for n in nodes[level] {
-                   str += "  " + (n?.nodeDesc ?? "  ")
+                    str += "  " + (n?.nodeDesc ?? "  ")
                 }
                 maxCount = str.count
                 return str
@@ -64,14 +63,13 @@ public extension BTNode {
                 let centerIdnex = halfIndex + i * offset
                 let nodeDesc = node.nodeDesc
                 let beginIndex = centerIdnex - (nodeDesc.count >> 1)
-               nsstring = nsstring.replacingCharacters(in: NSRange(location: beginIndex, length: nodeDesc.count), with: nodeDesc) as NSString
+                nsstring = nsstring.replacingCharacters(in: NSRange(location: beginIndex, length: nodeDesc.count), with: nodeDesc) as NSString
             }
             
             return nsstring as String
         }
         
         var str = ""
-        
         
         for item in (0...(nodes.count - 1)).reversed() {
             str = toSting(reversed: item) + "\n\n" + str
@@ -113,7 +111,7 @@ extension BTNode {
     func getBSTReplaceNode() -> (node: BTNode<E>, isLeft: Bool)? {
         guard var node = left, let rightNode = node.right else {
             if var node = right {
-               
+                
                 while node.left != nil {
                     node = node.left!
                 }
@@ -127,6 +125,7 @@ extension BTNode {
         }
         return (node: node, isLeft: false)
     }
+    
     
     /// 从父节点移除
     /// 返回值为父节点 本身是根节点则返回父节点为空

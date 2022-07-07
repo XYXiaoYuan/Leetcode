@@ -14,7 +14,7 @@ let black: Color = false
 
 /// 红黑树 节点
 final class RBNode<E>: BTNode<E> {
-    ///左子节点
+    /// 左子节点
     var lChild: RBNode<E>? {
         get {
             left as? RBNode<E>
@@ -23,8 +23,7 @@ final class RBNode<E>: BTNode<E> {
             left = newValue
         }
     }
-    
-    // 右子节点
+    /// 右子节点
     var rChild: RBNode<E>? {
         get {
             right as? RBNode<E>
@@ -33,8 +32,7 @@ final class RBNode<E>: BTNode<E> {
             right = newValue
         }
     }
-    
-    // 父节点
+    /// 父节点
     var fater: RBNode<E>? {
         get {
             parent as? RBNode<E>
@@ -63,7 +61,7 @@ final class RBNode<E>: BTNode<E> {
         }
         return nil
     }
-
+    
     /// 叔节点
     var uncle: RBNode<E>? {
         fater?.brother?.node
@@ -74,11 +72,12 @@ final class RBNode<E>: BTNode<E> {
     }
 }
 
+
 /// 红黑树
 public struct RBTree<E>: BST {
     
     public typealias Element = E
-    /// 跟节点
+    /// 根节点
     private var _root: RBNode<E>?
     public var root: BTNode<E>? {
         set {
@@ -99,12 +98,12 @@ public struct RBTree<E>: BST {
         self.cmp = cmp
     }
     
-    
     /// 创建红黑树节点
     public func createNode(with val: E, parent: BTNode<E>?) -> BTNode<E> {
         RBNode(val: val, parent: parent)
     }
 }
+
 
 /// 元素具备可比性
 extension RBTree where E: Comparable {
@@ -123,11 +122,10 @@ extension RBTree: BBST {
     /// 插入了元素 实现自平衡
     mutating public func didInsert(node: BTNode<E>, parent: BTNode<E>?) {
         count += 1
-        
         guard let node = node as? RBNode<E> else { return }
         /// 插入元素实现自平衡
         guard let parent = parent as? RBNode<E> else {
-            // 插入的是根节点 需要染黑
+            /// 插入的是根节点 需要染黑
             node.render(color: black)
             return
         }
@@ -147,7 +145,7 @@ extension RBTree: BBST {
         guard let parent = parent as? RBNode<E> else {
             return
         }
-
+        
         /// 处理下溢
         balanceUnderFlow(node: node, parent: parent)
     }
@@ -159,19 +157,19 @@ extension RBTree: BBST {
             if let brother = node.brother {
                 if let child = brother.node.lChild {
                     if brother.isLeft {
-                        // LL
+                        /// LL
                         makeRightRotate(parent, lChild: brother.node)
                         
                     } else {
-                        // LR
+                        /// LR
                         makeRightRotate(brother.node, lChild: child)
                         makeLeftRotate(parent, rChild: child)
                     }
                     child.render(color: black)
-                     brother.node.render(color: red)
+                    brother.node.render(color: red)
                 } else if let child = brother.node.rChild {
                     if brother.isLeft {
-                        // RL
+                        /// RL
                         makeLeftRotate(brother.node, rChild: child)
                         makeRightRotate(parent, lChild: child)
                     } else {
@@ -179,7 +177,7 @@ extension RBTree: BBST {
                         makeLeftRotate(parent, rChild: brother.node)
                     }
                     child.render(color: black)
-                     brother.node.render(color: red)
+                    brother.node.render(color: red)
                 } else {
                     /// 兄弟是叶子节点 直接染红
                     brother.node.render(color: red)
@@ -188,35 +186,34 @@ extension RBTree: BBST {
             }
             return
         }
-        
         /// 兄弟节点是红节点情况
         func makeRotate(red brother: RBNode<E>, isLeft: Bool) {
             if isLeft {
                 if  brother.lChild != nil {
-                    // LL型
+                    /// LL型
                     makeRightRotate(parent, lChild: brother)
                     /// 父节点染红 兄弟节点染黑
                     brother.render(color: black)
-                    //parent.render(color: red)
+                    /// parent.render(color: red)
                     if let child = parent.lChild {
                         if child.color == black, !child.isLeafNode {
                             child.render(color: red)
                         } else {
-                           parent.render(color: red)
-                       }
+                            parent.render(color: red)
+                        }
                     } else {
                         parent.render(color: red)
                     }
                 } else if let child = brother.rChild {
-                    // RL
+                    /// RL
                     makeLeftRotate(brother, rChild: child)
                     makeRightRotate(parent, lChild: child)
                     /// 兄弟染黑
                     brother.render(color: black)
                     brother.lChild?.render(color: red)
                 } else {
-                   /// 不存在的情况...
-                   fatalError("父节点是黑节点 子节点有一个黑节点情况下 必然有另一个节点")
+                    /// 不存在的情况...
+                    fatalError("父节点是黑节点 子节点有一个黑节点情况下 必然有另一个节点")
                 }
             } else {
                 if brother.rChild != nil {
@@ -228,7 +225,7 @@ extension RBTree: BBST {
                         if child.color == black, !child.isLeafNode {
                             child.render(color: red)
                         } else {
-                          parent.render(color: red)
+                            parent.render(color: red)
                         }
                     } else {
                         parent.render(color: red)
@@ -241,28 +238,29 @@ extension RBTree: BBST {
                     brother.render(color: black)
                     brother.lChild?.render(color: red)
                 } else {
-                   //不存在的情况...
-                   fatalError("父节点是黑节点 子节点有一个黑节点情况下 必然有另一个节点")
-               }
+                    //不存在的情况...
+                    fatalError("父节点是黑节点 子节点有一个黑节点情况下 必然有另一个节点")
+                }
+                
             }
         }
         
-         /// 兄弟节点是黑节点情况
+        /// 兄弟节点是黑节点情况
         func makeRotate(black brother: RBNode<E>, isLeft: Bool) {
             if let child = brother.lChild {
                 if isLeft {
-                    // LL型
+                    /// LL型
                     makeRightRotate(parent, lChild: brother)
                     child.render(color: black)
                 } else {
-                    // LR
+                    /// LR
                     makeRightRotate(brother, lChild: child)
                     makeLeftRotate(parent, rChild: child)
                     child.render(color: black)
                 }
             } else if let child = brother.rChild {
                 if isLeft {
-                    // RL
+                    /// RL
                     makeLeftRotate(brother, rChild: child)
                     makeRightRotate(parent, lChild: child)
                     /// 兄弟染黑
@@ -271,11 +269,12 @@ extension RBTree: BBST {
                     makeLeftRotate(parent, rChild: brother)
                     /// 父节点染红 兄弟节点染黑
                     child.render(color: black)
+                    
                 }
             } else {
-                // 兄弟节点不存在子节点
-               // 将兄弟节点染红, 父节点产生下益 递归调用
-                // 将
+                /// 兄弟节点不存在子节点
+                /// 将兄弟节点染红, 父节点产生下益 递归调用
+                /// 将
                 brother.render(color: red)
                 if let grandF = parent.fater {
                     balanceUnderFlow(node: parent, parent: grandF)
@@ -289,11 +288,11 @@ extension RBTree: BBST {
             fatalError("父节点是黑节点 子节点有一个黑节点情况下 必然有另一个节点")
         }
         
+        
         if brother.isLeft {
             if brother.node.color == red {
                 makeRotate(red: brother.node, isLeft: true)
             } else {
-               
                 makeRotate(black: brother.node, isLeft: true)
             }
         } else {
@@ -304,7 +303,7 @@ extension RBTree: BBST {
             }
         }
     }
-
+    
     /// 插入的父节点是红色 出现了连续的红色需要平衡
     mutating func balanceOverflow(node: RBNode<E>, parent: RBNode<E>) {
         if let uncle = parent.brother?.node {
@@ -321,11 +320,11 @@ extension RBTree: BBST {
                 return
             }
         }
-        // 叔节点不存在
+        /// 叔节点不存在
         
-        // 是否存在祖父节点
+        /// 是否存在祖父节点
         guard let grand = parent.fater else {
-            // 不存在
+            /// 不存在
             if parent.color == red {
                 print("根节点变成了红节点")
             }
@@ -347,7 +346,7 @@ extension RBTree: BBST {
                 /// 父节点染黑
                 upNode = parent
             } else {
-                // LR型
+                /// LR型
                 makeRightRotate(parent, lChild: node)
                 makeLeftRotate(grand, rChild: node)
                 /// 自己染黑
@@ -361,7 +360,7 @@ extension RBTree: BBST {
                 /// 自己染黑
                 upNode = node
             } else {
-                // RR型
+                /// RR型
                 makeLeftRotate(grand, rChild: parent)
                 /// 父节点染黑
                 upNode = parent

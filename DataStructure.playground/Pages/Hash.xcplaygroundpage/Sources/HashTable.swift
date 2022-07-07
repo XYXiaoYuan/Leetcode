@@ -19,7 +19,7 @@ open class HashTable<T> {
     
     /// count of element
     public var count: Int {
-         table.allObjects.count
+        table.allObjects.count
     }
     
     /**

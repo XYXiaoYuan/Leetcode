@@ -36,7 +36,7 @@ final class AVLNode<E>: BTNode<E> {
         }
     }
     
-    // 高度 默认为一层 左右子树为空
+    /// 高度 默认为一层 左右子树为空
     var height = 1
     
     /// 平衡因子
@@ -59,7 +59,7 @@ final class AVLNode<E>: BTNode<E> {
 /// AVL树
 public struct AVLTree<E>: BST {
     public typealias Element = E
-    /// 跟节点
+    /// 根节点
     private var _root: AVLNode<E>?
     public var root: BTNode<E>? {
         set {
@@ -126,7 +126,7 @@ extension AVLTree: BBST {
         if -1...1 ~= factor {
             if let p = grand.fater {
                 if var node = (p.lChild === grand) ? p.rChild : p.lChild, var child = node.lChild ?? node.rChild {
-                     addjustUnbaclance(node: &child, parent: &node)
+                    addjustUnbaclance(node: &child, parent: &node)
                 }
             }
             return
@@ -149,7 +149,7 @@ extension AVLTree: BBST {
     ///   - parent: 失衡节点的子节点
     mutating func addjustUnbaclance(node: inout AVLNode<E>, parent: inout AVLNode<E>) {
         while true {
-
+            
             guard let grand = parent.fater else { return }
             let isAddLeft = (parent.left === node)
             let factor = grand.factor
@@ -172,24 +172,24 @@ extension AVLTree: BBST {
                     makeRightRotate(grand, lChild: parent)
                     node = parent
                 } else {
-                    // RL 型
-                    // p 进行右旋转 然后 g 进行左旋转
+                    /// RL 型
+                    /// p 进行右旋转 然后 g 进行左旋转
                     makeLeftRotate(parent, rChild: node)
                     makeRightRotate(grand, lChild: node)
                 }
                 
             } else {
                 if isAddLeft {
-                    //LR 型
+                    /// LR 型
                     makeRightRotate(parent, lChild: node)
                     makeLeftRotate(grand, rChild: node)
                 } else {
-                    // RR 型
+                    /// RR 型
                     makeLeftRotate(grand, rChild: parent)
                     node = parent
                 }
             }
-
+            
             parent.updateHight()
             grand.updateHight()
             node.updateHight()

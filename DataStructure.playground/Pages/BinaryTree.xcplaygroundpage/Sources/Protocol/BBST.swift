@@ -25,7 +25,7 @@ public protocol BBST: BST {
 
 /// insert remove
 public extension BBST {
-
+    
     /// 插入元素
     /// - Parameter element: 插入的新元素
     /// - Returns: 之前存在相同的值,返回之前存在的值
@@ -55,7 +55,6 @@ public extension BBST {
                     node.left = newNode
                     /// 这里维持平衡的代码交给实体类解决
                     didInsert(node: newNode, parent: node)
-                    //check()
                     return nil
                 }
             case .orderedDescending:
@@ -67,7 +66,6 @@ public extension BBST {
                     node.right = newNode
                     /// 这里维持平衡的代码交给实体类解决
                     didInsert(node: newNode, parent: node)
-                    //check()
                     return nil
                 }
             }
@@ -87,9 +85,6 @@ public extension BBST {
             switch cmp(element, node.val) {
             case .orderedSame:
                 let origin = node.val
-//                defer {
-//                    check()
-//                }
                 /// 寻找非叶子节点的实际删除节点位置
                 guard let replaceNode = node.getBSTReplaceNode() else {
                     // 删除的是叶子节点  实际要删除的就是本身
@@ -97,7 +92,7 @@ public extension BBST {
                         /// 删除了叶子节点  实际类处理删除后的平衡逻辑
                         didRemove(node: node, parent: parent)
                     } else {
-                        // 没有替换的节点几位根节点
+                        /// 没有替换的节点几位根节点
                         root = nil
                         didRemove(node: node, parent: nil)
                     }
@@ -107,18 +102,18 @@ public extension BBST {
                 /// 1. 替换要删除的节点
                 node.val = replaceNode.node.val
                 
-                // 2. 再实际删除实际的叶子节点
+                /// 2. 再实际删除实际的叶子节点
                 let realRMNode: BTNode<Element>
                 let removeParent: BTNode<Element>?
                 /// 这里检验实际删除的节点是否还有子节点
                 if let child = replaceNode.isLeft ? replaceNode.node.right : replaceNode.node.left {
-                    // 如果存在则将它的子节点先替换自己 实际删除的是子节点
+                    /// 如果存在则将它的子节点先替换自己 实际删除的是子节点
                     replaceNode.node.val = child.val
                     
                     if replaceNode.isLeft {
                         replaceNode.node.right = nil
                     } else {
-                         replaceNode.node.left = nil
+                        replaceNode.node.left = nil
                     }
                     realRMNode = child
                     removeParent = replaceNode.node
@@ -131,14 +126,14 @@ public extension BBST {
                 /// 3. 高度发生了变化 实体类自平衡调节
                 didRemove(node: realRMNode, parent: removeParent)
                 
-                // 删除元素
+                /// 删除元素
                 return origin
             case .orderedAscending:
                 guard let next = node.left else { return nil }
-                 node = next
+                node = next
             case .orderedDescending:
                 guard let next = node.right else { return nil }
-                 node = next
+                node = next
             }
         }
     }

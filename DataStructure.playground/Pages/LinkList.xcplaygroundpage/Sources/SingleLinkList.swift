@@ -20,16 +20,18 @@ extension SingleLinkList {
     }
 }
 
-// 单链表
+/// 单链表
 public struct SingleLinkList<T: Equatable>: LinkList {
-    public typealias Element = T
-    // 头结点
+    /// 头结点
     private var header: Node<T>?
-    // 节点数量
+    /// 元素类型
+    public typealias Element = T
+    /// 节点数量
     public private(set) var count: Int = 0
     
     public init() {}
     
+    /// 第一个元素
     public var first: T? {
         header?.val
     }
@@ -52,7 +54,6 @@ public struct SingleLinkList<T: Equatable>: LinkList {
         count == 0
     }
     
-    
     /// O(N)
     public mutating func append(_ element: T) {
         guard let node = lastNode else {
@@ -63,7 +64,7 @@ public struct SingleLinkList<T: Equatable>: LinkList {
         node.next = Node(val: element)
         count += 1
     }
-    #if swift(>=5.2)
+#if swift(>=5.2)
     public mutating func append<S>(contentsOf newElements: S) where S : Sequence, Self.Element == S.Element {
         let nodes = newElements.map { Node(val: $0) }
         var pre: Node<T>?
@@ -80,9 +81,9 @@ public struct SingleLinkList<T: Equatable>: LinkList {
         node.next = nodes.first
         count += nodes.count
     }
-    #else
+#else
     public mutating func append<S>(contentsOf newElements: S) where S : Sequence, SingleLinkList.Element == S.Element {
-    
+        
         let nodes = newElements.map { Node(val: $0) }
         var pre: Node<T>?
         nodes.forEach {
@@ -98,7 +99,7 @@ public struct SingleLinkList<T: Equatable>: LinkList {
         node.next = nodes.first
         count += nodes.count
     }
-    #endif
+#endif
     
     public mutating func insert(_ element: T, at index: Int) {
         if index == 0 {
@@ -109,7 +110,7 @@ public struct SingleLinkList<T: Equatable>: LinkList {
         guard index > 0, index < count else {
             fatalError("insert element index must be < list.count")
         }
-
+        
         var node = header!
         var v = 1
         while v < index {
@@ -149,7 +150,7 @@ public struct SingleLinkList<T: Equatable>: LinkList {
                     header = Node(val: element, next: header)
                     count += 1
                 }
-
+                
                 return
             }
             if node.next == nil {
@@ -169,11 +170,11 @@ public struct SingleLinkList<T: Equatable>: LinkList {
             count -= 1
             return head.val
         }
-
+        
         guard index > 0, index < count else {
             fatalError("remove element index must be < list.count")
         }
-        // 获取删除前一个节点
+        /// 获取删除前一个节点
         var preNode = head
         
         if index > 1 {
@@ -258,8 +259,8 @@ public struct SingleLinkList<T: Equatable>: LinkList {
             var node = header!
             var c = 0
             while c < index {
-               node = node.next!
-               c += 1
+                node = node.next!
+                c += 1
             }
             return node.val
         }
@@ -273,7 +274,7 @@ public struct SingleLinkList<T: Equatable>: LinkList {
                 node = node.next!
                 c += 1
             }
-             node.val = newValue
+            node.val = newValue
         }
     }
     
@@ -322,22 +323,22 @@ extension SingleLinkList {
 }
 
 extension SingleLinkList {
-    #if swift(>=5.2)
+#if swift(>=5.2)
     /// 快速构造
     /// - Parameter elements: 元素集合
     public init<S>(contentsOf elements: S) where S : Sequence, Self.Element == S.Element {
         self.init()
         self.append(contentsOf: elements)
     }
-    #else
+#else
     /// 快速构造
     /// - Parameter elements: 元素集合
     public init<S>(contentsOf elements: S) where S : Sequence, SingleLinkList.Element == S.Element {
         self.init()
         self.append(contentsOf: elements)
     }
-    #endif
-
+#endif
+    
 }
 
 public extension SingleLinkList {
@@ -348,7 +349,6 @@ public extension SingleLinkList {
     func map<T>(_ transform: (Element) throws -> T) rethrows -> [T] {
         try header?.map { return try transform($0) } ?? []
     }
-    
     
     /// 转为数组
     /// - Parameter transform: 转换block 返回nil 时不加入数组
@@ -378,20 +378,26 @@ extension SingleLinkList: Sequence {
     public func makeIterator() -> Iterator { self }
 }
 
-// MARK: - Stack
+// MARK: - Stack,链表栈
 extension SingleLinkList: Stack {
+    /// 顶部元素
     public var top: T? {
         first
     }
     
+    /// 压入一个元素
+    /// - Parameter element: 元素
     public mutating func push(_ element: T) {
         insert(element, at: 0)
     }
     
+    /// 出栈一个元素
     public mutating func pop() -> T? {
         removeFirst()
     }
     
+    /// 出栈多个元素
+    /// - Parameter count: 元素个数
     public mutating func pop(count: Int) -> [T]? {
         if count <= 0 {
             return nil
