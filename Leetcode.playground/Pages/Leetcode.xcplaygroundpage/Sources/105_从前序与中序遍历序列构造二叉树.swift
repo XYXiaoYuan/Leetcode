@@ -47,7 +47,7 @@ public class _105_从前序与中序遍历序列构造二叉树 {
         return f(preorder: preorder, L1: 0, R1: preorder.count - 1, inorder: inorder, L2: 0, R2: inorder.count - 1)
     }
     
-    /// 有一棵树，先序结果是preorder[L1..R1]，中序结果是inorder[L2...R2]
+    /// 有一棵树，先序结果是pre[L1..R1]，中序结果是ins[L2...R2]
     /// - Parameters:
     ///   - pre: 先序数组
     ///   - L1: 先序数组L1
@@ -85,7 +85,7 @@ public class _105_从前序与中序遍历序列构造二叉树 {
         return g(preorder: preorder, L1: 0, R1: preorder.count - 1, inorder: inorder, L2: 0, R2: inorder.count - 1, valueIndexMap: valueIndexMap)
     }
     
-    /// 有一棵树，先序结果是preorder[L1..R1]，中序结果是inorder[L2...R2]
+    /// 有一棵树，先序结果是pre[L1..R1]，中序结果是ins[L2...R2]
     /// - Parameters:
     ///   - pre: 先序数组
     ///   - L1: 先序数组L1
@@ -134,15 +134,15 @@ extension _105_从前序与中序遍历序列构造二叉树 {
     }
 }
 
-do {
-    let s = _105_从前序与中序遍历序列构造二叉树()
-    let result = s.buildTree1([3,9,20,15,7], [9,3,15,20,7])
-    if let result = result {
-        print("\(s) --- \(result)")
-    }
-
-    _105_从前序与中序遍历序列构造二叉树.Test.defaultTestSuite.run()
-}
+//do {
+//    let s = _105_从前序与中序遍历序列构造二叉树()
+//    let result = s.buildTree1([3,9,20,15,7], [9,3,15,20,7])
+//    if let result = result {
+//        print("\(s) --- \(result)")
+//    }
+//
+//    _105_从前序与中序遍历序列构造二叉树.Test.defaultTestSuite.run()
+//}
 
 
 

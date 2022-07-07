@@ -254,6 +254,16 @@ do {
 }
 
 do {
+    let s = _105_从前序与中序遍历序列构造二叉树()
+    let result = s.buildTree1([3,9,20,15,7], [9,3,15,20,7])
+    if let result = result {
+        print("\(s) --- \(result)")
+    }
+
+    _105_从前序与中序遍历序列构造二叉树.Test.defaultTestSuite.run()
+}
+
+do {
     let s = _118_杨辉三角()
     let result = s.generate(5)
     print("\(s) --- \(result)")
