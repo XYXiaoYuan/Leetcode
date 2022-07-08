@@ -118,14 +118,14 @@ public extension _113_路径总和_II {
     }
 }
 
-do {
+//do {
 //    var s = _113_路径总和_II()
 //    let node = TreeNode.arrayToNode([5,4,8,11,null,13,4,7,2,null,null,null,1])
 //    let result = s.isBalanced(node, 22)
 //    print("\(s) --- \(result)")
-
-    _113_路径总和_II.Test.defaultTestSuite.run()
-}
+//
+//    _113_路径总和_II.Test.defaultTestSuite.run()
+//}
 
 
 
