@@ -54,6 +54,13 @@ public class _113_路径总和_II {
         return ans
     }
     
+    /// 处理树的某个路径和是否等于目标数
+    /// - Parameters:
+    ///   - x: 树结点
+    ///   - paths: 当前路径
+    ///   - preSum: 当前路径前缀和
+    ///   - targetSum: 目标数
+    ///   - ans: 符合要求的结果路径集
     private func process(_ x: TreeNode?, _ paths: inout [Int], _ preSum: inout Int, _ targetSum: Int, _ ans: inout [[Int]]) {
         guard let x = x else { return }
         let val = x.val
@@ -61,7 +68,7 @@ public class _113_路径总和_II {
         guard let _ = x.left, let _ = x.right else {
             if val + preSum == targetSum {
                 paths.append(val)
-                ans.append(copyPath(paths))
+                ans.append(paths.map { $0 })
                 paths.remove(at: paths.count - 1)
             }
             return
@@ -76,14 +83,6 @@ public class _113_路径总和_II {
             process(right, &paths, &preSum, targetSum, &ans)
         }
         paths.remove(at: paths.count - 1)
-    }
-    
-    private func copyPath(_ paths: [Int]) -> [Int] {
-        var ans = [Int]()
-        for num in paths {
-            ans.append(num)
-        }
-        return ans
     }
 }
 
