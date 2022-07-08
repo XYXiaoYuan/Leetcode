@@ -39,6 +39,15 @@ do {
 }
 
 do {
+    let s = _11_盛最多水的容器()
+    let result = s.maxArea([1,8,6,2,5,4,8,3,7])
+    print("\(s) --- \(result)")
+    assert(result == 49)
+
+    _11_盛最多水的容器.Test.defaultTestSuite.run()
+}
+
+do {
     let s = _018_四数之和()
     let result = s.fourSum([1,0,-1,0,-2,2], 0)
     print("\(s) --- \(result)")
