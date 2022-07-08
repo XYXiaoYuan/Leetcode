@@ -58,7 +58,7 @@ public class _113_路径总和_II {
         guard let x = x else { return }
         let val = x.val
         
-        if x.left == nil && x.right == nil {
+        guard let _ = x.left, let _ = x.right else {
             if val + preSum == targetSum {
                 paths.append(val)
                 ans.append(copyPath(paths))
@@ -69,11 +69,11 @@ public class _113_路径总和_II {
         /// x是非叶子节点
         paths.append(val)
         preSum += val
-        if x.left != nil {
-            process(x.left, &paths, &preSum, targetSum, &ans)
+        if let left = x.left {
+            process(left, &paths, &preSum, targetSum, &ans)
         }
-        if x.right != nil {
-            process(x.right, &paths, &preSum, targetSum, &ans)
+        if let right = x.right {
+            process(right, &paths, &preSum, targetSum, &ans)
         }
         paths.remove(at: paths.count - 1)
     }
@@ -100,18 +100,18 @@ public extension _113_路径总和_II {
         }
                 
         func testExample2() {
-            let node = TreeNode.arrayToNode([1,2,3])
-            let result = s.pathSum(node, 5)
-            print("\(s) --- \(result)")
-            let answer = [Int]()
+//            let node = TreeNode.arrayToNode([1,2,3])
+//            let result = s.pathSum(node, 5)
+//            print("\(s) --- \(result)")
+//            let answer = [Int]()
 //            XCTAssertEqual(result, answer)
         }
         
         func testExample3() {
-            let node = TreeNode.arrayToNode([1,2])
-            let result = s.pathSum(node, 0)
-            print("\(s) --- \(result)")
-            let answer = [Int]()
+//            let node = TreeNode.arrayToNode([1,2])
+//            let result = s.pathSum(node, 0)
+//            print("\(s) --- \(result)")
+//            let answer = [Int]()
 //            XCTAssertEqual(result, answer)
         }
 
