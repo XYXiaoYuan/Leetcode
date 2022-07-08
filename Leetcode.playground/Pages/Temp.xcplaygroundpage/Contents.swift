@@ -45,9 +45,7 @@ public class _113_路径总和_II {
     
     public func pathSum(_ root: TreeNode?, _ targetSum: Int) -> [[Int]] {
         var ans = [[Int]]()
-        if root == nil {
-            return ans
-        }
+        guard let root = root else { return ans }
         var paths = [Int]()
         var preSum = 0
         process(root, &paths, &preSum, targetSum, &ans)
@@ -61,8 +59,11 @@ public class _113_路径总和_II {
     ///   - preSum: 当前路径前缀和
     ///   - targetSum: 目标数
     ///   - ans: 符合要求的结果路径集
-    private func process(_ x: TreeNode?, _ paths: inout [Int], _ preSum: inout Int, _ targetSum: Int, _ ans: inout [[Int]]) {
-        guard let x = x else { return }
+    private func process(_ x: TreeNode,
+                         _ paths: inout [Int],
+                         _ preSum: inout Int,
+                         _ targetSum: Int,
+                         _ ans: inout [[Int]]) {
         let val = x.val
         
         guard let _ = x.left, let _ = x.right else {
@@ -83,14 +84,6 @@ public class _113_路径总和_II {
             process(right, &paths, &preSum, targetSum, &ans)
         }
         paths.remove(at: paths.count - 1)
-    }
-    
-    private func copyPath(_ paths: [Int]) -> [Int] {
-        var ans = [Int]()
-        for num in paths {
-            ans.append(num)
-        }
-        return ans
     }
 }
 
@@ -126,10 +119,10 @@ public extension _113_路径总和_II {
 }
 
 do {
-//    var s = _113_路径总和_II()
-//    let node = TreeNode.arrayToNode([5,4,8,11,null,13,4,7,2,null,null,null,1])
-//    let result = s.isBalanced(node, 22)
-//    print("\(s) --- \(result)")
+    var s = _113_路径总和_II()
+    let node = TreeNode.arrayToNode([5,4,8,11,nil,13,4,7,2,nil,nil,nil,1])
+    let result = s.pathSum(node, 22)
+    print("\(s) --- \(result)")
 
     _113_路径总和_II.Test.defaultTestSuite.run()
 }

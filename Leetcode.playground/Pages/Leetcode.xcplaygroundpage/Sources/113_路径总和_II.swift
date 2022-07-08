@@ -45,9 +45,7 @@ public class _113_路径总和_II {
     
     public func pathSum(_ root: TreeNode?, _ targetSum: Int) -> [[Int]] {
         var ans = [[Int]]()
-        if root == nil {
-            return ans
-        }
+        guard let root = root else { return ans }
         var paths = [Int]()
         var preSum = 0
         process(root, &paths, &preSum, targetSum, &ans)
@@ -61,8 +59,11 @@ public class _113_路径总和_II {
     ///   - preSum: 当前路径前缀和
     ///   - targetSum: 目标数
     ///   - ans: 符合要求的结果路径集
-    private func process(_ x: TreeNode?, _ paths: inout [Int], _ preSum: inout Int, _ targetSum: Int, _ ans: inout [[Int]]) {
-        guard let x = x else { return }
+    private func process(_ x: TreeNode,
+                         _ paths: inout [Int],
+                         _ preSum: inout Int,
+                         _ targetSum: Int,
+                         _ ans: inout [[Int]]) {
         let val = x.val
         
         guard let _ = x.left, let _ = x.right else {
