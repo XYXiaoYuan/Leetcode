@@ -109,13 +109,13 @@ public extension _112_路径总和 {
     }
 }
 
-do {
+//do {
 //    let node = TreeNode.arrayToNode([5,4,8,11,null,13,4,7,2,null,null,null,1])
 //    let result = s.isBalanced(node, 22)
 //    print("\(s) --- \(result)")
-
-    _112_路径总和.Test.defaultTestSuite.run()
-}
+//
+//    _112_路径总和.Test.defaultTestSuite.run()
+//}
 
 
 
