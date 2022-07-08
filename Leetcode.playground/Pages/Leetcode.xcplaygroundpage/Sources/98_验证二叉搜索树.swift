@@ -134,14 +134,14 @@ public extension _98_验证二叉搜索树 {
     }
 }
 
-do {
+//do {
 //    var s = _98_验证二叉搜索树()
 //    let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
 //    let result = s.isBalanced(node)
 //    print("\(s) --- \(result)")
-
-    _98_验证二叉搜索树.Test.defaultTestSuite.run()
-}
+//
+//    _98_验证二叉搜索树.Test.defaultTestSuite.run()
+//}
 
 
 
