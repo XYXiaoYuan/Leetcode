@@ -40,7 +40,7 @@ public class _102_二叉树的层序遍历 {
     public init() {}
     
     public func levelOrder(_ root: TreeNode?) -> [[Int]] {
-        var ans = [[Int]]()
+        let ans = [[Int]]()
         if root === nil {
             return ans
         }

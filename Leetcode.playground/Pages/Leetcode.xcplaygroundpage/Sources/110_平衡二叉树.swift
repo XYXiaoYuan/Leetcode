@@ -100,13 +100,13 @@ public extension _110_平衡二叉树 {
     }
 }
 
-do {
+//do {
 //    let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
 //    let result = s.isBalanced(node)
 //    print("\(s) --- \(result)")
-
-    _110_平衡二叉树.Test.defaultTestSuite.run()
-}
+//
+//    _110_平衡二叉树.Test.defaultTestSuite.run()
+//}
 
 
 
