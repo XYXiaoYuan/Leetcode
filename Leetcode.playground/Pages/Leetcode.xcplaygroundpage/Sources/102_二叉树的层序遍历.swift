@@ -81,14 +81,14 @@ public extension _102_二叉树的层序遍历 {
     }
 }
 
-do {
+//do {
 //    let s = _102_二叉树的层序遍历()
 //    let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
 //    let result = s.levelOrder(node)
 //    print("\(s) --- \(result)")
-
-    _102_二叉树的层序遍历.Test.defaultTestSuite.run()
-}
+//
+//    _102_二叉树的层序遍历.Test.defaultTestSuite.run()
+//}
 
 
 

@@ -110,7 +110,7 @@ public class _105_从前序与中序遍历序列构造二叉树 {
     }
 }
 
-extension _105_从前序与中序遍历序列构造二叉树 {
+public extension _105_从前序与中序遍历序列构造二叉树 {
     class Test: XCTestCase {
         var s = _105_从前序与中序遍历序列构造二叉树()
         
