@@ -2,7 +2,7 @@ import UIKit
 
 
 
-func myMergeSort(_ arr: [Int]) -> [Int] {
+func myMergeSort<T: Comparable>(_ arr: [T]) -> [T] {
     if arr.isEmpty || arr.count < 2 {
         return arr
     }
@@ -11,7 +11,7 @@ func myMergeSort(_ arr: [Int]) -> [Int] {
     return arr
 }
 
-private func process(_ arr: inout [Int], _ L: Int, _ R: Int) {
+private func process<T: Comparable>(_ arr: inout [T], _ L: Int, _ R: Int) {
     if L == R {
         return
     }
@@ -22,8 +22,8 @@ private func process(_ arr: inout [Int], _ L: Int, _ R: Int) {
     merge(&arr, L, mid, R)
 }
 
-private func merge(_ arr: inout [Int], _ L: Int, _ M: Int, _ R: Int) {
-    var help = [Int].init(repeating: 0, count: R - L + 1)
+private func merge<T: Comparable>(_ arr: inout [T], _ L: Int, _ M: Int, _ R: Int) {
+    var help = [T].init(repeating: 0 as! T, count: R - L + 1)
     var index = 0
     var p1 = L
     var p2 = M + 1

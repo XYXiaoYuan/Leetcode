@@ -39,23 +39,27 @@ func merge<T: Comparable>(leftPile: [T], rightPile: [T]) -> [T] {
 }
 
 /// 左神写法
-func myMergeSort(_ arr: [Int]) -> [Int] {
-    if arr.isEmpty || arr.count < 2 { return arr }
+func myMergeSort<T: Comparable>(_ arr: [T]) -> [T] {
+    if arr.isEmpty || arr.count < 2 {
+        return arr
+    }
     var arr = arr
     process(&arr, 0, arr.count - 1)
     return arr
 }
 
-private func process(_ arr: inout [Int], _ L: Int, _ R: Int) {
-    if L == R { return }
+private func process<T: Comparable>(_ arr: inout [T], _ L: Int, _ R: Int) {
+    if L == R {
+        return
+    }
     let mid = L + ((R - L) >> 1)
     process(&arr, L, mid)
     process(&arr, mid + 1, R)
     merge(&arr, L, mid, R)
 }
 
-private func merge(_ arr: inout [Int], _ L: Int, _ M: Int, _ R: Int) {
-    var help = [Int].init(repeating: 0, count: R - L + 1)
+private func merge<T: Comparable>(_ arr: inout [T], _ L: Int, _ M: Int, _ R: Int) {
+    var help = [T].init(repeating: 0 as! T, count: R - L + 1)
     var index = 0
     var p1 = L
     var p2 = M + 1
