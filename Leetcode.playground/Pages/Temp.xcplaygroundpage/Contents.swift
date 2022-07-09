@@ -70,7 +70,7 @@ public class _113_路径总和_II {
             if val + preSum == targetSum {
                 paths.append(val)
                 ans.append(paths.map { $0 })
-                paths.remove(at: paths.count - 1)
+                paths.removeLast()
             }
             return
         }
@@ -83,7 +83,7 @@ public class _113_路径总和_II {
         if let right = x.right {
             process(right, &paths, &preSum, targetSum, &ans)
         }
-        paths.remove(at: paths.count - 1)
+        paths.removeLast()
     }
 }
 

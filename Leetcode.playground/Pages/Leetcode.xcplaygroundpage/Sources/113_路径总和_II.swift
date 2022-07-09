@@ -85,6 +85,28 @@ public class _113_路径总和_II {
         }
         paths.remove(at: paths.count - 1)
     }
+    
+    func pathSum1(_ root: TreeNode?, _ sum: Int) -> [[Int]] {
+        var paths = [[Int]]()
+        var path = [Int]()
+        
+        dfs(root, sum, &path, &paths)
+        
+        return paths
+    }
+    
+    private func dfs(_ root: TreeNode?, _ sum: Int, _ path: inout [Int], _ paths: inout [[Int]]) {
+        guard let root = root else { return }
+        
+        path.append(root.val)
+        if root.left == nil && root.right == nil && sum == root.val {
+            paths.append(path)
+        } else {
+            dfs(root.left, sum - root.val, &path, &paths)
+            dfs(root.right, sum - root.val, &path, &paths)
+        }
+        path.removeLast()
+    }
 }
 
 public extension _113_路径总和_II {
