@@ -38,7 +38,7 @@ func merge<T: Comparable>(leftPile: [T], rightPile: [T]) -> [T] {
     return orderedPile
 }
 
-/// 左神写法
+/// 左神递归写法
 func myMergeSort<T: Comparable>(_ arr: [T]) -> [T] {
     if arr.isEmpty || arr.count < 2 {
         return arr
@@ -89,6 +89,33 @@ private func merge<T: Comparable>(_ arr: inout [T], _ L: Int, _ M: Int, _ R: Int
     for i in 0..<help.count {
         arr[L + i] = help[i]
     }
+}
+
+/// 左神迭代写法
+func myMergeSort2<T: Comparable>(_ arr: [T]) -> [T] {
+    if arr.isEmpty || arr.count < 2 { return arr }
+    var arr = arr
+    var step = 1
+    let N = arr.count
+    while step < N {
+        var L = 0
+        while L < N {
+            if step >= N - L {
+                break
+            }
+            let M = L + step - 1
+            let R = M + min(step, N - M - 1)
+            merge(&arr, L, M, R)
+            L = R + 1
+        }
+        
+        if step > (N / 2) {
+            break
+        }
+        step <<= 1
+    }
+    
+    return arr
 }
 
 let array = [2, 1, 5, 4, 9]

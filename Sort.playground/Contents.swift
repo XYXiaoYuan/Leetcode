@@ -2,7 +2,7 @@ import UIKit
 
 
 
-func myMergeSort<T: Comparable>(_ arr: [T]) -> [T] {
+func myMergeSort1<T: Comparable>(_ arr: [T]) -> [T] {
     if arr.isEmpty || arr.count < 2 {
         return arr
     }
@@ -18,7 +18,7 @@ private func process<T: Comparable>(_ arr: inout [T], _ L: Int, _ R: Int) {
     let mid = L + ((R - L) >> 1)
     process(&arr, L, mid)
     process(&arr, mid + 1, R)
-    print("左右有序后 arr \(arr)")
+    print("递归左右有序后 arr \(arr)")
     merge(&arr, L, mid, R)
 }
 
@@ -55,9 +55,40 @@ private func merge<T: Comparable>(_ arr: inout [T], _ L: Int, _ M: Int, _ R: Int
     }
 }
 
-let result1 = myMergeSort([4,3,2,1,6,8,7,5])
-print("归并排序 \(result1)")
-print("归并排序呀哈哈 完美收工")
+let result1 = myMergeSort1([4,3,2,1,6,8,7,5])
+print("归并排序(递归) \(result1)")
+print("归并排序(递归)呀哈哈 完美收工")
+
+
+func myMergeSort2<T: Comparable>(_ arr: [T]) -> [T] {
+    if arr.isEmpty || arr.count < 2 { return arr }
+    var arr = arr
+    var step = 1
+    let N = arr.count
+    while step < N {
+        var L = 0
+        while L < N {
+            if step >= N - L {
+                break
+            }
+            let M = L + step - 1
+            let R = M + min(step, N - M - 1)
+            merge(&arr, L, M, R)
+            L = R + 1
+        }
+        
+        if step > (N / 2) {
+            break
+        }
+        step <<= 1
+    }
+    
+    return arr
+}
+
+let result2 = myMergeSort2([4,3,2,1,6,8,7,5])
+print("归并排序(迭代) \(result2)")
+print("归并排序(迭代)呀哈哈 完美收工")
 
 
 /// 测试冒泡排序
