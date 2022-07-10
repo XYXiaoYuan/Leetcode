@@ -50,33 +50,11 @@ public class _741_摘樱桃 {
     public func cherryPickup(_ grid: [[Int]]) -> Int {
         let n = grid.count
     
-<<<<<<< Updated upstream
-    /// 处理树的某个路径和是否等于目标数
-    /// - Parameters:
-    ///   - x: 树结点
-    ///   - paths: 当前路径
-    ///   - preSum: 当前路径前缀和
-    ///   - targetSum: 目标数
-    ///   - ans: 符合要求的结果路径集
-    private func process(_ x: TreeNode,
-                         _ paths: inout [Int],
-                         _ preSum: inout Int,
-                         _ targetSum: Int,
-                         _ ans: inout [[Int]]) {
-        let val = x.val
-        
-        guard let _ = x.left, let _ = x.right else {
-            if val + preSum == targetSum {
-                paths.append(val)
-                ans.append(paths.map { $0 })
-                paths.remove(at: paths.count - 1)
-=======
         for k in 0..<(2 * n) {
             for i1 in 0..<n {
                 for i2 in 0..<n {
                     Self.f[k][i1][i2] = Self.INF
                 }
->>>>>>> Stashed changes
             }
         }
         
@@ -110,12 +88,8 @@ public class _741_摘樱桃 {
                 }
             }
         }
-<<<<<<< Updated upstream
-        paths.remove(at: paths.count - 1)
-=======
         
         return Self.f[2 * n][n][n] <= 0 ? 0 : Self.f[2 * n][n][n]
->>>>>>> Stashed changes
     }
 }
 
@@ -152,16 +126,16 @@ public extension _741_摘樱桃 {
     }
 }
 
-do {
-    var s = _741_摘樱桃()
-    let grid = [[0, 1, -1],
-                [1, 0, -1],
-                [1, 1,  1]]
-    let result = s.cherryPickup(grid)
-    print("\(s) --- \(result)")
-
+//do {
+//    var s = _741_摘樱桃()
+//    let grid = [[0, 1, -1],
+//                [1, 0, -1],
+//                [1, 1,  1]]
+//    let result = s.cherryPickup(grid)
+//    print("\(s) --- \(result)")
+//
 //    _741_摘樱桃.Test.defaultTestSuite.run()
-}
+//}
 
 
 
