@@ -33,12 +33,10 @@
 import Foundation
 import Darwin
 import XCTest
-//_002_两数相加.Test.defaultTestSuite.run()
 
 public class _002_两数相加 {
     //class Solution {
     public init() {}
-    public func runTestSuite() { _002_两数相加.Test.defaultTestSuite.run() }
     
     public func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         if l1 == nil { return l2 }
@@ -121,9 +119,46 @@ public class _002_两数相加 {
         }
         return l
     }
+    
+    public func test() {
+        let testTime = 10
+        let minValue = 0
+        let maxValue = 9
+        var isSucceed = true
+        for _ in 0..<testTime {
+            let count = Int.random(in: 1...100)
+            let randomArr1 = Int.random(count: count, min: minValue, max: maxValue)
+            let randomArr2 = Int.random(count: count, min: minValue, max: maxValue)
+            
+            /// 方法一
+            let node1 = ListNode.arrayToNode(randomArr1)
+            let node2 = ListNode.arrayToNode(randomArr2)
+            let result1 = addTwoNumbers1(node1, node2)
+            
+            /// 待验证的：方法二
+            let node3 = ListNode.arrayToNode(randomArr1)
+            let node4 = ListNode.arrayToNode(randomArr2)
+            let result2 = addTwoNumbers(node3, node4)
+            
+            /// 可选绑定
+            if let result1 = result1, let result2 = result2 {
+                let ans1 = result1.toArray()
+                let ans2 = result2.toArray()
+                
+                if !ans1.isEqual(ans2) {
+                    isSucceed = false
+                    randomArr1.printArray()
+                    randomArr2.printArray()
+                    break
+                }
+            }
+        }
+        
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+    }
 }
 
-extension _002_两数相加 {
+public extension _002_两数相加 {
     class Test: XCTestCase {
         var s = _002_两数相加()
         
@@ -159,11 +194,15 @@ extension _002_两数相加 {
 //    let node2 = ListNode.arrayToNode([5,6,4])
 //    let result = s.addTwoNumbers(node1, node2)
 //    let answer = ListNode.arrayToNode([7,0,8])
+//    assert(result == answer)
 //    if let result = result {
 //        print("\(s) --- \(result)")
 //    }
+//    /// 单元测试
+//    _002_两数相加.Test.defaultTestSuite.run()
 //    
-//    assert(result == answer)
+//    /// 对数器测试
+//    s.test()
 //}
 
 //: [Next](@next)

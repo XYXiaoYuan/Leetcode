@@ -18,13 +18,15 @@ do {
     let node2 = ListNode.arrayToNode([5,6,4])
     let result = s.addTwoNumbers(node1, node2)
     let answer = ListNode.arrayToNode([7,0,8])
+    assert(result == answer)
     if let result = result {
         print("\(s) --- \(result)")
     }
-
-    assert(result == answer)
+    /// 单元测试
+//    _002_两数相加.Test.defaultTestSuite.run()
     
-    s.runTestSuite()
+    /// 对数器测试
+    s.test()
 }
 
 do {

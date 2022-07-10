@@ -1,38 +1,32 @@
 /**
- https://leetcode.cn/problems/cherry-pickup/
+ https://leetcode-cn.com/problems/add-two-numbers/
  
- 一个N x N的网格(grid) 代表了一块樱桃地，每个格子由以下三种数字的一种来表示：
-
- 0 表示这个格子是空的，所以你可以穿过它。
- 1 表示这个格子里装着一个樱桃，你可以摘到樱桃然后穿过它。
- -1 表示这个格子里有荆棘，挡着你的路。
- 你的任务是在遵守下列规则的情况下，尽可能的摘到最多樱桃：
-
- 从位置 (0, 0) 出发，最后到达 (N-1, N-1) ，只能向下或向右走，并且只能穿越有效的格子（即只可以穿过值为0或者1的格子）；
- 当到达 (N-1, N-1) 后，你要继续走，直到返回到 (0, 0) ，只能向上或向左走，并且只能穿越有效的格子；
- 当你经过一个格子且这个格子包含一个樱桃时，你将摘到樱桃并且这个格子会变成空的（值变为0）；
- 如果在 (0, 0) 和 (N-1, N-1) 之间不存在一条可经过的路径，则没有任何一个樱桃能被摘到。
- 示例 1:
-
- 输入: grid =
- [[0, 1, -1],
-  [1, 0, -1],
-  [1, 1,  1]]
- 输出: 5
- 解释：
- 玩家从（0,0）点出发，经过了向下走，向下走，向右走，向右走，到达了点(2, 2)。
- 在这趟单程中，总共摘到了4颗樱桃，矩阵变成了[[0,1,-1],[0,0,-1],[0,0,0]]。
- 接着，这名玩家向左走，向上走，向上走，向左走，返回了起始点，又摘到了1颗樱桃。
- 在旅程中，总共摘到了5颗樱桃，这是可以摘到的最大值了。
- 说明:
-
- grid 是一个 N * N 的二维数组，N的取值范围是1 <= N <= 50。
- 每一个 grid[i][j] 都是集合 {-1, 0, 1}其中的一个数。
- 可以保证起点 grid[0][0] 和终点 grid[N-1][N-1] 的值都不会是 -1。
-
-
+ 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。
+ 
+ 请你将两个数相加，并以相同形式返回一个表示和的链表。
+ 
+ 你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+ 
+  
+ 
+ 示例 1：
+ 
+ 
+ 输入：l1 = [2,4,3], l2 = [5,6,4]
+ 输出：[7,0,8]
+ 解释：342 + 465 = 807.
+ 示例 2：
+ 
+ 输入：l1 = [0], l2 = [0]
+ 输出：[0]
+ 示例 3：
+ 
+ 输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+ 输出：[8,9,9,9,0,0,0,1]
+ 
+ 
  来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/cherry-pickup
+ 链接：https://leetcode-cn.com/problems/add-two-numbers
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
@@ -40,101 +34,176 @@ import Foundation
 import Darwin
 import XCTest
 
-public class _741_摘樱桃 {
+public class _002_两数相加 {
     //class Solution {
     public init() {}
+    public func runTestSuite() { _002_两数相加.Test.defaultTestSuite.run() }
     
-    static let N = 50
-    static let INF = Int.min
-    static var f = [[[Int]]].init(repeating: [[Int]].init(repeating: [Int].init(repeating: 0, count: N), count: N), count: 2 * N)
-    public func cherryPickup(_ grid: [[Int]]) -> Int {
-        let n = grid.count
+    public func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        if l1 == nil { return l2 }
+        if l2 == nil { return l1 }
+        var l1 = l1
+        var l2 = l2
+        
+        let dummyHead: ListNode = ListNode(0)
+        var last: ListNode? = dummyHead
+        
+        /// 进位值
+        var carry = 0
+        while l1 != nil || l2 != nil {
+            var v1 = 0
+            if let ll1 = l1 {
+                v1 = ll1.val
+                l1 = ll1.next
+            }
+            
+            var v2 = 0
+            if let ll2 = l2 {
+                v2 = ll2.val
+                l2 = ll2.next
+            }
+            
+            let sum = v1 + v2 + carry
+            
+            // 设置进位值
+            carry = sum / 10
+            // sum的个位数作为数节点的值
+            last?.next = ListNode(sum % 10)
+            last = last?.next
+        }
+        
+        // 检查最后的进位
+        if carry > 0 {
+            // carry == 1
+            last?.next = ListNode(carry)
+        }
+        
+        return dummyHead.next
+    }
     
-        for k in 0..<(2 * n) {
-            for i1 in 0..<n {
-                for i2 in 0..<n {
-                    Self.f[k][i1][i2] = Self.INF
+    public func addTwoNumbers1(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        func listNodeCount(_ node: ListNode?) -> Int {
+            var count = 0, node = node
+            while node != nil {
+                count += 1
+                node = node?.next
+            }
+            return count
+        }
+        
+        let count1 = listNodeCount(l1)
+        let count2 = listNodeCount(l2)
+        let l = count1 >= count2 ? l1 : l2
+        let s = l === l1 ? l2 : l1
+        var curL = l
+        var curS = s
+        var last = curL
+        var carry = 0
+        var curNum = 0
+        while curS != nil {
+            curNum = (curL?.val ?? 0) + (curS?.val ?? 0) + carry
+            curL?.val = (curNum % 10)
+            carry = (curNum / 10)
+            last = curL
+            curL = curL?.next
+            curS = curS?.next
+        }
+        while curL != nil {
+            curNum = (curL?.val ?? 0)  + carry
+            curL?.val = (curNum % 10)
+            carry = (curNum / 10)
+            last = curL
+            curL = curL?.next
+        }
+        if carry != 0 {
+            last?.next = ListNode(1)
+        }
+        return l
+    }
+    
+    public func test() {
+        let testTime = 10
+        let minValue = 0
+        let maxValue = 9
+        var isSucceed = true
+        for _ in 0..<testTime {
+            let count = Int.random(in: 1...100)
+            let randomArr1 = Int.random(count: count, min: minValue, max: maxValue)
+            let randomArr2 = Int.random(count: count, min: minValue, max: maxValue)
+            
+            /// 方法一
+            let node1 = ListNode.arrayToNode(randomArr1)
+            let node2 = ListNode.arrayToNode(randomArr2)
+            let result1 = addTwoNumbers1(node1, node2)
+            
+            /// 待验证的：方法二
+            let node3 = ListNode.arrayToNode(randomArr1)
+            let node4 = ListNode.arrayToNode(randomArr2)
+            let result2 = addTwoNumbers(node3, node4)
+            
+            /// 可选绑定
+            if let result1 = result1, let result2 = result2 {
+                let ans1 = result1.toArray()
+                let ans2 = result2.toArray()
+                
+                if !ans1.isEqual(ans2) {
+                    isSucceed = false
+                    randomArr1.printArray()
+                    randomArr2.printArray()
+                    break
                 }
             }
         }
         
-        Self.f[2][1][1] = grid[0][0]
-
-        print(Self.f)
-        
-        for k in 3..<(2 * n) {
-            for i1 in 1..<n {
-                for i2 in 1..<n {
-                    let j1 = k - i1, j2 = k - i2
-                    if j1 <= 0 || j1 > n || j2 <= 0, j2 > n {
-                        continue
-                    }
-
-                    let A = grid[i1 - 1][j1 - 1], B = grid[i2 - 1][j2 - 1]
-                    if A == -1 || B == -1 {
-                        continue
-                    }
-
-                    let a = Self.f[k - 1][i1 - 1][i2]
-                    let b = Self.f[k - 1][i1 - 1][i2 - 1]
-                    let c = Self.f[k - 1][i1][i2 - 1]
-                    let d = Self.f[k - 1][i1][i2];
-
-                    var t = max(max(a, b), max(c, d)) + A
-                    if i1 != i2 {
-                        t += B
-                    }
-                    Self.f[k][i1][i2] = t
-                }
-            }
-        }
-        
-        return Self.f[2 * n][n][n] <= 0 ? 0 : Self.f[2 * n][n][n]
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
 }
 
-public extension _741_摘樱桃 {
+extension _002_两数相加 {
     class Test: XCTestCase {
-        var s = _741_摘樱桃()
+        var s = _002_两数相加()
         
         func testExample1() {
-            let grid = [[0, 1, -1],
-                        [1, 0, -1],
-                        [1, 1,  1]]
-            let result = s.cherryPickup(grid)
-            print("\(s) --- \(result)")
-            let answer = 5
+            let node1 = ListNode.arrayToNode([2,4,3])
+            let node2 = ListNode.arrayToNode([5,6,4])
+            let result = s.addTwoNumbers(node1, node2)
+            let answer = ListNode.arrayToNode([7,0,8])
             XCTAssertEqual(result, answer)
         }
-                
+        
         func testExample2() {
-//            let node = TreeNode.arrayToNode([1,2,3])
-//            let result = s.pathSum(node, 5)
-//            print("\(s) --- \(result)")
-//            let answer = [Int]()
-//            XCTAssertEqual(result, answer)
+            let node1 = ListNode.arrayToNode([0])
+            let node2 = ListNode.arrayToNode([0])
+            let result = s.addTwoNumbers(node1, node2)
+            let answer = ListNode.arrayToNode([0])
+            XCTAssertEqual(result, answer)
         }
         
         func testExample3() {
-//            let node = TreeNode.arrayToNode([1,2])
-//            let result = s.pathSum(node, 0)
-//            print("\(s) --- \(result)")
-//            let answer = [Int]()
-//            XCTAssertEqual(result, answer)
+            let node1 = ListNode.arrayToNode([9,9,9,9,9,9,9])
+            let node2 = ListNode.arrayToNode([9,9,9,9])
+            let result = s.addTwoNumbers(node1, node2)
+            let answer = ListNode.arrayToNode([8,9,9,9,0,0,0,1])
+            XCTAssertEqual(result, answer)
         }
-
     }
 }
 
 do {
-    let s = _741_摘樱桃()
-    let grid = [[6]]
-    let result = s.cherryPickup(grid)
-    print("\(s) --- \(result)")
-
-//    _741_摘樱桃.Test.defaultTestSuite.run()
+    let s = _002_两数相加()
+    let node1 = ListNode.arrayToNode([2,4,3])
+    let node2 = ListNode.arrayToNode([5,6,4])
+    let result = s.addTwoNumbers(node1, node2)
+    let answer = ListNode.arrayToNode([7,0,8])
+    assert(result == answer)
+    if let result = result {
+        print("\(s) --- \(result)")
+    }
+    /// 单元测试
+    _002_两数相加.Test.defaultTestSuite.run()
+    
+    /// 对数器测试
+    s.test()
 }
-
-
 
 //: [Next](@next)
