@@ -49,6 +49,22 @@ public class _11_盛最多水的容器 {
         var right = height.count - 1
         var res = 0
         while left < right {
+            if height[left] < height[right] {
+                res = max(res, (right - left) * height[left])
+                left += 1
+            } else {
+                res = max(res, (right - left) * height[right])
+                right -= 1
+            }
+        }
+        return res
+    }
+
+    public func maxArea1(_ height: [Int]) -> Int {
+        var left = 0
+        var right = height.count - 1
+        var res = 0
+        while left < right {
             let width = right - left
             let h = min(height[right], height[left])
             let size = width * h
@@ -64,6 +80,32 @@ public class _11_盛最多水的容器 {
             }
         }
         return res
+    }
+    
+    public func test() {
+        let testTime = 1000
+        let minValue = 0
+        let maxValue = 100
+        var isSucceed = true
+        for _ in 0..<testTime {
+            let count = Int.random(in: 1...10)
+            let randomArr = Int.random(count: count, min: minValue, max: maxValue)
+            
+            /// 方法一：正确的
+            let result1 = maxArea1(randomArr)
+            
+            /// 待验证的：方法二
+            let result2 = maxArea(randomArr)
+            
+            if result1 != result2 {
+                isSucceed = false
+                randomArr.printArray()
+                print("Expected Answer = \(result1)😆, Your Answer = \(result2) 😭")
+                break
+            }
+        }
+        
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
 }
 
@@ -94,9 +136,11 @@ public extension _11_盛最多水的容器 {
 //    let answer = 49
 //    XCTAssertEqual(result, answer)
 //
+//    /// 单元测试
 //    _11_盛最多水的容器.Test.defaultTestSuite.run()
-//}
 //
-
+//    /// 对数器测试
+//    s.test()
+//}
 
 //: [Next](@next)

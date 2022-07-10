@@ -36,7 +36,7 @@ extension Array {
             return
         }
         for i in 0..<self.count {
-            print("\(self[i]) \n")
+            print("\(self[i]) ")
         }
     }
 }

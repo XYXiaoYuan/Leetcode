@@ -1,4 +1,5 @@
 import Foundation
+import XCTest
 
 do {
     let s = _001_两数之和()
@@ -9,7 +10,7 @@ do {
     assert(s.twoSum([3,2,4], 6) == [1,2])
     assert(s.twoSum([3,3], 6) == [0,1])
 
-    s.runTestSuite()
+//    s.runTestSuite()
 }
 
 do {
@@ -44,9 +45,14 @@ do {
     let s = _11_盛最多水的容器()
     let result = s.maxArea([1,8,6,2,5,4,8,3,7])
     print("\(s) --- \(result)")
-    assert(result == 49)
+    let answer = 49
+    XCTAssertEqual(result, answer)
 
+    /// 单元测试
     _11_盛最多水的容器.Test.defaultTestSuite.run()
+    
+    /// 对数器测试
+    s.test()
 }
 
 do {

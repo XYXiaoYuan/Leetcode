@@ -1,32 +1,38 @@
 /**
- https://leetcode-cn.com/problems/add-two-numbers/
+ https://leetcode.cn/problems/container-with-most-water/
  
- 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。
+ 给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。
  
- 请你将两个数相加，并以相同形式返回一个表示和的链表。
+ 找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
  
- 你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+ 返回容器可以储存的最大水量。
+ 
+ 说明：你不能倾斜容器。
  
   
  
  示例 1：
  
  
- 输入：l1 = [2,4,3], l2 = [5,6,4]
- 输出：[7,0,8]
- 解释：342 + 465 = 807.
+ 
+ 输入：[1,8,6,2,5,4,8,3,7]
+ 输出：49
+ 解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
  示例 2：
  
- 输入：l1 = [0], l2 = [0]
- 输出：[0]
- 示例 3：
+ 输入：height = [1,1]
+ 输出：1
+  
  
- 输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
- 输出：[8,9,9,9,0,0,0,1]
+ 提示：
+ 
+ n == height.length
+ 2 <= n <= 105
+ 0 <= height[i] <= 104
  
  
  来源：力扣（LeetCode）
- 链接：https://leetcode-cn.com/problems/add-two-numbers
+ 链接：https://leetcode.cn/problems/container-with-most-water
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
@@ -34,176 +40,109 @@ import Foundation
 import Darwin
 import XCTest
 
-public class _002_两数相加 {
+public class _11_盛最多水的容器 {
     //class Solution {
     public init() {}
-    public func runTestSuite() { _002_两数相加.Test.defaultTestSuite.run() }
     
-    public func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        if l1 == nil { return l2 }
-        if l2 == nil { return l1 }
-        var l1 = l1
-        var l2 = l2
-        
-        let dummyHead: ListNode = ListNode(0)
-        var last: ListNode? = dummyHead
-        
-        /// 进位值
-        var carry = 0
-        while l1 != nil || l2 != nil {
-            var v1 = 0
-            if let ll1 = l1 {
-                v1 = ll1.val
-                l1 = ll1.next
+    public func maxArea(_ height: [Int]) -> Int {
+        var left = 0
+        var right = height.count - 1
+        var res = 0
+        while left < right {
+            if height[left] < height[right] {
+                res = max(res, (right - left) * height[left])
+                left += 1
+            } else {
+                res = max(res, (right - left) * height[right])
+                right -= 1
             }
-            
-            var v2 = 0
-            if let ll2 = l2 {
-                v2 = ll2.val
-                l2 = ll2.next
-            }
-            
-            let sum = v1 + v2 + carry
-            
-            // 设置进位值
-            carry = sum / 10
-            // sum的个位数作为数节点的值
-            last?.next = ListNode(sum % 10)
-            last = last?.next
         }
-        
-        // 检查最后的进位
-        if carry > 0 {
-            // carry == 1
-            last?.next = ListNode(carry)
-        }
-        
-        return dummyHead.next
+        return res
     }
-    
-    public func addTwoNumbers1(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        func listNodeCount(_ node: ListNode?) -> Int {
-            var count = 0, node = node
-            while node != nil {
-                count += 1
-                node = node?.next
+
+    public func maxArea1(_ height: [Int]) -> Int {
+        var left = 0
+        var right = height.count - 1
+        var res = 0
+        while left < right {
+            let width = right - left
+            let h = min(height[right], height[left])
+            let size = width * h
+            
+            // 更新最大面积
+            if size > res {
+                res = size
             }
-            return count
+            if height[left] < height[right] {
+                left += 1
+            } else {
+                right -= 1
+            }
         }
-        
-        let count1 = listNodeCount(l1)
-        let count2 = listNodeCount(l2)
-        let l = count1 >= count2 ? l1 : l2
-        let s = l === l1 ? l2 : l1
-        var curL = l
-        var curS = s
-        var last = curL
-        var carry = 0
-        var curNum = 0
-        while curS != nil {
-            curNum = (curL?.val ?? 0) + (curS?.val ?? 0) + carry
-            curL?.val = (curNum % 10)
-            carry = (curNum / 10)
-            last = curL
-            curL = curL?.next
-            curS = curS?.next
-        }
-        while curL != nil {
-            curNum = (curL?.val ?? 0)  + carry
-            curL?.val = (curNum % 10)
-            carry = (curNum / 10)
-            last = curL
-            curL = curL?.next
-        }
-        if carry != 0 {
-            last?.next = ListNode(1)
-        }
-        return l
+        return res
     }
     
     public func test() {
-        let testTime = 10
+        let testTime = 1000
         let minValue = 0
-        let maxValue = 9
+        let maxValue = 100
         var isSucceed = true
         for _ in 0..<testTime {
-            let count = Int.random(in: 1...100)
-            let randomArr1 = Int.random(count: count, min: minValue, max: maxValue)
-            let randomArr2 = Int.random(count: count, min: minValue, max: maxValue)
+            let count = Int.random(in: 1...10)
+            let randomArr = Int.random(count: count, min: minValue, max: maxValue)
             
-            /// 方法一
-            let node1 = ListNode.arrayToNode(randomArr1)
-            let node2 = ListNode.arrayToNode(randomArr2)
-            let result1 = addTwoNumbers1(node1, node2)
+            /// 方法一：正确的
+            let result1 = maxArea1(randomArr)
             
             /// 待验证的：方法二
-            let node3 = ListNode.arrayToNode(randomArr1)
-            let node4 = ListNode.arrayToNode(randomArr2)
-            let result2 = addTwoNumbers(node3, node4)
+            let result2 = maxArea(randomArr)
             
-            /// 可选绑定
-            if let result1 = result1, let result2 = result2 {
-                let ans1 = result1.toArray()
-                let ans2 = result2.toArray()
-                
-                if !ans1.isEqual(ans2) {
-                    isSucceed = false
-                    randomArr1.printArray()
-                    randomArr2.printArray()
-                    break
-                }
-            }
+            if result1 != result2 {
+                isSucceed = false
+                randomArr.printArray()
+                print("Expected Answer = \(result1)😆, Your Answer = \(result2) 😭")
+                break
+            } 
         }
         
         print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
 }
 
-extension _002_两数相加 {
+public extension _11_盛最多水的容器 {
     class Test: XCTestCase {
-        var s = _002_两数相加()
+        var s = _11_盛最多水的容器()
         
         func testExample1() {
-            let node1 = ListNode.arrayToNode([2,4,3])
-            let node2 = ListNode.arrayToNode([5,6,4])
-            let result = s.addTwoNumbers(node1, node2)
-            let answer = ListNode.arrayToNode([7,0,8])
+            let result = s.maxArea([1,8,6,2,5,4,8,3,7])
+            print("\(s) --- \(result)")
+            let answer = 49
             XCTAssertEqual(result, answer)
         }
         
         func testExample2() {
-            let node1 = ListNode.arrayToNode([0])
-            let node2 = ListNode.arrayToNode([0])
-            let result = s.addTwoNumbers(node1, node2)
-            let answer = ListNode.arrayToNode([0])
-            XCTAssertEqual(result, answer)
-        }
-        
-        func testExample3() {
-            let node1 = ListNode.arrayToNode([9,9,9,9,9,9,9])
-            let node2 = ListNode.arrayToNode([9,9,9,9])
-            let result = s.addTwoNumbers(node1, node2)
-            let answer = ListNode.arrayToNode([8,9,9,9,0,0,0,1])
+            let result = s.maxArea([1,1])
+            print("\(s) --- \(result)")
+            let answer = 1
             XCTAssertEqual(result, answer)
         }
     }
 }
 
 do {
-    let s = _002_两数相加()
-    let node1 = ListNode.arrayToNode([2,4,3])
-    let node2 = ListNode.arrayToNode([5,6,4])
-    let result = s.addTwoNumbers(node1, node2)
-    let answer = ListNode.arrayToNode([7,0,8])
-    assert(result == answer)
-    if let result = result {
-        print("\(s) --- \(result)")
-    }
-    /// 单元测试
-    _002_两数相加.Test.defaultTestSuite.run()
+    let s = _11_盛最多水的容器()
+    let result = s.maxArea([1,8,6,2,5,4,8,3,7])
+    print("\(s) --- \(result)")
+    let answer = 49
+    XCTAssertEqual(result, answer)
+
+//    /// 单元测试
+//    _11_盛最多水的容器.Test.defaultTestSuite.run()
     
     /// 对数器测试
     s.test()
 }
+
+
 
 //: [Next](@next)
