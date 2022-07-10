@@ -2,7 +2,8 @@ import Foundation
 
 /// 基数排序
 // NOTE: This implementation does not handle negative numbers
-public func radixSort(_ array: inout [Int] ) {
+public func radixSort(_ array: [Int]) -> [Int] {
+    var array = array
     let radix = 10  //Here we define our radix to be 10
     var done = false
     var index: Int
@@ -36,5 +37,7 @@ public func radixSort(_ array: inout [Int] ) {
         }
         
         digit *= radix  //Move to the next digit
+        
+        return array
     }
 }

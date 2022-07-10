@@ -1,7 +1,19 @@
 import Foundation
 
 /// 希尔排序
-public func insertionSort(_ list: inout [Int], start: Int, gap: Int) {
+public func shellSort(_ list: [Int]) -> [Int] {
+    var list = list
+    var sublistCount = list.count / 2
+    while sublistCount > 0 {
+        for pos in 0..<sublistCount {
+            insertionSort(&list, start: pos, gap: sublistCount)
+        }
+        sublistCount = sublistCount / 2
+    }
+    return list
+}
+
+private func insertionSort(_ list: inout [Int], start: Int, gap: Int) {
     for i in stride(from: (start + gap), to: list.count, by: gap) {
         let currentValue = list[i]
         var pos = i
@@ -12,17 +24,3 @@ public func insertionSort(_ list: inout [Int], start: Int, gap: Int) {
         list[pos] = currentValue
     }
 }
-
-public func shellSort(_ list: inout [Int]) {
-    var sublistCount = list.count / 2
-    while sublistCount > 0 {
-        for pos in 0..<sublistCount {
-            insertionSort(&list, start: pos, gap: sublistCount)
-        }
-        sublistCount = sublistCount / 2
-    }
-}
-
-//var arr = [64, 20, 50, 33, 72, 10, 23, -1, 4, 5]
-//
-//shellSort(&arr)

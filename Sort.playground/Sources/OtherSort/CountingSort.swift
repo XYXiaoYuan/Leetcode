@@ -1,13 +1,9 @@
 import Foundation
 
 /// 计数排序
-enum CountingSortError: Error {
-    case arrayEmpty
-}
-
-func countingSort(array: [Int]) throws -> [Int] {
-    guard array.count > 0 else {
-        throw CountingSortError.arrayEmpty
+public func countingSort(_ array: [Int]) -> [Int] {
+    if array.isEmpty || array.count < 2 {
+        return array
     }
     
     // Step 1
@@ -25,9 +21,7 @@ func countingSort(array: [Int]) throws -> [Int] {
         let sum = countArray[index] + countArray[index - 1]
         countArray[index] = sum
     }
-    
-    print(countArray)
-    
+        
     // Step 3
     // Place the element in the final array as per the number of elements before it
     // Loop through the array in reverse to keep the stability of the new array

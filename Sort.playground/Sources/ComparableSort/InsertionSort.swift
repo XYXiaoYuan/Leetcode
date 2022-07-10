@@ -10,7 +10,7 @@ import Foundation
 ///   - array: the array of elements to be sorted
 ///   - isOrderedBefore: returns true if the elements provided are in the corect order
 /// - Returns: a sorted array containing the same elements
-func insertionSort<T>(_ array: [T], _ isOrderedBefore: (T, T) -> Bool) -> [T] {
+public func insertionSort<T>(_ array: [T], _ isOrderedBefore: (T, T) -> Bool) -> [T] {
     guard array.count > 1 else { return array }
     
     var sortedArray = array
@@ -30,7 +30,7 @@ func insertionSort<T>(_ array: [T], _ isOrderedBefore: (T, T) -> Bool) -> [T] {
 ///
 /// - Parameter array: the array to be sorted, conatining elements that conform to the Comparable protocol
 /// - Returns: a sorted array containing the same elements
-func insertionSort<T: Comparable>(_ array: [T]) -> [T] {
+public func insertionSort<T: Comparable>(_ array: [T]) -> [T] {
     var sortedArray = array
     for index in 1..<sortedArray.count {
         var currentIndex = index

@@ -2,7 +2,7 @@ import Foundation
 
 // *** Simple but inefficient version of quicksort ***
 
-func quicksort<T: Comparable>(_ a: [T]) -> [T] {
+public func quickSort<T: Comparable>(_ a: [T]) -> [T] {
     guard a.count > 1 else { return a }
     
     let pivot = a[a.count/2]
@@ -14,7 +14,7 @@ func quicksort<T: Comparable>(_ a: [T]) -> [T] {
     // pivot is in each step and how the subarrays are partitioned.
     //print(pivot, less, equal, greater)  return quicksort(less) + equal + quicksort(greater)
     
-    return quicksort(less) + equal + quicksort(greater)
+    return quickSort(less) + equal + quickSort(greater)
 }
 
 //let list1 = [ 10, 0, 3, 9, 2, 14, 8, 27, 1, 5, 8, -1, 26 ]

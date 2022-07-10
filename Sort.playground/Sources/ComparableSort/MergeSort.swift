@@ -1,7 +1,7 @@
 import Foundation
 
 /// 归并排序
-func mergeSort<T: Comparable>(_ array: [T]) -> [T] {
+public func mergeSort<T: Comparable>(_ array: [T]) -> [T] {
     guard array.count > 1 else { return array }
     let middleIndex = array.count / 2
     let leftArray = mergeSort(Array(array[0..<middleIndex]))
@@ -39,7 +39,7 @@ func merge<T: Comparable>(leftPile: [T], rightPile: [T]) -> [T] {
 }
 
 /// 左神递归写法
-func myMergeSort<T: Comparable>(_ arr: [T]) -> [T] {
+public func myMergeSort<T: Comparable>(_ arr: [T]) -> [T] {
     if arr.isEmpty || arr.count < 2 {
         return arr
     }
@@ -92,7 +92,7 @@ private func merge<T: Comparable>(_ arr: inout [T], _ L: Int, _ M: Int, _ R: Int
 }
 
 /// 左神迭代写法
-func myMergeSort2<T: Comparable>(_ arr: [T]) -> [T] {
+public func myMergeSort2<T: Comparable>(_ arr: [T]) -> [T] {
     if arr.isEmpty || arr.count < 2 { return arr }
     var arr = arr
     var step = 1
