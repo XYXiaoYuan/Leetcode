@@ -1,5 +1,5 @@
 //
-//  Queue.swift
+//  QueueProtocol.swift
 //  DataStruct
 //
 //  Created by apple on 2020/8/20.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Queue {
+public protocol QueueProtocol {
     /// 元素类型
     associatedtype QE
     

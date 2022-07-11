@@ -1,5 +1,5 @@
 //
-//  Stack.swift
+//  StackProtocol.swift
 //  DataStructExtension
 //
 //  Created by apple on 2020/8/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// 栈
-public protocol Stack {
+public protocol StackProtocol {
     /// 栈元素类型
     associatedtype Element
     
@@ -37,7 +37,7 @@ public protocol Stack {
 }
 
 /// 数组 栈
-public struct ArrayStack<T>: Stack {
+public struct ArrayStack<T>: StackProtocol {
     
     /// Datastructure consisting of a generic item.
     fileprivate var array = [T]()

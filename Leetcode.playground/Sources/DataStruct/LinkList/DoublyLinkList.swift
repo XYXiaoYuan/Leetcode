@@ -492,7 +492,7 @@ extension DoublyLinkList: Sequence {
 }
 
 // MARK: - Queue
-extension DoublyLinkList: Queue {
+extension DoublyLinkList: QueueProtocol {
     /// 队列首元素
     public func peek() -> T? {
         first

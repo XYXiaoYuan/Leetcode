@@ -379,7 +379,7 @@ extension SingleLinkList: Sequence {
 }
 
 // MARK: - Stack,链表栈
-extension SingleLinkList: Stack {
+extension SingleLinkList: StackProtocol {
     /// 顶部元素
     public var top: T? {
         first

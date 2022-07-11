@@ -18,6 +18,22 @@
 		6D9C622D287BBF4C00320073 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6223287BBF4C00320073 /* TreeNode.swift */; };
 		6D9C622E287BBF4C00320073 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6224287BBF4C00320073 /* ListNode.swift */; };
 		6D9C622F287BBF4C00320073 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6225287BBF4C00320073 /* Heap.swift */; };
+		6D9C624A287BC5F300320073 /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6232287BC5F300320073 /* BitSet.swift */; };
+		6D9C624B287BC5F300320073 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6234287BC5F300320073 /* HashTable.swift */; };
+		6D9C624C287BC5F300320073 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6236287BC5F300320073 /* PriorityQueue.swift */; };
+		6D9C624D287BC5F300320073 /* QueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6237287BC5F300320073 /* QueueProtocol.swift */; };
+		6D9C624E287BC5F300320073 /* DoublyLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6239287BC5F300320073 /* DoublyLinkList.swift */; };
+		6D9C624F287BC5F300320073 /* SkipList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C623A287BC5F300320073 /* SkipList.swift */; };
+		6D9C6250287BC5F300320073 /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C623B287BC5F300320073 /* LinkList.swift */; };
+		6D9C6251287BC5F300320073 /* SingleLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C623C287BC5F300320073 /* SingleLinkList.swift */; };
+		6D9C6252287BC5F300320073 /* BloomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C623E287BC5F300320073 /* BloomFilter.swift */; };
+		6D9C6253287BC5F300320073 /* StackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6240287BC5F300320073 /* StackProtocol.swift */; };
+		6D9C6254287BC5F300320073 /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6243287BC5F300320073 /* BST.swift */; };
+		6D9C6255287BC5F300320073 /* BBST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6244287BC5F300320073 /* BBST.swift */; };
+		6D9C6256287BC5F300320073 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6245287BC5F300320073 /* BinaryTree.swift */; };
+		6D9C6257287BC5F300320073 /* BTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6247287BC5F300320073 /* BTNode.swift */; };
+		6D9C6258287BC5F300320073 /* RBTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6248287BC5F300320073 /* RBTree.swift */; };
+		6D9C6259287BC5F300320073 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6249287BC5F300320073 /* AVLTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +61,22 @@
 		6D9C6223287BBF4C00320073 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		6D9C6224287BBF4C00320073 /* ListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		6D9C6225287BBF4C00320073 /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		6D9C6232287BC5F300320073 /* BitSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitSet.swift; sourceTree = "<group>"; };
+		6D9C6234287BC5F300320073 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		6D9C6236287BC5F300320073 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		6D9C6237287BC5F300320073 /* QueueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueProtocol.swift; sourceTree = "<group>"; };
+		6D9C6239287BC5F300320073 /* DoublyLinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoublyLinkList.swift; sourceTree = "<group>"; };
+		6D9C623A287BC5F300320073 /* SkipList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkipList.swift; sourceTree = "<group>"; };
+		6D9C623B287BC5F300320073 /* LinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
+		6D9C623C287BC5F300320073 /* SingleLinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLinkList.swift; sourceTree = "<group>"; };
+		6D9C623E287BC5F300320073 /* BloomFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomFilter.swift; sourceTree = "<group>"; };
+		6D9C6240287BC5F300320073 /* StackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackProtocol.swift; sourceTree = "<group>"; };
+		6D9C6243287BC5F300320073 /* BST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
+		6D9C6244287BC5F300320073 /* BBST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBST.swift; sourceTree = "<group>"; };
+		6D9C6245287BC5F300320073 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		6D9C6247287BC5F300320073 /* BTNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNode.swift; sourceTree = "<group>"; };
+		6D9C6248287BC5F300320073 /* RBTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTree.swift; sourceTree = "<group>"; };
+		6D9C6249287BC5F300320073 /* AVLTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +118,7 @@
 		6D9C621A287BBF4C00320073 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				6D9C6230287BC5F300320073 /* DataStruct */,
 				6D9C621B287BBF4C00320073 /* Tools */,
 				6D9C621F287BBF4C00320073 /* String+Index.swift */,
 				6D9C6220287BBF4C00320073 /* Stack.swift */,
@@ -106,6 +139,101 @@
 				6D9C621E287BBF4C00320073 /* Array+Tool.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		6D9C6230287BC5F300320073 /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6231287BC5F300320073 /* BitSet */,
+				6D9C6233287BC5F300320073 /* Hash */,
+				6D9C6235287BC5F300320073 /* Queue */,
+				6D9C6238287BC5F300320073 /* LinkList */,
+				6D9C623D287BC5F300320073 /* BloomFilter */,
+				6D9C623F287BC5F300320073 /* Stack */,
+				6D9C6241287BC5F300320073 /* BinaryTree */,
+			);
+			path = DataStruct;
+			sourceTree = "<group>";
+		};
+		6D9C6231287BC5F300320073 /* BitSet */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6232287BC5F300320073 /* BitSet.swift */,
+			);
+			path = BitSet;
+			sourceTree = "<group>";
+		};
+		6D9C6233287BC5F300320073 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6234287BC5F300320073 /* HashTable.swift */,
+			);
+			path = Hash;
+			sourceTree = "<group>";
+		};
+		6D9C6235287BC5F300320073 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6236287BC5F300320073 /* PriorityQueue.swift */,
+				6D9C6237287BC5F300320073 /* QueueProtocol.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		6D9C6238287BC5F300320073 /* LinkList */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6239287BC5F300320073 /* DoublyLinkList.swift */,
+				6D9C623A287BC5F300320073 /* SkipList.swift */,
+				6D9C623B287BC5F300320073 /* LinkList.swift */,
+				6D9C623C287BC5F300320073 /* SingleLinkList.swift */,
+			);
+			path = LinkList;
+			sourceTree = "<group>";
+		};
+		6D9C623D287BC5F300320073 /* BloomFilter */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C623E287BC5F300320073 /* BloomFilter.swift */,
+			);
+			path = BloomFilter;
+			sourceTree = "<group>";
+		};
+		6D9C623F287BC5F300320073 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6240287BC5F300320073 /* StackProtocol.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		6D9C6241287BC5F300320073 /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6242287BC5F300320073 /* Protocol */,
+				6D9C6246287BC5F300320073 /* Node */,
+				6D9C6248287BC5F300320073 /* RBTree.swift */,
+				6D9C6249287BC5F300320073 /* AVLTree.swift */,
+			);
+			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		6D9C6242287BC5F300320073 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6243287BC5F300320073 /* BST.swift */,
+				6D9C6244287BC5F300320073 /* BBST.swift */,
+				6D9C6245287BC5F300320073 /* BinaryTree.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		6D9C6246287BC5F300320073 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				6D9C6247287BC5F300320073 /* BTNode.swift */,
+			);
+			path = Node;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,17 +294,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9C6259287BC5F300320073 /* AVLTree.swift in Sources */,
 				6D9C6226287BBF4C00320073 /* Times.swift in Sources */,
+				6D9C6250287BC5F300320073 /* LinkList.swift in Sources */,
+				6D9C624B287BC5F300320073 /* HashTable.swift in Sources */,
+				6D9C6252287BC5F300320073 /* BloomFilter.swift in Sources */,
 				6D9C622E287BBF4C00320073 /* ListNode.swift in Sources */,
 				6D9C622C287BBF4C00320073 /* Trie.swift in Sources */,
+				6D9C6251287BC5F300320073 /* SingleLinkList.swift in Sources */,
+				6D9C6258287BC5F300320073 /* RBTree.swift in Sources */,
 				6D9C622D287BBF4C00320073 /* TreeNode.swift in Sources */,
+				6D9C6256287BC5F300320073 /* BinaryTree.swift in Sources */,
+				6D9C624C287BC5F300320073 /* PriorityQueue.swift in Sources */,
+				6D9C6254287BC5F300320073 /* BST.swift in Sources */,
+				6D9C6255287BC5F300320073 /* BBST.swift in Sources */,
 				6D9C6214287BBEDA00320073 /* main.swift in Sources */,
 				6D9C6227287BBF4C00320073 /* Int+Numbers.swift in Sources */,
+				6D9C624E287BC5F300320073 /* DoublyLinkList.swift in Sources */,
+				6D9C624A287BC5F300320073 /* BitSet.swift in Sources */,
 				6D9C6228287BBF4C00320073 /* Array+Tool.swift in Sources */,
+				6D9C624D287BC5F300320073 /* QueueProtocol.swift in Sources */,
 				6D9C622A287BBF4C00320073 /* Stack.swift in Sources */,
+				6D9C6253287BC5F300320073 /* StackProtocol.swift in Sources */,
 				6D9C6229287BBF4C00320073 /* String+Index.swift in Sources */,
+				6D9C6257287BC5F300320073 /* BTNode.swift in Sources */,
 				6D9C622B287BBF4C00320073 /* Tester.swift in Sources */,
 				6D9C622F287BBF4C00320073 /* Heap.swift in Sources */,
+				6D9C624F287BC5F300320073 /* SkipList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

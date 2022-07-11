@@ -67,7 +67,7 @@ extension PriorityQueue where E: Comparable {
     }
 }
 
-extension PriorityQueue: Queue {
+extension PriorityQueue: QueueProtocol {
     /// typealias Queue.Element
     public typealias QE = E
     
