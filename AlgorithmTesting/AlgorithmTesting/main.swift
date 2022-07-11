@@ -46,8 +46,8 @@ public class _741_摘樱桃 {
     public func cherryPickup(_ grid: [[Int]]) -> Int {
         let n = grid.count
         
-        let N = 6
-        let INF = -9
+        let N = 50
+        let INF = Int.min
         var f = [[[Int]]].init(repeating: [[Int]].init(repeating: [Int].init(repeating: 0, count: N), count: N), count: 2 * N)
 
         for k in 0..<(2 * n) {
@@ -92,7 +92,7 @@ public class _741_摘樱桃 {
             }
         }
         
-        print(f)
+//        print(f)
         
         return f[2 * n][n][n] <= 0 ? 0 : f[2 * n][n][n]
     }
