@@ -38,35 +38,33 @@
 
 import Foundation
 import Darwin
-import XCTest
 
 public class _741_摘樱桃 {
     //class Solution {
     public init() {}
     
-    static let N = 50
-    static let INF = Int.min
-    static var f = [[[Int]]].init(repeating: [[Int]].init(repeating: [Int].init(repeating: 0, count: N), count: N), count: 2 * N)
     public func cherryPickup(_ grid: [[Int]]) -> Int {
         let n = grid.count
-    
+        
+        let N = 50
+        let INF = Int.min
+        var f = [[[Int]]].init(repeating: [[Int]].init(repeating: [Int].init(repeating: 0, count: N), count: N), count: 2 * N)
+
         for k in 0..<(2 * n) {
             for i1 in 0..<n {
                 for i2 in 0..<n {
-                    Self.f[k][i1][i2] = Self.INF
+                    f[k][i1][i2] = INF
                 }
             }
         }
         
-        Self.f[2][1][1] = grid[0][0]
-
-        print(Self.f)
+        f[2][1][1] = grid[0][0]
         
         for k in 3..<(2 * n) {
             for i1 in 1..<n {
                 for i2 in 1..<n {
                     let j1 = k - i1, j2 = k - i2
-                    if j1 <= 0 || j1 > n || j2 <= 0, j2 > n {
+                    if j1 <= 0 || j1 > n || j2 <= 0 || j2 > n {
                         continue
                     }
                     
@@ -75,66 +73,53 @@ public class _741_摘樱桃 {
                         continue
                     }
 
-                    let a = Self.f[k - 1][i1 - 1][i2]
-                    let b = Self.f[k - 1][i1 - 1][i2 - 1]
-                    let c = Self.f[k - 1][i1][i2 - 1]
-                    let d = Self.f[k - 1][i1][i2];
-
-                    var t = max(max(a, b), max(c, d)) + A
+                    let a = f[k - 1][i1 - 1][i2]
+                    let b = f[k - 1][i1 - 1][i2 - 1]
+                    let c = f[k - 1][i1][i2 - 1]
+                    let d = f[k - 1][i1][i2];
+                    
+                    var t = max(a, b, c, d) + A
                     if i1 != i2 {
                         t += B
                     }
-                    Self.f[k][i1][i2] = t
+                    
+//                    print("A = \(A), B = \(B), a = \(a), b = \(b), c = \(c), d = \(d), t = \(t), 设置前 f[\(k)][\(i1)][\(i2)] = \(f[k][i1][i2])")
+
+                    f[k][i1][i2] = t
+                    
+//                    print("设置后 f[\(k)][\(i1)][\(i2)] = \(f[k][i1][i2])")
                 }
             }
         }
-        
-        return Self.f[2 * n][n][n] <= 0 ? 0 : Self.f[2 * n][n][n]
-    }
-}
-
-public extension _741_摘樱桃 {
-    class Test: XCTestCase {
-        var s = _741_摘樱桃()
-        
-        func testExample1() {
-            let grid = [[0, 1, -1],
-                        [1, 0, -1],
-                        [1, 1,  1]]
-            let result = s.cherryPickup(grid)
-            print("\(s) --- \(result)")
-            let answer = 5
-            XCTAssertEqual(result, answer)
-        }
                 
-        func testExample2() {
-//            let node = TreeNode.arrayToNode([1,2,3])
-//            let result = s.pathSum(node, 5)
-//            print("\(s) --- \(result)")
-//            let answer = [Int]()
-//            XCTAssertEqual(result, answer)
-        }
-        
-        func testExample3() {
-//            let node = TreeNode.arrayToNode([1,2])
-//            let result = s.pathSum(node, 0)
-//            print("\(s) --- \(result)")
-//            let answer = [Int]()
-//            XCTAssertEqual(result, answer)
-        }
-
+        return f[2 * n][n][n] <= 0 ? 0 : f[2 * n][n][n]
     }
 }
+
+//public extension _741_摘樱桃 {
+//    class Test: XCTestCase {
+//        var s = _741_摘樱桃()
+//
+//        func testExample1() {
+//            let grid = [[0, 1, -1],
+//                        [1, 0, -1],
+//                        [1, 1,  1]]
+//            let result = s.cherryPickup(grid)
+//            print("\(s) --- \(result)")
+//            let answer = 5
+//            XCTAssertEqual(result, answer)
+//        }
+//    }
+//}
 
 //do {
-//    var s = _741_摘樱桃()
+//    let s = _741_摘樱桃()
 //    let grid = [[0, 1, -1],
 //                [1, 0, -1],
 //                [1, 1,  1]]
 //    let result = s.cherryPickup(grid)
 //    print("\(s) --- \(result)")
 //
-//    _741_摘樱桃.Test.defaultTestSuite.run()
 //}
 
 

@@ -34,6 +34,7 @@
 		6D9C6257287BC5F300320073 /* BTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6247287BC5F300320073 /* BTNode.swift */; };
 		6D9C6258287BC5F300320073 /* RBTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6248287BC5F300320073 /* RBTree.swift */; };
 		6D9C6259287BC5F300320073 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6249287BC5F300320073 /* AVLTree.swift */; };
+		6D9C625B287C06AA00320073 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C625A287C06AA00320073 /* Temp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		6D9C6247287BC5F300320073 /* BTNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNode.swift; sourceTree = "<group>"; };
 		6D9C6248287BC5F300320073 /* RBTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTree.swift; sourceTree = "<group>"; };
 		6D9C6249287BC5F300320073 /* AVLTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
+		6D9C625A287C06AA00320073 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				6D9C621A287BBF4C00320073 /* Dependencies */,
 				6D9C6213287BBEDA00320073 /* main.swift */,
+				6D9C625A287C06AA00320073 /* Temp.swift */,
 			);
 			path = AlgorithmTesting;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				6D9C6252287BC5F300320073 /* BloomFilter.swift in Sources */,
 				6D9C622E287BBF4C00320073 /* ListNode.swift in Sources */,
 				6D9C622C287BBF4C00320073 /* Trie.swift in Sources */,
+				6D9C625B287C06AA00320073 /* Temp.swift in Sources */,
 				6D9C6251287BC5F300320073 /* SingleLinkList.swift in Sources */,
 				6D9C6258287BC5F300320073 /* RBTree.swift in Sources */,
 				6D9C622D287BBF4C00320073 /* TreeNode.swift in Sources */,
