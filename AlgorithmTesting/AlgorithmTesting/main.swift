@@ -14,7 +14,7 @@ public class constellation {
         return day < dayArr[month - 1] ? constellationArr[month - 1] : constellationArr[month]
     }
     
-    /// 老方法实现
+    /// 老方法实现(正确)
     public func getconstellationByMonthOld(_ month: Int, _ day: Int) -> String {
         var constellation = ""
         switch month {
@@ -99,7 +99,7 @@ public class constellation {
     /// 对数器测试
     func test() {
         /// 测试样本次数
-        let testTime = 100000
+        let testTime = 100_0000
         var isSucceed = true
         /// 正常的月日
         let normalMonthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
