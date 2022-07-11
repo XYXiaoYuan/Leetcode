@@ -1,127 +1,140 @@
-/**
- https://leetcode.cn/problems/cherry-pickup/
- 
- 一个N x N的网格(grid) 代表了一块樱桃地，每个格子由以下三种数字的一种来表示：
-
- 0 表示这个格子是空的，所以你可以穿过它。
- 1 表示这个格子里装着一个樱桃，你可以摘到樱桃然后穿过它。
- -1 表示这个格子里有荆棘，挡着你的路。
- 你的任务是在遵守下列规则的情况下，尽可能的摘到最多樱桃：
-
- 从位置 (0, 0) 出发，最后到达 (N-1, N-1) ，只能向下或向右走，并且只能穿越有效的格子（即只可以穿过值为0或者1的格子）；
- 当到达 (N-1, N-1) 后，你要继续走，直到返回到 (0, 0) ，只能向上或向左走，并且只能穿越有效的格子；
- 当你经过一个格子且这个格子包含一个樱桃时，你将摘到樱桃并且这个格子会变成空的（值变为0）；
- 如果在 (0, 0) 和 (N-1, N-1) 之间不存在一条可经过的路径，则没有任何一个樱桃能被摘到。
- 示例 1:
-
- 输入: grid =
- [[0, 1, -1],
-  [1, 0, -1],
-  [1, 1,  1]]
- 输出: 5
- 解释：
- 玩家从（0,0）点出发，经过了向下走，向下走，向右走，向右走，到达了点(2, 2)。
- 在这趟单程中，总共摘到了4颗樱桃，矩阵变成了[[0,1,-1],[0,0,-1],[0,0,0]]。
- 接着，这名玩家向左走，向上走，向上走，向左走，返回了起始点，又摘到了1颗樱桃。
- 在旅程中，总共摘到了5颗樱桃，这是可以摘到的最大值了。
- 说明:
-
- grid 是一个 N * N 的二维数组，N的取值范围是1 <= N <= 50。
- 每一个 grid[i][j] 都是集合 {-1, 0, 1}其中的一个数。
- 可以保证起点 grid[0][0] 和终点 grid[N-1][N-1] 的值都不会是 -1。
-
-
- 来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/cherry-pickup
- 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
 
 import Foundation
 import Darwin
 
-public class _741_摘樱桃 {
+/// 星座
+public class constellation {
     //class Solution {
     public init() {}
     
-    public func cherryPickup(_ grid: [[Int]]) -> Int {
-        let n = grid.count
+    /// 用两个数组的方式实现
+    public func getconstellationByMonth(_ month: Int, _ day: Int) -> String {
+        let dayArr = [20, 19, 21, 20, 21, 22, 23, 23, 23, 24, 23, 22]
+        let constellationArr = ["摩羯座", "水瓶座", "双鱼座", "白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座","天蝎座", "射手座", "摩羯座"];
+        return day < dayArr[month - 1] ? constellationArr[month - 1] : constellationArr[month]
+    }
+    
+    /// 老方法实现
+    public func getconstellationByMonthOld(_ month: Int, _ day: Int) -> String {
+        var constellation = ""
+        switch month {
+        case 1:
+            if day >= 20 {
+                constellation = "水瓶座"
+            } else {
+                constellation = "摩羯座"
+            }
+        case 2:
+            if day >= 19 {
+                constellation = "双鱼座"
+            } else {
+                constellation = "水瓶座"
+            }
+        case 3:
+            if day >= 21 {
+                constellation = "白羊座"
+            } else {
+                constellation = "双鱼座"
+            }
+        case 4:
+            if day >= 20 {
+                constellation = "金牛座"
+            } else {
+                constellation = "白羊座"
+            }
+        case 5:
+            if day >= 21 {
+                constellation = "双子座"
+            } else {
+                constellation = "金牛座"
+            }
+        case 6:
+            if day >= 22 {
+                constellation = "巨蟹座"
+            } else {
+                constellation = "双子座"
+            }
+        case 7:
+            if day >= 23 {
+                constellation = "狮子座"
+            } else {
+                constellation = "巨蟹座"
+            }
+        case 8:
+            if day >= 23 {
+                constellation = "处女座"
+            } else {
+                constellation = "狮子座"
+            }
+        case 9:
+            if day >= 23 {
+                constellation = "天秤座"
+            } else {
+                constellation = "处女座"
+            }
+        case 10:
+            if day >= 24 {
+                constellation = "天蝎座"
+            } else {
+                constellation = "天秤座"
+            }
+        case 11:
+            if day >= 23 {
+                constellation = "射手座"
+            } else {
+                constellation = "天蝎座"
+            }
+        case 12:
+            if day >= 22 {
+                constellation = "摩羯座"
+            } else {
+                constellation = "射手座"
+            }
+        default:
+            constellation = "未知"
+        }
+        return constellation
+    }
+    
+    /// 对数器测试
+    func test() {
+        /// 测试样本次数
+        let testTime = 100000
+        var isSucceed = true
+        /// 正常的月日
+        let normalMonthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        /// 闰年的月日
+        let leapMonthDay = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         
-        let N = 50
-        let INF = Int.min
-        var f = [[[Int]]].init(repeating: [[Int]].init(repeating: [Int].init(repeating: 0, count: N), count: N), count: 2 * N)
-
-        for k in 0..<(2 * n) {
-            for i1 in 0..<n {
-                for i2 in 0..<n {
-                    f[k][i1][i2] = INF
-                }
+        for _ in 0..<testTime {
+            let monthDay = Bool.random() ? normalMonthDay : leapMonthDay
+            /// 生成随机月份
+            let month = Int.random(in: 1...(monthDay.count))
+            /// 获得每个月最大的日
+            let maxDay = monthDay[month - 1]
+            /// 生成每月的随机日
+            let day = Int.random(in: 1...maxDay)
+            
+            /// 方法一:一定对的
+            let result1 = getconstellationByMonthOld(month, day)
+            
+            /// 待验证的：方法二(数组辅助)
+            let result2 = getconstellationByMonth(month, day)
+            
+            if result1 != result2 {
+                isSucceed = false
+                print("month = \(month) --- day = \(day)")
+                break
             }
         }
         
-        f[2][1][1] = grid[0][0]
-        
-        for k in 3..<(2 * n) {
-            for i1 in 1..<n {
-                for i2 in 1..<n {
-                    let j1 = k - i1, j2 = k - i2
-                    if j1 <= 0 || j1 > n || j2 <= 0 || j2 > n {
-                        continue
-                    }
-                    
-                    let A = grid[i1 - 1][j1 - 1], B = grid[i2 - 1][j2 - 1]
-                    if A == -1 || B == -1 {
-                        continue
-                    }
-
-                    let a = f[k - 1][i1 - 1][i2]
-                    let b = f[k - 1][i1 - 1][i2 - 1]
-                    let c = f[k - 1][i1][i2 - 1]
-                    let d = f[k - 1][i1][i2];
-                    
-                    var t = max(a, b, c, d) + A
-                    if i1 != i2 {
-                        t += B
-                    }
-                    
-//                    print("A = \(A), B = \(B), a = \(a), b = \(b), c = \(c), d = \(d), t = \(t), 设置前 f[\(k)][\(i1)][\(i2)] = \(f[k][i1][i2])")
-
-                    f[k][i1][i2] = t
-                    
-//                    print("设置后 f[\(k)][\(i1)][\(i2)] = \(f[k][i1][i2])")
-                }
-            }
-        }
-        
-//        print(f)
-        
-        return f[2 * n][n][n] <= 0 ? 0 : f[2 * n][n][n]
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
 }
 
-//public extension _741_摘樱桃 {
-//    class Test: XCTestCase {
-//        var s = _741_摘樱桃()
-//
-//        func testExample1() {
-//            let grid = [[0, 1, -1],
-//                        [1, 0, -1],
-//                        [1, 1,  1]]
-//            let result = s.cherryPickup(grid)
-//            print("\(s) --- \(result)")
-//            let answer = 5
-//            XCTAssertEqual(result, answer)
-//        }
-//    }
-//}
-
 do {
-    let s = _741_摘樱桃()
-    let grid = [[0, 1, -1],
-                [1, 0, -1],
-                [1, 1,  1]]
-    let result = s.cherryPickup(grid)
-    print("\(s) --- \(result)")
-
+    let s = constellation()
+    s.test()
 }
 
 
