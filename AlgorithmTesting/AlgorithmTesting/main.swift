@@ -9,6 +9,10 @@ public class constellation {
     
     /// 用两个数组的方式实现
     public func getconstellationByMonth(_ month: Int, _ day: Int) -> String {
+        if month <= 0 || month > 12 {
+            return "未知"
+        }
+        
         let dayArr = [20, 19, 21, 20, 21, 22, 23, 23, 23, 24, 23, 22]
         let constellationArr = ["摩羯座", "水瓶座", "双鱼座", "白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座","天蝎座", "射手座", "摩羯座"];
         return day < dayArr[month - 1] ? constellationArr[month - 1] : constellationArr[month]
@@ -130,11 +134,35 @@ public class constellation {
         
         print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
+    
+    /// 对数器测试
+    func test1() {
+        /// 测试样本次数
+        let testTime = 100_0000
+        var isSucceed = true
+        let number = Int.random(in: 0...10)
+        for _ in 0..<testTime {
+            /// 方法一:一定对的
+            let result1 = number != 0 || number != 1
+            
+            /// 待验证的：方法二
+            let result2 = number != 0 && number != 1
+            
+            if result1 != result2 {
+                isSucceed = false
+                print("number = \(number)")
+                break
+            }
+        }
+        
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+    }
 }
 
 do {
     let s = constellation()
     s.test()
+//    s.test1()
 }
 
 
