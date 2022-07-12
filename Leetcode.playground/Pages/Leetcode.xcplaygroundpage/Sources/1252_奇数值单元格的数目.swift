@@ -55,19 +55,22 @@ public class _1252_奇数值单元格的数目 {
     //class Solution {
     public init() {}
     
-//    public func oddCells(_ m: Int, _ n: Int, _ indices: [[Int]]) -> Int {
-//        let r = [Bool].init(repeating: false, count: m)
-//        let c = [Bool].init(repeating: false, count: n)
-//        var a = 0, b = 0
-//        for info in indices {
-//            let ri = info[0], ci = info[1]
-//            a += (r[ri] == !r[ri]) ? 1 : -1
-//            b += (c[ci] == !c[ci]) ? 1 : -1
-//        }
-//        return a * (n - b) + (m - a) * b
-//    }
-    
     public func oddCells(_ m: Int, _ n: Int, _ indices: [[Int]]) -> Int {
+        var r = [Int].init(repeating: 0, count: m)
+        var c = [Int].init(repeating: 0, count: n)
+        for info in indices {
+            let ri = info[0], ci = info[1]
+            r[ri] ^= 1
+            c[ci] ^= 1
+        }
+        // x: 出现奇数次的行的数量,y: 出现奇数次的列的数量
+        let x = r.reduce(0, { $0 + $1 })
+        let y = c.reduce(0, { $0 + $1 })
+        
+        return x * n + y * m - 2 * x * y
+    }
+    
+    public func oddCells3(_ m: Int, _ n: Int, _ indices: [[Int]]) -> Int {
         var c1: Int = 0, c2: Int = 0
         for info in indices {
             c1 ^= 1 << info[0]
@@ -130,7 +133,7 @@ public class _1252_奇数值单元格的数目 {
 
 extension _1252_奇数值单元格的数目 {
     public func test() {
-        let testTime = 10
+        let testTime = 1000
         let m = Int.random(in: 1...50)
         let n = Int.random(in: 1...50)
         let indicesLength = Int.random(in: 1...100)
