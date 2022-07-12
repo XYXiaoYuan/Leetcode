@@ -882,6 +882,15 @@ do {
 }
 
 do {
+    let s = _1252_奇数值单元格的数目()
+    let result = s.oddCells(2, 3, [[0,1],[0,0]])
+    print("\(s) --- \(result)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _1290_二进制链表转整数()
     let head = ListNode.arrayToNode([1,0,1])
     let result = s.getDecimalValue(head)
