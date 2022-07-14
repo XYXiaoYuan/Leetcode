@@ -721,6 +721,15 @@ do {
 }
 
 do {
+    let s = _735_行星碰撞()
+    let result = s.asteroidCollision([5,10,-5])
+    print("\(s) --- \(result)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _740_删除并获得点数()
     let result = s.deleteAndEarn([2,2,3,3,3,4])
     print("\(s) --- \(result)")

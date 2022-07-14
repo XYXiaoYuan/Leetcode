@@ -122,13 +122,13 @@ extension _735_行星碰撞 {
     }
 }
 
-do {
-    let s = _735_行星碰撞()
-    let result = s.asteroidCollision([5,10,-5])
-    print("\(s) --- \(result)")
-
-    /// 对数器测试
-    s.test()
-}
+//do {
+//    let s = _735_行星碰撞()
+//    let result = s.asteroidCollision([5,10,-5])
+//    print("\(s) --- \(result)")
+//
+//    /// 对数器测试
+//    s.test()
+//}
 
 //: [Next](@next)
