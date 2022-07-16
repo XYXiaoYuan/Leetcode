@@ -37,11 +37,13 @@ public class _234_回文链表 {
     
     public func isPalindrome(_ head: ListNode?) -> Bool {
         var stack = Stack<ListNode?>()
-        var cur = head, head = head
+        var cur = head
         while cur != nil {
             stack.push(cur)
             cur = cur?.next
         }
+        
+        var head = head
         while head != nil {
             if (head?.val ?? 0) != (stack.pop()??.val ?? 0) {
                 return false
