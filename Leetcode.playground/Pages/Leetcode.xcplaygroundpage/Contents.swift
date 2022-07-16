@@ -493,6 +493,8 @@ do {
     print("\(s) --- \(result)")
     
     assert(s.isPalindrome(head) == true)
+    /// 对数器测试
+    s.test()
 }
 
 do {

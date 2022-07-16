@@ -36,6 +36,22 @@ public class _234_回文链表 {
     //class Solution class Solution {
     
     public func isPalindrome(_ head: ListNode?) -> Bool {
+        var stack = Stack<ListNode?>()
+        var cur = head, head = head
+        while cur != nil {
+            stack.push(cur)
+            cur = cur?.next
+        }
+        while head != nil {
+            if (head?.val ?? 0) != (stack.pop()??.val ?? 0) {
+                return false
+            }
+            head = head?.next
+        }
+        return true
+    }
+    
+    public func isPalindrome1(_ head: ListNode?) -> Bool {
         if head == nil || head?.next == nil { return true }
         if head?.next?.next == nil {
             return head?.val == head?.next?.val
@@ -82,6 +98,7 @@ public class _234_回文链表 {
     /// 翻转链表
     /// - Parameter head: 原链表的头结点
     /// - Returns: 翻转之后链表的头结点（返回4）
+    @discardableResult
     private func reverseList(_ head: ListNode?) -> ListNode? {
         var head = head
         var newHead: ListNode? = nil
@@ -95,10 +112,41 @@ public class _234_回文链表 {
     }
 }
 
+extension _234_回文链表 {
+    public func test() {
+        let testTime = 10
+        let minValue = 0
+        let maxValue = 9
+        var isSucceed = true
+        for _ in 0..<testTime {
+            let count = Int.random(in: 1...100)
+            let randomArr1 = Int.random(count: count, min: minValue, max: maxValue)
+            
+            /// 方法一
+            let node1 = ListNode.arrayToNode(randomArr1)
+            let result1 = isPalindrome1(node1)
+            
+            /// 待验证的：方法二
+            let node2 = ListNode.arrayToNode(randomArr1)
+            let result2 = isPalindrome(node2)
+            
+            if result1 != result2 {
+                isSucceed = false
+                randomArr1.printArray()
+                break
+            }
+        }
+        
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+    }
+}
+
 //do {
 //    let s = _234_回文链表()
 //    let head = ListNode.arrayToNode([1,2,2,1])
 //    let result = s.isPalindrome(head)
 //    print(result)
+//    
+//    s.test()
 //}
 
