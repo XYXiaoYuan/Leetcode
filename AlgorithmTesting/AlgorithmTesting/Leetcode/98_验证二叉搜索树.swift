@@ -64,13 +64,13 @@ public class _98_验证二叉搜索树 {
         var maxVal = x.val
         var minVal = x.val
         
-        if leftInfo != nil {
-            maxVal = max(leftInfo?.maxVal ?? 0, maxVal)
-            minVal = min(rightInfo?.minVal ?? 0, minVal)
+        if let leftInfo = leftInfo {
+            maxVal = max(leftInfo.maxVal, maxVal)
+            minVal = min(leftInfo.minVal, minVal)
         }
-        if rightInfo != nil {
-            maxVal = max(rightInfo?.maxVal ?? 0, maxVal)
-            minVal = min(rightInfo?.minVal ?? 0, minVal)
+        if let rightInfo = rightInfo {
+            maxVal = max(rightInfo.maxVal, maxVal)
+            minVal = min(rightInfo.minVal, minVal)
         }
         
         /// 默认为true
