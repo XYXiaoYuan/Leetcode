@@ -90,10 +90,10 @@ public class _502_IPO {
 
 extension _502_IPO {
     public func test() {
-        let testTime = 10
-        let minValue = 0
-        let maxValue = 9
-        var isSucceed = true
+//        let testTime = 10
+//        let minValue = 0
+//        let maxValue = 9
+//        var isSucceed = true
 //        for _ in 0..<testTime {
 //            let count = Int.random(in: 1...100)
 //            let randomArr1 = Int.random(count: count, min: minValue, max: maxValue)
@@ -117,11 +117,11 @@ extension _502_IPO {
     }
 }
 
-do {
-    let s = _502_IPO()
-    let result = s.findMaximizedCapital(2, 0, [1,2,3], [0,1,1])
-    print(result)
-    
+//do {
+//    let s = _502_IPO()
+//    let result = s.findMaximizedCapital(2, 0, [1,2,3], [0,1,1])
+//    print(result)
+//
 //    s.test()
-}
+//}
 
