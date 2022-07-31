@@ -968,6 +968,15 @@ do {
 }
 
 do {
+    let s = _2351_第一个出现两次的字母()
+    let result = s.repeatedCharacter("abccbaacz")
+    print("\(s) --- \(result)")
+
+    /// 对数器测试
+//    s.test()
+}
+
+do {
     let s = _6132_使数组中所有元素都等于零()
     let result = s.minimumOperations([1,5,0,3,5])
     print("\(s) --- \(result)")

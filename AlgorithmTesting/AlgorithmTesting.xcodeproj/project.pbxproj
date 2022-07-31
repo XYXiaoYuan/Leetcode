@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C9F69BA2896C8E8008AF00C /* 2351_第一个出现两次的字母.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */; };
 		6D7C167F2896401900A70746 /* 6132_使数组中所有元素都等于零.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */; };
 		6D95A06D287FF28900FE54E2 /* 168_Excel表列名称.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D959FB9287FF28800FE54E2 /* 168_Excel表列名称.swift */; };
 		6D95A06E287FF28900FE54E2 /* 070_爬楼梯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D959FBA287FF28800FE54E2 /* 070_爬楼梯.swift */; };
@@ -303,6 +304,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2351_第一个出现两次的字母.swift"; sourceTree = "<group>"; };
 		6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6132_使数组中所有元素都等于零.swift"; sourceTree = "<group>"; };
 		6D959FB9287FF28800FE54E2 /* 168_Excel表列名称.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "168_Excel表列名称.swift"; sourceTree = "<group>"; };
 		6D959FBA287FF28800FE54E2 /* 070_爬楼梯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "070_爬楼梯.swift"; sourceTree = "<group>"; };
@@ -602,7 +604,6 @@
 			isa = PBXGroup;
 			children = (
 				6D959FF8287FF28800FE54E2 /* 001_两数之和.swift */,
-				6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */,
 				6D959FE2287FF28800FE54E2 /* 002_两数相加.swift */,
 				6D959FFE287FF28800FE54E2 /* 003_无重复字符的最长子串.swift */,
 				6D959FD3287FF28800FE54E2 /* 004_寻找两个正序数组的中位数.swift */,
@@ -782,6 +783,8 @@
 				6D95A02B287FF28800FE54E2 /* 1930_长度为3的不同回文子序列.swift */,
 				6D95A06B287FF28800FE54E2 /* 1931_用三种不同颜色为网格涂色.swift */,
 				6D959FE6287FF28800FE54E2 /* 1979_找出数组的最大公约数.swift */,
+				1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */,
+				6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				6D95A06E287FF28900FE54E2 /* 070_爬楼梯.swift in Sources */,
 				6D95A075287FF28900FE54E2 /* 372_超级次方.swift in Sources */,
 				6D95A0A0287FF28900FE54E2 /* 617_合并二叉树.swift in Sources */,
+				1C9F69BA2896C8E8008AF00C /* 2351_第一个出现两次的字母.swift in Sources */,
 				6D95A189287FF2B500FE54E2 /* 剑指Offer07_重建二叉树.swift in Sources */,
 				6D95A070287FF28900FE54E2 /* 1137_第N个泰波那契数.swift in Sources */,
 				6D95A0D5287FF28900FE54E2 /* 714_买卖股票的最佳时机含手续费.swift in Sources */,
