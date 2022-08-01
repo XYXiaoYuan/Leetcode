@@ -4,6 +4,7 @@ public class TreeNode {
     public var val: Int
     public var left: TreeNode?
     public var right: TreeNode?
+    public var nodeDesc: String { val == Int.max ? "" : "\(val)" }
     public init() { self.val = 0; self.left = nil; self.right = nil; }
     public init(_ val: Int) { self.val = val; self.left = nil; self.right = nil; }
     public init(_ val: Int, _ left: TreeNode?, _ right: TreeNode?) {
@@ -17,7 +18,7 @@ public extension TreeNode {
     /// 数组转树,通过一个数组生成一棵树结点
     /// - Parameter list: 列表
     /// - Returns: 树结点
-    static func arrayToNode(_ tree: [Int]) -> TreeNode? {
+    static func arrayToNode(_ tree: [Int?]) -> TreeNode? {
         if tree.count == 0 {
             return nil
         }
@@ -25,19 +26,17 @@ public extension TreeNode {
         var newTree = tree
         //add first
         var que:[TreeNode?] = [TreeNode]()
-        let head = TreeNode(newTree.removeFirst())
+        let head = TreeNode(newTree.removeFirst() ?? 0)
         que.append(head);
         while newTree.count > 0 {
-            
-            let temp = newTree.first
+            let temp = newTree.first ?? 0
             let headNode = que.first ?? nil
 
-            var newNode:TreeNode
-            if temp != nil {
-                newNode = TreeNode(temp ?? 0)
+            var newNode: TreeNode
+            if let temp = temp {
+                newNode = TreeNode(temp)
             } else {
                 newNode = TreeNode(Int.max)
-                
             }
             
             //sth wrong
@@ -74,41 +73,72 @@ public extension TreeNode {
 //    }
 }
 
+extension TreeNode {
+    func levelNodes() -> [[TreeNode?]] {
+        var nodes = [[TreeNode?]]()
+        var tempNodes: [TreeNode?] = []
+        tempNodes.append(self)
+        var hasNext = true
+        while hasNext {
+            nodes.append(tempNodes)
+            var nextNodes: [TreeNode?] = []
+            hasNext = false
+            func appendNext(node: TreeNode?) {
+                if node != nil {
+                    hasNext = true
+                }
+                nextNodes.append(node)
+            }
+            while !tempNodes.isEmpty {
+                let node = tempNodes.removeFirst()
+                appendNext(node: node?.left)
+                appendNext(node: node?.right)
+            }
+            
+            tempNodes = nextNodes
+        }
+        return nodes
+    }
+}
+
 extension TreeNode: CustomStringConvertible {
     public var description: String {
-        var resStr = ""
-        
-        var queue:[TreeNode?] = [TreeNode]()
-        let treeNode: TreeNode? = self
-        queue.append(treeNode)
-        var res:[String] = [String]()
-        while !queue.isEmpty {
-            //remove first leaf
-            let leaf = queue.removeFirst();
-            
-            //print leaf
-            if leaf == nil || leaf?.val == Int.max{
-                res.append("null")
-            }else{
-                res.append(String(leaf!.val))
-                 //leaf in the queue
-                queue.append(leaf?.left)
-                queue.append(leaf?.right)
+        let nodes = levelNodes()
+        var maxCount = 0
+        func toSting(reversed level: Int) -> String {
+            if maxCount == 0 {
+                var str = ""
+                for n in nodes[level] {
+                    str += "  " + (n?.nodeDesc ?? "  ")
+                }
+                maxCount = str.count
+                return str
             }
-          
+            
+            var nsstring = String(repeating: " ", count: maxCount) as NSString
+            
+            let count = nodes[level].count
+            let offset = maxCount / count
+            let halfIndex = offset >> 1
+            for i in 0..<count {
+                guard let node = nodes[level][i] else { continue }
+                let centerIdnex = halfIndex + i * offset
+                let nodeDesc = node.nodeDesc
+                let beginIndex = centerIdnex - (nodeDesc.count >> 1)
+                nsstring = nsstring.replacingCharacters(in: NSRange(location: beginIndex, length: nodeDesc.count), with: nodeDesc) as NSString
+            }
+            
+            return nsstring as String
         }
         
-        //remove last null
-        while res.last == "null" {
-            res.removeLast()
+        var str = ""
+        
+        for item in (0...(nodes.count - 1)).reversed() {
+            str = toSting(reversed: item) + "\n\n" + str
         }
         
-        //print
-        while !res.isEmpty {
-            resStr += " " + res.removeFirst()
-        }
-        
-        return resStr;
+        return str
+
     }
 }
 

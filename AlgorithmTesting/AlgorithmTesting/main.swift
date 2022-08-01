@@ -1,102 +1,118 @@
-///**
-// https://leetcode.cn/problems/first-letter-to-appear-twice/
-// 
-// 给你一个由小写英文字母组成的字符串 s ，请你找出并返回第一个出现 两次 的字母。
+/**
+ https://leetcode.cn/problems/balanced-binary-tree/
+ 
+ 给定一个二叉树，判断它是否是高度平衡的二叉树。
+
+ 本题中，一棵高度平衡二叉树定义为：
+
+ 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
+
+  
+
+ 示例 1：
+
+
+ 输入：root = [3,9,20,null,null,15,7]
+ 输出：true
+ 示例 2：
+
+
+ 输入：root = [1,2,2,3,3,null,null,4,4]
+ 输出：false
+ 示例 3：
+
+ 输入：root = []
+ 输出：true
+  
+
+ 提示：
+
+ 树中的节点数在范围 [0, 5000] 内
+ -104 <= Node.val <= 104
+
+
+ 来源：力扣（LeetCode）
+ 链接：https://leetcode.cn/problems/balanced-binary-tree
+ 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ */
+
+import Foundation
+import Darwin
+// import XCTest
+
+public class Solution {
+    //class Solution {
+    public init() {}
+    
+    private struct Info {
+        /// 整棵树是否平衡
+        var isBalanced: Bool
+        /// 整棵树的高度
+        var height: Int
+    }
+    
+    public func isBalanced(_ root: TreeNode?) -> Bool {
+        return process(root).isBalanced
+    }
+    
+    private func process(_ x: TreeNode?) -> Info {
+        if x == nil {
+            return Info(isBalanced: true, height: 0)
+        }
+        
+        let leftInfo = process(x?.left)
+        let rightInfo = process(x?.right)
+        let height = max(leftInfo.height, rightInfo.height) + 1
+        let isBalanced = leftInfo.isBalanced && rightInfo.isBalanced && abs((leftInfo.height - rightInfo.height)) < 2
+        return Info(isBalanced: isBalanced, height: height)
+    }
+
+}
+
+//public extension Solution {
+//    class Test: XCTestCase {
+//        var s = Solution()
 //
-// 注意：
-//
-// 如果 a 的 第二次 出现比 b 的 第二次 出现在字符串中的位置更靠前，则认为字母 a 在字母 b 之前出现两次。
-// s 包含至少一个出现两次的字母。
-//  
-//
-// 示例 1：
-//
-// 输入：s = "abccbaacz"
-// 输出："c"
-// 解释：
-// 字母 'a' 在下标 0 、5 和 6 处出现。
-// 字母 'b' 在下标 1 和 4 处出现。
-// 字母 'c' 在下标 2 、3 和 7 处出现。
-// 字母 'z' 在下标 8 处出现。
-// 字母 'c' 是第一个出现两次的字母，因为在所有字母中，'c' 第二次出现的下标是最小的。
-// 示例 2：
-//
-// 输入：s = "abcdd"
-// 输出："d"
-// 解释：
-// 只有字母 'd' 出现两次，所以返回 'd' 。
-//  
-//
-// 提示：
-//
-// 2 <= s.length <= 100
-// s 由小写英文字母组成
-// s 包含至少一个重复字母
-//
-//
-// 来源：力扣（LeetCode）
-// 链接：https://leetcode.cn/problems/first-letter-to-appear-twice
-// 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-// */
-//
-//import Foundation
-//import Darwin
-//
-//public class _2351_第一个出现两次的字母 /** Solution */  {
-//    public init() {}
-//        
-//    /// 哈希表法，转化为数组中的不重复的非零元素的个数
-//    func repeatedCharacter(_ s: String) -> Character {
-//        var dict = [Character: Character]()
-//        for c in s {
-//            let char = Character(String(c))
-//            if let vaule = dict[char] {
-//                return vaule
-//            }
-//            dict[char] = char
+//        func testExample1() {
+////            let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
+////            let result = s.isBalanced(node)
+////            print("\(s) --- \(result)")
+////            let answer = true
+////            XCTAssertEqual(result, answer)
 //        }
-//        return Character("")
+//
+//        func testExample2() {
+////            let node = TreeNode.arrayToNode([1,2,2,3,3,nil,nil,4,4])
+////            let result = s.isBalanced(node)
+////            print("\(s) --- \(result)")
+////            let answer = false
+////            XCTAssertEqual(result, answer)
+//        }
+//
+//        func testExample3() {
+//            let node = TreeNode.arrayToNode([])
+//            let result = s.isBalanced(node)
+//            print("\(s) --- \(result)")
+////            let answer = true
+////            XCTAssertEqual(result, answer)
+//        }
+//
 //    }
 //}
-//
-//extension _2351_第一个出现两次的字母 {
-////    public func test() {
-////        let testTime = 100
-////        let minValue = 1
-////        let maxValue = 100
-////        let count = Int.random(in: 0...100)
-////        var isSucceed = true
-////        for _ in 0..<testTime {
-////            let randomArr = Int.random(count: count, min: minValue, max: maxValue)
-////
-////            /// 方法一
-////            let result = minimumOperations(randomArr)
-////
-////            /// 待验证的：方法二
-////            let result2 = minimumOperations1(randomArr)
-////
-////            /// 待验证的：方法三
-////            let result3 = minimumOperations2(randomArr)
-////
-////            if result != result2 || result != result3 {
-////                isSucceed = false
-////                print("randomArr = \(randomArr)")
-////                break
-////            }
-////        }
-////
-////        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
-////    }
-//}
-//
-//do {
-//    let s = _2351_第一个出现两次的字母()
-//    let result = s.repeatedCharacter("abccbaacz")
-//    print("\(s) --- \(result)")
-//
-//    /// 对数器测试
-////    s.test()
-//}
-//
-////: [Next](@next)
-//
+
+do {
+    let s = Solution()
+    let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
+    if let node = node {
+        print(node)
+    }
+
+    let result = s.isBalanced(node)
+    print("\(s) --- \(result)")
+
+//    Solution.Test.defaultTestSuite.run()
+}
+
+
+
+//: [Next](@next)

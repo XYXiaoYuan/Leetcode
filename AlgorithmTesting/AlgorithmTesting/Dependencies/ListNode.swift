@@ -65,7 +65,7 @@ extension ListNode: CustomStringConvertible {
         let valPrefix: String = "❗️"
         var res = ""
         for (i, num) in self.toArray().enumerated() {
-            res.append("[\(i)_\(valPrefix)\(num)] -> ")
+            res.append("[\(i)_\(valPrefix)\(num)] → ")
         }
         return "LinkedList: " + res + "nil"
 //        return "LinkedList: " + String(describing: self.toArray())
