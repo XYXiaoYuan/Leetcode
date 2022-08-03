@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution {
+public class _464_我能赢吗 {
     //class Solution {
     public init() {}
     
@@ -120,7 +120,7 @@ public class Solution {
 
 }
 
-extension Solution {
+extension _464_我能赢吗 {
     public func test() {
         let testTime = 10
         var isSucceed = true
@@ -147,14 +147,14 @@ extension Solution {
 }
 
 
-do {
-    let s = Solution()
-    let result = s.canIWin(10, 11)
-    print("\(s) --- \(result)")
-
-    /// 对数器测试
-    s.test()
-//    Solution.Test.defaultTestSuite.run()
-}
+//do {
+//    let s = _464_我能赢吗()
+//    let result = s.canIWin(10, 11)
+//    print("\(s) --- \(result)")
+//
+//    /// 对数器测试
+//    s.test()
+////    Solution.Test.defaultTestSuite.run()
+//}
 
 //: [Next](@next)

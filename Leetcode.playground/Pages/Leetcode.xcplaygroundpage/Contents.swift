@@ -644,6 +644,15 @@ do {
 }
 
 do {
+    let s = _464_我能赢吗()
+    let result = s.canIWin(10, 11)
+    print("\(s) --- \(result)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _507_完美数()
     let result = s.checkPerfectNumber(28)
     print("\(s) --- \(result)")
