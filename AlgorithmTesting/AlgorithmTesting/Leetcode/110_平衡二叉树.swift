@@ -56,17 +56,14 @@ public class _110_平衡二叉树 {
     }
     
     private func process(_ x: TreeNode?) -> Info {
-        if x == nil {
-            return Info(isBalanced: true, height: 0)
-        }
+        guard let x = x else { return Info(isBalanced: true, height: 0) }
         
-        let leftInfo = process(x?.left)
-        let rightInfo = process(x?.right)
+        let leftInfo = process(x.left)
+        let rightInfo = process(x.right)
         let height = max(leftInfo.height, rightInfo.height) + 1
         let isBalanced = leftInfo.isBalanced && rightInfo.isBalanced && abs((leftInfo.height - rightInfo.height)) < 2
         return Info(isBalanced: isBalanced, height: height)
     }
-
 }
 
 //public extension _110_平衡二叉树 {
