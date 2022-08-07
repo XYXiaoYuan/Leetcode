@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C9F69BA2896C8E8008AF00C /* 2351_第一个出现两次的字母.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */; };
+		6D311D04289FEFD300B824B8 /* KMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D311D03289FEFD300B824B8 /* KMP.swift */; };
 		6D7C167F2896401900A70746 /* 6132_使数组中所有元素都等于零.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */; };
 		6D95A06D287FF28900FE54E2 /* 168_Excel表列名称.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D959FB9287FF28800FE54E2 /* 168_Excel表列名称.swift */; };
 		6D95A06E287FF28900FE54E2 /* 070_爬楼梯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D959FBA287FF28800FE54E2 /* 070_爬楼梯.swift */; };
@@ -306,6 +307,7 @@
 
 /* Begin PBXFileReference section */
 		1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2351_第一个出现两次的字母.swift"; sourceTree = "<group>"; };
+		6D311D03289FEFD300B824B8 /* KMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP.swift; sourceTree = "<group>"; };
 		6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6132_使数组中所有元素都等于零.swift"; sourceTree = "<group>"; };
 		6D959FB9287FF28800FE54E2 /* 168_Excel表列名称.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "168_Excel表列名称.swift"; sourceTree = "<group>"; };
 		6D959FBA287FF28800FE54E2 /* 070_爬楼梯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "070_爬楼梯.swift"; sourceTree = "<group>"; };
@@ -602,6 +604,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D311D02289FEFC900B824B8 /* KMP */ = {
+			isa = PBXGroup;
+			children = (
+				6D311D03289FEFD300B824B8 /* KMP.swift */,
+			);
+			path = KMP;
+			sourceTree = "<group>";
+		};
 		6D959FB8287FF28800FE54E2 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +946,7 @@
 		6D9C6230287BC5F300320073 /* DataStruct */ = {
 			isa = PBXGroup;
 			children = (
+				6D311D02289FEFC900B824B8 /* KMP */,
 				6D9C6231287BC5F300320073 /* BitSet */,
 				6D9C6233287BC5F300320073 /* Hash */,
 				6D9C6235287BC5F300320073 /* Queue */,
@@ -1326,6 +1337,7 @@
 				6D95A101287FF28900FE54E2 /* 118_杨辉三角.swift in Sources */,
 				6D95A11B287FF28900FE54E2 /* 097_交错字符串.swift in Sources */,
 				6D95A09D287FF28900FE54E2 /* 829_连续整数求和.swift in Sources */,
+				6D311D04289FEFD300B824B8 /* KMP.swift in Sources */,
 				6D95A11D287FF28900FE54E2 /* 238_除自身以外数组的乘积.swift in Sources */,
 				6D95A0D2287FF28900FE54E2 /* 300_最长递增子序列.swift in Sources */,
 				6D95A0CA287FF28900FE54E2 /* 007_整数反转.swift in Sources */,
