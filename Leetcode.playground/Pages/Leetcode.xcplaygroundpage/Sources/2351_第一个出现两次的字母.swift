@@ -46,7 +46,7 @@ public class _2351_第一个出现两次的字母 /** Solution */  {
     public init() {}
         
     /// 哈希表法，转化为数组中的不重复的非零元素的个数
-    func repeatedCharacter(_ s: String) -> Character {
+    public func repeatedCharacter(_ s: String) -> Character {
         var dict = [Character: Character]()
         for c in s {
             let char = Character(String(c))

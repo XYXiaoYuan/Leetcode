@@ -756,6 +756,17 @@ do {
 }
 
 do {
+    let s = _796_旋转字符串()
+    let result1 = s.rotateString("aa", "a")
+    let result2 = s.rotateString("abcde", "cdeab")
+    let result3 = s.rotateString("abcde", "abced")
+    print("\(s) --- \(result1), --- \(result2), ---- \(result3)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _829_连续整数求和()
     let result = s.consecutiveNumbersSum(15)
     print("\(s) --- \(result)")
