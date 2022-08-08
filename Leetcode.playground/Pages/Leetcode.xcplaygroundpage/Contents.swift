@@ -1019,5 +1019,20 @@ do {
     print("\(s) --- \(result1) --- \(result2) --- \(result3)")
 }
 
+do {
+    let s = _6142_统计坏数对的数目()
+
+    let result1 = s.countBadPairs([4,1,3,3])
+    assert(result1 == 5)
+    
+    let result2 = s.countBadPairs([1,2,3,4,5])
+    assert(result2 == 0)
+
+    print("\(s) --- \(result1) --- \(result2)")
+
+    /// 对数器测试
+    s.test()
+}
+
 //: [Next](@next)
 

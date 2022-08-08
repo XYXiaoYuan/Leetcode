@@ -1,56 +1,37 @@
 ///**
-// https://leetcode.cn/problems/merge-similar-items/
-// 
-// 给你两个二维整数数组 items1 和 items2 ，表示两个物品集合。每个数组 items 有以下特质：
+// https://leetcode.cn/problems/count-number-of-bad-pairs/
 //
-// items[i] = [valuei, weighti] 其中 valuei 表示第 i 件物品的 价值 ，weighti 表示第 i 件物品的 重量 。
-// items 中每件物品的价值都是 唯一的 。
-// 请你返回一个二维数组 ret，其中 ret[i] = [valuei, weighti]， weighti 是所有价值为 valuei 物品的 重量之和 。
+// 给你一个下标从 0 开始的整数数组 nums 。如果 i < j 且 j - i != nums[j] - nums[i] ，那么我们称 (i, j) 是一个 坏数对 。
 //
-// 注意：ret 应该按价值 升序 排序后返回。
+// 请你返回 nums 中 坏数对 的总数目。
 //
-//  
+//
 //
 // 示例 1：
 //
-// 输入：items1 = [[1,1],[4,5],[3,8]], items2 = [[3,1],[1,5]]
-// 输出：[[1,6],[3,9],[4,5]]
-// 解释：
-// value = 1 的物品在 items1 中 weight = 1 ，在 items2 中 weight = 5 ，总重量为 1 + 5 = 6 。
-// value = 3 的物品再 items1 中 weight = 8 ，在 items2 中 weight = 1 ，总重量为 8 + 1 = 9 。
-// value = 4 的物品在 items1 中 weight = 5 ，总重量为 5 。
-// 所以，我们返回 [[1,6],[3,9],[4,5]] 。
+// 输入：nums = [4,1,3,3]
+// 输出：5
+// 解释：数对 (0, 1) 是坏数对，因为 1 - 0 != 1 - 4 。
+// 数对 (0, 2) 是坏数对，因为 2 - 0 != 3 - 4, 2 != -1 。
+// 数对 (0, 3) 是坏数对，因为 3 - 0 != 3 - 4, 3 != -1 。
+// 数对 (1, 2) 是坏数对，因为 2 - 1 != 3 - 1, 1 != 2 。
+// 数对 (2, 3) 是坏数对，因为 3 - 2 != 3 - 3, 1 != 0 。
+// 总共有 5 个坏数对，所以我们返回 5 。
 // 示例 2：
 //
-// 输入：items1 = [[1,1],[3,2],[2,3]], items2 = [[2,1],[3,2],[1,3]]
-// 输出：[[1,4],[2,4],[3,4]]
-// 解释：
-// value = 1 的物品在 items1 中 weight = 1 ，在 items2 中 weight = 3 ，总重量为 1 + 3 = 4 。
-// value = 2 的物品在 items1 中 weight = 3 ，在 items2 中 weight = 1 ，总重量为 3 + 1 = 4 。
-// value = 3 的物品在 items1 中 weight = 2 ，在 items2 中 weight = 2 ，总重量为 2 + 2 = 4 。
-// 所以，我们返回 [[1,4],[2,4],[3,4]] 。
-// 示例 3：
+// 输入：nums = [1,2,3,4,5]
+// 输出：0
+// 解释：没有坏数对。
 //
-// 输入：items1 = [[1,3],[2,2]], items2 = [[7,1],[2,2],[1,4]]
-// 输出：[[1,7],[2,4],[7,1]]
-// 解释：
-// value = 1 的物品在 items1 中 weight = 3 ，在 items2 中 weight = 4 ，总重量为 3 + 4 = 7 。
-// value = 2 的物品在 items1 中 weight = 2 ，在 items2 中 weight = 2 ，总重量为 2 + 2 = 4 。
-// value = 7 的物品在 items2 中 weight = 1 ，总重量为 1 。
-// 所以，我们返回 [[1,7],[2,4],[7,1]] 。
-//  
 //
 // 提示：
 //
-// 1 <= items1.length, items2.length <= 1000
-// items1[i].length == items2[i].length == 2
-// 1 <= valuei, weighti <= 1000
-// items1 中每个 valuei 都是 唯一的 。
-// items2 中每个 valuei 都是 唯一的 。
+// 1 <= nums.length <= 105
+// 1 <= nums[i] <= 109
 //
 //
 // 来源：力扣（LeetCode）
-// 链接：https://leetcode.cn/problems/merge-similar-items
+// 链接：https://leetcode.cn/problems/count-number-of-bad-pairs
 // 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 // */
 //
@@ -58,103 +39,81 @@
 //import Darwin
 //// import XCTest
 //
-//public class _6141_合并相似的物品 {
+//public class _6142_统计坏数对的数目 {
 //    //class Solution {
 //    public init() {}
-//    
-//    func mergeSimilarItems(_ items1: [[Int]], _ items2: [[Int]]) -> [[Int]] {
-//        if items1.isEmpty, !items2.isEmpty {
-//            return items2
+//
+//    // j - i != num2 - num1
+//    // j - num2 != i - num1
+//    public func countBadPairs(_ nums: [Int]) -> Int {
+//        var ans = 0
+//
+//        var map = [Int: Int]()
+//        for i in 0..<nums.count {
+//            let val = i - nums[i]
+//            let same = map[val] ?? 0
+//            ans += i - same
+//            map[val] = same + 1
+////            print("ans = \(ans), -- map \(map), 😆 -- val = \(val), -- same = \(same)")
 //        }
-//        if !items1.isEmpty, items2.isEmpty {
-//            return items1
-//        }
-//        if items1.isEmpty, items2.isEmpty {
-//            return [[Int]]()
-//        }
-//        
-//        var dict = [Int: Int]()
-//        for item in items1 {
-//            let value = item[0]
-//            let weight = item[1]
-//            if let w = dict[value] {
-//                dict[value] = w + weight
-//            } else {
-//                dict[value] = weight
+//
+//        return ans
+//    }
+//
+//    /// 正确，但是会超时
+//    public func countBadPairs0(_ nums: [Int]) -> Int {
+//        var ans = 0
+//
+//        for (i, num1) in nums.enumerated() {
+//            for (j, num2) in nums.enumerated() {
+//                if i < j, j - i != num2 - num1 {
+//                    ans += 1
+//                }
 //            }
 //        }
-//        
-//        for item in items2 {
-//            let value = item[0]
-//            let weight = item[1]
-//            if let w = dict[value] {
-//                dict[value] = w + weight
-//            } else {
-//                dict[value] = weight
-//            }
-//        }
-//        
-//        var res = [[Int]]()
-//        for (key, value) in dict.sorted(by: { (k1, k2) -> Bool in
-//            return k1.key < k2.key
-//        }) {
-//            res.append([key, value])
-//        }
-//        
-//        return res
+//
+//        return ans
 //    }
 //}
 //
-////extension _6141_合并相似的物品 {
-////    public func test() {
-////        let testTime = 10
-////        var isSucceed = true
-////        let letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-////        let minCount = 1
-////        let maxCount = 100
-////        let count = Int.random(in: minCount...maxCount)
-////        for _ in 0..<testTime {
-////            var s = ""
-////            var goal = ""
-////            for _ in 0..<count {
-////                let sIndex = Int.random(in: 0..<letter.count)
-////                s += letter[sIndex]
-////
-////                let goalIndex = Int.random(in: 0..<letter.count)
-////                goal += letter[goalIndex]
-////            }
-////
-////            /// 方法一
-////            let result1 = rotateString0(s, goal)
-////
-////            /// 待验证的：方法二
-////            let result2 = rotateString(s, goal)
-////
-////            if result1 != result2 {
-////                isSucceed = false
-////                print("s = \(s) --- goal = \(goal)")
-////                break
-////            }
-////        }
-////
-////        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
-////    }
-////
-////}
+//extension _6142_统计坏数对的数目 {
+//    public func test() {
+//        let testTime = 10
+//        var isSucceed = true
+//        let min = 1
+//        let max = 100
+//        let count = 10
+//        for _ in 0..<testTime {
+//            let numbers = Int.random(count: count, min: min, max: max)
+//
+//            /// 方法一
+//            let result1 = countBadPairs0(numbers)
+//
+//            /// 待验证的：方法二
+//            let result2 = countBadPairs(numbers)
+//
+//            if result1 != result2 {
+//                isSucceed = false
+//                print("numbers = \(numbers)")
+//                break
+//            }
+//        }
+//
+//        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+//    }
+//
+//}
 //
 //do {
-//    let s = _6141_合并相似的物品()
-//    let result1 = s.mergeSimilarItems([[1,1],[4,5],[3,8]], [[3,1],[1,5]])
-//    assert(result1 == [[1,6],[3,9],[4,5]])
-//    print(result1)
-//    
-//    let result2 = s.mergeSimilarItems([[1,1],[3,2],[2,3]], [[2,1],[3,2],[1,3]])
-//    assert(result2 == [[1,4],[2,4],[3,4]])
-//    print(result2)
+//    let s = _6142_统计坏数对的数目()
 //
-//    let result3 = s.mergeSimilarItems([[1,3],[2,2]], [[7,1],[2,2],[1,4]])
-//    assert(result3 == [[1,7],[2,4],[7,1]])
-//    print(result3)
+//    let result1 = s.countBadPairs([4,1,3,3])
+//    assert(result1 == 5)
+//    print(result1)
+//
+//    let result2 = s.countBadPairs([1,2,3,4,5])
+//    assert(result2 == 0)
+//    print(result2)
 //
 //    /// 对数器测试
 ////    s.test()
