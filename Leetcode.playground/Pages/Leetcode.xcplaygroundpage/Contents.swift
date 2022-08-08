@@ -969,6 +969,20 @@ do {
 }
 
 do {
+    let s = _1814_统计一个数组中好对子的数目()
+
+    let result1 = s.countNicePairs0([42,11,1,97])
+    assert(result1 == 2)
+
+    let result2 = s.countNicePairs0([13,10,35,24,76])
+    assert(result2 == 4)
+    print("\(s) --- \(result1), --- \(result2)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _1930_长度为3的不同回文子序列()
     let result = s.countPalindromicSubsequence("aabca")
     print("\(s) --- \(result)")
