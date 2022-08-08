@@ -63,16 +63,6 @@ public class _6141_合并相似的物品 {
     public init() {}
     
     public func mergeSimilarItems(_ items1: [[Int]], _ items2: [[Int]]) -> [[Int]] {
-        if items1.isEmpty, !items2.isEmpty {
-            return items2
-        }
-        if !items1.isEmpty, items2.isEmpty {
-            return items1
-        }
-        if items1.isEmpty, items2.isEmpty {
-            return [[Int]]()
-        }
-        
         var dict = [Int: Int]()
         for item in items1 {
             let value = item[0]
