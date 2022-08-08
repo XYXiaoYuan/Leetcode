@@ -99,7 +99,8 @@ public class _6141_合并相似的物品 {
 //    public func test() {
 //        let testTime = 10
 //        var isSucceed = true
-//        let letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+//        let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("a").value
+//        let letters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
 //        let minCount = 1
 //        let maxCount = 100
 //        let count = Int.random(in: minCount...maxCount)
@@ -107,11 +108,11 @@ public class _6141_合并相似的物品 {
 //            var s = ""
 //            var goal = ""
 //            for _ in 0..<count {
-//                let sIndex = Int.random(in: 0..<letter.count)
-//                s += letter[sIndex]
+//                let sIndex = Int.random(in: 0..<letters.count)
+//                s += letters[sIndex]
 //
-//                let goalIndex = Int.random(in: 0..<letter.count)
-//                goal += letter[goalIndex]
+//                let goalIndex = Int.random(in: 0..<letters.count)
+//                goal += letters[goalIndex]
 //            }
 //
 //            /// 方法一

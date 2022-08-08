@@ -99,19 +99,50 @@ extension _2365_任务调度器_II {
 
 }
 
+//do {
+//    let s = _2365_任务调度器_II()
+//
+//    let result1 = s.taskSchedulerII([1,2,1,2,3,1], 3)
+////    assert(result1 == 9)
+//    print(result1)
+//
+//    let result2 = s.taskSchedulerII([5,8,8,5], 2)
+////    assert(result2 == 6)
+//    print(result2)
+//
+//    /// 对数器测试
+//    s.test()
+//}
+
 do {
-    let s = _2365_任务调度器_II()
+    let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("z").value
+    let lowercaseLetters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+    print(lowercaseLetters)// ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    let result1 = s.taskSchedulerII([1,2,1,2,3,1], 3)
-//    assert(result1 == 9)
-    print(result1)
-
-    let result2 = s.taskSchedulerII([5,8,8,5], 2)
-//    assert(result2 == 6)
-    print(result2)
-
-    /// 对数器测试
-    s.test()
+    let uppercaseLetterValues = Unicode.Scalar("A").value...Unicode.Scalar("Z").value
+    let uppercaseLetters = uppercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+    print(uppercaseLetters)// ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 }
+
+do {
+    let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("z").value
+    let letters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+    print(letters)// ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+}
+
+do {
+    let uppercaseLetterValues = Unicode.Scalar("A").value...Unicode.Scalar("Z").value
+    let letters = uppercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+    print(letters)// ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+}
+
+
+
+//let startingValue = Int(("A" as Unicode.Scalar).value) // 65
+//for i in 0 ..< 26 {
+//    if let value = Unicode.Scalar(i + lowLetterValue) {
+//        print(Character(value))
+//    }
+//}
 
 //: [Next](@next)
