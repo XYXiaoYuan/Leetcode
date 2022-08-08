@@ -1,31 +1,56 @@
 ///**
-// https://leetcode.cn/problems/rotate-string/
+// https://leetcode.cn/problems/merge-similar-items/
 // 
-// 给定两个字符串, s 和 goal。如果在若干次旋转操作之后，s 能变成 goal ，那么返回 true 。
+// 给你两个二维整数数组 items1 和 items2 ，表示两个物品集合。每个数组 items 有以下特质：
 //
-// s 的 旋转操作 就是将 s 最左边的字符移动到最右边。
+// items[i] = [valuei, weighti] 其中 valuei 表示第 i 件物品的 价值 ，weighti 表示第 i 件物品的 重量 。
+// items 中每件物品的价值都是 唯一的 。
+// 请你返回一个二维数组 ret，其中 ret[i] = [valuei, weighti]， weighti 是所有价值为 valuei 物品的 重量之和 。
 //
-// 例如, 若 s = 'abcde'，在旋转一次之后结果就是'bcdea' 。
+// 注意：ret 应该按价值 升序 排序后返回。
+//
 //  
 //
-// 示例 1:
+// 示例 1：
 //
-// 输入: s = "abcde", goal = "cdeab"
-// 输出: true
-// 示例 2:
+// 输入：items1 = [[1,1],[4,5],[3,8]], items2 = [[3,1],[1,5]]
+// 输出：[[1,6],[3,9],[4,5]]
+// 解释：
+// value = 1 的物品在 items1 中 weight = 1 ，在 items2 中 weight = 5 ，总重量为 1 + 5 = 6 。
+// value = 3 的物品再 items1 中 weight = 8 ，在 items2 中 weight = 1 ，总重量为 8 + 1 = 9 。
+// value = 4 的物品在 items1 中 weight = 5 ，总重量为 5 。
+// 所以，我们返回 [[1,6],[3,9],[4,5]] 。
+// 示例 2：
 //
-// 输入: s = "abcde", goal = "abced"
-// 输出: false
+// 输入：items1 = [[1,1],[3,2],[2,3]], items2 = [[2,1],[3,2],[1,3]]
+// 输出：[[1,4],[2,4],[3,4]]
+// 解释：
+// value = 1 的物品在 items1 中 weight = 1 ，在 items2 中 weight = 3 ，总重量为 1 + 3 = 4 。
+// value = 2 的物品在 items1 中 weight = 3 ，在 items2 中 weight = 1 ，总重量为 3 + 1 = 4 。
+// value = 3 的物品在 items1 中 weight = 2 ，在 items2 中 weight = 2 ，总重量为 2 + 2 = 4 。
+// 所以，我们返回 [[1,4],[2,4],[3,4]] 。
+// 示例 3：
+//
+// 输入：items1 = [[1,3],[2,2]], items2 = [[7,1],[2,2],[1,4]]
+// 输出：[[1,7],[2,4],[7,1]]
+// 解释：
+// value = 1 的物品在 items1 中 weight = 3 ，在 items2 中 weight = 4 ，总重量为 3 + 4 = 7 。
+// value = 2 的物品在 items1 中 weight = 2 ，在 items2 中 weight = 2 ，总重量为 2 + 2 = 4 。
+// value = 7 的物品在 items2 中 weight = 1 ，总重量为 1 。
+// 所以，我们返回 [[1,7],[2,4],[7,1]] 。
 //  
 //
-// 提示:
+// 提示：
 //
-// 1 <= s.length, goal.length <= 100
-// s 和 goal 由小写英文字母组成
+// 1 <= items1.length, items2.length <= 1000
+// items1[i].length == items2[i].length == 2
+// 1 <= valuei, weighti <= 1000
+// items1 中每个 valuei 都是 唯一的 。
+// items2 中每个 valuei 都是 唯一的 。
 //
 //
 // 来源：力扣（LeetCode）
-// 链接：https://leetcode.cn/problems/rotate-string
+// 链接：https://leetcode.cn/problems/merge-similar-items
 // 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 // */
 //
@@ -33,134 +58,106 @@
 //import Darwin
 //// import XCTest
 //
-//public class _796_旋转字符串 {
+//public class _6141_合并相似的物品 {
 //    //class Solution {
 //    public init() {}
 //    
-//    func rotateString(_ s: String, _ goal: String) -> Bool {
-//        guard s.isEmpty || goal.isEmpty || s.count == goal.count else {
-//            return false
+//    func mergeSimilarItems(_ items1: [[Int]], _ items2: [[Int]]) -> [[Int]] {
+//        if items1.isEmpty, !items2.isEmpty {
+//            return items2
 //        }
-//
-//        let new = s + s
-//        return getIndexOf(new, goal) != -1
-//    }
-//    
-//    /// 获取match字符串在s字符串第一次出现的位置 ,如果没有出现,返回-1
-//    /// - Parameters:
-//    ///   - s: 源字符串
-//    ///   - m: 匹配字符串
-//    func getIndexOf(_ s: String, _ m: String) -> Int {
-//        if s.count < m.count {
-//            return -1
+//        if !items1.isEmpty, items2.isEmpty {
+//            return items1
+//        }
+//        if items1.isEmpty, items2.isEmpty {
+//            return [[Int]]()
 //        }
 //        
-//        let ss = s.map { Character(extendedGraphemeClusterLiteral: $0) }
-//        let ms = m.map { Character(extendedGraphemeClusterLiteral: $0) }
-//        var si = 0
-//        var mi = 0
-//        let next = getNextArray(ms)
-//        
-//        while si < ss.count, mi < ms.count {
-//            if ss[si] == ms[mi] {
-//                si += 1
-//                mi += 1
-//            } else if next[mi] == -1 {
-//                si += 1
+//        var dict = [Int: Int]()
+//        for item in items1 {
+//            let value = item[0]
+//            let weight = item[1]
+//            if let w = dict[value] {
+//                dict[value] = w + weight
 //            } else {
-//                mi = next[mi]
+//                dict[value] = weight
 //            }
 //        }
 //        
-//        return mi == ms.count ? si - mi : -1
-//    }
-//    
-//    /// 之前这坨字符串最长前缀和最长后缀相等时的匹配长度数组
-//    /// - Parameters:
-//    ///   - ms: 匹配字符串数组
-//    func getNextArray(_ ms: [Character]) -> [Int] {
-//        if ms.count == 1 {
-//            return [-1]
-//        }
-//        
-//        var next = [Int].init(repeating: 0, count: ms.count)
-//        next[0] = -1
-//        next[1] = 0
-//        
-//        var pos = 2
-//        var cn = 0
-//        while pos < next.count {
-//            if ms[pos - 1] == ms[cn] {
-//                cn += 1
-//                next[pos] = cn
-//                pos += 1
-//            } else if cn > 0 {
-//                cn = next[cn]
+//        for item in items2 {
+//            let value = item[0]
+//            let weight = item[1]
+//            if let w = dict[value] {
+//                dict[value] = w + weight
 //            } else {
-//                next[pos] = 0
-//                pos += 1
+//                dict[value] = weight
 //            }
 //        }
 //        
-//        return next
-//    }
-//    
-//    func rotateString0(_ s: String, _ goal: String) -> Bool {
-//        guard s.isEmpty || goal.isEmpty || s.count == goal.count else {
-//            return false
+//        var res = [[Int]]()
+//        for (key, value) in dict.sorted(by: { (k1, k2) -> Bool in
+//            return k1.key < k2.key
+//        }) {
+//            res.append([key, value])
 //        }
-//
-//        let new = s + s
-//        return new.contains(goal)
+//        
+//        return res
 //    }
 //}
 //
-//extension _796_旋转字符串 {
-//    public func test() {
-//        let testTime = 10
-//        var isSucceed = true
-//        let letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-//        let minCount = 1
-//        let maxCount = 100
-//        let count = Int.random(in: minCount...maxCount)
-//        for _ in 0..<testTime {
-//            var s = ""
-//            var goal = ""
-//            for _ in 0..<count {
-//                let sIndex = Int.random(in: 0..<letter.count)
-//                s += letter[sIndex]
-//
-//                let goalIndex = Int.random(in: 0..<letter.count)
-//                goal += letter[goalIndex]
-//            }
-//                        
-//            /// 方法一
-//            let result1 = rotateString0(s, goal)
-//            
-//            /// 待验证的：方法二
-//            let result2 = rotateString(s, goal)
-//            
-//            if result1 != result2 {
-//                isSucceed = false
-//                print("s = \(s) --- goal = \(goal)")
-//                break
-//            }
-//        }
-//        
-//        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
-//    }
-//    
-//}
+////extension _6141_合并相似的物品 {
+////    public func test() {
+////        let testTime = 10
+////        var isSucceed = true
+////        let letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+////        let minCount = 1
+////        let maxCount = 100
+////        let count = Int.random(in: minCount...maxCount)
+////        for _ in 0..<testTime {
+////            var s = ""
+////            var goal = ""
+////            for _ in 0..<count {
+////                let sIndex = Int.random(in: 0..<letter.count)
+////                s += letter[sIndex]
+////
+////                let goalIndex = Int.random(in: 0..<letter.count)
+////                goal += letter[goalIndex]
+////            }
+////
+////            /// 方法一
+////            let result1 = rotateString0(s, goal)
+////
+////            /// 待验证的：方法二
+////            let result2 = rotateString(s, goal)
+////
+////            if result1 != result2 {
+////                isSucceed = false
+////                print("s = \(s) --- goal = \(goal)")
+////                break
+////            }
+////        }
+////
+////        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+////    }
+////
+////}
 //
 //do {
-//    let s = _796_旋转字符串()
-//    let result1 = s.rotateString("aa", "a")
-//    let result2 = s.rotateString("abcde", "cdeab")
-//    let result3 = s.rotateString("abcde", "abced")
-//    print("\(s) --- \(result1), --- \(result2), ---- \(result3)")
+//    let s = _6141_合并相似的物品()
+//    let result1 = s.mergeSimilarItems([[1,1],[4,5],[3,8]], [[3,1],[1,5]])
+//    assert(result1 == [[1,6],[3,9],[4,5]])
+//    print(result1)
 //    
+//    let result2 = s.mergeSimilarItems([[1,1],[3,2],[2,3]], [[2,1],[3,2],[1,3]])
+//    assert(result2 == [[1,4],[2,4],[3,4]])
+//    print(result2)
+//
+//    let result3 = s.mergeSimilarItems([[1,3],[2,2]], [[7,1],[2,2],[1,4]])
+//    assert(result3 == [[1,7],[2,4],[7,1]])
+//    print(result3)
+//
 //    /// 对数器测试
-//    s.test()
+////    s.test()
 //}
 //
 ////: [Next](@next)

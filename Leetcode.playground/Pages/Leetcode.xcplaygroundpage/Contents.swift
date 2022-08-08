@@ -1005,5 +1005,19 @@ do {
     s.test()
 }
 
+do {
+    let s = _6141_合并相似的物品()
+    let result1 = s.mergeSimilarItems([[1,1],[4,5],[3,8]], [[3,1],[1,5]])
+    assert(result1 == [[1,6],[3,9],[4,5]])
+    
+    let result2 = s.mergeSimilarItems([[1,1],[3,2],[2,3]], [[2,1],[3,2],[1,3]])
+    assert(result2 == [[1,4],[2,4],[3,4]])
+
+    let result3 = s.mergeSimilarItems([[1,3],[2,2]], [[7,1],[2,2],[1,4]])
+    assert(result3 == [[1,7],[2,4],[7,1]])
+    
+    print("\(s) --- \(result1) --- \(result2) --- \(result3)")
+}
+
 //: [Next](@next)
 
