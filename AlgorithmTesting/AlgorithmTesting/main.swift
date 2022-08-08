@@ -1,129 +1,117 @@
-///**
-// https://leetcode.cn/problems/count-nice-pairs-in-an-array/
-//
-// 给你一个数组 nums ，数组中只包含非负整数。定义 rev(x) 的值为将整数 x 各个数字位反转得到的结果。比方说 rev(123) = 321 ， rev(120) = 21 。我们称满足下面条件的下标对 (i, j) 是 好的 ：
-//
-// 0 <= i < j < nums.length
-// nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])
-// 请你返回好下标对的数目。由于结果可能会很大，请将结果对 109 + 7 取余 后返回。
-//
-//
-//
-// 示例 1：
-//
-// 输入：nums = [42,11,1,97]
-// 输出：2
-// 解释：两个坐标对为：
-//  - (0,3)：42 + rev(97) = 42 + 79 = 121, 97 + rev(42) = 97 + 24 = 121 。
-//  - (1,2)：11 + rev(1) = 11 + 1 = 12, 1 + rev(11) = 1 + 11 = 12 。
-// 示例 2：
-//
-// 输入：nums = [13,10,35,24,76]
-// 输出：4
-//
-//
-// 提示：
-//
-// 1 <= nums.length <= 105
-// 0 <= nums[i] <= 109
-//
-//
-// 来源：力扣（LeetCode）
-// 链接：https://leetcode.cn/problems/count-nice-pairs-in-an-array
-// 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-// */
-//
-//import Foundation
-//import Darwin
-//// import XCTest
-//
-//public class _1814_统计一个数组中好对子的数目 {
-//    //class Solution {
-//    public init() {}
-//
-//    private func rev(_ x: Int) -> Int {
-//        let rawString = String(x)
-//        let str = String(rawString.reversed())
-//        return Int(str) ?? 0
-//    }
-//
-//    //0 <= i < j < nums.length
-//    //nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])
-//    public func countNicePairs(_ nums: [Int]) -> Int {
-//        var dict = [Int: Int]()
-//        let mod = 1000000007
-//        var ans = 0
-//
-//        for i in nums {
-//            dict[i - rev(i), default: 0] += 1
-//        }
-//
-//        for (_, value) in dict {
-//            ans += ((value - 1) * value) / 2
-//            ans %=  mod
-//        }
-//
-//        return ans
-//    }
-//
-//    /// 正确，但是会超时
-//    public func countNicePairs0(_ nums: [Int]) -> Int {
-//        var ans = 0
-//        let mod = 1000000007
-//
-//        for i in 0..<nums.count {
-//            for j in 0..<nums.count {
-//                if i < j, nums[i] + rev(nums[j]) == nums[j] + rev(nums[i]) {
-//                    ans += 1
-//                }
-//            }
-//        }
-//
-//        return ans % mod
-//    }
-//}
-//
-//extension _1814_统计一个数组中好对子的数目 {
-//    public func test() {
-//        let testTime = 10
-//        var isSucceed = true
-//        let min = 1
-//        let max = 100
-//        let count = 10
-//        for _ in 0..<testTime {
-//            let numbers = Int.random(count: count, min: min, max: max)
-//
-//            /// 方法一
-//            let result1 = countNicePairs0(numbers)
-//
-//            /// 待验证的：方法二
-//            let result2 = countNicePairs(numbers)
-//
-//            if result1 != result2 {
-//                isSucceed = false
-//                print("numbers = \(numbers)")
-//                break
-//            }
-//        }
-//
-//        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
-//    }
-//
-//}
-//
-//do {
-//    let s = _1814_统计一个数组中好对子的数目()
-//
-//    let result1 = s.countNicePairs0([42,11,1,97])
-//    assert(result1 == 2)
-//    print(result1)
-//
-//    let result2 = s.countNicePairs0([13,10,35,24,76])
-//    assert(result2 == 4)
-//    print(result2)
-//
-//    /// 对数器测试
-//    s.test()
-//}
-//
-////: [Next](@next)
+/**
+ https://leetcode.cn/problems/task-scheduler-ii/
+
+ 给你一个下标从 0 开始的正整数数组 tasks ，表示需要 按顺序 完成的任务，其中 tasks[i] 表示第 i 件任务的 类型 。
+
+ 同时给你一个正整数 space ，表示一个任务完成 后 ，另一个 相同 类型任务完成前需要间隔的 最少 天数。
+
+ 在所有任务完成前的每一天，你都必须进行以下两种操作中的一种：
+
+ 完成 tasks 中的下一个任务
+ 休息一天
+ 请你返回完成所有任务所需的 最少 天数。
+
+  
+
+ 示例 1：
+
+ 输入：tasks = [1,2,1,2,3,1], space = 3
+ 输出：9
+ 解释：
+ 9 天完成所有任务的一种方法是：
+ 第 1 天：完成任务 0 。
+ 第 2 天：完成任务 1 。
+ 第 3 天：休息。
+ 第 4 天：休息。
+ 第 5 天：完成任务 2 。
+ 第 6 天：完成任务 3 。
+ 第 7 天：休息。
+ 第 8 天：完成任务 4 。
+ 第 9 天：完成任务 5 。
+ 可以证明无法少于 9 天完成所有任务。
+ 示例 2：
+
+ 输入：tasks = [5,8,8,5], space = 2
+ 输出：6
+ 解释：
+ 6 天完成所有任务的一种方法是：
+ 第 1 天：完成任务 0 。
+ 第 2 天：完成任务 1 。
+ 第 3 天：休息。
+ 第 4 天：休息。
+ 第 5 天：完成任务 2 。
+ 第 6 天：完成任务 3 。
+ 可以证明无法少于 6 天完成所有任务。
+  
+
+ 提示：
+
+ 1 <= tasks.length <= 105
+ 1 <= tasks[i] <= 109
+ 1 <= space <= tasks.length
+
+
+ 来源：力扣（LeetCode）
+ 链接：https://leetcode.cn/problems/task-scheduler-ii
+ 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ */
+
+import Foundation
+import Darwin
+// import XCTest
+
+public class _2365_任务调度器_II {
+    //class Solution {
+    public init() {}
+
+    func taskSchedulerII(_ tasks: [Int], _ space: Int) -> Int {
+        
+        return 0
+    }
+}
+
+extension _2365_任务调度器_II {
+    public func test() {
+        let testTime = 10
+        var isSucceed = true
+        let min = 1
+        let max = 100
+        let count = 10
+        for _ in 0..<testTime {
+            let tasks = Int.random(count: count, min: min, max: max)
+            let space = 10
+            
+            /// 方法一
+            let result1 = taskSchedulerII(tasks, space)
+
+            /// 待验证的：方法二
+            let result2 = taskSchedulerII(tasks, space)
+
+            if result1 != result2 {
+                isSucceed = false
+                print("numbers = \(tasks)")
+                break
+            }
+        }
+
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+    }
+
+}
+
+do {
+    let s = _2365_任务调度器_II()
+
+    let result1 = s.taskSchedulerII([1,2,1,2,3,1], 3)
+//    assert(result1 == 9)
+    print(result1)
+
+    let result2 = s.taskSchedulerII([5,8,8,5], 2)
+//    assert(result2 == 6)
+    print(result2)
+
+    /// 对数器测试
+    s.test()
+}
+
+//: [Next](@next)
