@@ -295,6 +295,7 @@
 		6D9C6259287BC5F300320073 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6249287BC5F300320073 /* AVLTree.swift */; };
 		6D9C625B287C06AA00320073 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C625A287C06AA00320073 /* Temp.swift */; };
 		6DD45F5F289A8C24001D8CD5 /* 464_我能赢吗.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */; };
+		6DF14D8328A2030C00154C5E /* String+Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF14D8228A2030C00154C5E /* String+Letters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -599,6 +600,7 @@
 		6D9C6249287BC5F300320073 /* AVLTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		6D9C625A287C06AA00320073 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "464_我能赢吗.swift"; sourceTree = "<group>"; };
+		6DF14D8228A2030C00154C5E /* String+Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Letters.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -951,6 +953,7 @@
 				6D9C621C287BBF4C00320073 /* Times.swift */,
 				6D9C621D287BBF4C00320073 /* Int+Numbers.swift */,
 				6D9C621E287BBF4C00320073 /* Array+Tool.swift */,
+				6DF14D8228A2030C00154C5E /* String+Letters.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1382,6 +1385,7 @@
 				6D95A076287FF28900FE54E2 /* 1185_一周中的第几天.swift in Sources */,
 				6D95A179287FF2B400FE54E2 /* 剑指Offer30_包含min函数的栈.swift in Sources */,
 				6D95A07D287FF28900FE54E2 /* 234_回文链表.swift in Sources */,
+				6DF14D8328A2030C00154C5E /* String+Letters.swift in Sources */,
 				6D95A0E5287FF28900FE54E2 /* 152_爱生气的书店老板.swift in Sources */,
 				6D95A0AD287FF28900FE54E2 /* 279_完全平方数.swift in Sources */,
 				6D311D0E28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift in Sources */,

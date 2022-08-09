@@ -99,8 +99,7 @@ public class _6141_合并相似的物品 {
 //    public func test() {
 //        let testTime = 10
 //        var isSucceed = true
-//        let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("a").value
-//        let letters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+//        let letters = String.lowercaseLetters()
 //        let minCount = 1
 //        let maxCount = 100
 //        let count = Int.random(in: minCount...maxCount)

@@ -114,35 +114,4 @@ extension _2365_任务调度器_II {
 //    s.test()
 //}
 
-do {
-    let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("z").value
-    let lowercaseLetters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
-    print(lowercaseLetters)// ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-    let uppercaseLetterValues = Unicode.Scalar("A").value...Unicode.Scalar("Z").value
-    let uppercaseLetters = uppercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
-    print(uppercaseLetters)// ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-}
-
-do {
-    let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("z").value
-    let letters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
-    print(letters)// ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-}
-
-do {
-    let uppercaseLetterValues = Unicode.Scalar("A").value...Unicode.Scalar("Z").value
-    let letters = uppercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
-    print(letters)// ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-}
-
-
-
-//let startingValue = Int(("A" as Unicode.Scalar).value) // 65
-//for i in 0 ..< 26 {
-//    if let value = Unicode.Scalar(i + lowLetterValue) {
-//        print(Character(value))
-//    }
-//}
-
 //: [Next](@next)

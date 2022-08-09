@@ -44,8 +44,7 @@ public class _168_Excel表列名称 {
     public init() {}
     
     public func convertToTitle1(_ n: Int) -> String {
-        let lowercaseLetterValues = Unicode.Scalar("A").value...Unicode.Scalar("Z").value
-        let letters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+        let letters = String.uppercaseLetters()
         let count: Int = letters.count
         
         var result = ""

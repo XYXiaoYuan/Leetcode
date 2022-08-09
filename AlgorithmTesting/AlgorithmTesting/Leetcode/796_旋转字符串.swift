@@ -120,8 +120,7 @@ public extension _796_旋转字符串 {
         let testTime = 10
         var isSucceed = true
         
-        let lowercaseLetterValues = Unicode.Scalar("a").value...Unicode.Scalar("z").value
-        let letters = lowercaseLetterValues.map { String(Unicode.Scalar($0) ?? " ")}
+        let letters = String.lowercaseLetters()
         let minCount = 1
         let maxCount = 100
         let count = Int.random(in: minCount...maxCount)
