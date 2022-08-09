@@ -1,116 +1,114 @@
 /**
- https://leetcode.cn/problems/implement-magic-dictionary/
- 
- 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
+ https://leetcode.cn/problems/task-scheduler-ii/
 
- 实现 MagicDictionary 类：
+ 给你一个下标从 0 开始的正整数数组 tasks ，表示需要 按顺序 完成的任务，其中 tasks[i] 表示第 i 件任务的 类型 。
 
- MagicDictionary() 初始化对象
- void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同
- bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。
+ 同时给你一个正整数 space ，表示一个任务完成 后 ，另一个 相同 类型任务完成前需要间隔的 最少 天数。
+
+ 在所有任务完成前的每一天，你都必须进行以下两种操作中的一种：
+
+ 完成 tasks 中的下一个任务
+ 休息一天
+ 请你返回完成所有任务所需的 最少 天数。
+
   
 
- 示例：
+ 示例 1：
 
- 输入
- ["MagicDictionary", "buildDict", "search", "search", "search", "search"]
- [[], [["hello", "leetcode"]], ["hello"], ["hhllo"], ["hell"], ["leetcoded"]]
- 输出
- [null, null, false, true, false, false]
+ 输入：tasks = [1,2,1,2,3,1], space = 3
+ 输出：9
+ 解释：
+ 9 天完成所有任务的一种方法是：
+ 第 1 天：完成任务 0 。
+ 第 2 天：完成任务 1 。
+ 第 3 天：休息。
+ 第 4 天：休息。
+ 第 5 天：完成任务 2 。
+ 第 6 天：完成任务 3 。
+ 第 7 天：休息。
+ 第 8 天：完成任务 4 。
+ 第 9 天：完成任务 5 。
+ 可以证明无法少于 9 天完成所有任务。
+ 示例 2：
 
- 解释
- MagicDictionary magicDictionary = new MagicDictionary();
- magicDictionary.buildDict(["hello", "leetcode"]);
- magicDictionary.search("hello"); // 返回 False
- magicDictionary.search("hhllo"); // 将第二个 'h' 替换为 'e' 可以匹配 "hello" ，所以返回 True
- magicDictionary.search("hell"); // 返回 False
- magicDictionary.search("leetcoded"); // 返回 False
+ 输入：tasks = [5,8,8,5], space = 2
+ 输出：6
+ 解释：
+ 6 天完成所有任务的一种方法是：
+ 第 1 天：完成任务 0 。
+ 第 2 天：完成任务 1 。
+ 第 3 天：休息。
+ 第 4 天：休息。
+ 第 5 天：完成任务 2 。
+ 第 6 天：完成任务 3 。
+ 可以证明无法少于 6 天完成所有任务。
   
 
  提示：
 
- 1 <= dictionary.length <= 100
- 1 <= dictionary[i].length <= 100
- dictionary[i] 仅由小写英文字母组成
- dictionary 中的所有字符串 互不相同
- 1 <= searchWord.length <= 100
- searchWord 仅由小写英文字母组成
- buildDict 仅在 search 之前调用一次
- 最多调用 100 次 search
+ 1 <= tasks.length <= 105
+ 1 <= tasks[i] <= 109
+ 1 <= space <= tasks.length
 
 
  来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/implement-magic-dictionary
+ 链接：https://leetcode.cn/problems/task-scheduler-ii
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
 import Foundation
 import Darwin
+// import XCTest
 
-public class _676_实现一个魔法字典 {
+public class _2365_任务调度器_II {
     //class Solution {
     public init() {}
-    
-    public class MagicDictionary {
 
-        init() {
-
-        }
+    func taskSchedulerII(_ tasks: [Int], _ space: Int) -> Int {
         
-        func buildDict(_ dictionary: [String]) {
-            
-           
-        }
-        
-        func search(_ searchWord: String) -> Bool {
-            return false
-        }
+        return 0
     }
 }
 
-extension _676_实现一个魔法字典.MagicDictionary {
+extension _2365_任务调度器_II {
     public func test() {
         let testTime = 10
-        let minValue = 0
-        let maxValue = 9
         var isSucceed = true
+        let min = 1
+        let max = 100
+        let count = 10
         for _ in 0..<testTime {
-            let count = Int.random(in: 1...100)
-            let randomArr1 = Int.random(count: count, min: minValue, max: maxValue)
-            let randomArr2 = Int.random(count: count, min: minValue, max: maxValue)
+            let tasks = Int.random(count: count, min: min, max: max)
+            let space = 10
             
-//            /// 方法一
-//            let node1 = ListNode.arrayToNode(randomArr1)
-//            let node2 = ListNode.arrayToNode(randomArr2)
-//            let result1 = addTwoNumbers1(node1, node2)
-//
-//            /// 待验证的：方法二
-//            let node3 = ListNode.arrayToNode(randomArr1)
-//            let node4 = ListNode.arrayToNode(randomArr2)
-//            let result2 = addTwoNumbers(node3, node4)
-//
-//            /// 可选绑定
-//            if let result1 = result1, let result2 = result2 {
-//                let ans1 = result1.toArray()
-//                let ans2 = result2.toArray()
-//
-//                if !ans1.isEqual(ans2) {
-//                    isSucceed = false
-//                    randomArr1.printArray()
-//                    randomArr2.printArray()
-//                    break
-//                }
-//            }
+            /// 方法一
+            let result1 = taskSchedulerII(tasks, space)
+
+            /// 待验证的：方法二
+            let result2 = taskSchedulerII(tasks, space)
+
+            if result1 != result2 {
+                isSucceed = false
+                print("numbers = \(tasks)")
+                break
+            }
         }
-        
+
         print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
 
 }
 
 //do {
-//    let s = _676_实现一个魔法字典.MagicDictionary()
-//    print("\(s) --- \(result)")
+//    let s = _2365_任务调度器_II()
+//
+//    let result1 = s.taskSchedulerII([1,2,1,2,3,1], 3)
+////    assert(result1 == 9)
+//    print(result1)
+//
+//    let result2 = s.taskSchedulerII([5,8,8,5], 2)
+////    assert(result2 == 6)
+//    print(result2)
 //
 //    /// 对数器测试
 //    s.test()

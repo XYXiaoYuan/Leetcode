@@ -950,6 +950,21 @@ do {
 }
 
 do {
+    let s = _1413_逐步求和得到正数的最小值()
+
+    let result1 = s.minStartValue([-3,2,-3,4,2])
+    let result2 = s.minStartValue([1,2])
+    let result3 = s.minStartValue([1,-2,-3])
+    assert(result1 == 5)
+    assert(result2 == 1)
+    assert(result3 == 5)
+    print("\(s) --- \(result1),\(result2),\(result3)")
+
+    /// 对数器测试
+//    s.test()
+}
+
+do {
     let s = _1512_好数对的数目()
     let result = s.numIdenticalPairs([1,2,3,1,1,3])
     print("\(s) --- \(result)")
