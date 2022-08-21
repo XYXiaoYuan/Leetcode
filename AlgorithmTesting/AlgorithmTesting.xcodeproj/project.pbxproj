@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C21C06D28B1F3C50062565C /* 6152_赢得比赛需要的最少训练时长.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21C06C28B1F3C50062565C /* 6152_赢得比赛需要的最少训练时长.swift */; };
 		1C9F69BA2896C8E8008AF00C /* 2351_第一个出现两次的字母.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */; };
 		1CAD20D0289FF9BE00816713 /* 796_旋转字符串.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD20CF289FF9BE00816713 /* 796_旋转字符串.swift */; };
 		6D311D04289FEFD300B824B8 /* KMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D311D03289FEFD300B824B8 /* KMP.swift */; };
@@ -314,6 +315,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C21C06C28B1F3C50062565C /* 6152_赢得比赛需要的最少训练时长.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6152_赢得比赛需要的最少训练时长.swift"; sourceTree = "<group>"; };
 		1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2351_第一个出现两次的字母.swift"; sourceTree = "<group>"; };
 		1CAD20CF289FF9BE00816713 /* 796_旋转字符串.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "796_旋转字符串.swift"; sourceTree = "<group>"; };
 		6D311D03289FEFD300B824B8 /* KMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP.swift; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 				6D959FF8287FF28800FE54E2 /* 001_两数之和.swift */,
 				6D959FE2287FF28800FE54E2 /* 002_两数相加.swift */,
 				6D959FFE287FF28800FE54E2 /* 003_无重复字符的最长子串.swift */,
+				1C21C06C28B1F3C50062565C /* 6152_赢得比赛需要的最少训练时长.swift */,
 				6D959FD3287FF28800FE54E2 /* 004_寻找两个正序数组的中位数.swift */,
 				6D95A028287FF28800FE54E2 /* 005_最长回文子串.swift */,
 				6D959FD7287FF28800FE54E2 /* 006_Z 字形变换 .swift */,
@@ -1182,6 +1185,7 @@
 				6D95A115287FF28900FE54E2 /* 1154_一年中的第几天.swift in Sources */,
 				6D95A06F287FF28900FE54E2 /* 727_最小窗口子序列.swift in Sources */,
 				6D95A0B0287FF28900FE54E2 /* 264_丑数II.swift in Sources */,
+				1C21C06D28B1F3C50062565C /* 6152_赢得比赛需要的最少训练时长.swift in Sources */,
 				6D95A0FB287FF28900FE54E2 /* 344_反转字符串.swift in Sources */,
 				6D95A18C287FF2B500FE54E2 /* 剑指OfferII_023_两个链表的第一个重合节点.swift in Sources */,
 				6D95A16E287FF2B400FE54E2 /* 剑指Offer12_矩阵中的路径.swift in Sources */,

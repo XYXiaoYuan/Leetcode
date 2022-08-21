@@ -1063,5 +1063,31 @@ do {
     s.test()
 }
 
+do {
+    let s = _6152_赢得比赛需要的最少训练时长()
+
+    let result1 = s.minNumberOfHours(5, 3, [1,4,3,2], [2,6,3,1])
+    assert(result1 == 8)
+    print(result1)
+
+    let result2 = s.minNumberOfHours(2, 4, [1], [3])
+    assert(result2 == 0)
+    print(result2)
+
+    let result3 = s.minNumberOfHours(1, 1, [1,1,1,1], [1,1,1,50])
+    assert(result2 == 51)
+    print(result3)
+
+    let result4 = s.minNumberOfHours(5, 3, [1,4], [2,5])
+    assert(result4 == 2)
+    print(result4)
+    
+    print("\(s) --- \(result1) --- \(result2) --- \(result3) --- \(result4)")
+
+    /// 对数器测试
+//    s.test()
+}
+
+
 //: [Next](@next)
 
