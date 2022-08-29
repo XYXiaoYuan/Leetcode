@@ -1,158 +1,122 @@
+/**
+ https://leetcode.cn/problems/count-number-of-bad-pairs/
+ 
+ 给你一个下标从 0 开始的整数数组 nums 。如果 i < j 且 j - i != nums[j] - nums[i] ，那么我们称 (i, j) 是一个 坏数对 。
+
+ 请你返回 nums 中 坏数对 的总数目。
+
+  
+
+ 示例 1：
+
+ 输入：nums = [4,1,3,3]
+ 输出：5
+ 解释：数对 (0, 1) 是坏数对，因为 1 - 0 != 1 - 4 。
+ 数对 (0, 2) 是坏数对，因为 2 - 0 != 3 - 4, 2 != -1 。
+ 数对 (0, 3) 是坏数对，因为 3 - 0 != 3 - 4, 3 != -1 。
+ 数对 (1, 2) 是坏数对，因为 2 - 1 != 3 - 1, 1 != 2 。
+ 数对 (2, 3) 是坏数对，因为 3 - 2 != 3 - 3, 1 != 0 。
+ 总共有 5 个坏数对，所以我们返回 5 。
+ 示例 2：
+
+ 输入：nums = [1,2,3,4,5]
+ 输出：0
+ 解释：没有坏数对。
+  
+
+ 提示：
+
+ 1 <= nums.length <= 105
+ 1 <= nums[i] <= 109
+
+
+ 来源：力扣（LeetCode）
+ 链接：https://leetcode.cn/problems/count-number-of-bad-pairs
+ 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ */
 
 import Foundation
 import Darwin
 // import XCTest
 
-extension Solution.Direction: CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .top:
-            return "☝️"
-        case .left:
-            return "👈"
-        case .bottom:
-            return "👇"
-        case .right:
-            return "👉"
-        }
-    }
-}
-
-extension Solution.Seat: CustomStringConvertible {
-    public var description: String {
-        return "[\(index)]"
-//        return "\(direction)-[\(index)]"
-    }
-}
-
-extension Solution.Seat: Equatable {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.direction == rhs.direction
-    }
-}
-
-extension Solution {
-    public func print(_ ans: [Seat], _ cur: Int) -> String {
-        guard !ans.isEmpty else { return "🈚️" }
-        
-        var result = ""
-        let space = " "
-        let directions = ans.map { $0.direction }
-        if directions.contains(.top) {
-            var leftAns = ""
-            if directions.contains(.left) {
-                let leftRes = ans.filter { $0.direction == .left }.first!
-                leftAns = " [\(leftRes.index)]👈"
-            }
-            let leftEmpty = String.init(repeating: " ", count: leftAns.count)
-
-            result += "\(leftEmpty)\(space)\(ans.filter { $0.direction == .top }.first!)\(space)"
-            result += "\n\(leftEmpty)\(space) ☝️\(space)\n"
-        }
-                
-        var leftAns = ""
-        if directions.contains(.left) {
-            let leftRes = ans.filter { $0.direction == .left }.first!
-            leftAns = "  [\(leftRes.index)]👈"
-            result += "\(leftRes)👈"
-        }
-        
-        result += "\(space)〈\(cur)〉\(space)"
-        
-        if directions.contains(.right) {
-            result += "👉\(ans.filter { $0.direction == .right }.first!)"
-        }
-                
-        if directions.contains(.bottom) {
-            var leftEmpty = String.init(repeating: " ", count: leftAns.count)
-            leftEmpty = leftEmpty.isEmpty ? "  " : leftEmpty
-            result += "\n\(leftEmpty)\(space)👇\(space)\n"
-            result += "\(leftEmpty)\(space)\(ans.filter { $0.direction == .bottom }.first!)\(space)"
-        }
-        
-        result += "\n"
-
-        return result
-    }
-}
-
-public class Solution {
-    public enum Direction {
-        case top
-        case left
-        case bottom
-        case right
-    }
-    
-    public struct Seat  {
-        var index: Int
-        var direction: Direction
-    }
-    
+public class Soltion1 {
+    //class Solution {
     public init() {}
     
-    /// 处理当前坐席相邻的坐席号
-    /// - Parameters:
-    ///   - seatIndex: 当前坐席号
-    ///   - maxRowSeats: 一行多少个坐席
-    ///   - seats: 总坐席序号[0...n]
-    /// - Returns: 当前坐席相邻的坐席号
-    public func adjacentSeats(_ seatIndex: Int,
-                              _ maxRowSeats: Int = 4,
-                              _ seats: [Int] = [0,1,2,3,4,5,6,7]) -> [Seat] {
-        guard seatIndex < seats.count else { return [Seat]() }
-
-        var ans = [Seat]()
+    // j - i != num2 - num1
+    // j - num2 != i - num1
+    public func countBadPairs(_ nums: [Int]) -> Int {
+        var ans = 0
         
-        /// 顶部
-        let top = seatIndex - maxRowSeats
-        if top >= 0 {
-            ans.append(Seat(index: seats[top], direction: .top))
+        var map = [Int: Int]()
+        for i in 0..<nums.count {
+            let val = i - nums[i]
+            let same = map[val] ?? 0
+            ans += i - same
+            map[val] = same + 1
+//            print("ans = \(ans), -- map \(map), 😆 -- val = \(val), -- same = \(same)")
         }
         
-        /// 左边
-        let left = seatIndex - 1
-        if seatIndex % maxRowSeats > 0 {
-            ans.append(Seat(index: seats[left], direction: .left))
-        }
-
-        /// 底部
-        let bottom = seatIndex + maxRowSeats
-        if bottom < seats.count {
-            ans.append(Seat(index: seats[bottom], direction: .bottom))
-        }
-
-        /// 右边
-        let right = seatIndex + 1
-        if seatIndex % maxRowSeats < (maxRowSeats - 1) {
-            ans.append(Seat(index: seats[right], direction: .right))
+        return ans
+    }
+    
+    /// 正确，但是会超时
+    public func countBadPairs0(_ nums: [Int]) -> Int {
+        var ans = 0
+        
+        for (i, num1) in nums.enumerated() {
+            for (j, num2) in nums.enumerated() {
+                if i < j, j - i != num2 - num1 {
+                    ans += 1
+                }
+            }
         }
         
         return ans
     }
 }
 
+extension Soltion1 {
+    public func test() {
+        let testTime = 10
+        var isSucceed = true
+        let min = 1
+        let max = 100
+        let count = 10
+        for _ in 0..<testTime {
+            let numbers = Int.random(count: count, min: min, max: max)
+
+            /// 方法一
+            let result1 = countBadPairs0(numbers)
+
+            /// 待验证的：方法二
+            let result2 = countBadPairs(numbers)
+
+            if result1 != result2 {
+                isSucceed = false
+                print("numbers = \(numbers)")
+                break
+            }
+        }
+
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+    }
+
+}
+
 do {
-    let s = Solution()
-    
-    for i in 0..<8 {
-        let seats = s.adjacentSeats(i)
-        print("第〈\(i)〉位坐席的 相邻坐席有\n\n \(s.print(seats, i))")
-    }
+    let s = Soltion1()
 
-    print("\n----------------------------------- \n")
+//    let result1 = s.countBadPairs([4,1,3,3])
+//    assert(result1 == 5)
+//    print(result1)
+//
+//    let result2 = s.countBadPairs([1,2,3,4,5])
+//    assert(result2 == 0)
+//    print(result2)
 
-    for i in 0..<10 {
-        let seats = s.adjacentSeats(i, 5, [0,1,2,3,4,5,6,7,8,9])
-        print("第〈\(i)〉位坐席的 相邻坐席有\n\n \(s.print(seats, i))")
-    }
-
-    print("\n----------------------------------- \n")
-    
-    for i in 0..<10 {
-        let seats = s.adjacentSeats(i, 3, [0,1,2,3,4,5,6,7,8])
-        print("第〈\(i)〉位坐席的 相邻坐席有\n\n \(s.print(seats, i))")
-    }
+    /// 对数器测试
+    s.test()
 }
 
 //: [Next](@next)

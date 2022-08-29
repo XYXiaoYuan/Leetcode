@@ -42,6 +42,41 @@ public class _98_验证二叉搜索树 {
     //class Solution {
     public init() {}
     
+    public func isValidBST(_ root: TreeNode?) -> Bool {
+        if root == nil {
+            return true
+        }
+        
+        var cur: TreeNode? = root
+        var mostRight: TreeNode?
+        
+        var pre: Int?
+        while cur != nil {
+            mostRight = cur?.left
+            if mostRight != nil {
+                while mostRight?.right != nil, mostRight?.right !== cur {
+                    mostRight = mostRight?.right
+                }
+                
+                if mostRight?.right == nil {
+                    mostRight?.right = cur
+                    cur = cur?.left
+                    continue
+                } else {
+                    mostRight?.right = nil
+                }
+            }
+            
+            if let pre = pre, let curValue = cur?.val, pre >= curValue {
+                return false
+            }
+            
+            pre = cur?.val ?? nil
+            cur = cur?.right
+        }
+        return true
+    }
+
     private struct Info {
         /// 整棵树是否平衡
         var isBST: Bool
@@ -51,7 +86,7 @@ public class _98_验证二叉搜索树 {
         var minVal: Int
     }
     
-    public func isValidBST(_ root: TreeNode?) -> Bool {
+    public func isValidBST1(_ root: TreeNode?) -> Bool {
         let info = process(root)
         return info?.isBST ?? true
     }
