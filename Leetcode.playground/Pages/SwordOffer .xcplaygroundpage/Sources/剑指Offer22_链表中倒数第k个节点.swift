@@ -33,15 +33,15 @@ public class _剑指Offer22_链表中倒数第k个节点 {
         var headB = head  //声明另外一个目标指针B
         
         for _ in 0..<k-1 { //0到k-1开区间
-            if headA?.next != nil {
-                headA = headA?.next
+            if let headANext = headA?.next {
+                headA = headANext
             } else { //当为nil的时候说明存在输入的k大于整个链表的长度
                 return nil
             }
         }
 
-        while headA?.next != nil { //当前headA指针走到尾结点的时候恰巧headB就是目标点
-            headA = headA?.next
+        while let headANext = headA?.next { //当前headA指针走到尾结点的时候恰巧headB就是目标点
+            headA = headANext
             headB = headB?.next
         }
 
