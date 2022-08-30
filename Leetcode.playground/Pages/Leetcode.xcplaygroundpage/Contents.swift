@@ -1026,6 +1026,16 @@ do {
 }
 
 do {
+    let s = _2389_和有限的最长子序列()
+    let result1 = s.answerQueries([1,2,4,5], [3,10,21])
+    assert(result1 == [2,3,4])
+    let result2 = s.answerQueries([2,3,4,5], [1])
+    assert(result2 == [0])
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+}
+
+do {
     let s = _6132_使数组中所有元素都等于零()
     let result = s.minimumOperations([1,5,0,3,5])
     print("\(s) --- \(result)")

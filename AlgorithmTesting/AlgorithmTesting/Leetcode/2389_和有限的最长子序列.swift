@@ -41,7 +41,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _2389_和有限的最长子序列 {
     //class Solution {
     public init() {}
     
@@ -65,14 +65,14 @@ public class Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.answerQueries([1,2,4,5], [3,10,21])
-    assert(result1 == [2,3,4])
-    let result2 = s.answerQueries([2,3,4,5], [1])
-    assert(result2 == [0])
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-}
+//do {
+//    let s = _2389_和有限的最长子序列()
+//    let result1 = s.answerQueries([1,2,4,5], [3,10,21])
+//    assert(result1 == [2,3,4])
+//    let result2 = s.answerQueries([2,3,4,5], [1])
+//    assert(result2 == [0])
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//}
 
 //: [Next](@next)
