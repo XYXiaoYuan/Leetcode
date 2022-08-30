@@ -63,7 +63,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class _Solution1 {
+public class _2391_收集垃圾的最少总时间 {
     //class Solution {
     public init() {}
         
@@ -129,7 +129,7 @@ public class _Solution1 {
     }
 }
 
-extension _Solution1 {
+extension _2391_收集垃圾的最少总时间 {
     public func test() {
         let testTime = 10000
         var isSucceed = true
@@ -169,17 +169,17 @@ extension _Solution1 {
 }
 
 
-do {
-    let s = _Solution1()
-    let result1 = s.garbageCollection(["G","P","GP","GG"], [2,4,3])
-    assert(result1 == 21)
-    let result2 = s.garbageCollection(["MMM","PGM","GP"], [3,10])
-    assert(result2 == 37)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-    
-    /// 对数器测试
-    s.test()
-}
+//do {
+//    let s = _2391_收集垃圾的最少总时间()
+//    let result1 = s.garbageCollection(["G","P","GP","GG"], [2,4,3])
+//    assert(result1 == 21)
+//    let result2 = s.garbageCollection(["MMM","PGM","GP"], [3,10])
+//    assert(result2 == 37)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//    
+//    /// 对数器测试
+//    s.test()
+//}
 
 //: [Next](@next)

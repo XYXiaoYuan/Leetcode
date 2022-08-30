@@ -20,6 +20,32 @@ extension Int {
         
         return array
     }
+    
+    /// 随机数字，数字不重复
+    /// - Parameters:
+    ///   - count: 个数
+    ///   - min: 最小值
+    ///   - max: 最大值
+    /// - Returns: 生成一个随机数数组
+    public static func randomSet(count: Int, min: Int, max: Int) -> [Int] {
+        if count <= 0 || min > max {
+            return []
+        }
+        var set = Set<Int>()
+        
+        func generateRandoms() -> Int {
+            let delta = max - min + 1
+            let value = min + Int(Double.random(in: 0.0...1.0) * Double(delta))
+            return value
+        }
+        
+        while set.count < count {
+            let value = generateRandoms()
+            set.insert(value)
+        }
+                
+        return Array(set)
+    }
 }
 
 extension Int {
