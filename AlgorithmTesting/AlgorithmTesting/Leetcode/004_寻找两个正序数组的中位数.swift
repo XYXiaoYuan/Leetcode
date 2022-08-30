@@ -54,35 +54,71 @@ public class _004_寻找两个正序数组的中位数 {
     public init() {}
     
     public func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
-        if nums1.isEmpty && nums2.count == 1 {
-            return Double(nums2.first!)
+        var i = 0, j = 0, numbers = [Int]()
+        while i < nums1.count, j < nums2.count {
+            if nums1[i] < nums2[j] {
+                numbers.append(nums1[i])
+                i += 1
+            } else {
+                numbers.append(nums2[j])
+                j += 1
+            }
         }
-        if nums2.isEmpty && nums1.count == 1 {
-            return Double(nums1.first!)
+        numbers.append(contentsOf: nums1[i..<nums1.count])
+        numbers.append(contentsOf: nums2[j..<nums2.count])
+        if numbers.count % 2 == 0 {
+            return Double(numbers[numbers.count / 2] + numbers[numbers.count / 2 - 1]) / 2
+        } else {
+            return Double(numbers[numbers.count / 2])
+        }
+    }
+
+    public func findMedianSortedArrays1(_ nums1: [Int], _ nums2: [Int]) -> Double {
+        guard nums1.count <= nums2.count else {
+            return findMedianSortedArrays(nums2, nums1)
         }
         
-//        let count: Int = max(nums1.count, nums2.count)
-//        var cur1: Int = 0
-//        var cur2: Int = 0
-//
-//        var middleIndex: (Int, Int) = (0, 0)
-//        if count & 2 == 1 {
-//            middleIndex
-//        }
-//
-//        for i in 0..<count {
-//            if nums1[cur1] < nums2[cur2] {
-//
-//            }
-//        }
+        let m = nums1.count, n = nums2.count
+        var start = 0, end = m
         
-        return 1.0
+        while start <= end {
+            let cutPos1 = (start + end) / 2
+            let cutPos2 = (m + n + 1) / 2 - cutPos1
+            
+            // If cutPos1 == 0, nothing in array1 is there on the left,
+            // use Int.min for maxLeft1
+            // If cutPos1 == m, nothing in array1 is there on the right,
+            // use Int.max for minRight1
+            let maxLeft1 = cutPos1 == 0 ? Int.min : nums1[cutPos1 - 1]
+            let minRight1 = cutPos1 == m ? Int.max : nums1[cutPos1]
+            
+            let maxLeft2 = cutPos2 == 0 ? Int.min : nums2[cutPos2 - 1]
+            let minRight2 = cutPos2 == n ? Int.max : nums2[cutPos2]
+            
+            if maxLeft1 <= minRight2, maxLeft2 <= minRight1 {
+                // We have partitioned both array at correct place
+                if (m + n) % 2 == 0 {
+                    return Double(max(maxLeft1, maxLeft2) + min(minRight1, minRight2)) / 2.0
+                } else {
+                    return Double(max(maxLeft1, maxLeft2))
+                }
+            } else if maxLeft1 > minRight2 {
+                // We are too far on right side for cutPos1, go left side
+                end = cutPos1 - 1
+            } else {
+                // We are too far on left side for cutPos1, go right side
+                start = cutPos1 + 1
+            }
+        }
+        return -1
     }
 }
 
-//let s = _004_寻找两个正序数组的中位数()
-//let result = s.findMedianSortedArrays([1,3], [2])
-//print("结果result = \(result)")
+//do {
+//    let s = _004_寻找两个正序数组的中位数()
+//    let result = s.findMedianSortedArrays([1,3], [2])
+//    print("结果result = \(result)")
+//}
 
 
 //: [Next](@next)
