@@ -1036,6 +1036,19 @@ do {
 }
 
 do {
+    let s = _2390_从字符串中移除星号()
+    let result1 = s.removeStars("leet**cod*e")
+    assert(result1 == "lecoe")
+    let result2 = s.removeStars("erase*****")
+    assert(result2 == "")
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _6132_使数组中所有元素都等于零()
     let result = s.minimumOperations([1,5,0,3,5])
     print("\(s) --- \(result)")
