@@ -38,14 +38,12 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class _98_验证二叉搜索树 {
+public class _098_验证二叉搜索树 {
     //class Solution {
     public init() {}
     
     public func isValidBST(_ root: TreeNode?) -> Bool {
-        if root == nil {
-            return true
-        }
+        if root == nil { return true }
         
         var cur: TreeNode? = root
         var mostRight: TreeNode?
@@ -71,7 +69,7 @@ public class _98_验证二叉搜索树 {
                 return false
             }
             
-            pre = cur?.val ?? nil
+            pre = cur?.val
             cur = cur?.right
         }
         return true
@@ -138,9 +136,9 @@ public class _98_验证二叉搜索树 {
 
 }
 
-//public extension _98_验证二叉搜索树 {
+//public extension _098_验证二叉搜索树 {
 //    class Test: XCTestCase {
-//        var s = _98_验证二叉搜索树()
+//        var s = _098_验证二叉搜索树()
 //        
 //        func testExample1() {
 ////            let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
@@ -170,12 +168,12 @@ public class _98_验证二叉搜索树 {
 //}
 
 //do {
-//    var s = _98_验证二叉搜索树()
+//    var s = _098_验证二叉搜索树()
 //    let node = TreeNode.arrayToNode([3,9,20,nil,nil,15,7])
 //    let result = s.isBalanced(node)
 //    print("\(s) --- \(result)")
 //
-//    _98_验证二叉搜索树.Test.defaultTestSuite.run()
+//    _098_验证二叉搜索树.Test.defaultTestSuite.run()
 //}
 
 

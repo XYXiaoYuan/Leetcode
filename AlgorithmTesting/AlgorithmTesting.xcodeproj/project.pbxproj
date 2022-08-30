@@ -135,7 +135,7 @@
 		6D95A0E1287FF28900FE54E2 /* 270_最接近的二叉搜索树值.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A02D287FF28800FE54E2 /* 270_最接近的二叉搜索树值.swift */; };
 		6D95A0E2287FF28900FE54E2 /* 309_最佳买卖股票时机含冷冻期.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A02E287FF28800FE54E2 /* 309_最佳买卖股票时机含冷冻期.swift */; };
 		6D95A0E3287FF28900FE54E2 /* 386_字典序排数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A02F287FF28800FE54E2 /* 386_字典序排数.swift */; };
-		6D95A0E4287FF28900FE54E2 /* 98_验证二叉搜索树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A030287FF28800FE54E2 /* 98_验证二叉搜索树.swift */; };
+		6D95A0E4287FF28900FE54E2 /* 098_验证二叉搜索树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A030287FF28800FE54E2 /* 098_验证二叉搜索树.swift */; };
 		6D95A0E5287FF28900FE54E2 /* 152_爱生气的书店老板.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A031287FF28800FE54E2 /* 152_爱生气的书店老板.swift */; };
 		6D95A0E6287FF28900FE54E2 /* 094_二叉树的中序遍历.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A032287FF28800FE54E2 /* 094_二叉树的中序遍历.swift */; };
 		6D95A0E7287FF28900FE54E2 /* 1201_丑数III.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A033287FF28800FE54E2 /* 1201_丑数III.swift */; };
@@ -443,7 +443,7 @@
 		6D95A02D287FF28800FE54E2 /* 270_最接近的二叉搜索树值.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "270_最接近的二叉搜索树值.swift"; sourceTree = "<group>"; };
 		6D95A02E287FF28800FE54E2 /* 309_最佳买卖股票时机含冷冻期.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "309_最佳买卖股票时机含冷冻期.swift"; sourceTree = "<group>"; };
 		6D95A02F287FF28800FE54E2 /* 386_字典序排数.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "386_字典序排数.swift"; sourceTree = "<group>"; };
-		6D95A030287FF28800FE54E2 /* 98_验证二叉搜索树.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "98_验证二叉搜索树.swift"; sourceTree = "<group>"; };
+		6D95A030287FF28800FE54E2 /* 098_验证二叉搜索树.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "098_验证二叉搜索树.swift"; sourceTree = "<group>"; };
 		6D95A031287FF28800FE54E2 /* 152_爱生气的书店老板.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "152_爱生气的书店老板.swift"; sourceTree = "<group>"; };
 		6D95A032287FF28800FE54E2 /* 094_二叉树的中序遍历.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "094_二叉树的中序遍历.swift"; sourceTree = "<group>"; };
 		6D95A033287FF28800FE54E2 /* 1201_丑数III.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "1201_丑数III.swift"; sourceTree = "<group>"; };
@@ -676,7 +676,7 @@
 				6D95A01A287FF28800FE54E2 /* 093_复原IP地址.swift */,
 				6D95A032287FF28800FE54E2 /* 094_二叉树的中序遍历.swift */,
 				6D95A067287FF28800FE54E2 /* 097_交错字符串.swift */,
-				6D95A030287FF28800FE54E2 /* 98_验证二叉搜索树.swift */,
+				6D95A030287FF28800FE54E2 /* 098_验证二叉搜索树.swift */,
 				6D95A011287FF28800FE54E2 /* 100_相同的树.swift */,
 				6D95A00C287FF28800FE54E2 /* 101_对称二叉树.swift */,
 				6D959FD6287FF28800FE54E2 /* 102_二叉树的层序遍历.swift */,
@@ -1228,7 +1228,7 @@
 				6D9C622D287BBF4C00320073 /* TreeNode.swift in Sources */,
 				6D95A0B4287FF28900FE54E2 /* 1134_阿姆斯特朗数.swift in Sources */,
 				6D95A190287FF2B500FE54E2 /* 剑指Offer11_旋转数组的最小数字.swift in Sources */,
-				6D95A0E4287FF28900FE54E2 /* 98_验证二叉搜索树.swift in Sources */,
+				6D95A0E4287FF28900FE54E2 /* 098_验证二叉搜索树.swift in Sources */,
 				6D95A0CE287FF28900FE54E2 /* 093_复原IP地址.swift in Sources */,
 				6D95A10F287FF28900FE54E2 /* 086_分隔链表.swift in Sources */,
 				6D9C6256287BC5F300320073 /* BinaryTree.swift in Sources */,
