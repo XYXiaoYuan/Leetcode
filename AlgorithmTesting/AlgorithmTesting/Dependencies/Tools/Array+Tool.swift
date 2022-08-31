@@ -53,3 +53,28 @@ extension Array {
         return copiedArray
     }
 }
+
+extension Array {
+    /// 二分查找数组中某个数，在不在数组中
+    /// - Parameters:
+    ///   - sortedArr: 数组
+    ///   - target: 目标数值
+    /// - Returns: 数是否要数组中
+    static func exist(_ sortedArr: [Int], _ target: Int) -> Bool {
+        var L = 0, mid = 0, R = sortedArr.count - 1
+        
+        while L < R {
+            mid = L + ((R - L) >> 1)
+            
+            if sortedArr[mid] == target {
+                return true
+            } else if sortedArr[mid] > target {
+                R = mid - 1
+            } else {
+                L = mid + 1
+            }
+        }
+        
+        return sortedArr[L] == target
+    }
+}

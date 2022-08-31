@@ -450,6 +450,21 @@ do {
 }
 
 do {
+    let s = _209_长度最小的子数组()
+    let result1 = s.minSubArrayLen(7, [2,3,1,2,4,3])
+    assert(result1 == 2)
+    let result2 = s.minSubArrayLen(4 ,[1,4,4])
+    assert(result2 == 1)
+    let result3 = s.minSubArrayLen(11 ,[1,1,1,1,1,1,1,1])
+    assert(result3 == 0)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _217_存在重复元素()
     let result = s.containsDuplicate([1])
     print("\(s) --- \(result)")
