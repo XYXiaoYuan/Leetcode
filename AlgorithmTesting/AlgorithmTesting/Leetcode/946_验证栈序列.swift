@@ -37,7 +37,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _946_验证栈序列 {
     //class Solution {
     public init() {}
         
@@ -78,7 +78,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _946_验证栈序列 {
     public func test() {
         let testTime = 100
         var isSucceed = true
@@ -121,17 +121,17 @@ extension Solution1 {
 }
 
 
-do {
-    let s = Solution1()
-    let result1 = s.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
-    assert(result1 == true)
-    let result2 = s.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
-    assert(result2 == false)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-    
-    /// 对数器测试
-    s.test()
-}
+//do {
+//    let s = _946_验证栈序列()
+//    let result1 = s.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
+//    assert(result1 == true)
+//    let result2 = s.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
+//    assert(result2 == false)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//    
+//    /// 对数器测试
+//    s.test()
+//}
 
 //: [Next](@next)

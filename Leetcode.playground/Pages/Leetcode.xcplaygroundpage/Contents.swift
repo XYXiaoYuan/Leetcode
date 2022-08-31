@@ -824,6 +824,19 @@ do {
 }
 
 do {
+    let s = _946_验证栈序列()
+    let result1 = s.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
+    assert(result1 == true)
+    let result2 = s.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
+    assert(result2 == false)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _1104_二叉树寻路()
     let result = s.pathInZigZagTree(26)
     print(result)
