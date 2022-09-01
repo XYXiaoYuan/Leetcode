@@ -1018,6 +1018,21 @@ do {
 }
 
 do {
+    let s = Solution1()
+    let result1 = s.countVowelStrings(1)
+    assert(result1 == 5)
+    let result2 = s.countVowelStrings(2)
+    assert(result2 == 15)
+    let result3 = s.countVowelStrings(33)
+    assert(result3 == 66045)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+    
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _1805_字符串中不同整数的数目()
     let result = s.numDifferentIntegers("a123bc34d8ef34")
     print("\(s) --- \(result)")

@@ -302,6 +302,7 @@
 		6DD01EE028BF618500EC22B1 /* 946_验证栈序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EDF28BF618500EC22B1 /* 946_验证栈序列.swift */; };
 		6DD01EE228BF828F00EC22B1 /* 209_长度最小的子数组.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EE128BF828F00EC22B1 /* 209_长度最小的子数组.swift */; };
 		6DD01EE428C05E2500EC22B1 /* 1475_商品折扣后的最终价格.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EE328C05E2500EC22B1 /* 1475_商品折扣后的最终价格.swift */; };
+		6DD01EE628C0766400EC22B1 /* 1641_统计字典序元音字符串的数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EE528C0766400EC22B1 /* 1641_统计字典序元音字符串的数目.swift */; };
 		6DD38C4428AE238700C3CC99 /* Temp1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD38C4328AE238700C3CC99 /* Temp1.swift */; };
 		6DD45F5F289A8C24001D8CD5 /* 464_我能赢吗.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */; };
 		6DF14D8328A2030C00154C5E /* String+Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF14D8228A2030C00154C5E /* String+Letters.swift */; };
@@ -617,6 +618,7 @@
 		6DD01EDF28BF618500EC22B1 /* 946_验证栈序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "946_验证栈序列.swift"; sourceTree = "<group>"; };
 		6DD01EE128BF828F00EC22B1 /* 209_长度最小的子数组.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "209_长度最小的子数组.swift"; sourceTree = "<group>"; };
 		6DD01EE328C05E2500EC22B1 /* 1475_商品折扣后的最终价格.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1475_商品折扣后的最终价格.swift"; sourceTree = "<group>"; };
+		6DD01EE528C0766400EC22B1 /* 1641_统计字典序元音字符串的数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1641_统计字典序元音字符串的数目.swift"; sourceTree = "<group>"; };
 		6DD38C4328AE238700C3CC99 /* Temp1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp1.swift; sourceTree = "<group>"; };
 		6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "464_我能赢吗.swift"; sourceTree = "<group>"; };
 		6DF14D8228A2030C00154C5E /* String+Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Letters.swift"; sourceTree = "<group>"; };
@@ -826,6 +828,7 @@
 				6DD01EE328C05E2500EC22B1 /* 1475_商品折扣后的最终价格.swift */,
 				6D95A02A287FF28800FE54E2 /* 1512_好数对的数目.swift */,
 				6D959FF7287FF28800FE54E2 /* 1547_切棍子的最小成本.swift */,
+				6DD01EE528C0766400EC22B1 /* 1641_统计字典序元音字符串的数目.swift */,
 				6D959FC7287FF28800FE54E2 /* 1805_字符串中不同整数的数目.swift */,
 				6D311D0D28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift */,
 				6D95A006287FF28800FE54E2 /* 1929_数组串联.swift */,
@@ -1165,6 +1168,7 @@
 				6D95A086287FF28900FE54E2 /* 295_数据流的中位数.swift in Sources */,
 				6D95A092287FF28900FE54E2 /* 221_最大正方形.swift in Sources */,
 				6D95A108287FF28900FE54E2 /* 1104_二叉树寻路.swift in Sources */,
+				6DD01EE628C0766400EC22B1 /* 1641_统计字典序元音字符串的数目.swift in Sources */,
 				6D95A0F4287FF28900FE54E2 /* 139_单词拆分.swift in Sources */,
 				6D95A10E287FF28900FE54E2 /* 075_颜色分类.swift in Sources */,
 				6D95A191287FF2B500FE54E2 /* 剑指Offer66_构建乘积数组.swift in Sources */,

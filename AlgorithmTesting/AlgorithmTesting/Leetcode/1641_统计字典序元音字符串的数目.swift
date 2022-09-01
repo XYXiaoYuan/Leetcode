@@ -33,7 +33,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _1641_统计字典序元音字符串的数目 {
     //class Solution {
     public init() {}
 
@@ -53,7 +53,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _1641_统计字典序元音字符串的数目 {
     public func test() {
         var isSucceed = true
         for n in 1...50 {
@@ -74,19 +74,19 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.countVowelStrings(1)
-    assert(result1 == 5)
-    let result2 = s.countVowelStrings(2)
-    assert(result2 == 15)
-    let result3 = s.countVowelStrings(33)
-    assert(result3 == 66045)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
-    
-    /// 对数器测试
-    s.test()
-}
+//do {
+//    let s = _1641_统计字典序元音字符串的数目()
+//    let result1 = s.countVowelStrings(1)
+//    assert(result1 == 5)
+//    let result2 = s.countVowelStrings(2)
+//    assert(result2 == 15)
+//    let result3 = s.countVowelStrings(33)
+//    assert(result3 == 66045)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+//    
+//    /// 对数器测试
+//    s.test()
+//}
 
 //: [Next](@next)
