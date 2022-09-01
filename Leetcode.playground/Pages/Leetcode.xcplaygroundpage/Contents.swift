@@ -993,6 +993,21 @@ do {
 }
 
 do {
+    let s = _1475_商品折扣后的最终价格()
+    let result1 = s.finalPrices([8,4,6,2,3])
+    assert(result1 == [4,2,4,2,3])
+    let result2 = s.finalPrices([1,2,3,4,5])
+    assert(result2 == [1,2,3,4,5])
+    let result3 = s.finalPrices([10,1,1,6])
+    assert(result3 == [9,0,1,6])
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _1512_好数对的数目()
     let result = s.numIdenticalPairs([1,2,3,1,1,3])
     print("\(s) --- \(result)")
