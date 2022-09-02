@@ -34,7 +34,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _611_有效三角形的个数 {
     //class Solution {
     public init() {}
 
@@ -71,7 +71,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _611_有效三角形的个数 {
     public func test() {
         let testTime = 10
         var isSucceed = true
@@ -97,17 +97,17 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.triangleNumber([2,2,3,4])
-    assert(result1 == 3)
-    let result2 = s.triangleNumber([4,2,3,4])
-    assert(result2 == 4)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-    
-    /// 对数器测试
-//    s.test()
-}
+//do {
+//    let s = _611_有效三角形的个数()
+//    let result1 = s.triangleNumber([2,2,3,4])
+//    assert(result1 == 3)
+//    let result2 = s.triangleNumber([4,2,3,4])
+//    assert(result2 == 4)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//    
+//    /// 对数器测试
+////    s.test()
+//}
 
 //: [Next](@next)

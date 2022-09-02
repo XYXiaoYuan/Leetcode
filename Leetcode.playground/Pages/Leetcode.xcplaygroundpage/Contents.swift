@@ -703,6 +703,16 @@ do {
 }
 
 do {
+    let s = _611_有效三角形的个数()
+    let result1 = s.triangleNumber([2,2,3,4])
+    assert(result1 == 3)
+    let result2 = s.triangleNumber([4,2,3,4])
+    assert(result2 == 4)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+}
+
+do {
     let s = _628_三个数的最大乘积()
     let result = s.numIdenticalPairs([1,2,3,1,1,3])
     print("\(s) --- \(result)")
