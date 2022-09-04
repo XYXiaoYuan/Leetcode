@@ -1192,6 +1192,20 @@ do {
 //    s.test()
 }
 
+do {
+    let s = _6167_检查相同字母间的距离()
+    let result1 = s.checkDistances("abaccb", [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+    assert(result1 == true)
+    let result2 = s.checkDistances("aa", [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+    assert(result2 == false)
+    let result3 = s.checkDistances("zz", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1])
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+
+    /// 对数器测试
+//    s.test()
+}
+
 
 //: [Next](@next)
 
