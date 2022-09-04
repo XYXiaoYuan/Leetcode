@@ -1206,6 +1206,19 @@ do {
 //    s.test()
 }
 
+do {
+    let s = _6168_恰好移动k步到达某一位置的方法数目()
+    let result1 = s.numberOfWays(1,2,3)
+    assert(result1 == 3)
+    let result2 = s.numberOfWays(2,5,10)
+    assert(result2 == 0)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+
+    /// 对数器测试
+    _6168_恰好移动k步到达某一位置的方法数目.test()
+}
+
 
 //: [Next](@next)
 
