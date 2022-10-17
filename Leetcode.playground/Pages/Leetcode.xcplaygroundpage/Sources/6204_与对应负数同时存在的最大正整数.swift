@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _6204_与对应负数同时存在的最大正整数 {
     //class Solution {
     public init() {}
     
@@ -88,7 +88,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _6204_与对应负数同时存在的最大正整数 {
     public static func test() {
         let testTime = 10
         var isSucceed = true
@@ -97,7 +97,7 @@ extension Solution1 {
         for _ in 0..<testTime {
             let count = Int.random(in: 1...1000)
             let nums = Int.random(count: count, min: min, max: max)
-            let s = Solution1()
+            let s = _6204_与对应负数同时存在的最大正整数()
             /// 方法一
             let result = s.findMaxK0(nums)
 
@@ -118,21 +118,21 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.findMaxK([-1,2,-3,3])
-    assert(result1 == 3)
-    
-    let result2 = s.findMaxK([-1,10,6,7,-7,1])
-    assert(result2 == 7)
-
-    let result3 = s.findMaxK([-10,8,6,7,-2,-3])
-    assert(result3 == -1)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
-    
-    /// 对数器测试
-    Solution1.test()
-}
+//do {
+//    let s = _6204_与对应负数同时存在的最大正整数()
+//    let result1 = s.findMaxK([-1,2,-3,3])
+//    assert(result1 == 3)
+//
+//    let result2 = s.findMaxK([-1,10,6,7,-7,1])
+//    assert(result2 == 7)
+//
+//    let result3 = s.findMaxK([-10,8,6,7,-2,-3])
+//    assert(result3 == -1)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+//
+//    /// 对数器测试
+//    _6204_与对应负数同时存在的最大正整数.test()
+//}
 
 //: [Next](@next)

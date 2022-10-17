@@ -311,6 +311,7 @@
 		6DD45F5F289A8C24001D8CD5 /* 464_我能赢吗.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */; };
 		6DF14D8328A2030C00154C5E /* String+Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF14D8228A2030C00154C5E /* String+Letters.swift */; };
 		6DF14D8528A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF14D8428A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift */; };
+		6DF5E14528FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5E14428FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -631,6 +632,7 @@
 		6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "464_我能赢吗.swift"; sourceTree = "<group>"; };
 		6DF14D8228A2030C00154C5E /* String+Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Letters.swift"; sourceTree = "<group>"; };
 		6DF14D8428A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1413_逐步求和得到正数的最小值.swift"; sourceTree = "<group>"; };
+		6DF5E14428FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6204_与对应负数同时存在的最大正整数.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -855,6 +857,7 @@
 				1C21C06C28B1F3C50062565C /* 6152_赢得比赛需要的最少训练时长.swift */,
 				1CE8A41528C454E40071E2BD /* 6167_检查相同字母间的距离.swift */,
 				1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */,
+				6DF5E14428FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -1173,6 +1176,7 @@
 				6D95A08F287FF28900FE54E2 /* 061_旋转链表.swift in Sources */,
 				6D95A089287FF28900FE54E2 /* 241_为运算表达式设计优先级.swift in Sources */,
 				6D95A104287FF28900FE54E2 /* 707_设计链表.swift in Sources */,
+				6DF5E14528FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift in Sources */,
 				6D95A0D0287FF28900FE54E2 /* 019_删除链表的倒数第N个结点.swift in Sources */,
 				6D95A172287FF2B400FE54E2 /* 剑指Offer03_数组中重复的数字.swift in Sources */,
 				6D95A16D287FF2B400FE54E2 /* 剑指Offer57_II_和为s的连续正数序列.swift in Sources */,
