@@ -44,6 +44,7 @@ public class Solution1 {
     //class Solution {
     public init() {}
     
+    /// 排序+双指针
     public func findMaxK(_ nums: [Int]) -> Int {
         let nums = nums.sorted()
         
@@ -63,6 +64,7 @@ public class Solution1 {
         return -1
     }
     
+    /// 哈希表
     public func findMaxK1(_ nums: [Int]) -> Int {
         var ans = -1
         var pairs = Set<Int>()
@@ -75,6 +77,7 @@ public class Solution1 {
         return ans
     }
     
+    /// 暴力直译
     public func findMaxK0(_ nums: [Int]) -> Int {
         var pairs = [Int]()
         for num1 in nums {
