@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _6205_反转之后不同整数的数目 {
     //class Solution {
     public init() {}
     
@@ -84,7 +84,8 @@ public class Solution1 {
         
         var result: Int = 0
         while value != 0 {
-            result = result * 10 + value % 10
+            let newResult = result * 10 + value % 10
+            result = newResult
             value /= 10
         }
         
@@ -92,7 +93,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _6205_反转之后不同整数的数目 {
     public static func test() {
         let testTime = 5
         var isSucceed = true
@@ -101,7 +102,7 @@ extension Solution1 {
         for _ in 0..<testTime {
             let count = Int.random(in: 1...100000)
             let nums = Int.random(count: count, min: min, max: max)
-            let s = Solution1()
+            let s = _6205_反转之后不同整数的数目()
             /// 方法一
             let result = s.countDistinctIntegers0(nums)
 
@@ -119,18 +120,18 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.countDistinctIntegers([1,13,10,12,31])
-    assert(result1 == 6)
-    
-    let result2 = s.countDistinctIntegers([2,2,2])
-    assert(result2 == 1)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-    
-    /// 对数器测试
-    Solution1.test()
-}
+//do {
+//    let s = _6205_反转之后不同整数的数目()
+//    let result1 = s.countDistinctIntegers([1,13,10,12,31])
+//    assert(result1 == 6)
+//
+//    let result2 = s.countDistinctIntegers([2,2,2])
+//    assert(result2 == 1)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//
+//    /// 对数器测试
+//    _6205_反转之后不同整数的数目.test()
+//}
 
 //: [Next](@next)

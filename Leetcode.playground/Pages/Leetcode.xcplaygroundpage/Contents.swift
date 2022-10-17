@@ -1236,5 +1236,19 @@ do {
     _6204_与对应负数同时存在的最大正整数.test()
 }
 
+do {
+    let s = _6205_反转之后不同整数的数目()
+    let result1 = s.countDistinctIntegers([1,13,10,12,31])
+    assert(result1 == 6)
+    
+    let result2 = s.countDistinctIntegers([2,2,2])
+    assert(result2 == 1)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+    
+    /// 对数器测试
+    _6205_反转之后不同整数的数目.test()
+}
+
 //: [Next](@next)
 
