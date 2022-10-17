@@ -39,7 +39,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _6219_反转之后的数字和 {
     //class Solution {
     public init() {}
     
@@ -71,7 +71,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _6219_反转之后的数字和 {
     public static func test() {
         let testTime = 5
         var isSucceed = true
@@ -79,7 +79,7 @@ extension Solution1 {
         let max = 100000
         for _ in 0..<testTime {
             let nums = Int.random(in: min...max)
-            let s = Solution1()
+            let s = _6219_反转之后的数字和()
             /// 方法一
             let result = s.sumOfNumberAndReverse0(nums)
 
@@ -97,21 +97,21 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.sumOfNumberAndReverse(443)
-    assert(result1 == true)
-
-    let result2 = s.sumOfNumberAndReverse(63)
-    assert(result2 == false)
-
-    let result3 = s.sumOfNumberAndReverse(181)
-    assert(result3 == true)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
-
-    /// 对数器测试
-    Solution1.test()
-}
+//do {
+//    let s = _6219_反转之后的数字和()
+//    let result1 = s.sumOfNumberAndReverse(443)
+//    assert(result1 == true)
+//
+//    let result2 = s.sumOfNumberAndReverse(63)
+//    assert(result2 == false)
+//
+//    let result3 = s.sumOfNumberAndReverse(181)
+//    assert(result3 == true)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+//
+//    /// 对数器测试
+//    _6219_反转之后的数字和.test()
+//}
 
 //: [Next](@next)
