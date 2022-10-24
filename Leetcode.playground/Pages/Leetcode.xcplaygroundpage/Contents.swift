@@ -1130,6 +1130,23 @@ do {
 }
 
 do {
+    let s = _2446_判断两个事件是否存在冲突()
+    let result1 = s.haveConflict(["01:15","02:00"], ["02:00","03:00"])
+    assert(result1 == true)
+
+    let result2 = s.haveConflict(["01:00","02:00"], ["01:20","03:00"])
+    assert(result2 == true)
+
+    let result3 = s.haveConflict(["10:00","11:00"], ["14:00","15:00"])
+    assert(result3 == false)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+
+    /// 对数器测试
+    _2446_判断两个事件是否存在冲突.test()
+}
+
+do {
     let s = _6132_使数组中所有元素都等于零()
     let result = s.minimumOperations([1,5,0,3,5])
     print("\(s) --- \(result)")

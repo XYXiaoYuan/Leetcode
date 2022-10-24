@@ -49,7 +49,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _2446_判断两个事件是否存在冲突 {
     //class Solution {
     public init() {}
     
@@ -63,7 +63,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _2446_判断两个事件是否存在冲突 {
     public static func test() {
         let testTime = 5
         var isSucceed = true
@@ -71,7 +71,7 @@ extension Solution1 {
         let max = 100000
         for _ in 0..<testTime {
             let nums = Int.random(in: min...max)
-            let s = Solution1()
+            let s = _2446_判断两个事件是否存在冲突()
             /// 方法一
             let result = s.haveConflict([], [])
 
@@ -89,21 +89,21 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.haveConflict(["01:15","02:00"], ["02:00","03:00"])
-    assert(result1 == true)
-
-    let result2 = s.haveConflict(["01:00","02:00"], ["01:20","03:00"])
-    assert(result2 == true)
-
-    let result3 = s.haveConflict(["10:00","11:00"], ["14:00","15:00"])
-    assert(result3 == false)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
-
-    /// 对数器测试
-    Solution1.test()
-}
+//do {
+//    let s = _2446_判断两个事件是否存在冲突()
+//    let result1 = s.haveConflict(["01:15","02:00"], ["02:00","03:00"])
+//    assert(result1 == true)
+//
+//    let result2 = s.haveConflict(["01:00","02:00"], ["01:20","03:00"])
+//    assert(result2 == true)
+//
+//    let result3 = s.haveConflict(["10:00","11:00"], ["14:00","15:00"])
+//    assert(result3 == false)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+//
+//    /// 对数器测试
+//    _2446_判断两个事件是否存在冲突.test()
+//}
 
 //: [Next](@next)
