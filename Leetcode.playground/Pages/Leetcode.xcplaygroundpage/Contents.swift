@@ -794,6 +794,23 @@ do {
 }
 
 do {
+    let s = _739_每日温度()
+    let result1 = s.dailyTemperatures([73,74,75,71,69,72,76,73])
+    assert(result1 == [1,1,4,2,1,1,0,0])
+    
+    let result2 = s.dailyTemperatures([30,40,50,60])
+    assert(result2 == [1,1,1,0])
+
+    let result3 = s.dailyTemperatures([30,60,90])
+    assert(result3 == [1,1,0])
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+
+    /// 对数器测试
+    _739_每日温度.test()
+}
+
+do {
     let s = _740_删除并获得点数()
     let result = s.deleteAndEarn([2,2,3,3,3,4])
     print("\(s) --- \(result)")

@@ -35,7 +35,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _739_每日温度 {
     //class Solution {
     public init() {}
     
@@ -81,14 +81,14 @@ public class Solution1 {
 
 }
 
-extension Solution1 {
+extension _739_每日温度 {
     public static func test() {
         let testTime = 100
         var isSucceed = true
         for _ in 0..<testTime {
             let count = Int.random(in: 0...10)
             let nums = Int.random(count: count, min: 30, max: 100)
-            let s = Solution1()
+            let s = _739_每日温度()
             /// 暴力方法
             let result = s.dailyTemperatures0(nums)
 
@@ -106,21 +106,21 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    let result1 = s.dailyTemperatures([73,74,75,71,69,72,76,73])
-    assert(result1 == [1,1,4,2,1,1,0,0])
-    
-    let result2 = s.dailyTemperatures([30,40,50,60])
-    assert(result2 == [1,1,1,0])
-
-    let result3 = s.dailyTemperatures([30,60,90])
-    assert(result3 == [1,1,0])
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
-
-    /// 对数器测试
-    Solution1.test()
-}
+//do {
+//    let s = _739_每日温度()
+//    let result1 = s.dailyTemperatures([73,74,75,71,69,72,76,73])
+//    assert(result1 == [1,1,4,2,1,1,0,0])
+//
+//    let result2 = s.dailyTemperatures([30,40,50,60])
+//    assert(result2 == [1,1,1,0])
+//
+//    let result3 = s.dailyTemperatures([30,60,90])
+//    assert(result3 == [1,1,0])
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+//
+//    /// 对数器测试
+//    _739_每日温度.test()
+//}
 
 //: [Next](@next)
