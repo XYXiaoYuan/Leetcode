@@ -130,18 +130,18 @@ extension _494_目标和 {
     }
 }
 
-do {
-    let s = _494_目标和()
-    let result1 = s.findTargetSumWays([1,1,1,1,1], 3)
-    assert(result1 == 5)
-    
-    let result2 = s.findTargetSumWays([1], 1)
-    assert(result2 == 1)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-
-    /// 对数器测试
-    _494_目标和.test()
-}
+//do {
+//    let s = _494_目标和()
+//    let result1 = s.findTargetSumWays([1,1,1,1,1], 3)
+//    assert(result1 == 5)
+//
+//    let result2 = s.findTargetSumWays([1], 1)
+//    assert(result2 == 1)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//
+//    /// 对数器测试
+//    _494_目标和.test()
+//}
 
 //: [Next](@next)

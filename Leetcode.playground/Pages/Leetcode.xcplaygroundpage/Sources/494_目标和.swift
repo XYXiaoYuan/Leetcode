@@ -48,7 +48,7 @@ public class _494_目标和 {
     //class Solution {
     public init() {}
     
-    func findTargetSumWays(_ nums: [Int], _ target: Int) -> Int {
+    public func findTargetSumWays(_ nums: [Int], _ target: Int) -> Int {
         let sum = nums.reduce(0, { $0 + $1 })
         // 这两种情况，不可能存在合法的子集划分
         if (sum < Swift.abs(target) || (sum + target) % 2 == 1) {
@@ -78,7 +78,7 @@ public class _494_目标和 {
     
     private var memo = [String: Int]()
     
-    func findTargetSumWays0(_ nums: [Int], _ target: Int) -> Int {
+    public func findTargetSumWays0(_ nums: [Int], _ target: Int) -> Int {
         guard !nums.isEmpty else { return 0 }
         return dp(nums, 0, target)
     }
@@ -130,18 +130,18 @@ extension _494_目标和 {
     }
 }
 
-do {
-    let s = _494_目标和()
-    let result1 = s.findTargetSumWays([1,1,1,1,1], 3)
-    assert(result1 == 5)
-    
-    let result2 = s.findTargetSumWays([1], 1)
-    assert(result2 == 1)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-
-    /// 对数器测试
-    _494_目标和.test()
-}
+//do {
+//    let s = _494_目标和()
+//    let result1 = s.findTargetSumWays([1,1,1,1,1], 3)
+//    assert(result1 == 5)
+//
+//    let result2 = s.findTargetSumWays([1], 1)
+//    assert(result2 == 1)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//
+//    /// 对数器测试
+//    _494_目标和.test()
+//}
 
 //: [Next](@next)
