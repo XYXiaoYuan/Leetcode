@@ -97,21 +97,21 @@ extension _6219_反转之后的数字和 {
     }
 }
 
-do {
-    let s = _6219_反转之后的数字和()
-    let result1 = s.sumOfNumberAndReverse(443)
-    assert(result1 == true)
-
-    let result2 = s.sumOfNumberAndReverse(63)
-    assert(result2 == false)
-
-    let result3 = s.sumOfNumberAndReverse(181)
-    assert(result3 == true)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
-
-    /// 对数器测试
-    _6219_反转之后的数字和.test()
-}
+//do {
+//    let s = _6219_反转之后的数字和()
+//    let result1 = s.sumOfNumberAndReverse(443)
+//    assert(result1 == true)
+//
+//    let result2 = s.sumOfNumberAndReverse(63)
+//    assert(result2 == false)
+//
+//    let result3 = s.sumOfNumberAndReverse(181)
+//    assert(result3 == true)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2) ---- result3 = \(result3)")
+//
+//    /// 对数器测试
+//    _6219_反转之后的数字和.test()
+//}
 
 //: [Next](@next)

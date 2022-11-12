@@ -53,7 +53,7 @@ public class _2446_判断两个事件是否存在冲突 {
     //class Solution {
     public init() {}
     
-    func haveConflict(_ event1: [String], _ event2: [String]) -> Bool {
+    public func haveConflict(_ event1: [String], _ event2: [String]) -> Bool {
         guard let e1First = event1.first,
                 let e1Last = event1.last,
                 let e2First = event2.first,

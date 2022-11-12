@@ -18,6 +18,7 @@
 		6D311D0C28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D311D0B28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift */; };
 		6D311D0E28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D311D0D28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift */; };
 		6D679C2928C1A05100235CDA /* 611_有效三角形的个数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D679C2828C1A05100235CDA /* 611_有效三角形的个数.swift */; };
+		6D6ED855291F359D00A18517 /* 239_滑动窗口最大值.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6ED854291F359D00A18517 /* 239_滑动窗口最大值.swift */; };
 		6D783E6328AE3AA100852DE8 /* AdjacentSeats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D783E6228AE3AA100852DE8 /* AdjacentSeats.swift */; };
 		6D7C167F2896401900A70746 /* 6132_使数组中所有元素都等于零.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */; };
 		6D84028828BE11E9000A8D2D /* 2389_和有限的最长子序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D84028728BE11E9000A8D2D /* 2389_和有限的最长子序列.swift */; };
@@ -341,6 +342,7 @@
 		6D311D0B28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6142_统计坏数对的数目.swift"; sourceTree = "<group>"; };
 		6D311D0D28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1814_统计一个数组中好对子的数目.swift"; sourceTree = "<group>"; };
 		6D679C2828C1A05100235CDA /* 611_有效三角形的个数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "611_有效三角形的个数.swift"; sourceTree = "<group>"; };
+		6D6ED854291F359D00A18517 /* 239_滑动窗口最大值.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "239_滑动窗口最大值.swift"; sourceTree = "<group>"; };
 		6D783E6228AE3AA100852DE8 /* AdjacentSeats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacentSeats.swift; sourceTree = "<group>"; };
 		6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6132_使数组中所有元素都等于零.swift"; sourceTree = "<group>"; };
 		6D84028728BE11E9000A8D2D /* 2389_和有限的最长子序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2389_和有限的最长子序列.swift"; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				6D959FE2287FF28800FE54E2 /* 002_两数相加.swift */,
 				6D959FFE287FF28800FE54E2 /* 003_无重复字符的最长子串.swift */,
 				6D959FD3287FF28800FE54E2 /* 004_寻找两个正序数组的中位数.swift */,
+				6D6ED854291F359D00A18517 /* 239_滑动窗口最大值.swift */,
 				6D95A028287FF28800FE54E2 /* 005_最长回文子串.swift */,
 				6D959FD7287FF28800FE54E2 /* 006_Z 字形变换 .swift */,
 				6DF5E14828FD3DAE0023F7E8 /* 6219_反转之后的数字和.swift */,
@@ -1190,6 +1193,7 @@
 				6D95A172287FF2B400FE54E2 /* 剑指Offer03_数组中重复的数字.swift in Sources */,
 				6D95A16D287FF2B400FE54E2 /* 剑指Offer57_II_和为s的连续正数序列.swift in Sources */,
 				6D95A0D3287FF28900FE54E2 /* 328_奇偶链表.swift in Sources */,
+				6D6ED855291F359D00A18517 /* 239_滑动窗口最大值.swift in Sources */,
 				6D95A086287FF28900FE54E2 /* 295_数据流的中位数.swift in Sources */,
 				6D95A092287FF28900FE54E2 /* 221_最大正方形.swift in Sources */,
 				6D95A108287FF28900FE54E2 /* 1104_二叉树寻路.swift in Sources */,

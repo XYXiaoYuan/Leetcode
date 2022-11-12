@@ -519,6 +519,20 @@ do {
 }
 
 do {
+    let s = _239_滑动窗口最大值()
+    let result1 = s.maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3)
+    assert(result1 == [3,3,5,5,6,7])
+
+    let result2 = s.maxSlidingWindow([1], 1)
+    assert(result2 == [1])
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+
+    /// 对数器测试
+    _239_滑动窗口最大值.test()
+}
+
+do {
     let s = _241_为运算表达式设计优先级()
     let result = s.diffWaysToCompute("2-1-1")
     print("\(s) --- \(result)")
@@ -1028,7 +1042,7 @@ do {
 }
 
 do {
-    let s = Solution1()
+    let s = _1641_统计字典序元音字符串的数目()
     let result1 = s.countVowelStrings(1)
     assert(result1 == 5)
     let result2 = s.countVowelStrings(2)

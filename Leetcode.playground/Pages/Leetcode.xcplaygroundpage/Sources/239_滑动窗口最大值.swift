@@ -47,7 +47,7 @@ public class _239_滑动窗口最大值 {
     //class Solution {
     public init() {}
     
-    func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
+    public func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
         let n = nums.count
         var prefixMax = [Int].init(repeating: 0, count: n)
         var suffixMax = [Int].init(repeating: 0, count: n)
@@ -101,18 +101,18 @@ extension _239_滑动窗口最大值 {
     }
 }
 
-do {
-    let s = _239_滑动窗口最大值()
-    let result1 = s.maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3)
+//do {
+//    let s = _239_滑动窗口最大值()
+//    let result1 = s.maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3)
 //    assert(result1 == [3,3,5,5,6,7])
-
-    let result2 = s.maxSlidingWindow([1], 1)
+//
+//    let result2 = s.maxSlidingWindow([1], 1)
 //    assert(result2 == [1])
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-
-    /// 对数器测试
-    _239_滑动窗口最大值.test()
-}
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//
+//    /// 对数器测试
+//    _239_滑动窗口最大值.test()
+//}
 
 //: [Next](@next)
