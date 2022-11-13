@@ -16,6 +16,7 @@
 		6D0A527729210030002055C6 /* 146_LRU缓存.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527629210030002055C6 /* 146_LRU缓存.swift */; };
 		6D0A5279292102CD002055C6 /* 215_数组中的第K个最大元素.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A5278292102CD002055C6 /* 215_数组中的第K个最大元素.swift */; };
 		6D0A527B292106EC002055C6 /* 020_有效的括号.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527A292106EC002055C6 /* 020_有效的括号.swift */; };
+		6D0A527D29210AE9002055C6 /* 704_二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527C29210AE9002055C6 /* 704_二分查找.swift */; };
 		6D237CA12906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */; };
 		6D26B7B5291F49010064754B /* 494_目标和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26B7B4291F49010064754B /* 494_目标和.swift */; };
 		6D26B7B7291F6AD30064754B /* 739_每日温度.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26B7B6291F6AD30064754B /* 739_每日温度.swift */; };
@@ -347,6 +348,7 @@
 		6D0A527629210030002055C6 /* 146_LRU缓存.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "146_LRU缓存.swift"; sourceTree = "<group>"; };
 		6D0A5278292102CD002055C6 /* 215_数组中的第K个最大元素.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "215_数组中的第K个最大元素.swift"; sourceTree = "<group>"; };
 		6D0A527A292106EC002055C6 /* 020_有效的括号.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "020_有效的括号.swift"; sourceTree = "<group>"; };
+		6D0A527C29210AE9002055C6 /* 704_二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "704_二分查找.swift"; sourceTree = "<group>"; };
 		6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2446_判断两个事件是否存在冲突.swift"; sourceTree = "<group>"; };
 		6D26B7B4291F49010064754B /* 494_目标和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "494_目标和.swift"; sourceTree = "<group>"; };
 		6D26B7B6291F6AD30064754B /* 739_每日温度.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "739_每日温度.swift"; sourceTree = "<group>"; };
@@ -811,6 +813,7 @@
 				6D959FF4287FF28800FE54E2 /* 445_两数相加II.swift */,
 				6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */,
 				6D95A036287FF28800FE54E2 /* 486_预测赢家.swift */,
+				6D26B7B4291F49010064754B /* 494_目标和.swift */,
 				6D959FF0287FF28800FE54E2 /* 504_七进制数.swift */,
 				6D95A043287FF28800FE54E2 /* 507_完美数.swift */,
 				6D95A052287FF28800FE54E2 /* 509_斐波那契数.swift */,
@@ -830,6 +833,7 @@
 				6D95A04E287FF28800FE54E2 /* 679_24点游戏.swift */,
 				6DD01EE728C0826D00EC22B1 /* 690_员工的重要性.swift */,
 				6D95A05E287FF28800FE54E2 /* 703_数据流中的第 K 大元素.swift */,
+				6D0A527C29210AE9002055C6 /* 704_二分查找.swift */,
 				6D95A050287FF28800FE54E2 /* 707_设计链表.swift */,
 				6D95A021287FF28800FE54E2 /* 714_买卖股票的最佳时机含手续费.swift */,
 				6D959FBB287FF28800FE54E2 /* 727_最小窗口子序列.swift */,
@@ -874,7 +878,6 @@
 				6D311D0D28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift */,
 				6D95A006287FF28800FE54E2 /* 1929_数组串联.swift */,
 				6D95A02B287FF28800FE54E2 /* 1930_长度为3的不同回文子序列.swift */,
-				6D26B7B4291F49010064754B /* 494_目标和.swift */,
 				6D95A06B287FF28800FE54E2 /* 1931_用三种不同颜色为网格涂色.swift */,
 				6D959FE6287FF28800FE54E2 /* 1979_找出数组的最大公约数.swift */,
 				1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */,
@@ -1163,7 +1166,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					6D9C620F287BBEDA00320073 = {
 						CreatedOnToolsVersion = 13.4;
@@ -1472,6 +1475,7 @@
 				6D9C622F287BBF4C00320073 /* Heap.swift in Sources */,
 				6D95A196287FF2B500FE54E2 /* 剑指Offer27_二叉树的镜像.swift in Sources */,
 				6D95A0BA287FF28900FE54E2 /* 1929_数组串联.swift in Sources */,
+				6D0A527D29210AE9002055C6 /* 704_二分查找.swift in Sources */,
 				6D95A17D287FF2B500FE54E2 /* 剑指Offer61_扑克牌中的顺子.swift in Sources */,
 				6D95A0E7287FF28900FE54E2 /* 1201_丑数III.swift in Sources */,
 				6D95A0C5287FF28900FE54E2 /* 100_相同的树.swift in Sources */,
@@ -1548,6 +1552,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1608,6 +1613,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1631,7 +1637,9 @@
 		6D9C6218287BBEDA00320073 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = T868H8UY96;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1642,7 +1650,9 @@
 		6D9C6219287BBEDA00320073 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = T868H8UY96;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

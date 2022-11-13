@@ -32,7 +32,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _704_二分查找 {
     //class Solution {
     public init() {}
     
@@ -55,7 +55,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _704_二分查找 {
     public func test() {
         let testTime = 10
         var isSucceed = true
@@ -84,20 +84,20 @@ extension Solution1 {
 
 }
 
-do {
-    let s = Solution1()
-
-    let result1 = s.search([-1,0,3,5,9,12], 9)
-    assert(result1 == 4)
-    print(result1)
-
-    let result2 = s.search([-1,0,3,5,9,12], 2)
-    assert(result2 == -1)
-    print(result2)
-
-    /// 对数器测试
-    s.test()
-}
+//do {
+//    let s = _704_二分查找()
+//
+//    let result1 = s.search([-1,0,3,5,9,12], 9)
+//    assert(result1 == 4)
+//    print(result1)
+//
+//    let result2 = s.search([-1,0,3,5,9,12], 2)
+//    assert(result2 == -1)
+//    print(result2)
+//
+//    /// 对数器测试
+//    s.test()
+//}
 
 
 //: [Next](@next)

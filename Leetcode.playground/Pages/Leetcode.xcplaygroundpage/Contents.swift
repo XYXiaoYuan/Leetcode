@@ -819,6 +819,21 @@ do {
 }
 
 do {
+    let s = _704_二分查找()
+
+    let result1 = s.search([-1,0,3,5,9,12], 9)
+    assert(result1 == 4)
+    print(result1)
+
+    let result2 = s.search([-1,0,3,5,9,12], 2)
+    assert(result2 == -1)
+    print(result2)
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _714_买卖股票的最佳时机含手续费()
     let input1 = [1, 3, 2, 8, 4, 9]
     let input2 = [1,3,7,5,10,3]
