@@ -97,7 +97,7 @@ public class _735_行星碰撞 {
 
 extension _735_行星碰撞 {
     public func test() {
-        let testTime = 1000
+        let testTime = 1
         let minValue = -1000
         let maxValue = 1000
         let count = Int.random(in: 2...10000)

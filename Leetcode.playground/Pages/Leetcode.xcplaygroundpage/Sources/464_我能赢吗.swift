@@ -122,7 +122,7 @@ public class _464_我能赢吗 {
 
 extension _464_我能赢吗 {
     public func test() {
-        let testTime = 10
+        let testTime = 1
         var isSucceed = true
         for _ in 0..<testTime {
             let choose = Int.random(in: 1...20)

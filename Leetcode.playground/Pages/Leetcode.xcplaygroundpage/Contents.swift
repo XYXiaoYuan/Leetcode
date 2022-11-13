@@ -723,7 +723,7 @@ do {
     print("\(s) --- \(result)")
 
     /// 对数器测试
-    s.test()
+//    s.test()
 }
 
 do {
@@ -1327,13 +1327,13 @@ do {
     print(result2)
 
     let result3 = s.minNumberOfHours(1, 1, [1,1,1,1], [1,1,1,50])
-    assert(result2 == 51)
+    assert(result3 == 51)
     print(result3)
 
     let result4 = s.minNumberOfHours(5, 3, [1,4], [2,5])
     assert(result4 == 2)
     print(result4)
-    
+
     print("\(s) --- \(result1) --- \(result2) --- \(result3) --- \(result4)")
 
     /// 对数器测试

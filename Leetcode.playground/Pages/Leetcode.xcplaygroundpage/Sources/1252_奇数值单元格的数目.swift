@@ -133,7 +133,7 @@ public class _1252_奇数值单元格的数目 {
 
 extension _1252_奇数值单元格的数目 {
     public func test() {
-        let testTime = 1000
+        let testTime = 1
         let m = Int.random(in: 1...50)
         let n = Int.random(in: 1...50)
         let indicesLength = Int.random(in: 1...100)
