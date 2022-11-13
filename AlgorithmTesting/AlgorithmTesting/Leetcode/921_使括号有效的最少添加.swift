@@ -39,7 +39,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class _Solution1 {
+public class _921_使括号有效的最少添加 {
     //class Solution {
     public init() {}
     
@@ -62,7 +62,7 @@ public class _Solution1 {
     }
 }
 
-extension _Solution1 {
+extension _921_使括号有效的最少添加 {
     public static func test() {
         let testTime = 100
         var isSucceed = true
@@ -73,7 +73,7 @@ extension _Solution1 {
                 let temp = Bool.random() ? "(" : ")"
                 str.append(temp)
             }
-            let s = _Solution1()
+            let s = _921_使括号有效的最少添加()
             /// 暴力方法
             let result = s.minAddToMakeValid(str)
 
@@ -91,18 +91,18 @@ extension _Solution1 {
     }
 }
 
-do {
-    let s = _Solution1()
-    let result1 = s.minAddToMakeValid("())")
-    assert(result1 == 1)
-    
-    let result2 = s.minAddToMakeValid("(((")
-    assert(result2 == 3)
-
-    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
-
-    /// 对数器测试
-    _Solution1.test()
-}
+//do {
+//    let s = _921_使括号有效的最少添加()
+//    let result1 = s.minAddToMakeValid("())")
+//    assert(result1 == 1)
+//    
+//    let result2 = s.minAddToMakeValid("(((")
+//    assert(result2 == 3)
+//
+//    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+//
+//    /// 对数器测试
+//    _921_使括号有效的最少添加.test()
+//}
 
 //: [Next](@next)

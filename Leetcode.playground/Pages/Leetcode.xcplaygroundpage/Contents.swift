@@ -908,6 +908,20 @@ do {
 }
 
 do {
+    let s = _921_使括号有效的最少添加()
+    let result1 = s.minAddToMakeValid("())")
+    assert(result1 == 1)
+    
+    let result2 = s.minAddToMakeValid("(((")
+    assert(result2 == 3)
+
+    print("\(s) result1 = \(result1) ---- result2 = \(result2)")
+
+    /// 对数器测试
+    _921_使括号有效的最少添加.test()
+}
+
+do {
     let s = _946_验证栈序列()
     let result1 = s.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
     assert(result1 == true)
