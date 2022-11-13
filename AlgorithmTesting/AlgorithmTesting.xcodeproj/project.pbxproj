@@ -13,6 +13,7 @@
 		1CE8A41628C454E40071E2BD /* 6167_检查相同字母间的距离.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8A41528C454E40071E2BD /* 6167_检查相同字母间的距离.swift */; };
 		1CE8A42128C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */; };
 		6D0A52752920DC5A002055C6 /* 921_使括号有效的最少添加.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A52742920DC5A002055C6 /* 921_使括号有效的最少添加.swift */; };
+		6D0A527729210030002055C6 /* 146_LRU缓存.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527629210030002055C6 /* 146_LRU缓存.swift */; };
 		6D237CA12906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */; };
 		6D26B7B5291F49010064754B /* 494_目标和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26B7B4291F49010064754B /* 494_目标和.swift */; };
 		6D26B7B7291F6AD30064754B /* 739_每日温度.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26B7B6291F6AD30064754B /* 739_每日温度.swift */; };
@@ -341,6 +342,7 @@
 		1CE8A41528C454E40071E2BD /* 6167_检查相同字母间的距离.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6167_检查相同字母间的距离.swift"; sourceTree = "<group>"; };
 		1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6168_恰好移动k步到达某一位置的方法数目.swift"; sourceTree = "<group>"; };
 		6D0A52742920DC5A002055C6 /* 921_使括号有效的最少添加.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "921_使括号有效的最少添加.swift"; sourceTree = "<group>"; };
+		6D0A527629210030002055C6 /* 146_LRU缓存.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "146_LRU缓存.swift"; sourceTree = "<group>"; };
 		6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2446_判断两个事件是否存在冲突.swift"; sourceTree = "<group>"; };
 		6D26B7B4291F49010064754B /* 494_目标和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "494_目标和.swift"; sourceTree = "<group>"; };
 		6D26B7B6291F6AD30064754B /* 739_每日温度.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "739_每日温度.swift"; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 				6D95A05C287FF28800FE54E2 /* 141_环形链表.swift */,
 				6D959FD1287FF28800FE54E2 /* 142_环形链表II.swift */,
 				6D959FDF287FF28800FE54E2 /* 143_重排链表.swift */,
+				6D0A527629210030002055C6 /* 146_LRU缓存.swift */,
 				6D95A04A287FF28800FE54E2 /* 148_排序链表.swift */,
 				6D95A003287FF28800FE54E2 /* 151_翻转字符串里的单词.swift */,
 				6D95A031287FF28800FE54E2 /* 152_爱生气的书店老板.swift */,
@@ -1428,6 +1431,7 @@
 				6D95A0F1287FF28900FE54E2 /* 137_只出现一次的数字II.swift in Sources */,
 				6D95A093287FF28900FE54E2 /* 143_重排链表.swift in Sources */,
 				6D95A0D9287FF28900FE54E2 /* 044_通配符匹配.swift in Sources */,
+				6D0A527729210030002055C6 /* 146_LRU缓存.swift in Sources */,
 				6D95A120287FF28900FE54E2 /* 160_相交链表.swift in Sources */,
 				6D95A0C0287FF28900FE54E2 /* 101_对称二叉树.swift in Sources */,
 				6D95A11E287FF28900FE54E2 /* 232_用栈实现队列.swift in Sources */,

@@ -49,7 +49,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _146_LRU缓存 {
     //class Solution {
     public init() {}
     
