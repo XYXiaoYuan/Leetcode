@@ -35,7 +35,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class _42_接雨水 {
+public class Solution1 {
     //class Solution {
     public init() {}
     
@@ -70,37 +70,40 @@ public class _42_接雨水 {
     /// 正确,但是效率不是最高的
     public func trap0(_ height: [Int]) -> Int {
 //        print("height          = \(height)")
-        var leftMaxH = [Int].init(repeating: 0, count: height.count)
-        var rightMaxH = [Int].init(repeating: 0, count: height.count)
-        for i in 0..<height.count {
-            let j = height.count - 1 - i
-            if i == 0 {
-                leftMaxH[i] = height[i]
-                rightMaxH[j] = height[j]
-                continue
-            }
-            
-            leftMaxH[i] = leftMaxH[i - 1] > height[i] ? leftMaxH[i - 1] : height[i]
-            rightMaxH[j] = rightMaxH[j + 1] > height[j] ? rightMaxH[j + 1] : height[j]
+        if height.isEmpty || height.count < 2 {
+            return 0
+        }
+        
+        let N = height.count
+        var leftMaxs = [Int].init(repeating: 0, count: N)
+        leftMaxs[0] = height[0]
+        for i in 1..<N {
+            leftMaxs[i] = Swift.max(leftMaxs[i - 1], height[i])
+        }
+        
+        var rightMaxs = [Int].init(repeating: 0, count: N)
+        rightMaxs[N - 1] = height[N - 1]
+        for i in stride(from: N - 2, through: 0, by: -1) {
+            rightMaxs[i] = Swift.max(rightMaxs[i + 1], height[i])
         }
 //        print("leftMaxHeights  = \(leftMaxH)\nrightMaxHeights = \(rightMaxH)")
-        var total: Int = 0
-        for i in 0..<height.count {
-            total = total + (min(leftMaxH[i], rightMaxH[i]) - height[i])
+        var water = 0
+        for i in 1..<(N - 1) {
+            water += Swift.max(Swift.min(leftMaxs[i - 1], rightMaxs[i + 1]) - height[i], 0)
         }
-        return total
+        return water
     }
 
 }
 
-extension _42_接雨水 {
+extension Solution1 {
     public static func test() {
         let testTime = 100
         var isSucceed = true
         for _ in 0..<testTime {
             let count = Int.random(in: 1...100)
             let nums = Int.random(count: count, min: 1, max: 10000)
-            let s = _42_接雨水()
+            let s = Solution1()
             /// 暴力方法
             let result = s.trap0(nums)
 
@@ -119,7 +122,7 @@ extension _42_接雨水 {
 }
 
 do {
-    let s = _42_接雨水()
+    let s = Solution1()
     let result1 = s.trap([0,1,0,2,1,0,1,3,2,1,2,1])
     assert(result1 == 6)
     
@@ -129,7 +132,7 @@ do {
     print("\(s) result1 = \(result1) ---- result2 = \(result2)")
 
     /// 对数器测试
-    _42_接雨水.test()
+    Solution1.test()
 }
 
 //: [Next](@next)

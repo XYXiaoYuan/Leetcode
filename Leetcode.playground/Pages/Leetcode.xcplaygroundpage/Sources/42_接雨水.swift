@@ -69,26 +69,30 @@ public class _42_接雨水 {
     
     /// 正确,但是效率不是最高的
     public func trap0(_ height: [Int]) -> Int {
-//        print("height          = \(height)")
-        var leftMaxH = [Int].init(repeating: 0, count: height.count)
-        var rightMaxH = [Int].init(repeating: 0, count: height.count)
-        for i in 0..<height.count {
-            let j = height.count - 1 - i
-            if i == 0 {
-                leftMaxH[i] = height[i]
-                rightMaxH[j] = height[j]
-                continue
-            }
-            
-            leftMaxH[i] = leftMaxH[i - 1] > height[i] ? leftMaxH[i - 1] : height[i]
-            rightMaxH[j] = rightMaxH[j + 1] > height[j] ? rightMaxH[j + 1] : height[j]
+        //        print("height          = \(height)")
+        if height.isEmpty || height.count < 2 {
+            return 0
         }
-//        print("leftMaxHeights  = \(leftMaxH)\nrightMaxHeights = \(rightMaxH)")
-        var total: Int = 0
-        for i in 0..<height.count {
-            total = total + (min(leftMaxH[i], rightMaxH[i]) - height[i])
+        
+        let N = height.count
+        var leftMaxs = [Int].init(repeating: 0, count: N)
+        leftMaxs[0] = height[0]
+        for i in 1..<N {
+            leftMaxs[i] = Swift.max(leftMaxs[i - 1], height[i])
         }
-        return total
+        
+        var rightMaxs = [Int].init(repeating: 0, count: N)
+        rightMaxs[N - 1] = height[N - 1]
+        for i in stride(from: N - 2, through: 0, by: -1) {
+            rightMaxs[i] = Swift.max(rightMaxs[i + 1], height[i])
+        }
+        //        print("leftMaxHeights  = \(leftMaxH)\nrightMaxHeights = \(rightMaxH)")
+        var water = 0
+        for i in 1..<(N - 1) {
+            water += Swift.max(Swift.min(leftMaxs[i - 1], rightMaxs[i + 1]) - height[i], 0)
+        }
+        return water
+        
     }
 
 }
