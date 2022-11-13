@@ -69,7 +69,7 @@ extension _921_使括号有效的最少添加 {
         for _ in 0..<testTime {
             var str = ""
             let count = Int.random(in: 1...100)
-            for i in 0..<count {
+            for _ in 0..<count {
                 let temp = Bool.random() ? "(" : ")"
                 str.append(temp)
             }

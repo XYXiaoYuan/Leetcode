@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _020_有效的括号 {
     //class Solution {
     public init() {}
     
@@ -62,9 +62,7 @@ public class Solution1 {
                     return false
                 }
                 
-                if let top = stack.pop(),
-                   let v = Self.map[top],
-                   c != v {
+                if let top = stack.pop(), let v = Self.map[top], c != v {
                     return false
                 }
             }
@@ -96,7 +94,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _020_有效的括号 {
     public func test() {
         let testTime = 1
         var isSucceed = true
@@ -125,24 +123,24 @@ extension Solution1 {
 
 }
 
-do {
-    let s = Solution1()
-
-    let result1 = s.isValid("()")
-    assert(result1 == true)
-    print(result1)
-
-    let result2 = s.isValid("()[]{}")
-    assert(result2 == true)
-    print(result2)
-    
-    let result3 = s.isValid("(]")
-    assert(result3 == false)
-    print(result3)
-
-    /// 对数器测试
-    s.test()
-}
+//do {
+//    let s = _020_有效的括号()
+//
+//    let result1 = s.isValid("()")
+//    assert(result1 == true)
+//    print(result1)
+//
+//    let result2 = s.isValid("()[]{}")
+//    assert(result2 == true)
+//    print(result2)
+//    
+//    let result3 = s.isValid("(]")
+//    assert(result3 == false)
+//    print(result3)
+//
+//    /// 对数器测试
+//    s.test()
+//}
 
 
 //: [Next](@next)

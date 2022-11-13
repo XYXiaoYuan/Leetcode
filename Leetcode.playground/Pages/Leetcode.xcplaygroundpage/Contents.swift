@@ -62,6 +62,25 @@ do {
 }
 
 do {
+    let s = _020_有效的括号()
+
+    let result1 = s.isValid("()")
+    assert(result1 == true)
+    print(result1)
+
+    let result2 = s.isValid("()[]{}")
+    assert(result2 == true)
+    print(result2)
+    
+    let result3 = s.isValid("(]")
+    assert(result3 == false)
+    print(result3)
+
+    /// 对数器测试
+    s.test()
+}
+
+do {
     let s = _25_K个一组翻转链表()
     let head = ListNode.arrayToNode([1,2,3,4,5])
     let result = s.reverseKGroup(head, 2)
