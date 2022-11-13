@@ -479,6 +479,18 @@ do {
 }
 
 do {
+    let s = _215_数组中的第K个最大元素()
+
+    let result1 = s.findKthLargest([3,2,1,5,6,4], 2)
+    assert(result1 == 5)
+    print(result1)
+
+    let result2 = s.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
+    assert(result2 == 4)
+    print(result2)
+}
+
+do {
     let s = _217_存在重复元素()
     let result = s.containsDuplicate([1])
     print("\(s) --- \(result)")

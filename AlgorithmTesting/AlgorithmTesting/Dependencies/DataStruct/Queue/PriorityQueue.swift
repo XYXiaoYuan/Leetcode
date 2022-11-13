@@ -93,6 +93,7 @@ extension PriorityQueue: QueueProtocol {
     /// Remove and return the element with the highest priority (or lowest if ascending). O(lg n)
     ///
     /// - returns: The element with the highest priority in the Priority Queue, or nil if the PriorityQueue is empty.
+    @discardableResult
     public mutating func pop() -> E? {
         if heap.isEmpty { return nil }
         let count = heap.count

@@ -35,7 +35,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _215_数组中的第K个最大元素 {
     //class Solution {
     public init() {}
     
@@ -56,17 +56,17 @@ public class Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-
-    let result1 = s.findKthLargest([3,2,1,5,6,4], 2)
-    assert(result1 == 5)
-    print(result1)
-
-    let result2 = s.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
-    assert(result2 == 4)
-    print(result2)
-}
+//do {
+//    let s = _215_数组中的第K个最大元素()
+//
+//    let result1 = s.findKthLargest([3,2,1,5,6,4], 2)
+//    assert(result1 == 5)
+//    print(result1)
+//
+//    let result2 = s.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
+//    assert(result2 == 4)
+//    print(result2)
+//}
 
 
 //: [Next](@next)
