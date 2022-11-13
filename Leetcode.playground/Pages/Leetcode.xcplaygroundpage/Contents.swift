@@ -1086,6 +1086,18 @@ do {
 }
 
 do {
+    let s = _1314_矩阵区域和()
+
+    let result1 = s.matrixBlockSum([[1,2,3],[4,5,6],[7,8,9]], 1)
+    assert(result1 == [[12,21,16],[27,45,33],[24,39,28]])
+    print(result1)
+
+    let result2 = s.matrixBlockSum([[1,2,3],[4,5,6],[7,8,9]], 2)
+    assert(result2 == [[45,45,45],[45,45,45],[45,45,45]])
+    print(result2)
+}
+
+do {
     let s = _1323_6和9组成的最大数字()
     let result = s.maximum69Number(9669)
     print("\(s) --- \(result)")
