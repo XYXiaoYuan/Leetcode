@@ -1,33 +1,50 @@
 /**
- https://leetcode.cn/problems/matrix-block-sum/
+ https://leetcode.cn/problems/2vYnGI/
  
- 给你一个 m x n 的矩阵 mat 和一个整数 k ，请你返回一个矩阵 answer ，其中每个 answer[i][j] 是所有满足下述条件的元素 mat[r][c] 的和：
+ 小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。请返回小扣共有多少种购买方案。
 
- i - k <= r <= i + k,
- j - k <= c <= j + k 且
- (r, c) 在矩阵内。
-  
+ 注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1
 
  示例 1：
 
- 输入：mat = [[1,2,3],[4,5,6],[7,8,9]], k = 1
- 输出：[[12,21,16],[27,45,33],[24,39,28]]
+ 输入：staple = [10,20,5], drinks = [5,5,2], x = 15
+
+ 输出：6
+
+ 解释：小扣有 6 种购买方案，所选主食与所选饮料在数组中对应的下标分别是：
+ 第 1 种方案：staple[0] + drinks[0] = 10 + 5 = 15；
+ 第 2 种方案：staple[0] + drinks[1] = 10 + 5 = 15；
+ 第 3 种方案：staple[0] + drinks[2] = 10 + 2 = 12；
+ 第 4 种方案：staple[2] + drinks[0] = 5 + 5 = 10；
+ 第 5 种方案：staple[2] + drinks[1] = 5 + 5 = 10；
+ 第 6 种方案：staple[2] + drinks[2] = 5 + 2 = 7。
+
  示例 2：
 
- 输入：mat = [[1,2,3],[4,5,6],[7,8,9]], k = 2
- 输出：[[45,45,45],[45,45,45],[45,45,45]]
-  
+ 输入：staple = [2,1,1], drinks = [8,9,5,1], x = 9
+
+ 输出：8
+
+ 解释：小扣有 8 种购买方案，所选主食与所选饮料在数组中对应的下标分别是：
+ 第 1 种方案：staple[0] + drinks[2] = 2 + 5 = 7；
+ 第 2 种方案：staple[0] + drinks[3] = 2 + 1 = 3；
+ 第 3 种方案：staple[1] + drinks[0] = 1 + 8 = 9；
+ 第 4 种方案：staple[1] + drinks[2] = 1 + 5 = 6；
+ 第 5 种方案：staple[1] + drinks[3] = 1 + 1 = 2；
+ 第 6 种方案：staple[2] + drinks[0] = 1 + 8 = 9；
+ 第 7 种方案：staple[2] + drinks[2] = 1 + 5 = 6；
+ 第 8 种方案：staple[2] + drinks[3] = 1 + 1 = 2；
 
  提示：
 
- m == mat.length
- n == mat[i].length
- 1 <= m, n, k <= 100
- 1 <= mat[i][j] <= 100
+ 1 <= staple.length <= 10^5
+ 1 <= drinks.length <= 10^5
+ 1 <= staple[i],drinks[i] <= 10^5
+ 1 <= x <= 2*10^5
 
 
  来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/matrix-block-sum
+ 链接：https://leetcode.cn/problems/2vYnGI
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
@@ -35,69 +52,91 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _LCP_18_早餐组合 {
     //class Solution {
     public init() {}
     
-    public func matrixBlockSum(_ mat: [[Int]], _ k: Int) -> [[Int]] {
-        let m = mat.count
-        let n = mat[0].count
-        let numMatrix = NumMatrix(mat)
-        guard let numMatrix = numMatrix else { return [[Int]]() }
-
-        var res = [[Int]].init(repeating: [Int].init(repeating: 0, count: n), count: m)
+    public func breakfastNumber(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
+        var ans: Int = 0
+        var arr = [Int].init(repeating: 0, count: x + 1)
         
-        for i in 0..<m {
-            for j in 0..<n {
-                // 左上角的坐标
-                let x1 = Swift.max(i - k, 0)
-                let y1 = Swift.max(j - k, 0)
-                // 右下角坐标
-                let x2 = Swift.min(i + k, m - 1)
-                let y2 = Swift.min(j + k, n - 1)
-                
-                res[i][j] = numMatrix.sumRegion(x1, y1, x2, y2)
-            }
+        for sta in staple where sta < x {
+            arr[sta] += 1
         }
-        return res
+        
+        for i in 2..<x {
+            print(i)
+            arr[i] += arr[i - 1]
+        }
+        
+        for drink in drinks {
+            let lt = x - drink
+            if lt <= 0 {
+                continue
+            }
+            ans += arr[lt]
+        }
+        
+        print("000000-----")
+        
+        return ans % (Int(1e9) + 7)
     }
     
-    class NumMatrix {
-        // 定义：preSum[i][j] 记录 matrix 中子矩阵 [0, 0, i-1, j-1] 的元素和
-        private var preSum: [[Int]]
-
-        public init?(_ matrix: [[Int]]) {
-            let m = matrix.count
-            let n = matrix[0].count
-            if m == 0 || n == 0 { return nil }
-            // 构造前缀和矩阵
-            preSum = [[Int]].init(repeating: [Int].init(repeating: 0, count: n + 1), count: m + 1)
-            for i in 1...m {
-                for j in 1...n {
-                    // 计算每个矩阵 [0, 0, i, j] 的元素和
-                    preSum[i][j] = preSum[i - 1][j] + preSum[i][j - 1] + matrix[i - 1][j - 1] - preSum[i - 1][j - 1]
+    public func breakfastNumber0(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
+        var ans = 0
+        
+        for s in staple {
+            for d in drinks {
+                if s + d <= x {
+                    ans += 1
                 }
             }
         }
-
-        // 计算子矩阵 [x1, y1, x2, y2] 的元素和
-        public func sumRegion(_ x1: Int, _ y1: Int, _ x2: Int, _ y2: Int) -> Int {
-            // 目标矩阵之和由四个相邻矩阵运算获得
-            return preSum[x2 + 1][y2 + 1] - preSum[x1][y2 + 1] - preSum[x2 + 1][y1] + preSum[x1][y1]
-        }
+        
+        return ans
     }
 }
 
-do {
-    let s = Solution1()
+extension _LCP_18_早餐组合 {
+    public func test() {
+        let testTime = 10
+        var isSucceed = true
+        for _ in 0..<testTime {
+            let staple = Int.random(count: 3, min: 1, max: 10)
+            let drinks = Int.random(count: 3, min: 1, max: 10)
+            let x = Int.random(in: 2...10)
 
-    let result1 = s.matrixBlockSum([[1,2,3],[4,5,6],[7,8,9]], 1)
-    assert(result1 == [[12,21,16],[27,45,33],[24,39,28]])
+            /// 方法一
+            let result1 = breakfastNumber0(staple, drinks, x)
+
+            /// 待验证的：方法二
+            let result2 = breakfastNumber(staple, drinks, x)
+
+            if result1 != result2 {
+                isSucceed = false
+                print("staple = \(staple), drinks = \(drinks), x = \(x)")
+                break
+            }
+        }
+
+        print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
+    }
+
+}
+
+
+do {
+    let s = _LCP_18_早餐组合()
+
+    let result1 = s.breakfastNumber([10,20,5], [5,5,2], 15)
+    assert(result1 == 6)
     print(result1)
 
-    let result2 = s.matrixBlockSum([[1,2,3],[4,5,6],[7,8,9]], 2)
-    assert(result2 == [[45,45,45],[45,45,45],[45,45,45]])
+    let result2 = s.breakfastNumber([2,1,1], [8,9,5,1], 9)
+    assert(result2 == 8)
     print(result2)
+    
+    s.test()
 }
 
 
