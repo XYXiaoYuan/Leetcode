@@ -20,6 +20,20 @@ do {
 }
 
 do {
+    let s = _LCP_18_早餐组合()
+
+    let result1 = s.breakfastNumber([10,20,5], [5,5,2], 15)
+    assert(result1 == 6)
+    print(result1)
+
+    let result2 = s.breakfastNumber([2,1,1], [8,9,5,1], 9)
+    assert(result2 == 8)
+    print(result2)
+
+    s.test()
+}
+
+do {
     let s = _LCP22_黑白方格画()
     let result = s.paintingPlan(3, 8)
     print("\(s) --- \(result)")

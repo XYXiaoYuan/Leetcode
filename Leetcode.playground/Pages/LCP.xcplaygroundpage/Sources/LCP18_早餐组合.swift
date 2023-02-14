@@ -52,7 +52,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _LCP_18_早餐组合 {
     //class Solution {
     public init() {}
     
@@ -120,7 +120,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _LCP_18_早餐组合 {
     public func test() {
         
         let testTime = 10
@@ -157,22 +157,23 @@ extension Solution1 {
 
         print("\(isSucceed ? "Nice! 🎉🎉🎉" : "Oops! Fucking fucked! 💣💣💣")")
     }
+
 }
 
 
-do {
-    let s = _LCP_18_早餐组合()
-
-    let result1 = s.breakfastNumber([10,20,5], [5,5,2], 15)
-    assert(result1 == 6)
-    print(result1)
-
-    let result2 = s.breakfastNumber([2,1,1], [8,9,5,1], 9)
-    assert(result2 == 8)
-    print(result2)
-    
-    s.test()
-}
+//do {
+//    let s = _LCP_18_早餐组合()
+//
+//    let result1 = s.breakfastNumber([10,20,5], [5,5,2], 15)
+//    assert(result1 == 6)
+//    print(result1)
+//
+//    let result2 = s.breakfastNumber([2,1,1], [8,9,5,1], 9)
+//    assert(result2 == 8)
+//    print(result2)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)
