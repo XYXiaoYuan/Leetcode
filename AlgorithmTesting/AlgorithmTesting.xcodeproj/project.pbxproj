@@ -323,6 +323,7 @@
 		6DF14D8328A2030C00154C5E /* String+Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF14D8228A2030C00154C5E /* String+Letters.swift */; };
 		6DF14D8528A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF14D8428A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift */; };
 		6DF2B980299B57A1006DB5CE /* LCP18_早餐组合.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2B97F299B57A1006DB5CE /* LCP18_早餐组合.swift */; };
+		6DF2B982299B667A006DB5CE /* 1496_判断路径是否相交.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2B981299B667A006DB5CE /* 1496_判断路径是否相交.swift */; };
 		6DF5E14528FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5E14428FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift */; };
 		6DF5E14728FD2AF10023F7E8 /* 6205_反转之后不同整数的数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5E14628FD2AF10023F7E8 /* 6205_反转之后不同整数的数目.swift */; };
 		6DF5E14928FD3DAE0023F7E8 /* 6219_反转之后的数字和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5E14828FD3DAE0023F7E8 /* 6219_反转之后的数字和.swift */; };
@@ -658,6 +659,7 @@
 		6DF14D8228A2030C00154C5E /* String+Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Letters.swift"; sourceTree = "<group>"; };
 		6DF14D8428A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1413_逐步求和得到正数的最小值.swift"; sourceTree = "<group>"; };
 		6DF2B97F299B57A1006DB5CE /* LCP18_早餐组合.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LCP18_早餐组合.swift"; sourceTree = "<group>"; };
+		6DF2B981299B667A006DB5CE /* 1496_判断路径是否相交.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1496_判断路径是否相交.swift"; sourceTree = "<group>"; };
 		6DF5E14428FD209C0023F7E8 /* 6204_与对应负数同时存在的最大正整数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6204_与对应负数同时存在的最大正整数.swift"; sourceTree = "<group>"; };
 		6DF5E14628FD2AF10023F7E8 /* 6205_反转之后不同整数的数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6205_反转之后不同整数的数目.swift"; sourceTree = "<group>"; };
 		6DF5E14828FD3DAE0023F7E8 /* 6219_反转之后的数字和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6219_反转之后的数字和.swift"; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 				6D95A020287FF28800FE54E2 /* 1411_给Nx3网格图涂色的方案数.swift */,
 				6DF14D8428A2476A00154C5E /* 1413_逐步求和得到正数的最小值.swift */,
 				6DD01EE328C05E2500EC22B1 /* 1475_商品折扣后的最终价格.swift */,
+				6DF2B981299B667A006DB5CE /* 1496_判断路径是否相交.swift */,
 				6D95A02A287FF28800FE54E2 /* 1512_好数对的数目.swift */,
 				6D959FF7287FF28800FE54E2 /* 1547_切棍子的最小成本.swift */,
 				6DD01EE528C0766400EC22B1 /* 1641_统计字典序元音字符串的数目.swift */,
@@ -1480,6 +1483,7 @@
 				6D95A11A287FF28900FE54E2 /* 415_字符串相加.swift in Sources */,
 				6D95A0EF287FF28900FE54E2 /* 063_不同路径II.swift in Sources */,
 				6D95A194287FF2B500FE54E2 /* 剑指Offer31_栈的压入弹出序列.swift in Sources */,
+				6DF2B982299B667A006DB5CE /* 1496_判断路径是否相交.swift in Sources */,
 				6D9C622F287BBF4C00320073 /* Heap.swift in Sources */,
 				6D95A196287FF2B500FE54E2 /* 剑指Offer27_二叉树的镜像.swift in Sources */,
 				6D95A0BA287FF28900FE54E2 /* 1929_数组串联.swift in Sources */,

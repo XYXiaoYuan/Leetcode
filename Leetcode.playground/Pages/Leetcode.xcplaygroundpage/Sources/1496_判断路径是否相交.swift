@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _1496_判断路径是否相交 {
     //class Solution {
     public init() {}
 
@@ -106,7 +106,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _1496_判断路径是否相交 {
     public func test() {
         
         let testTime = 10
@@ -141,19 +141,19 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-
-    let result1 = s.isPathCrossing("NES")
-    assert(result1 == false)
-    print(result1)
-
-    let result2 = s.isPathCrossing("NESWW")
-    assert(result2 == true)
-    print(result2)
-    
-    s.test()
-}
+//do {
+//    let s = _1496_判断路径是否相交()
+//
+//    let result1 = s.isPathCrossing("NES")
+//    assert(result1 == false)
+//    print(result1)
+//
+//    let result2 = s.isPathCrossing("NESWW")
+//    assert(result2 == true)
+//    print(result2)
+//    
+//    s.test()
+//}
 
 
 //: [Next](@next)

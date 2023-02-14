@@ -1149,6 +1149,20 @@ do {
 }
 
 do {
+    let s = _1496_判断路径是否相交()
+
+    let result1 = s.isPathCrossing("NES")
+    assert(result1 == false)
+    print(result1)
+
+    let result2 = s.isPathCrossing("NESWW")
+    assert(result2 == true)
+    print(result2)
+    
+    s.test()
+}
+
+do {
     let s = _1512_好数对的数目()
     let result = s.numIdenticalPairs([1,2,3,1,1,3])
     print("\(s) --- \(result)")
