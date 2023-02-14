@@ -60,8 +60,7 @@ public class Solution1 {
         ]
         
         var point = Path(x: 0, y: 0)
-        var vis = Set<Path>()
-        vis.insert(point)
+        var vis: Set<Path> = [point]
         for ch in path.map({ String($0) }) {
             let dir = dirs[ch]
             if let dir = dir {
@@ -83,23 +82,24 @@ public class Solution1 {
             var x: Int
             var y: Int
         }
+        
         let dirs: [String: Path] = [
-            "N": Path(x: -1, y: 0),
-            "S": Path(x: 1, y: 0),
-            "W": Path(x: 0, y: -1),
-            "E": Path(x: 0, y: 1),
+            "N": Path(x: -1,  y:  0),
+            "S": Path(x:  1,  y:  0),
+            "W": Path(x:  0,  y: -1),
+            "E": Path(x:  0,  y:  1),
         ]
         
-        var originPath = Path(x: 0, y: 0)
-        var vis = Set<Path>()
-        vis.insert(originPath)
+        var point = Path(x: 0, y: 0)
+        var vis: Set<Path> = [point]
+        vis.insert(point)
         for ch in path.map({ String($0) }) {
             let dir = dirs[ch]
-            originPath = Path(x: originPath.x + dir!.x, y: originPath.y + dir!.y)
-            if vis.contains(originPath) {
+            point = Path(x: point.x + dir!.x, y: point.y + dir!.y)
+            if vis.contains(point) {
                 return true
             }
-            vis.insert(originPath)
+            vis.insert(point)
         }
         
         return false
@@ -153,6 +153,25 @@ do {
     print(result2)
     
     s.test()
+}
+
+do {
+    let oddDigits: Set = [1, 3, 5, 7, 9]
+    let evenDigits: Set = [0, 2, 4, 6, 8]
+    let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
+    
+    
+    let _ = oddDigits.union(evenDigits)
+    print("union 并集", oddDigits.union(evenDigits).sorted())
+    // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    let _ = oddDigits.intersection(evenDigits)
+    print("intersection 交集", oddDigits.intersection(evenDigits).sorted())
+    // []
+    
+    let _ = oddDigits.subtracting(singleDigitPrimeNumbers).sorted()
+    print("subtracting 差集", oddDigits.subtracting(singleDigitPrimeNumbers).sorted())
+    // [1, 9]
 }
 
 

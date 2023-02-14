@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class _1496_判断路径是否相交 {
+public class Solution1 {
     //class Solution {
     public init() {}
 
@@ -60,8 +60,7 @@ public class _1496_判断路径是否相交 {
         ]
         
         var point = Path(x: 0, y: 0)
-        var vis = Set<Path>()
-        vis.insert(point)
+        var vis: Set<Path> = [point]
         for ch in path.map({ String($0) }) {
             let dir = dirs[ch]
             if let dir = dir {
@@ -83,30 +82,31 @@ public class _1496_判断路径是否相交 {
             var x: Int
             var y: Int
         }
+        
         let dirs: [String: Path] = [
-            "N": Path(x: -1, y: 0),
-            "S": Path(x: 1, y: 0),
-            "W": Path(x: 0, y: -1),
-            "E": Path(x: 0, y: 1),
+            "N": Path(x: -1,  y:  0),
+            "S": Path(x:  1,  y:  0),
+            "W": Path(x:  0,  y: -1),
+            "E": Path(x:  0,  y:  1),
         ]
         
-        var originPath = Path(x: 0, y: 0)
-        var vis = Set<Path>()
-        vis.insert(originPath)
+        var point = Path(x: 0, y: 0)
+        var vis: Set<Path> = [point]
+        vis.insert(point)
         for ch in path.map({ String($0) }) {
             let dir = dirs[ch]
-            originPath = Path(x: originPath.x + dir!.x, y: originPath.y + dir!.y)
-            if vis.contains(originPath) {
+            point = Path(x: point.x + dir!.x, y: point.y + dir!.y)
+            if vis.contains(point) {
                 return true
             }
-            vis.insert(originPath)
+            vis.insert(point)
         }
         
         return false
     }
 }
 
-extension _1496_判断路径是否相交 {
+extension Solution1 {
     public func test() {
         
         let testTime = 10
@@ -142,7 +142,7 @@ extension _1496_判断路径是否相交 {
 }
 
 //do {
-//    let s = _1496_判断路径是否相交()
+//    let s = Solution1()
 //
 //    let result1 = s.isPathCrossing("NES")
 //    assert(result1 == false)
@@ -151,7 +151,7 @@ extension _1496_判断路径是否相交 {
 //    let result2 = s.isPathCrossing("NESWW")
 //    assert(result2 == true)
 //    print(result2)
-//    
+//
 //    s.test()
 //}
 
