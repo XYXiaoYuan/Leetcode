@@ -727,6 +727,25 @@ do {
 }
 
 do {
+    let s = _476_数字的补数()
+
+    let result1 = s.findComplement(5)
+    assert(result1 == 2)
+    print(result1)
+
+    let result2 = s.findComplement(1)
+    assert(result2 == 0)
+    print(result2)
+
+    let result3 = s.findComplement(0)
+    assert(result3 == 1)
+    print(result3)
+
+
+    s.test()
+}
+
+do {
     let s = _494_目标和()
     let result1 = s.findTargetSumWays([1,1,1,1,1], 3)
     assert(result1 == 5)

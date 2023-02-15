@@ -18,6 +18,7 @@
 		6D0A527B292106EC002055C6 /* 020_有效的括号.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527A292106EC002055C6 /* 020_有效的括号.swift */; };
 		6D0A527D29210AE9002055C6 /* 704_二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527C29210AE9002055C6 /* 704_二分查找.swift */; };
 		6D0A527F2921193F002055C6 /* 1314_矩阵区域和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527E2921193F002055C6 /* 1314_矩阵区域和.swift */; };
+		6D121912299CAFA5001C9BE7 /* 476_数字的补数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D121911299CAFA5001C9BE7 /* 476_数字的补数.swift */; };
 		6D237CA12906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */; };
 		6D26B7B5291F49010064754B /* 494_目标和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26B7B4291F49010064754B /* 494_目标和.swift */; };
 		6D26B7B7291F6AD30064754B /* 739_每日温度.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26B7B6291F6AD30064754B /* 739_每日温度.swift */; };
@@ -353,6 +354,7 @@
 		6D0A527A292106EC002055C6 /* 020_有效的括号.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "020_有效的括号.swift"; sourceTree = "<group>"; };
 		6D0A527C29210AE9002055C6 /* 704_二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "704_二分查找.swift"; sourceTree = "<group>"; };
 		6D0A527E2921193F002055C6 /* 1314_矩阵区域和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1314_矩阵区域和.swift"; sourceTree = "<group>"; };
+		6D121911299CAFA5001C9BE7 /* 476_数字的补数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "476_数字的补数.swift"; sourceTree = "<group>"; };
 		6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2446_判断两个事件是否存在冲突.swift"; sourceTree = "<group>"; };
 		6D26B7B4291F49010064754B /* 494_目标和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "494_目标和.swift"; sourceTree = "<group>"; };
 		6D26B7B6291F6AD30064754B /* 739_每日温度.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "739_每日温度.swift"; sourceTree = "<group>"; };
@@ -818,6 +820,7 @@
 				6D95A066287FF28800FE54E2 /* 415_字符串相加.swift */,
 				6D959FF4287FF28800FE54E2 /* 445_两数相加II.swift */,
 				6DD45F5E289A8C24001D8CD5 /* 464_我能赢吗.swift */,
+				6D121911299CAFA5001C9BE7 /* 476_数字的补数.swift */,
 				6D95A036287FF28800FE54E2 /* 486_预测赢家.swift */,
 				6D26B7B4291F49010064754B /* 494_目标和.swift */,
 				6D959FF0287FF28800FE54E2 /* 504_七进制数.swift */,
@@ -1408,6 +1411,7 @@
 				6D95A0F0287FF28900FE54E2 /* 204_计数质数.swift in Sources */,
 				6D95A1A3287FF2B500FE54E2 /* 剑指Offer26_树的子结构.swift in Sources */,
 				6D95A17E287FF2B500FE54E2 /* 剑指Offer18_删除链表的节点.swift in Sources */,
+				6D121912299CAFA5001C9BE7 /* 476_数字的补数.swift in Sources */,
 				6D95A19A287FF2B500FE54E2 /* 剑指Offer43_1～n 整数中 1 出现的次数.swift in Sources */,
 				6DD45F5F289A8C24001D8CD5 /* 464_我能赢吗.swift in Sources */,
 				6D95A11F287FF28900FE54E2 /* 1931_用三种不同颜色为网格涂色.swift in Sources */,

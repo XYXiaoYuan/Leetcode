@@ -38,7 +38,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _476_数字的补数 {
     //class Solution {
     public init() {}
 
@@ -58,13 +58,13 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _476_数字的补数 {
     public func test() {
         
         let testTime = 10
         print("对数器开始工作, 执行 【\(testTime)】 次")
         var isSucceed = true
-        let maxVlaue = 100
+        let maxVlaue = 100;
         for i in 0..<testTime {
             let num = Int.random(in: 0..<maxVlaue)
 
@@ -86,24 +86,24 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-
-    let result1 = s.findComplement(5)
-    assert(result1 == 2)
-    print(result1)
-
-    let result2 = s.findComplement(1)
-    assert(result2 == 0)
-    print(result2)
-    
-    let result3 = s.findComplement(0)
-    assert(result3 == 1)
-    print(result3)
-
-    
-    s.test()
-}
+//do {
+//    let s = _476_数字的补数()
+//
+//    let result1 = s.findComplement(5)
+//    assert(result1 == 2)
+//    print(result1)
+//
+//    let result2 = s.findComplement(1)
+//    assert(result2 == 0)
+//    print(result2)
+//
+//    let result3 = s.findComplement(0)
+//    assert(result3 == 1)
+//    print(result3)
+//
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)
