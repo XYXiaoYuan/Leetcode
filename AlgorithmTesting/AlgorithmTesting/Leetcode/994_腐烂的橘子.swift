@@ -47,7 +47,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class _994_腐烂的橘子 {
     //class Solution {
     public init() {}
     
@@ -109,7 +109,7 @@ public class Solutions {
     }
 }
 
-extension Solutions {
+extension _994_腐烂的橘子 {
     public func test() {
         
         let testTime = 100
@@ -148,23 +148,23 @@ extension Solutions {
     }
 }
 
-do {
-    let s = Solutions()
-
-    let result1 = s.orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
-    assert(result1 == 4)
-    print(result1)
-
-    let result2 = s.orangesRotting([[2,1,1],[0,1,1],[1,0,1]])
-    assert(result2 == -1)
-    print(result2)
-
-    let result3 = s.orangesRotting([[0,2]])
-    assert(result3 == 0)
-    print(result3)
-
-    s.test()
-}
+//do {
+//    let s = _994_腐烂的橘子()
+//
+//    let result1 = s.orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
+//    assert(result1 == 4)
+//    print(result1)
+//
+//    let result2 = s.orangesRotting([[2,1,1],[0,1,1],[1,0,1]])
+//    assert(result2 == -1)
+//    print(result2)
+//
+//    let result3 = s.orangesRotting([[0,2]])
+//    assert(result3 == 0)
+//    print(result3)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)
