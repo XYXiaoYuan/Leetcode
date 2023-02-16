@@ -1,45 +1,44 @@
 /**
- https://leetcode.cn/problems/rotting-oranges/
+ https://leetcode.cn/problems/largest-3-same-digit-number-in-string/
  
- 在给定的 m x n 网格 grid 中，每个单元格可以有以下三个值之一：
+ 给你一个字符串 num ，表示一个大整数。如果一个整数满足下述所有条件，则认为该整数是一个 优质整数 ：
 
- 值 0 代表空单元格；
- 值 1 代表新鲜橘子；
- 值 2 代表腐烂的橘子。
- 每分钟，腐烂的橘子 周围 4 个方向上相邻 的新鲜橘子都会腐烂。
+ 该整数是 num 的一个长度为 3 的 子字符串 。
+ 该整数由唯一一个数字重复 3 次组成。
+ 以字符串形式返回 最大的优质整数 。如果不存在满足要求的整数，则返回一个空字符串 "" 。
 
- 返回 直到单元格中没有新鲜橘子为止所必须经过的最小分钟数。如果不可能，返回 -1 。
+ 注意：
 
+ 子字符串 是字符串中的一个连续字符序列。
+ num 或优质整数中可能存在 前导零 。
   
 
  示例 1：
 
-
-
- 输入：grid = [[2,1,1],[1,1,0],[0,1,1]]
- 输出：4
+ 输入：num = "6777133339"
+ 输出："777"
+ 解释：num 中存在两个优质整数："777" 和 "333" 。
+ "777" 是最大的那个，所以返回 "777" 。
  示例 2：
 
- 输入：grid = [[2,1,1],[0,1,1],[1,0,1]]
- 输出：-1
- 解释：左下角的橘子（第 2 行， 第 0 列）永远不会腐烂，因为腐烂只会发生在 4 个正向上。
+ 输入：num = "2300019"
+ 输出："000"
+ 解释："000" 是唯一一个优质整数。
  示例 3：
 
- 输入：grid = [[0,2]]
- 输出：0
- 解释：因为 0 分钟时已经没有新鲜橘子了，所以答案就是 0 。
+ 输入：num = "42352338"
+ 输出：""
+ 解释：不存在长度为 3 且仅由一个唯一数字组成的整数。因此，不存在优质整数。
   
 
  提示：
 
- m == grid.length
- n == grid[i].length
- 1 <= m, n <= 10
- grid[i][j] 仅为 0、1 或 2
+ 3 <= num.length <= 1000
+ num 仅由数字（0 - 9）组成
 
 
  来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/rotting-oranges
+ 链接：https://leetcode.cn/problems/largest-3-same-digit-number-in-string
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
@@ -47,100 +46,68 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class _2264_字符串中最大的3位相同数字 {
     //class Solution {
     public init() {}
     
-    struct Direction: Equatable {
-        var x: Int
-        var y: Int
-        
-        static func == (lhs: Self, rhs: Self) -> Bool {
-            return lhs.x == rhs.x && lhs.y == rhs.y
-        }
-    }
-    
-    static let directions = [
-        Direction(x:  0, y:  1),
-        Direction(x:  0, y: -1),
-        Direction(x:  1, y:  0),
-        Direction(x: -1, y:  0),
-    ]
-
-    public func orangesRotting(_ grid: [[Int]]) -> Int {
-        let row = grid.count
-        let col = grid[0].count
-        
-        var rotten = [Direction]() /// 腐烂集合
-        var fresh  = [Direction]() /// 新鲜集合
-        for i in 0..<row {
-            for j in 0..<col {
-                if (grid[i][j] == 2) {
-                    rotten.append(Direction(x: i, y: j))
+    public func largestGoodInteger(_ num: String) -> String {
+        var lastNum = String(num.first!)
+        var dict = [lastNum: 1]
+        let nums = (num.map { String($0) })
+        for i in 1..<nums.count {
+            let n = nums[i]
+            if lastNum == n {
+                if let value = dict[n] {
+                    dict[n] = value + 1
+                } else {
+                    dict[n] = 1
                 }
-                if (grid[i][j] == 1) {
-                    fresh.append(Direction(x: i, y: j))
-                }
+            } else {
+                dict.updateValue(dict[n] ?? 1, forKey: n)
             }
+            
+            lastNum = n
         }
-
-        var time = 0
+       
+        dict = dict.filter({ $0.value >= 3 })
         
-        while !fresh.isEmpty {
-            if rotten.isEmpty { return -1 }
-            var tempRotten = [Direction]()
-            for rd in rotten {
-                for dd in Self.directions {
-                    /// 即将腐烂的如果在新鲜的集合中，就将它腐烂
-                    let temp = Direction(x: rd.x + dd.x, y: rd.y + dd.y)
-                    if fresh.contains(temp) {
-                        tempRotten.append(temp)
-                    }
-                }
-            }
-            rotten = tempRotten
-                    
-            /// 新鲜里剔除腐烂的
-            fresh = fresh.filter({ !rotten.contains($0) })
-            time += 1
-        }
+        print(dict)
+                
+        let result = dict.sorted(by: { (k1, k2) -> Bool in
+            return k1.key > k2.key
+        }).first?.key
         
-        return time
+        guard let result = result else { return "" }
+        return String.init(repeating: result, count: 3)
     }
 }
 
-extension Solutions {
+extension _2264_字符串中最大的3位相同数字 {
     public func test() {
         
-        let testTime = 100
+        let testTime = 1
         print("对数器开始工作, 执行 【\(testTime)】 次")
         var isSucceed = true
-        let count = 10
+        let minLength = 3
+        let maxLength = 20//1000
         for i in 0..<testTime {
-            let m = Int.random(in: 1...count)
-            let n = Int.random(in: 1...count)
-
-            var nums = [[Int]]()
-            for _ in 0..<m {
-                var temp = [Int]()
-                for _ in 0..<n {
-                    let t = Int.random(in: 0...2)
-                    temp.append(t)
-                }
-                nums.append(temp)
+            var num = ""
+            let length = Int.random(in: minLength...maxLength)
+            for _ in 0..<length {
+                let t = Int.random(in: 0...9)
+                num += "\(t)"
             }
             
-            /// 方法一
-            let result1 = orangesRotting(nums)
+            let result1 = largestGoodInteger(num)
 
-            let result2 = orangesRotting(nums)
+            let result2 = largestGoodInteger(num)
 
             if result1 != result2 {
                 isSucceed = false
-                print("第 \(i + 1) 次测试失败, num = \(nums)")
+                print("第 \(i + 1) 次测试失败, num = \(num)")
                 break
             } else {
-                print("第 \(i + 1) 次测试成功, (\(m) * \(n)), num = \(nums), result = \(result1)")
+                print("第 \(i + 1) 次测试成功, num = \(num), result = \(result1)")
             }
         }
 
@@ -149,18 +116,18 @@ extension Solutions {
 }
 
 do {
-    let s = Solutions()
+    let s = _2264_字符串中最大的3位相同数字()
 
-    let result1 = s.orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
-    assert(result1 == 4)
+    let result1 = s.largestGoodInteger("6777133339")
+    assert(result1 == "777")
     print(result1)
 
-    let result2 = s.orangesRotting([[2,1,1],[0,1,1],[1,0,1]])
-    assert(result2 == -1)
+    let result2 = s.largestGoodInteger("2300019")
+    assert(result2 == "000")
     print(result2)
 
-    let result3 = s.orangesRotting([[0,2]])
-    assert(result3 == 0)
+    let result3 = s.largestGoodInteger("711133310755088231390684011112227777007142226669892017313336662051880002555771116")
+//    assert(result3 == "")
     print(result3)
 
     s.test()
