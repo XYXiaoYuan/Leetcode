@@ -93,32 +93,15 @@ extension Solutions {
                 num += "\(t)"
             }
             
-            var result0: String = ""
-            let item = DispatchWorkItem {
-                defer { group.leave() }
-                result0 = self.largestGoodInteger0(num)
-            }
-            
-            var result1: String = ""
-            let item1 = DispatchWorkItem {
-                defer { group.leave() }
-                result1 = self.largestGoodInteger(num)
-            }
-            
-            group.enter()
-            queue.async(group: group, execute: item.perform)
-            
-            group.enter()
-            queue.async(group: group, execute: item1.perform)
+            let result0: String = self.largestGoodInteger0(num)
+            var result1: String = self.largestGoodInteger(num)
 
-            group.notify(queue: queue) {
-                if result0 != result1 {
-                    isSucceed = false
-                    print("第 \(i + 1) 次测试失败, num = \(num)")
-                    return
-                } else {
-                    print("第 \(i + 1) 次测试成功, num = \(num), result = \(result1)")
-                }
+            if result0 != result1 {
+                isSucceed = false
+                print("第 \(i + 1) 次测试失败, num = \(num)")
+                break
+            } else {
+                print("第 \(i + 1) 次测试成功, num = \(num), result = \(result1)")
             }
         }
 
