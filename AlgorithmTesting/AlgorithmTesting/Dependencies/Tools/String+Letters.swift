@@ -33,4 +33,12 @@ extension String {
         return letters
         // ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     }
+    
+    public static func helloWorld() {
+        let str = "hello world!"
+        for index in str.indices {
+            let s = str[index]
+            print(s)
+        }
+    }
 }
