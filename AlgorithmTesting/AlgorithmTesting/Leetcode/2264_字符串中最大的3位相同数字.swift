@@ -46,7 +46,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class _2264_字符串中最大的3位相同数字 {
     //class Solution {
     public init() {}
     
@@ -74,7 +74,7 @@ public class Solutions {
     }
 }
 
-extension Solutions {
+extension _2264_字符串中最大的3位相同数字 {
     public func test() {
         let testTime = 100
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -126,23 +126,23 @@ extension Solutions {
     }
 }
 
-do {
-    let s = Solutions()
-
-    let result1 = s.largestGoodInteger("6777133339")
-    assert(result1 == "777")
-    print(result1)
-
-    let result2 = s.largestGoodInteger("2300019")
-    assert(result2 == "000")
-    print(result2)
-
-    let result3 = s.largestGoodInteger("42352338")
-    assert(result3 == "")
-    print(result3)
-
-    s.test()
-}
+//do {
+//    let s = _2264_字符串中最大的3位相同数字()
+//
+//    let result1 = s.largestGoodInteger("6777133339")
+//    assert(result1 == "777")
+//    print(result1)
+//
+//    let result2 = s.largestGoodInteger("2300019")
+//    assert(result2 == "000")
+//    print(result2)
+//
+//    let result3 = s.largestGoodInteger("42352338")
+//    assert(result3 == "")
+//    print(result3)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)

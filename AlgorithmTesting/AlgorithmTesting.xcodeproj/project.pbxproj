@@ -284,6 +284,7 @@
 		6D95A1B0287FF2D700FE54E2 /* LCP06_拿硬币.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A1AA287FF2D700FE54E2 /* LCP06_拿硬币.swift */; };
 		6D95A1B1287FF2D700FE54E2 /* LCP29_乐团站位.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A1AB287FF2D700FE54E2 /* LCP29_乐团站位.swift */; };
 		6D95A1B2287FF2D700FE54E2 /* LCS01_下载插件.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95A1AC287FF2D700FE54E2 /* LCS01_下载插件.swift */; };
+		6D9C3CA8299F4A01004B8CA5 /* 2264_字符串中最大的3位相同数字.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C3CA7299F4A01004B8CA5 /* 2264_字符串中最大的3位相同数字.swift */; };
 		6D9C6214287BBEDA00320073 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6213287BBEDA00320073 /* main.swift */; };
 		6D9C6226287BBF4C00320073 /* Times.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C621C287BBF4C00320073 /* Times.swift */; };
 		6D9C6227287BBF4C00320073 /* Int+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C621D287BBF4C00320073 /* Int+Numbers.swift */; };
@@ -621,6 +622,7 @@
 		6D95A1AA287FF2D700FE54E2 /* LCP06_拿硬币.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LCP06_拿硬币.swift"; sourceTree = "<group>"; };
 		6D95A1AB287FF2D700FE54E2 /* LCP29_乐团站位.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LCP29_乐团站位.swift"; sourceTree = "<group>"; };
 		6D95A1AC287FF2D700FE54E2 /* LCS01_下载插件.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LCS01_下载插件.swift"; sourceTree = "<group>"; };
+		6D9C3CA7299F4A01004B8CA5 /* 2264_字符串中最大的3位相同数字.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2264_字符串中最大的3位相同数字.swift"; sourceTree = "<group>"; };
 		6D9C6210287BBEDA00320073 /* AlgorithmTesting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmTesting; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9C6213287BBEDA00320073 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6D9C621C287BBF4C00320073 /* Times.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 				6D95A02B287FF28800FE54E2 /* 1930_长度为3的不同回文子序列.swift */,
 				6D95A06B287FF28800FE54E2 /* 1931_用三种不同颜色为网格涂色.swift */,
 				6D959FE6287FF28800FE54E2 /* 1979_找出数组的最大公约数.swift */,
+				6D9C3CA7299F4A01004B8CA5 /* 2264_字符串中最大的3位相同数字.swift */,
 				1C9F69B92896C8E8008AF00C /* 2351_第一个出现两次的字母.swift */,
 				6D84028728BE11E9000A8D2D /* 2389_和有限的最长子序列.swift */,
 				6DD01EDB28BE233F00EC22B1 /* 2390_从字符串中移除星号.swift */,
@@ -1466,6 +1469,7 @@
 				6D95A11E287FF28900FE54E2 /* 232_用栈实现队列.swift in Sources */,
 				6D95A099287FF28900FE54E2 /* 845_数组中的最长山脉.swift in Sources */,
 				6D95A0FE287FF28900FE54E2 /* 148_排序链表.swift in Sources */,
+				6D9C3CA8299F4A01004B8CA5 /* 2264_字符串中最大的3位相同数字.swift in Sources */,
 				6D0A5279292102CD002055C6 /* 215_数组中的第K个最大元素.swift in Sources */,
 				6D95A185287FF2B500FE54E2 /* 剑指Offer44_数字序列中某一位的数字.swift in Sources */,
 				6D95A0B2287FF28900FE54E2 /* 003_无重复字符的最长子串.swift in Sources */,

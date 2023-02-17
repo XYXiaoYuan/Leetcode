@@ -1267,6 +1267,24 @@ do {
 }
 
 do {
+    let s = _2264_字符串中最大的3位相同数字()
+
+    let result1 = s.largestGoodInteger("6777133339")
+    assert(result1 == "777")
+    print(result1)
+
+    let result2 = s.largestGoodInteger("2300019")
+    assert(result2 == "000")
+    print(result2)
+
+    let result3 = s.largestGoodInteger("42352338")
+    assert(result3 == "")
+    print(result3)
+
+    s.test()
+}
+
+do {
     let s = _2351_第一个出现两次的字母()
     let result = s.repeatedCharacter("abccbaacz")
     print("\(s) --- \(result)")
