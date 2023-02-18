@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class LCP28_采购方案 {
     //class Solution {
     public init() {}
         
@@ -76,7 +76,7 @@ public class Solutions {
     }
 }
 
-extension Solutions {
+extension LCP28_采购方案 {
     public func test() {
         let testTime = 10
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -101,10 +101,10 @@ extension Solutions {
 
             if result0 != result1 {
                 isSucceed = false
-                print("第 \(i + 1) 次测试失败, nums = \(nums), target = \(target), result = \(result1)")
+//                print("第 \(i + 1) 次测试失败, nums = \(nums), target = \(target), result = \(result1)")
                 break
             } else {
-                print("第 \(i + 1) 次测试成功, nums = \(nums), target = \(target), result = \(result1)")
+//                print("第 \(i + 1) 次测试成功, nums = \(nums), target = \(target), result = \(result1)")
             }
         }
 
@@ -112,19 +112,19 @@ extension Solutions {
     }
 }
 
-do {
-    let s = Solutions()
-
-    let result1 = s.purchasePlans([2,5,3,5], 6)
-    assert(result1 == 1)
-    print(result1)
-
-    let result2 = s.purchasePlans([2,2,1,9], 10)
-    assert(result2 == 4)
-    print(result2)
-
-    s.test()
-}
+//do {
+//    let s = LCP28_采购方案()
+//
+//    let result1 = s.purchasePlans([2,5,3,5], 6)
+//    assert(result1 == 1)
+//    print(result1)
+//
+//    let result2 = s.purchasePlans([2,2,1,9], 10)
+//    assert(result2 == 4)
+//    print(result2)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)

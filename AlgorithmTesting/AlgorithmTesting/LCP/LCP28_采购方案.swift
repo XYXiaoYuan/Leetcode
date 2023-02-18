@@ -40,7 +40,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class LCP28_采购方案 {
     //class Solution {
     public init() {}
         
@@ -76,7 +76,7 @@ public class Solutions {
     }
 }
 
-extension Solutions {
+extension LCP28_采购方案 {
     public func test() {
         let testTime = 10
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -87,7 +87,7 @@ extension Solutions {
         let minValue = 1
         let maxValue = 10//100000
         
-        for _ in 0..<testTime {
+        for i in 0..<testTime {
             let count = Int.random(in: minLength...maxLength)
             var nums = [Int]()
             for _ in 0..<count {
@@ -112,19 +112,19 @@ extension Solutions {
     }
 }
 
-do {
-    let s = Solutions()
-
-    let result1 = s.purchasePlans([2,5,3,5], 6)
-    assert(result1 == 1)
-    print(result1)
-
-    let result2 = s.purchasePlans([2,2,1,9], 10)
-    assert(result2 == 4)
-    print(result2)
-
-    s.test()
-}
+//do {
+//    let s = LCP28_采购方案()
+//
+//    let result1 = s.purchasePlans([2,5,3,5], 6)
+//    assert(result1 == 1)
+//    print(result1)
+//
+//    let result2 = s.purchasePlans([2,2,1,9], 10)
+//    assert(result2 == 4)
+//    print(result2)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)

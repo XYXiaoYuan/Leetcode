@@ -42,3 +42,20 @@ extension String {
         }
     }
 }
+
+extension String {
+    public func toLowerCase(_ s: String) -> String {
+        var result = ""
+        for i in s.indices {
+            var v = s[i]
+            if var value = v.asciiValue,
+                value >= 65,
+                value <= 90 {
+                value |= 32
+                v = Character(String(format: "%c", value))
+            }
+            result.append(v)
+        }
+        return result
+    }
+}
