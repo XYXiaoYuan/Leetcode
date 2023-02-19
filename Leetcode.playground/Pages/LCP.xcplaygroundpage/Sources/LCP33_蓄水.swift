@@ -45,7 +45,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class LCP33_蓄水 {
     //class Solution {
     public init() {}
         
@@ -139,7 +139,7 @@ public class Solutions {
     
 }
 
-extension Solutions {
+extension LCP33_蓄水 {
     public func test() {
         let testTime = 10
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -179,19 +179,19 @@ extension Solutions {
     }
 }
 
-do {
-    let s = Solutions()
-
-    let result1 = s.storeWater([1,3], [6,8])
-    assert(result1 == 4)
-    print(result1)
-
-    let result2 = s.storeWater([9,0,1], [0,2,2])
-    assert(result2 == 3)
-    print(result2)
-
-    s.test()
-}
+//do {
+//    let s = LCP33_蓄水()
+//
+//    let result1 = s.storeWater([1,3], [6,8])
+//    assert(result1 == 4)
+//    print(result1)
+//
+//    let result2 = s.storeWater([9,0,1], [0,2,2])
+//    assert(result2 == 3)
+//    print(result2)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)

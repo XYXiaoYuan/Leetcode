@@ -90,4 +90,20 @@ do {
     assert(s.orchestraLayout(4, 1, 2) == 5)
 }
 
+do {
+    let s = LCP33_蓄水()
+
+    let result1 = s.storeWater([1,3], [6,8])
+    assert(result1 == 4)
+    print(result1)
+
+    let result2 = s.storeWater([9,0,1], [0,2,2])
+    assert(result2 == 3)
+    print(result2)
+
+    s.test()
+}
+
+
+
 //: [Next](@next)
