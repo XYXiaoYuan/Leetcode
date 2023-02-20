@@ -1285,6 +1285,28 @@ do {
 }
 
 do {
+    let s = _2347_最好的扑克手牌()
+
+    let result1 = s.bestHand([13,2,3,1,9], ["a","a","a","a","a"])
+    assert(result1 == "Flush")
+    print(result1)
+
+    let result2 = s.bestHand([4,4,2,4,4], ["d","a","a","b","c"])
+    assert(result2 == "Three of a Kind")
+    print(result2)
+
+    let result3 = s.bestHand([10,10,2,12,9], ["a","b","c","a","d"])
+    assert(result3 == "Pair")
+    print(result3)
+
+    let result4 = s.bestHand([2,10,7,10,7], ["a","b","a","d","b"])
+    assert(result4 == "Pair")
+    print(result4)
+
+    s.test()
+}
+
+do {
     let s = _2351_第一个出现两次的字母()
     let result = s.repeatedCharacter("abccbaacz")
     print("\(s) --- \(result)")
@@ -1292,6 +1314,7 @@ do {
     /// 对数器测试
 //    s.test()
 }
+
 
 do {
     let s = _2389_和有限的最长子序列()

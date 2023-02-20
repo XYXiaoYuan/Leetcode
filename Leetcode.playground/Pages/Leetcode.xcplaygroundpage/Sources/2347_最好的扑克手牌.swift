@@ -52,7 +52,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solutions {
+public class _2347_最好的扑克手牌 {
     //class Solution {
     public init() {}
         
@@ -111,7 +111,7 @@ public class Solutions {
     
 }
 
-extension Solutions {
+extension _2347_最好的扑克手牌 {
     public func test() {
         let testTime = 10
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -148,30 +148,30 @@ extension Solutions {
     }
 }
 
-do {
-    let s = Solutions()
-    
-    let result1 = s.bestHand([13,2,3,1,9], ["a","a","a","a","a"])
-    assert(result1 == "Flush")
-    print(result1)
-
-    let result2 = s.bestHand([4,4,2,4,4], ["d","a","a","b","c"])
-    assert(result2 == "Three of a Kind")
-    print(result2)
-
-    let result3 = s.bestHand([10,10,2,12,9], ["a","b","c","a","d"])
-    assert(result3 == "Pair")
-    print(result3)
-    
-    do {
-        let result3 = s.bestHand([2,10,7,10,7], ["a","b","a","d","b"])
-        assert(result3 == "Pair")
-        print(result3)
-
-    }
-
-    s.test()
-}
+//do {
+//    let s = _2347_最好的扑克手牌()
+//
+//    let result1 = s.bestHand([13,2,3,1,9], ["a","a","a","a","a"])
+//    assert(result1 == "Flush")
+//    print(result1)
+//
+//    let result2 = s.bestHand([4,4,2,4,4], ["d","a","a","b","c"])
+//    assert(result2 == "Three of a Kind")
+//    print(result2)
+//
+//    let result3 = s.bestHand([10,10,2,12,9], ["a","b","c","a","d"])
+//    assert(result3 == "Pair")
+//    print(result3)
+//
+//    do {
+//        let result3 = s.bestHand([2,10,7,10,7], ["a","b","a","d","b"])
+//        assert(result3 == "Pair")
+//        print(result3)
+//
+//    }
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)
