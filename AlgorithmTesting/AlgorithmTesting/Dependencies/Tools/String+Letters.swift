@@ -59,3 +59,34 @@ extension String {
         return result
     }
 }
+
+extension String {
+    
+    /// 获取随机汉字
+    public static func randomChinese() -> String {
+        let cfEncoding = CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue)
+        let gbkEncoding = CFStringConvertEncodingToNSStringEncoding(cfEncoding)
+        let randomH = 0xA1 + arc4random() % (0xFE - 0xA1 + 1)
+        let randomL = 0xB0 + arc4random() % (0xF7 - 0xB0 + 1)
+        var number = (randomH << 8) + randomL
+        let data = Data.init(bytes: &number, count: 2)
+        let string = String(data: data, encoding: String.Encoding(rawValue: gbkEncoding))
+
+        guard let str = string else {
+            return ""
+        }
+        return str
+    }
+
+    /// 获取N个随机汉字
+    /// - Parameter count: 汉字字数
+    /// - Returns: N个随机汉字
+    public static func randomChinese(_ count: Int) -> String {
+        var target: String = ""
+        for _ in 0..<count {
+            let temp = Self.randomChinese()
+            target.append(temp)
+        }
+        return target
+    }
+}
