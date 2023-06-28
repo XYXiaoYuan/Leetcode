@@ -37,7 +37,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _2706_购买两块巧克力 {
     //class Solution {
     public init() {}
 
@@ -65,7 +65,7 @@ public class Solution1 {
     
 }
 
-extension Solution1 {
+extension _2706_购买两块巧克力 {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -97,23 +97,23 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    
-    let result1 = s.buyChoco([1,2,2], 3)
-    assert(result1 == 0)
-    print(result1)
-
-    let result2 = s.buyChoco([3,2,3], 3)
-    assert(result2 == 3)
-    print(result2)
-    
-    let result3 = s.buyChoco([98,54,6,34,66,63,52,39], 62)
-    assert(result3 == 22)
-    print(result3)
-    
-    s.test()
-}
+//do {
+//    let s = _2706_购买两块巧克力()
+//
+//    let result1 = s.buyChoco([1,2,2], 3)
+//    assert(result1 == 0)
+//    print(result1)
+//
+//    let result2 = s.buyChoco([3,2,3], 3)
+//    assert(result2 == 3)
+//    print(result2)
+//
+//    let result3 = s.buyChoco([98,54,6,34,66,63,52,39], 62)
+//    assert(result3 == 22)
+//    print(result3)
+//
+//    s.test()
+//}
 
 
 //: [Next](@next)

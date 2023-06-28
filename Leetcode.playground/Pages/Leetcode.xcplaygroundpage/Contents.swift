@@ -1370,6 +1370,24 @@ do {
 }
 
 do {
+    let s = _2706_购买两块巧克力()
+
+    let result1 = s.buyChoco([1,2,2], 3)
+    assert(result1 == 0)
+    print(result1)
+
+    let result2 = s.buyChoco([3,2,3], 3)
+    assert(result2 == 3)
+    print(result2)
+
+    let result3 = s.buyChoco([98,54,6,34,66,63,52,39], 62)
+    assert(result3 == 22)
+    print(result3)
+
+    s.test()
+}
+
+do {
     let s = _6132_使数组中所有元素都等于零()
     let result = s.minimumOperations([1,5,0,3,5])
     print("\(s) --- \(result)")
