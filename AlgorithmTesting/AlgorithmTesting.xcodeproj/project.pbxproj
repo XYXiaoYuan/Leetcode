@@ -30,6 +30,7 @@
 		6D311D0C28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D311D0B28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift */; };
 		6D311D0E28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D311D0D28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift */; };
 		6D31FFF6299E5C1C00FA19E0 /* 994_腐烂的橘子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31FFF5299E5C1C00FA19E0 /* 994_腐烂的橘子.swift */; };
+		6D625C802A5FE7E000E2474A /* 2769_找出最大的可达成数字.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D625C7F2A5FE7E000E2474A /* 2769_找出最大的可达成数字.swift */; };
 		6D679C2928C1A05100235CDA /* 611_有效三角形的个数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D679C2828C1A05100235CDA /* 611_有效三角形的个数.swift */; };
 		6D6ED855291F359D00A18517 /* 239_滑动窗口最大值.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6ED854291F359D00A18517 /* 239_滑动窗口最大值.swift */; };
 		6D783E6328AE3AA100852DE8 /* AdjacentSeats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D783E6228AE3AA100852DE8 /* AdjacentSeats.swift */; };
@@ -372,6 +373,7 @@
 		6D311D0B28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6142_统计坏数对的数目.swift"; sourceTree = "<group>"; };
 		6D311D0D28A0FD4A00B824B8 /* 1814_统计一个数组中好对子的数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1814_统计一个数组中好对子的数目.swift"; sourceTree = "<group>"; };
 		6D31FFF5299E5C1C00FA19E0 /* 994_腐烂的橘子.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "994_腐烂的橘子.swift"; sourceTree = "<group>"; };
+		6D625C7F2A5FE7E000E2474A /* 2769_找出最大的可达成数字.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2769_找出最大的可达成数字.swift"; sourceTree = "<group>"; };
 		6D679C2828C1A05100235CDA /* 611_有效三角形的个数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "611_有效三角形的个数.swift"; sourceTree = "<group>"; };
 		6D6ED854291F359D00A18517 /* 239_滑动窗口最大值.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "239_滑动窗口最大值.swift"; sourceTree = "<group>"; };
 		6D783E6228AE3AA100852DE8 /* AdjacentSeats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacentSeats.swift; sourceTree = "<group>"; };
@@ -912,6 +914,7 @@
 				6DD01EDD28BE34CF00EC22B1 /* 2391_收集垃圾的最少总时间.swift */,
 				6D237CA02906522A0007EF02 /* 2446_判断两个事件是否存在冲突.swift */,
 				6D7C260E2A4C54E200D8E19B /* 2706_购买两块巧克力.swift */,
+				6D625C7F2A5FE7E000E2474A /* 2769_找出最大的可达成数字.swift */,
 				6D7C167E2896401800A70746 /* 6132_使数组中所有元素都等于零.swift */,
 				6D311D0928A0ECC900B824B8 /* 6141_合并相似的物品.swift */,
 				6D311D0B28A0F6DF00B824B8 /* 6142_统计坏数对的数目.swift */,
@@ -1472,6 +1475,7 @@
 				6D95A18E287FF2B500FE54E2 /* 剑指Offer20_表示数值的字符串.swift in Sources */,
 				1CE8A42128C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift in Sources */,
 				6D95A0A8287FF28900FE54E2 /* 445_两数相加II.swift in Sources */,
+				6D625C802A5FE7E000E2474A /* 2769_找出最大的可达成数字.swift in Sources */,
 				6D95A103287FF28900FE54E2 /* 912_排序数组.swift in Sources */,
 				6D95A1B2287FF2D700FE54E2 /* LCS01_下载插件.swift in Sources */,
 				6D95A09E287FF28900FE54E2 /* 1290_二进制链表转整数.swift in Sources */,

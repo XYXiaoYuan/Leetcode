@@ -41,7 +41,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _2769_找出最大的可达成数字 {
     //class Solution {
     public init() {}
 
@@ -51,7 +51,7 @@ public class Solution1 {
     
 }
 
-extension Solution1 {
+extension _2769_找出最大的可达成数字 {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -77,19 +77,19 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    
-    let result1 = s.theMaximumAchievableX(4, 1)
-    assert(result1 == 6)
-    print(result1)
-
-    let result2 = s.theMaximumAchievableX(3, 2)
-    assert(result2 == 7)
-    print(result2)
-        
-    s.test()
-}
+//do {
+//    let s = _2769_找出最大的可达成数字()
+//    
+//    let result1 = s.theMaximumAchievableX(4, 1)
+//    assert(result1 == 6)
+//    print(result1)
+//
+//    let result2 = s.theMaximumAchievableX(3, 2)
+//    assert(result2 == 7)
+//    print(result2)
+//        
+//    s.test()
+//}
 
 
 //: [Next](@next)
