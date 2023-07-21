@@ -55,7 +55,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _2139_得到目标值的最少行动次数 {
     //class Solution {
     public init() {}
 
@@ -79,7 +79,7 @@ public class Solution1 {
     
 }
 
-extension Solution1 {
+extension _2139_得到目标值的最少行动次数 {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -105,27 +105,27 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    
-    let result1 = s.minMoves(5, 0)
-    assert(result1 == 4)
-    print(result1)
-
-    let result2 = s.minMoves(19, 2)
-    assert(result2 == 7)
-    print(result2)
-
-    let result3 = s.minMoves(10, 4)
-    assert(result3 == 4)
-    print(result3)
-    
-    let result4 = s.minMoves(766972377, 92)
-    assert(result4 == 45)
-    print(result4)
-    
-//    s.test()
-}
+//do {
+//    let s = _2139_得到目标值的最少行动次数()
+//
+//    let result1 = s.minMoves(5, 0)
+//    assert(result1 == 4)
+//    print(result1)
+//
+//    let result2 = s.minMoves(19, 2)
+//    assert(result2 == 7)
+//    print(result2)
+//
+//    let result3 = s.minMoves(10, 4)
+//    assert(result3 == 4)
+//    print(result3)
+//
+//    let result4 = s.minMoves(766972377, 92)
+//    assert(result4 == 45)
+//    print(result4)
+//
+////    s.test()
+//}
 
 
 //: [Next](@next)
