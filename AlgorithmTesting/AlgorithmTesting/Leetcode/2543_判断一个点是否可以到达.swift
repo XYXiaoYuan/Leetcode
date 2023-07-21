@@ -39,7 +39,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _2543_判断一个点是否可以到达 {
     //class Solution {
     public init() {}
     
@@ -59,7 +59,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _2543_判断一个点是否可以到达 {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -85,19 +85,19 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    
-    let result1 = s.isReachable(6, 9)
-//    assert(result1 == false)
-    print(result1)
-
-    let result2 = s.isReachable(4, 7)
-//    assert(result2 == true)
-    print(result2)
-    
-//    s.test()
-}
+//do {
+//    let s = _2543_判断一个点是否可以到达()
+//    
+//    let result1 = s.isReachable(6, 9)
+////    assert(result1 == false)
+//    print(result1)
+//
+//    let result2 = s.isReachable(4, 7)
+////    assert(result2 == true)
+//    print(result2)
+//    
+////    s.test()
+//}
 
 
 //: [Next](@next)
