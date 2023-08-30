@@ -17,6 +17,7 @@
 		1CE8A42128C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */; };
 		1CFE01D82A6AD1B500CD942E /* 2139_得到目标值的最少行动次数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE01D72A6AD1B500CD942E /* 2139_得到目标值的最少行动次数.swift */; };
 		1CFE01DA2A6ADC0C00CD942E /* 2543_判断一个点是否可以到达.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE01D92A6ADC0C00CD942E /* 2543_判断一个点是否可以到达.swift */; };
+		1CFE3A542A9EE1D700D654CD /* 667_优美的排列II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE3A532A9EE1D700D654CD /* 667_优美的排列II.swift */; };
 		6D0A52752920DC5A002055C6 /* 921_使括号有效的最少添加.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A52742920DC5A002055C6 /* 921_使括号有效的最少添加.swift */; };
 		6D0A527729210030002055C6 /* 146_LRU缓存.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A527629210030002055C6 /* 146_LRU缓存.swift */; };
 		6D0A5279292102CD002055C6 /* 215_数组中的第K个最大元素.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A5278292102CD002055C6 /* 215_数组中的第K个最大元素.swift */; };
@@ -362,6 +363,7 @@
 		1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6168_恰好移动k步到达某一位置的方法数目.swift"; sourceTree = "<group>"; };
 		1CFE01D72A6AD1B500CD942E /* 2139_得到目标值的最少行动次数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2139_得到目标值的最少行动次数.swift"; sourceTree = "<group>"; };
 		1CFE01D92A6ADC0C00CD942E /* 2543_判断一个点是否可以到达.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2543_判断一个点是否可以到达.swift"; sourceTree = "<group>"; };
+		1CFE3A532A9EE1D700D654CD /* 667_优美的排列II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "667_优美的排列II.swift"; sourceTree = "<group>"; };
 		6D0A52742920DC5A002055C6 /* 921_使括号有效的最少添加.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "921_使括号有效的最少添加.swift"; sourceTree = "<group>"; };
 		6D0A527629210030002055C6 /* 146_LRU缓存.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "146_LRU缓存.swift"; sourceTree = "<group>"; };
 		6D0A5278292102CD002055C6 /* 215_数组中的第K个最大元素.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "215_数组中的第K个最大元素.swift"; sourceTree = "<group>"; };
@@ -857,6 +859,7 @@
 				6D959FE8287FF28800FE54E2 /* 628_三个数的最大乘积.swift */,
 				6D95A059287FF28800FE54E2 /* 633_平方数之和.swift */,
 				6D95A03E287FF28800FE54E2 /* 660_移除9.swift */,
+				1CFE3A532A9EE1D700D654CD /* 667_优美的排列II.swift */,
 				6D95A04E287FF28800FE54E2 /* 679_24点游戏.swift */,
 				6DD01EE728C0826D00EC22B1 /* 690_员工的重要性.swift */,
 				6D95A05E287FF28800FE54E2 /* 703_数据流中的第 K 大元素.swift */,
@@ -1355,6 +1358,7 @@
 				6D95A10F287FF28900FE54E2 /* 086_分隔链表.swift in Sources */,
 				6D9C6256287BC5F300320073 /* BinaryTree.swift in Sources */,
 				6D95A0F6287FF28900FE54E2 /* 292_Nim 游戏.swift in Sources */,
+				1CFE3A542A9EE1D700D654CD /* 667_优美的排列II.swift in Sources */,
 				6D95A1AD287FF2D700FE54E2 /* LCP22_黑白方格画.swift in Sources */,
 				6D9C624C287BC5F300320073 /* PriorityQueue.swift in Sources */,
 				6D9C6254287BC5F300320073 /* BST.swift in Sources */,

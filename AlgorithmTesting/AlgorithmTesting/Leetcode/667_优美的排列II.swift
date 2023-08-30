@@ -30,7 +30,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _667_优美的排列II {
     //class Solution {
     public init() {}
     
@@ -65,7 +65,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _667_优美的排列II {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -91,19 +91,19 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    
-    let result1 = s.constructArray(3, 1)
-    //    assert(result1 == [1,2,3])
-    print(result1)
-    
-    let result2 = s.constructArray(3, 2)
-    //    assert(result2 == [1,3,2])
-    print(result2)
-    
-    //    s.test()
-}
+//do {
+//    let s = _667_优美的排列II()
+//    
+//    let result1 = s.constructArray(3, 1)
+//    //    assert(result1 == [1,2,3])
+//    print(result1)
+//    
+//    let result2 = s.constructArray(3, 2)
+//    //    assert(result2 == [1,3,2])
+//    print(result2)
+//    
+//    //    s.test()
+//}
 
 
 //: [Next](@next)
