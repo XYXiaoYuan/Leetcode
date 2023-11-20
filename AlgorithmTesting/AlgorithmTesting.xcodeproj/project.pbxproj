@@ -13,6 +13,7 @@
 		1CA0BE4829A1D53500993AA5 /* LCP33_蓄水.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA0BE4729A1D53500993AA5 /* LCP33_蓄水.swift */; };
 		1CA0BE4A29A3A8E200993AA5 /* 2347_最好的扑克手牌.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA0BE4929A3A8E200993AA5 /* 2347_最好的扑克手牌.swift */; };
 		1CAD20D0289FF9BE00816713 /* 796_旋转字符串.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD20CF289FF9BE00816713 /* 796_旋转字符串.swift */; };
+		1CD76A1C2B0AF97500E5F7F8 /* 053_最大字数组和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD76A1B2B0AF97500E5F7F8 /* 053_最大字数组和.swift */; };
 		1CE8A41628C454E40071E2BD /* 6167_检查相同字母间的距离.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8A41528C454E40071E2BD /* 6167_检查相同字母间的距离.swift */; };
 		1CE8A42128C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */; };
 		1CFE01D82A6AD1B500CD942E /* 2139_得到目标值的最少行动次数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE01D72A6AD1B500CD942E /* 2139_得到目标值的最少行动次数.swift */; };
@@ -321,7 +322,7 @@
 		6D9C6258287BC5F300320073 /* RBTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6248287BC5F300320073 /* RBTree.swift */; };
 		6D9C6259287BC5F300320073 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C6249287BC5F300320073 /* AVLTree.swift */; };
 		6D9C625B287C06AA00320073 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C625A287C06AA00320073 /* Temp.swift */; };
-		6DAC85C12920B45100067A4E /* 42_接雨水.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC85C02920B45100067A4E /* 42_接雨水.swift */; };
+		6DAC85C12920B45100067A4E /* 042_接雨水.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC85C02920B45100067A4E /* 042_接雨水.swift */; };
 		6DD01EDC28BE233F00EC22B1 /* 2390_从字符串中移除星号.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EDB28BE233F00EC22B1 /* 2390_从字符串中移除星号.swift */; };
 		6DD01EDE28BE34CF00EC22B1 /* 2391_收集垃圾的最少总时间.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EDD28BE34CF00EC22B1 /* 2391_收集垃圾的最少总时间.swift */; };
 		6DD01EE028BF618500EC22B1 /* 946_验证栈序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD01EDF28BF618500EC22B1 /* 946_验证栈序列.swift */; };
@@ -359,6 +360,7 @@
 		1CA0BE4729A1D53500993AA5 /* LCP33_蓄水.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LCP33_蓄水.swift"; sourceTree = "<group>"; };
 		1CA0BE4929A3A8E200993AA5 /* 2347_最好的扑克手牌.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2347_最好的扑克手牌.swift"; sourceTree = "<group>"; };
 		1CAD20CF289FF9BE00816713 /* 796_旋转字符串.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "796_旋转字符串.swift"; sourceTree = "<group>"; };
+		1CD76A1B2B0AF97500E5F7F8 /* 053_最大字数组和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "053_最大字数组和.swift"; sourceTree = "<group>"; };
 		1CE8A41528C454E40071E2BD /* 6167_检查相同字母间的距离.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6167_检查相同字母间的距离.swift"; sourceTree = "<group>"; };
 		1CE8A42028C525CC0071E2BD /* 6168_恰好移动k步到达某一位置的方法数目.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6168_恰好移动k步到达某一位置的方法数目.swift"; sourceTree = "<group>"; };
 		1CFE01D72A6AD1B500CD942E /* 2139_得到目标值的最少行动次数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2139_得到目标值的最少行动次数.swift"; sourceTree = "<group>"; };
@@ -668,7 +670,7 @@
 		6D9C6248287BC5F300320073 /* RBTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTree.swift; sourceTree = "<group>"; };
 		6D9C6249287BC5F300320073 /* AVLTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		6D9C625A287C06AA00320073 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
-		6DAC85C02920B45100067A4E /* 42_接雨水.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "42_接雨水.swift"; sourceTree = "<group>"; };
+		6DAC85C02920B45100067A4E /* 042_接雨水.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "042_接雨水.swift"; sourceTree = "<group>"; };
 		6DD01EDB28BE233F00EC22B1 /* 2390_从字符串中移除星号.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2390_从字符串中移除星号.swift"; sourceTree = "<group>"; };
 		6DD01EDD28BE34CF00EC22B1 /* 2391_收集垃圾的最少总时间.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2391_收集垃圾的最少总时间.swift"; sourceTree = "<group>"; };
 		6DD01EDF28BF618500EC22B1 /* 946_验证栈序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "946_验证栈序列.swift"; sourceTree = "<group>"; };
@@ -729,13 +731,14 @@
 				6D959FCA287FF28800FE54E2 /* 027_移除元素.swift */,
 				6D959FE7287FF28800FE54E2 /* 028_实现strStr.swift */,
 				6D95A068287FF28800FE54E2 /* 034_在排序数组中查找元素的第一个和最后一个位置.swift */,
-				6DAC85C02920B45100067A4E /* 42_接雨水.swift */,
+				6DAC85C02920B45100067A4E /* 042_接雨水.swift */,
 				6D95A00F287FF28800FE54E2 /* 043_字符串相乘.swift */,
 				6D95A025287FF28800FE54E2 /* 044_通配符匹配.swift */,
 				6D95A019287FF28800FE54E2 /* 045_跳跃游戏II.swift */,
 				6D95A038287FF28800FE54E2 /* 048_旋转图像.swift */,
 				6D95A004287FF28800FE54E2 /* 051_N皇后.swift */,
 				6D959FDA287FF28800FE54E2 /* 052_N皇后II.swift */,
+				1CD76A1B2B0AF97500E5F7F8 /* 053_最大字数组和.swift */,
 				6D95A017287FF28800FE54E2 /* 054_螺旋矩阵.swift */,
 				6D959FEF287FF28800FE54E2 /* 055_跳跃游戏.swift */,
 				6D959FDB287FF28800FE54E2 /* 061_旋转链表.swift */,
@@ -1282,6 +1285,7 @@
 				6D95A175287FF2B400FE54E2 /* 剑指Offer32_II_从上到下打印二叉树II.swift in Sources */,
 				6D9C624B287BC5F300320073 /* HashTable.swift in Sources */,
 				6D95A0B9287FF28900FE54E2 /* 015_三数之和.swift in Sources */,
+				1CD76A1C2B0AF97500E5F7F8 /* 053_最大字数组和.swift in Sources */,
 				6D95A17B287FF2B500FE54E2 /* 剑指Offer_II_001整数除法.swift in Sources */,
 				6D95A084287FF28900FE54E2 /* 299_猜数字游戏.swift in Sources */,
 				6D26B7B7291F6AD30064754B /* 739_每日温度.swift in Sources */,
@@ -1425,7 +1429,7 @@
 				6D95A0D4287FF28900FE54E2 /* 1411_给Nx3网格图涂色的方案数.swift in Sources */,
 				6D95A116287FF28900FE54E2 /* 560_和为K的子数组.swift in Sources */,
 				1CE8A41628C454E40071E2BD /* 6167_检查相同字母间的距离.swift in Sources */,
-				6DAC85C12920B45100067A4E /* 42_接雨水.swift in Sources */,
+				6DAC85C12920B45100067A4E /* 042_接雨水.swift in Sources */,
 				6D95A0B6287FF28900FE54E2 /* 394_字符串解码.swift in Sources */,
 				1CA0BE4A29A3A8E200993AA5 /* 2347_最好的扑克手牌.swift in Sources */,
 				6D95A109287FF28900FE54E2 /* 164_最大间距.swift in Sources */,

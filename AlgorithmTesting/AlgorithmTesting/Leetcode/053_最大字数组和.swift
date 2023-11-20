@@ -33,7 +33,7 @@ import Foundation
 import Darwin
 // import XCTest
 
-public class Solution1 {
+public class _053_最大字数组和 {
     //class Solution {
     public init() {}
     
@@ -63,7 +63,7 @@ public class Solution1 {
     }
 }
 
-extension Solution1 {
+extension _053_最大字数组和 {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -92,23 +92,23 @@ extension Solution1 {
     }
 }
 
-do {
-    let s = Solution1()
-    
-    let result1 = s.maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
-    //    assert(result1 == 6)
-    print(result1)
-    
-    let result2 = s.maxSubArray([1])
-    //    assert(result2 == 1)
-    print(result2)
-    
-    let result3 = s.maxSubArray([5,4,-1,7,8])
-//    assert(result3 == 23)
-    print(result3)
-    
-    //    s.test()
-}
+//do {
+//    let s = _053_最大字数组和()
+//
+//    let result1 = s.maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
+//    //    assert(result1 == 6)
+//    print(result1)
+//
+//    let result2 = s.maxSubArray([1])
+//    //    assert(result2 == 1)
+//    print(result2)
+//
+//    let result3 = s.maxSubArray([5,4,-1,7,8])
+////    assert(result3 == 23)
+//    print(result3)
+//
+//    //    s.test()
+//}
 
 
 //: [Next](@next)
