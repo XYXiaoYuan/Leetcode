@@ -65,6 +65,69 @@ public class _42_接雨水 {
         return water
     }
 
+    /// 面积差法
+    public func trap1(_ height: [Int]) -> Int {
+        if height.isEmpty || height.count < 2 {
+            return 0
+        }
+        
+        let n = height.count
+        var sum = 0, max = 0
+        for i in 0..<n {
+            let cur = height[i]
+            sum += cur
+            max = Swift.max(max, cur)
+        }
+        
+        let full = max * n
+        
+        var lSum = 0, lMax = 0
+        for i in 0..<n {
+            lMax = Swift.max(lMax, height[i])
+            lSum += lMax
+        }
+        
+        var rSum = 0, rMax = 0
+        for i in stride(from: n - 1, through: 0, by: -1) {
+            rMax = Swift.max(rMax, height[i])
+            rSum += rMax
+        }
+        
+        return lSum + rSum - full - sum
+    }
+    
+    /// 预处理最值
+    public func trap2(_ height: [Int]) -> Int {
+        let n = height.count
+        var ans = 0
+        if (n == 0) {
+            return ans
+        }
+        
+        /// 预处理左边的最值
+        var lm = [Int].init(repeating: 0, count: n)
+        lm[0] = height[0]
+        for i in 1..<n {
+            lm[i] = Swift.max(height[i], lm[i - 1])
+        }
+        
+        /// 预处理右边的最值
+        var rm = [Int].init(repeating: 0, count: n)
+        rm[n - 1] = height[n - 1]
+        for i in stride(from: n - 2, through: 0, by: -1) {
+            rm[i] = Swift.max(height[i], rm[i + 1])
+        }
+        
+        for i in 1..<(n - 1) {
+            let cur = height[i], l = lm[i], r = rm[i]
+            if (l <= cur || r <= cur) {
+                continue
+            }
+            ans += Swift.min(l, r) - cur
+        }
+        
+        return ans
+    }
 
     
     /// 正确,但是效率不是最高的
