@@ -56,7 +56,7 @@ import Foundation
 import Darwin
 // import XCTest
 //[100, 18, 18, ]
-public class Solution {
+public class _2865_美丽塔I {
     //class Solution {
     public init() {}
     
@@ -137,7 +137,7 @@ public class Solution {
     }
 }
 
-extension Solution {
+extension _2865_美丽塔I {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -163,22 +163,22 @@ extension Solution {
     }
 }
 
-do {
-    let s = Solution()
-    
-    do {
-        let result = s.maximumSumOfHeights([100, 52, 18, 85, 87, 74, 18, 97, 76, 34])
-//        assert(result == 372)
-        print(result)
-        
-    }
-    
-    do {
-        let result = s.maximumSumOfHeights1([100, 52, 18, 85, 87, 74, 18, 97, 76, 34])
-//        assert(result == 372)
-        print(result)
-        
-    }
+//do {
+//    let s = _2865_美丽塔I()
+//
+//    do {
+//        let result = s.maximumSumOfHeights([100, 52, 18, 85, 87, 74, 18, 97, 76, 34])
+////        assert(result == 372)
+//        print(result)
+//
+//    }
+//
+//    do {
+//        let result = s.maximumSumOfHeights1([100, 52, 18, 85, 87, 74, 18, 97, 76, 34])
+////        assert(result == 372)
+//        print(result)
+//
+//    }
 //
 //
 //    do {
@@ -232,7 +232,7 @@ do {
 //
 //
 //    s.test()
-}
+//}
 
 
 //: [Next](@next)
