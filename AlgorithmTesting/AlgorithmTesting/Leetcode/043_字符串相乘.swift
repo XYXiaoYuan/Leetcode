@@ -40,7 +40,7 @@
 //        /// 结果最多为 m + n 位数
 //        var result: [Int] = [Int].init(repeating: 0, count: m + n);
 //        /// 从个位数开始逐位相乘
-//        let zeroAsciiValue = Int(Character("0").unicodeScalars.first?.value ?? 0)
+//        let zeroAsciiValue = Int(Character("0").unicodeScalars.first?.value ?? 48)
 //        for i in stride(from: m - 1, through: 0, by: -1) {
 //            for j in stride(from: n - 1, through: 0, by: -1) {
 //                let num1Value = Int(Character(num1[i]).unicodeScalars.first?.value ?? 0) - zeroAsciiValue

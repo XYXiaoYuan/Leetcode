@@ -31,8 +31,8 @@
 import Foundation
 import Darwin
 
-public class Solution {
-    //class Solution {
+public class _481_神奇字符串 {
+    //class _481_神奇字符串 {
     public init() {}
     
     public func magicalString(_ n: Int) -> Int {
@@ -89,7 +89,7 @@ public class Solution {
     
 }
 
-extension Solution {
+extension _481_神奇字符串 {
     public func test() {
         let testTime = 10000
         print("对数器开始工作, 执行 【\(testTime)】 次")
@@ -114,24 +114,24 @@ extension Solution {
     }
 }
 
-do {
-    let s = Solution()
-    
-    do {
-        let result = s.magicalString(6)
-        assert(result == 3)
-        print(result)
-        
-    }
-        
-    do {
-        let result = s.magicalString(1)
-        assert(result == 1)
-        print(result)
-
-    }
-//    s.test()
-}
+//do {
+//    let s = _481_神奇字符串()
+//
+//    do {
+//        let result = s.magicalString(6)
+//        assert(result == 3)
+//        print(result)
+//
+//    }
+//
+//    do {
+//        let result = s.magicalString(1)
+//        assert(result == 1)
+//        print(result)
+//
+//    }
+////    s.test()
+//}
 
 
 //: [Next](@next)

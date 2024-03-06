@@ -12,7 +12,7 @@ public extension String {
     subscript (r: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: r.lowerBound)
         let end = index(startIndex, offsetBy: r.upperBound)
-        return String(self[start ..< end])
+        return String(self[start..<end])
     }
 
     /// 通过半开区间的方式获取字符串中半开区间位置的字符
@@ -20,5 +20,17 @@ public extension String {
         let startIndex =  self.index(self.startIndex, offsetBy: r.lowerBound)
         let endIndex = self.index(startIndex, offsetBy: r.upperBound - r.lowerBound)
         return String(self[startIndex...endIndex])
+    }
+}
+
+public extension String {
+    func ASCIIValue() -> Int {
+        return Int(self.unicodeScalars.first?.value ?? 0)
+    }
+}
+
+public extension Character {
+    func ASCIIValue() -> Int {
+        return Int(self.unicodeScalars.first?.value ?? 0)
     }
 }
